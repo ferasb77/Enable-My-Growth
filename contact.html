@@ -87,28 +87,34 @@
       </div>
 
       <div>
-        <form class="form-grid" onsubmit="handleContact(event)">
+        <form class="form-grid" action="https://formspree.io/f/xnjkjvkz" method="POST">
+
+          <!-- Redirect back to your site after submission -->
+          <input type="hidden" name="_next" value="https://enablemygrowth.com/contact.html?submitted=true" />
+          <!-- Label emails with a clear subject line in your inbox -->
+          <input type="hidden" name="_subject" value="New enquiry — EnableMyGrowth.com" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="c-name">Name</label>
-              <input type="text" id="c-name" placeholder="Your name" />
+              <input type="text" id="c-name" name="name" placeholder="Your name" required />
             </div>
             <div class="form-group">
               <label for="c-org">Organization</label>
-              <input type="text" id="c-org" placeholder="Company or institution" />
+              <input type="text" id="c-org" name="organization" placeholder="Company or institution" />
             </div>
           </div>
           <div class="form-group">
             <label for="c-email">Email</label>
-            <input type="email" id="c-email" placeholder="your@email.com" />
+            <input type="email" id="c-email" name="email" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
             <label for="c-role">Your Role</label>
-            <input type="text" id="c-role" placeholder="e.g. Chief Executive Officer" />
+            <input type="text" id="c-role" name="role" placeholder="e.g. Chief Executive Officer" />
           </div>
           <div class="form-group">
             <label for="c-type">Nature of Enquiry</label>
-            <select id="c-type">
+            <select id="c-type" name="enquiry_type">
               <option value="" disabled selected>Select an area</option>
               <option>Executive Advisory</option>
               <option>Hogan Assessment</option>
@@ -120,7 +126,7 @@
           </div>
           <div class="form-group">
             <label for="c-message">What are you trying to understand, decide, or improve?</label>
-            <textarea id="c-message" placeholder="Describe the challenge, decision, or development priority you're working through. The more specific, the better I can assess how I might be useful."></textarea>
+            <textarea id="c-message" name="message" placeholder="Describe the challenge, decision, or development priority you're working through. The more specific, the better I can assess how I might be useful." required></textarea>
           </div>
           <div>
             <button type="submit" class="btn btn-gold" style="width:100%; font-size:0.78rem; padding:1rem;">Send Enquiry</button>
@@ -132,11 +138,13 @@
   </section>
 
   <script>
-    function handleContact(e) {
-      e.preventDefault();
-      // TODO: wire to Formspree (https://formspree.io) or Netlify Forms
-      // For Formspree: set action="https://formspree.io/f/YOUR_ID" method="POST" and remove this JS
-      alert('Thank you — I\'ll be in touch within two business days.');
+    // Show a confirmation message if returning from Formspree submission
+    if (window.location.search.includes('submitted=true')) {
+      const msg = document.createElement('div');
+      msg.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#C9A96E;color:#0A0A0F;padding:1rem 1.5rem;border-radius:2px;font-size:0.82rem;font-family:Inter,sans-serif;font-weight:500;letter-spacing:0.04em;z-index:999;';
+      msg.textContent = 'Enquiry received — I\'ll be in touch within two business days.';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 6000);
     }
   </script>
 
