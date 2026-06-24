@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Assessment Scores Are Not Explanations — Feras Banna</title>
+  <meta name="description" content="A score describes. An explanation explains. The distinction sounds obvious. In practice, it is routinely ignored. An essay by Feras Banna." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .essay-wrap { max-width:1080px; margin:0 auto; padding:0 3rem; display:grid; grid-template-columns:1fr 260px; gap:6rem; align-items:start; }
+    .essay-body { max-width:640px; }
+    .essay-meta { display:flex; align-items:center; gap:1.5rem; margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border2); }
+    .essay-meta-tag { font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold-dim); padding:0.25rem 0.7rem; border-radius:2px; }
+    .essay-meta-info { font-size:0.75rem; color:var(--muted); letter-spacing:0.06em; }
+    .essay-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.6rem); font-weight:300; line-height:1.1; color:var(--text); margin-bottom:2.5rem; }
+    .essay-prose p { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; color:var(--text); line-height:1.85; margin-bottom:1.4rem; }
+    .essay-prose p.standalone { font-style:italic; color:var(--gold); font-size:1.1rem; margin:2rem 0; text-align:center; }
+    .essay-prose p.condition { padding-left:1.5rem; border-left:2px solid var(--gold-dim); color:var(--muted); font-size:1.1rem; margin-bottom:0.6rem; }
+    .essay-prose p.litany { padding-left:1.5rem; font-style:italic; color:var(--muted); font-size:1.05rem; margin-bottom:0.5rem; line-height:1.5; }
+    .essay-closing { margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--border2); }
+    .essay-closing p { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.8; margin-bottom:1.2rem; }
+    .essay-sidebar { position:sticky; top:6rem; display:flex; flex-direction:column; gap:2rem; }
+    .sidebar-card { background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:1.6rem 1.4rem; }
+    .sidebar-card-label { font-size:0.62rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+    .sidebar-card-title { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:400; color:var(--text); line-height:1.4; margin-bottom:0.5rem; }
+    .sidebar-card p { font-size:0.8rem; line-height:1.7; }
+    .sidebar-nav-list { list-style:none; display:flex; flex-direction:column; gap:0; }
+    .sidebar-nav-list li { border-bottom:1px solid var(--border2); }
+    .sidebar-nav-list li:first-child { border-top:1px solid var(--border2); }
+    .sidebar-nav-list a { display:block; font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-style:italic; color:var(--muted); text-decoration:none; padding:0.65rem 0; transition:color 0.2s; line-height:1.35; }
+    .sidebar-nav-list a:hover { color:var(--gold); }
+    .sidebar-nav-list a.current { color:var(--text); font-style:normal; }
+    .essay-footer { max-width:1080px; margin:0 auto; padding:3rem 3rem 0; border-top:1px solid var(--border2); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .essay-footer-author { display:flex; align-items:center; gap:1rem; }
+    .author-initial { width:42px; height:42px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--gold); flex-shrink:0; }
+    .author-name-block .name { font-size:0.88rem; color:var(--text); font-weight:500; }
+    .author-name-block .role { font-size:0.72rem; color:var(--muted); margin-top:0.15rem; }
+    @media (max-width:900px) { .essay-wrap { grid-template-columns:1fr; gap:3rem; padding:0 1.5rem; } .essay-sidebar { position:static; } .essay-footer { padding:2rem 1.5rem 0; flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="page-hero" style="padding-bottom:3rem;">
+    <div class="container">
+      <a href="ideas.html#context" style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); text-decoration:none;">← Context Before Explanation</a>
+    </div>
+  </div>
+
+  <section style="padding-top:2rem;">
+    <div class="essay-wrap">
+      <article class="essay-body">
+        <div class="essay-meta">
+          <span class="essay-meta-tag">Context Before Explanation</span>
+          <span class="essay-meta-info">Essay · Feras Banna</span>
+        </div>
+        <h1 class="essay-title">Why Assessment Scores Are Not Explanations</h1>
+        <div class="essay-prose">
+
+          <p>One of the most common misunderstandings in assessment is surprisingly simple.</p>
+          <p class="standalone">People confuse description with explanation.<br/>A score describes. An explanation explains.</p>
+          <p>The distinction sounds obvious. In practice, it is routinely ignored.</p>
+          <p>After many years working with personality assessments, leadership assessments, and talent decisions, I have noticed a recurring pattern. Someone receives a report. A score stands out. A behavior is observed. The two are immediately connected.</p>
+          <p class="litany">They are quiet because their Sociability score is low. They are impatient because their Prudence score is low. They are controlling because their Bold score is high. They avoid conflict because their Adjustment score is low.</p>
+          <p>The explanation feels complete. Often it is not.</p>
+          <p>The score may describe a tendency. It does not automatically explain a specific behavior.</p>
+          <p>This distinction matters because people do not operate as assessment reports. They operate within contexts.</p>
+          <p class="condition">A person with high Sociability may remain silent in a meeting.</p>
+          <p class="condition">A person with low Prudence may manage a complex project exceptionally well.</p>
+          <p class="condition">A person with elevated Bold may demonstrate remarkable humility.</p>
+          <p class="condition">A person with low Adjustment may remain calm during a crisis.</p>
+          <p>None of these examples invalidate the assessment. They simply highlight a reality that assessments themselves acknowledge: scores indicate probabilities. They do not determine outcomes.</p>
+          <p>The problem begins when scores become explanations rather than sources of inquiry.</p>
+          <p>Once this happens, observation often stops. The report provides the answer. The conversation becomes shorter. Curiosity decreases. Context disappears.</p>
+          <p>Yet context frequently determines whether a tendency becomes visible, muted, amplified, or redirected.</p>
+          <p>The same individual may appear very different across different environments — different leaders, different teams, different expectations, different incentives, different consequences. The underlying tendencies may remain relatively stable. The behavior may not.</p>
+          <p>This is why experienced assessors rarely begin with certainty. They begin with questions.</p>
+          <p class="condition">What situation produced the behavior?</p>
+          <p class="condition">What expectations existed?</p>
+          <p class="condition">What pressures were present?</p>
+          <p class="condition">What alternatives were available?</p>
+          <p class="condition">What consequences were being managed?</p>
+          <p>Without these questions, assessment can become reduction. The individual becomes their scores. Complexity becomes shorthand. Description becomes explanation.</p>
+          <p>Ironically, assessment tools are often strongest when they are treated as the beginning of a conversation rather than the conclusion of one.</p>
+          <p class="condition">A score can suggest where to look. It cannot tell us everything we will find.</p>
+          <p class="condition">The purpose of assessment is not to replace judgment. It is to improve it.</p>
+          <p class="condition">Not to eliminate inquiry. But to guide it.</p>
+          <p>A report can reveal tendencies. It can identify patterns. It can highlight potential strengths and risks. What it cannot do is explain every behavior without reference to context.</p>
+          <p>That requires something no assessment can provide on its own. Understanding.</p>
+
+        </div>
+        <div class="essay-closing">
+          <p>And understanding begins when scores stop being treated as answers and start being treated as evidence.</p>
+        </div>
+      </article>
+
+      <aside class="essay-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Part of</div>
+          <div class="sidebar-card-title">Context Before Explanation</div>
+          <p>We routinely explain behavior through the person before examining the conditions that made the behavior reasonable.</p>
+          <a href="ideas.html#context" class="btn-text btn" style="margin-top:1rem; display:inline-block;">Explore the idea</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Essays in this series</div>
+          <ul class="sidebar-nav-list">
+            <li><a href="essay-context.html">Context Before Explanation</a></li>
+            <li><a href="essay-scores.html" class="current">Why Assessment Scores Are Not Explanations</a></li>
+            <li><a href="essay-potential.html">Leadership Potential and Leadership Performance</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Newsletter</div>
+          <p style="margin-bottom:1rem;">Essays like this, delivered occasionally.</p>
+          <form onsubmit="handleCapture(event)" style="display:flex; flex-direction:column; gap:0.6rem;">
+            <input type="email" id="essay-email" placeholder="Your email" style="background:var(--bg); border:1px solid var(--border); border-radius:2px; padding:0.65rem 0.9rem; font-family:Inter,sans-serif; font-size:0.82rem; color:var(--text); outline:none;" />
+            <button type="submit" style="background:var(--gold); border:none; border-radius:2px; padding:0.65rem; font-family:Inter,sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); cursor:pointer;">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section style="padding-top:3rem; padding-bottom:5rem;">
+    <div class="essay-footer">
+      <div class="essay-footer-author">
+        <div class="author-initial">F</div>
+        <div class="author-name-block">
+          <div class="name">Feras Banna</div>
+          <div class="role">Certified Hogan Assessor · Leadership Consultant · Author</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="ideas.html" class="btn btn-outline" style="font-size:0.72rem; padding:0.65rem 1.4rem;">All Ideas</a>
+        <a href="contact.html" class="btn btn-gold" style="font-size:0.72rem; padding:0.65rem 1.4rem;">Work With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function handleCapture(e) { e.preventDefault(); const el=document.getElementById('essay-email'); if(!el.value.trim())return; alert('Thank you. You\'re on the list.'); el.value=''; }
+  </script>
+  <script src="nav.js"></script>
+</body>
+</html>

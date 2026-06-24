@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Context Before Explanation — Feras Banna</title>
+  <meta name="description" content="Most explanations arrive long before sufficient evidence does. An essay on why context must precede explanation. By Feras Banna." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .essay-wrap { max-width:1080px; margin:0 auto; padding:0 3rem; display:grid; grid-template-columns:1fr 260px; gap:6rem; align-items:start; }
+    .essay-body { max-width:640px; }
+    .essay-meta { display:flex; align-items:center; gap:1.5rem; margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border2); }
+    .essay-meta-tag { font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold-dim); padding:0.25rem 0.7rem; border-radius:2px; }
+    .essay-meta-info { font-size:0.75rem; color:var(--muted); letter-spacing:0.06em; }
+    .essay-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.6rem); font-weight:300; line-height:1.1; color:var(--text); margin-bottom:2.5rem; }
+    .essay-prose p { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; color:var(--text); line-height:1.85; margin-bottom:1.4rem; }
+    .essay-prose p.standalone { font-style:italic; color:var(--gold); font-size:1.1rem; margin:2rem 0; text-align:center; }
+    .essay-prose p.condition { padding-left:1.5rem; border-left:2px solid var(--gold-dim); color:var(--muted); font-size:1.1rem; margin-bottom:0.6rem; }
+    .essay-prose p.litany { padding-left:1.5rem; font-style:italic; color:var(--muted); font-size:1.05rem; margin-bottom:0.5rem; line-height:1.5; }
+    .essay-closing { margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--border2); }
+    .essay-closing p { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.8; margin-bottom:1.2rem; }
+    .essay-sidebar { position:sticky; top:6rem; display:flex; flex-direction:column; gap:2rem; }
+    .sidebar-card { background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:1.6rem 1.4rem; }
+    .sidebar-card-label { font-size:0.62rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+    .sidebar-card-title { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:400; color:var(--text); line-height:1.4; margin-bottom:0.5rem; }
+    .sidebar-card p { font-size:0.8rem; line-height:1.7; }
+    .sidebar-nav-list { list-style:none; display:flex; flex-direction:column; gap:0; }
+    .sidebar-nav-list li { border-bottom:1px solid var(--border2); }
+    .sidebar-nav-list li:first-child { border-top:1px solid var(--border2); }
+    .sidebar-nav-list a { display:block; font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-style:italic; color:var(--muted); text-decoration:none; padding:0.65rem 0; transition:color 0.2s; line-height:1.35; }
+    .sidebar-nav-list a:hover { color:var(--gold); }
+    .sidebar-nav-list a.current { color:var(--text); font-style:normal; }
+    .essay-footer { max-width:1080px; margin:0 auto; padding:3rem 3rem 0; border-top:1px solid var(--border2); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .essay-footer-author { display:flex; align-items:center; gap:1rem; }
+    .author-initial { width:42px; height:42px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--gold); flex-shrink:0; }
+    .author-name-block .name { font-size:0.88rem; color:var(--text); font-weight:500; }
+    .author-name-block .role { font-size:0.72rem; color:var(--muted); margin-top:0.15rem; }
+    @media (max-width:900px) { .essay-wrap { grid-template-columns:1fr; gap:3rem; padding:0 1.5rem; } .essay-sidebar { position:static; } .essay-footer { padding:2rem 1.5rem 0; flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="page-hero" style="padding-bottom:3rem;">
+    <div class="container">
+      <a href="ideas.html#context" style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); text-decoration:none;">← Context Before Explanation</a>
+    </div>
+  </div>
+
+  <section style="padding-top:2rem;">
+    <div class="essay-wrap">
+      <article class="essay-body">
+        <div class="essay-meta">
+          <span class="essay-meta-tag">Context Before Explanation</span>
+          <span class="essay-meta-info">Essay · Feras Banna</span>
+        </div>
+        <h1 class="essay-title">Context Before Explanation</h1>
+        <div class="essay-prose">
+
+          <p>Human beings are remarkably efficient explanation machines.</p>
+          <p>We see a behavior and immediately search for a reason.</p>
+          <p class="litany">A manager avoids conflict. An employee misses a deadline. A leader appears controlling. A colleague remains silent during meetings.</p>
+          <p>Within moments, explanations begin to form.</p>
+          <p class="litany">The manager lacks courage. The employee lacks discipline. The leader lacks trust. The colleague lacks confidence.</p>
+          <p>The explanation often feels obvious. That is precisely the problem.</p>
+          <p class="standalone">Most explanations arrive long before sufficient evidence does.</p>
+          <p>In leadership development, talent assessment, coaching conversations, and organizational decision-making, I have repeatedly observed the same pattern. People do not struggle to generate explanations. They struggle to delay them.</p>
+          <p>The moment behavior becomes visible, interpretation begins.</p>
+          <p>The challenge is that behavior is often the most visible part of a situation and the least complete source of information about it.</p>
+          <p class="condition">A manager who avoids conflict may have inherited a politically sensitive team.</p>
+          <p class="condition">An employee who misses deadlines may be operating with unclear priorities.</p>
+          <p class="condition">A leader who appears controlling may be carrying accountability for risks invisible to others.</p>
+          <p class="condition">The colleague who remains silent may already have learned that dissent is unwelcome.</p>
+          <p>The behavior remains the same. The meaning changes entirely.</p>
+          <p>Yet organizations routinely reward speed of interpretation. Managers are expected to make judgments. Leaders are expected to identify problems quickly. Assessors are expected to provide insights. Consultants are expected to offer explanations.</p>
+          <p>The pressure to explain often exceeds the willingness to investigate.</p>
+          <p>As a result, context becomes optional. The explanation arrives first. The context arrives later, if at all.</p>
+          <p>This tendency is understandable. Context is demanding. Context introduces complexity. Context creates uncertainty. Context often forces us to reconsider conclusions that initially felt convincing.</p>
+          <p>Explanations are simpler. They create clarity. They reduce ambiguity. They allow decisions to proceed.</p>
+          <p>Unfortunately, they also create risk.</p>
+          <p>Because once an explanation becomes accepted, new information tends to be filtered through it.</p>
+          <p class="litany">The employee becomes "unreliable." The manager becomes "weak." The leader becomes "controlling."</p>
+          <p>Future observations are interpreted through an existing story. Alternative explanations receive less attention. The conclusion begins shaping the evidence rather than the evidence shaping the conclusion.</p>
+          <p>This pattern appears everywhere — in organizations, in families, in politics, in education, in assessment, in everyday relationships.</p>
+          <p>The challenge is not that explanations are unnecessary. Explanation is essential. The challenge is sequence.</p>
+          <p class="standalone">Explanation should follow context.<br/>Too often it replaces it.</p>
+          <p>This distinction becomes particularly important when working with people. Human behavior rarely emerges from a single cause. It emerges from interactions between personality, incentives, expectations, consequences, authority, resources, relationships, and circumstances.</p>
+          <p>When context is ignored, complexity is compressed into labels. When context is explored, behavior often becomes more understandable. Not always more acceptable. Not always more desirable. But more understandable.</p>
+          <p>And understanding is usually a better starting point than assumption.</p>
+
+        </div>
+        <div class="essay-closing">
+          <p>Perhaps the most valuable question in any assessment, leadership discussion, or performance conversation is not: "Why did they do that?"</p>
+          <p>But rather: "What might we be missing?"</p>
+          <p>The difference between those questions is small. The difference in their answers is often enormous.</p>
+        </div>
+      </article>
+
+      <aside class="essay-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Part of</div>
+          <div class="sidebar-card-title">Context Before Explanation</div>
+          <p>We routinely explain behavior through the person before examining the conditions that made the behavior reasonable.</p>
+          <a href="ideas.html#context" class="btn-text btn" style="margin-top:1rem; display:inline-block;">Explore the idea</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Essays in this series</div>
+          <ul class="sidebar-nav-list">
+            <li><a href="essay-context.html" class="current">Context Before Explanation</a></li>
+            <li><a href="essay-scores.html">Why Assessment Scores Are Not Explanations</a></li>
+            <li><a href="essay-potential.html">Leadership Potential and Leadership Performance</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Newsletter</div>
+          <p style="margin-bottom:1rem;">Essays like this, delivered occasionally.</p>
+          <form onsubmit="handleCapture(event)" style="display:flex; flex-direction:column; gap:0.6rem;">
+            <input type="email" id="essay-email" placeholder="Your email" style="background:var(--bg); border:1px solid var(--border); border-radius:2px; padding:0.65rem 0.9rem; font-family:Inter,sans-serif; font-size:0.82rem; color:var(--text); outline:none;" />
+            <button type="submit" style="background:var(--gold); border:none; border-radius:2px; padding:0.65rem; font-family:Inter,sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); cursor:pointer;">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section style="padding-top:3rem; padding-bottom:5rem;">
+    <div class="essay-footer">
+      <div class="essay-footer-author">
+        <div class="author-initial">F</div>
+        <div class="author-name-block">
+          <div class="name">Feras Banna</div>
+          <div class="role">Certified Hogan Assessor · Leadership Consultant · Author</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="ideas.html" class="btn btn-outline" style="font-size:0.72rem; padding:0.65rem 1.4rem;">All Ideas</a>
+        <a href="contact.html" class="btn btn-gold" style="font-size:0.72rem; padding:0.65rem 1.4rem;">Work With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function handleCapture(e) { e.preventDefault(); const el=document.getElementById('essay-email'); if(!el.value.trim())return; alert('Thank you. You\'re on the list.'); el.value=''; }
+  </script>
+  <script src="nav.js"></script>
+</body>
+</html>
