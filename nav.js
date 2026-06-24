@@ -7,6 +7,7 @@
     { href: 'hogan.html',    label: 'Hogan Assessment' },
     { href: 'advisory.html', label: 'Advisory' },
     { href: 'speaking.html', label: 'Speaking' },
+    { href: 'events.html',   label: 'Events' },
     { href: 'books.html',    label: 'Books' },
     { href: 'contact.html',  label: 'Contact', cta: true },
   ];

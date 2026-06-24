@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Feras Banna</title>
+  <meta name="description" content="AI-Powered Design Thinking: A practical workshop on using AI as a structured thinking partner for innovation and decision quality." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── WORKSHOP INTRO ── */
+    .workshop-intro {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .philosophy-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 2px 2px 0;
+      padding: 2.2rem 2.2rem 2.2rem 2.4rem;
+      position: sticky;
+      top: 6rem;
+    }
+
+    .philosophy-block-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .philosophy-block-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .philosophy-block-attr {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── OUTCOMES ── */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .outcome-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .outcome-item::before {
+      content: '✓';
+      color: var(--gold);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* ── STRUCTURE ── */
+    .day-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .day-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .day-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .day-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .session-row {
+      padding: 1.1rem 2rem;
+      border-bottom: 1px solid var(--border2);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .session-row:last-child { border-bottom: none; }
+
+    .session-num {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      padding-top: 0.15rem;
+    }
+
+    .session-title {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .session-topics {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .day-challenge {
+      background: rgba(201,169,110,0.05);
+      border-top: 1px solid var(--border);
+      padding: 1.1rem 2rem;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.5rem;
+    }
+
+    .day-challenge-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 0.15rem;
+    }
+
+    /* ── INCLUDED ── */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: var(--border2);
+      margin-top: 3rem;
+    }
+
+    .included-tile {
+      background: var(--surface);
+      padding: 2.2rem 1.8rem;
+    }
+
+    .included-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .included-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── SESSION DETAILS ── */
+    .session-details-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .session-details-header {
+      background: rgba(201,169,110,0.06);
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .session-details-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .status-pill {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 0.25rem 0.8rem;
+      border-radius: 2px;
+    }
+
+    .session-details-body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-cell {
+      padding: 1.4rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .detail-cell:last-child { border-right: none; }
+
+    .detail-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 0;
+    }
+
+    .price-cell {
+      padding: 1.4rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .price-cell:last-child { border-right: none; }
+
+    .price-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .price-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .register-cell {
+      padding: 1.4rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ── WHO ── */
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .who-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .who-item::before {
+      content: '—';
+      color: var(--gold-dim);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .workshop-intro { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.5rem; }
+      .philosophy-block { position: static; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .session-details-body { grid-template-columns: 1fr 1fr; }
+      .pricing-row { grid-template-columns: 1fr 1fr; }
+      .register-cell { grid-column: 1/-1; }
+      .who-grid { grid-template-columns: 1fr; }
+      .session-row { grid-template-columns: 1fr; gap: 0.3rem; }
+      .day-challenge { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow mb-sm">Upcoming Event</p>
+      <h1 class="display display-xl" style="max-width:760px;">AI-Powered Design Thinking</h1>
+      <p style="margin-top:1rem; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">
+        July 21–22, 2026 &nbsp;·&nbsp; Beirut, Lebanon &nbsp;·&nbsp; 2-Day Workshop
+      </p>
+    </div>
+  </div>
+
+  <!-- INTRO + PHILOSOPHY -->
+  <section>
+    <div class="workshop-intro">
+      <div>
+        <p class="eyebrow mb-sm">The Problem Worth Solving First</p>
+        <h2 class="display display-md" style="margin-bottom:1.4rem; max-width:560px;">Why most organizations use AI incorrectly.</h2>
+        <p>Most professionals use AI to generate answers. They start with a problem, prompt the tool, receive a response, and move toward implementation.</p>
+        <p>What gets skipped is the thinking that should happen before any of that — examining the problem definition, exploring perspectives, challenging assumptions, and stress-testing ideas before commitment.</p>
+        <p>This workshop is built around a different premise: AI is most valuable not as an answer engine, but as a structured thinking partner — one that helps you examine conclusions more thoroughly before reaching them.</p>
+        <p>That shift changes what AI is for. And it changes what becomes possible when you use it well.</p>
+      </div>
+
+      <div>
+        <div class="philosophy-block">
+          <div class="philosophy-block-label">The Core Principle</div>
+          <div class="philosophy-block-text">
+            "It is not designed to help people reach conclusions faster. It is designed to help them examine conclusions more thoroughly before reaching them."
+          </div>
+          <div class="philosophy-block-attr">— AI Thinking Studio™ design principle</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section style="background:var(--surface); border-top:1px solid var(--border2);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;">
+        <div>
+          <p class="eyebrow mb-sm">Who Should Attend</p>
+          <h2 class="display display-md" style="margin-bottom:1rem; max-width:440px;">No technical background required.</h2>
+          <p>This workshop is for professionals who make decisions, solve problems, and lead teams — and who want to use AI to improve the quality of their thinking, not just the speed of their output.</p>
+          <div class="who-grid">
+            <div class="who-item">Managers and Team Leaders</div>
+            <div class="who-item">HR Professionals</div>
+            <div class="who-item">Learning &amp; Development Specialists</div>
+            <div class="who-item">Project Managers</div>
+            <div class="who-item">Business Analysts &amp; Consultants</div>
+            <div class="who-item">Entrepreneurs &amp; Business Owners</div>
+            <div class="who-item">Innovation &amp; Product Teams</div>
+            <div class="who-item">Anyone tackling real business challenges</div>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow mb-sm">What Participants Learn</p>
+          <h2 class="display display-md" style="margin-bottom:1rem; max-width:440px;">Ten capabilities you leave with.</h2>
+          <div class="outcomes-grid" style="margin-top:0;">
+            <div class="outcome-item">Apply Design Thinking with AI tools</div>
+            <div class="outcome-item">Use AI as a thinking partner</div>
+            <div class="outcome-item">Define problems more accurately</div>
+            <div class="outcome-item">Explore multiple perspectives</div>
+            <div class="outcome-item">Generate and evaluate ideas efficiently</div>
+            <div class="outcome-item">Identify assumptions and blind spots</div>
+            <div class="outcome-item">Stress-test ideas before commitment</div>
+            <div class="outcome-item">Rapidly prototype concepts</div>
+            <div class="outcome-item">Improve decision quality</div>
+            <div class="outcome-item">Apply a repeatable innovation process</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE -->
+  <section>
+    <div class="container">
+      <p class="eyebrow mb-sm">Workshop Structure</p>
+      <h2 class="display display-md" style="max-width:560px; margin-bottom:2.5rem;">Two days. From problem definition to tested solution.</h2>
+
+      <!-- DAY 1 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-label">Day One</span>
+          <span class="day-title">Understanding Problems &amp; Expanding Possibilities</span>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 1</div>
+          <div>
+            <div class="session-title">Design Thinking in the Age of AI</div>
+            <div class="session-topics">The evolution of Design Thinking · What AI changes — and what it does not · Human judgment versus machine assistance · The future of innovation and problem-solving</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 2</div>
+          <div>
+            <div class="session-title">Discovering the Real Problem</div>
+            <div class="session-topics">Why organizations often solve the wrong problem · Understanding assumptions and hidden constraints · Using AI to challenge initial problem definitions · Reframing challenges effectively</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 3</div>
+          <div>
+            <div class="session-title">AI-Assisted Empathy &amp; Insight Generation</div>
+            <div class="session-topics">Understanding customers, employees, and stakeholders · Using AI to explore different perspectives · Generating insights and identifying unmet needs · Turning observations into opportunities</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 4</div>
+          <div>
+            <div class="session-title">Creative Ideation at Scale</div>
+            <div class="session-topics">Moving beyond traditional brainstorming · Using AI to generate diverse solution options · Exploring unconventional approaches · Prioritizing ideas for further development</div>
+          </div>
+        </div>
+        <div class="day-challenge">
+          <div class="day-challenge-label">Day One Challenge</div>
+          <div style="font-size:0.88rem; color:var(--muted);">Teams analyze a real business challenge, uncover insights, and generate innovative solution concepts using AI-supported Design Thinking techniques.</div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-label">Day Two</span>
+          <span class="day-title">From Ideas to Action</span>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 5</div>
+          <div>
+            <div class="session-title">Building Concepts &amp; Prototypes</div>
+            <div class="session-topics">Turning ideas into tangible concepts · Creating rapid prototypes · Using AI for concept development and visualization · Building solution narratives</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 6</div>
+          <div>
+            <div class="session-title">Testing Assumptions &amp; Strengthening Ideas</div>
+            <div class="session-topics">Identifying weaknesses and risks · Using AI to challenge assumptions · Stress-testing concepts and scenarios · Refining solutions through structured feedback</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 7</div>
+          <div>
+            <div class="session-title">Communicating Innovation Effectively</div>
+            <div class="session-topics">Presenting ideas clearly and persuasively · Building stakeholder buy-in · Communicating recommendations with confidence · Enhancing presentations using AI tools</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <div class="session-num">Session 8</div>
+          <div>
+            <div class="session-title">Innovation Sprint</div>
+            <div class="session-topics">Teams apply everything learned to solve a real-world challenge — defining the problem, exploring perspectives, generating ideas, building a concept, testing assumptions, and presenting recommendations.</div>
+          </div>
+        </div>
+        <div class="day-challenge">
+          <div class="day-challenge-label">Final Sprint</div>
+          <div style="font-size:0.88rem; color:var(--muted);">A full end-to-end application of the Design Thinking + AI process on a real business challenge, with team presentations at close.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED -->
+  <section style="background:var(--surface); border-top:1px solid var(--border2);">
+    <div class="container">
+      <p class="eyebrow mb-sm">Included Resources</p>
+      <h2 class="display display-md" style="max-width:560px;">What every participant receives.</h2>
+      <div class="included-grid">
+        <div class="included-tile">
+          <span class="card-accent"></span>
+          <div class="included-title">AI Thinking Studio™ Lite</div>
+          <p style="font-size:0.85rem;">Exclusive access to a structured thinking environment designed to help you continue applying workshop concepts to real-world challenges after the session ends. Built around examining conclusions more thoroughly — not reaching them faster.</p>
+        </div>
+        <div class="included-tile">
+          <span class="card-accent"></span>
+          <div class="included-title">ChatGPT Plus Access</div>
+          <p style="font-size:0.85rem;">One month of ChatGPT Plus access to support continued learning, experimentation, and application following the workshop.</p>
+        </div>
+        <div class="included-tile">
+          <span class="card-accent"></span>
+          <div class="included-title">Participant Workbook</div>
+          <p style="font-size:0.85rem;">A comprehensive workbook containing frameworks, exercises, templates, reflection activities, AI application examples, and workshop tools.</p>
+        </div>
+        <div class="included-tile">
+          <span class="card-accent"></span>
+          <div class="included-title">AI Prompt Toolkit</div>
+          <p style="font-size:0.85rem;">A curated collection of practical prompts supporting problem exploration, stakeholder analysis, idea generation, assumption testing, and concept development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSION DETAILS + REGISTRATION -->
+  <section>
+    <div class="container">
+      <p class="eyebrow mb-sm">Upcoming Session</p>
+      <h2 class="display display-md" style="max-width:500px; margin-bottom:0;">Register for July 2026</h2>
+      <div class="session-details-card">
+        <div class="session-details-header">
+          <div class="session-details-title">AI-Powered Design Thinking — Beirut</div>
+          <div class="status-pill">Open for Registration</div>
+        </div>
+        <div class="session-details-body">
+          <div class="detail-cell">
+            <div class="detail-label">Dates</div>
+            <div class="detail-val">July 21–22<br/>2026</div>
+          </div>
+          <div class="detail-cell">
+            <div class="detail-label">Location</div>
+            <div class="detail-val">Beirut<br/>Lebanon</div>
+          </div>
+          <div class="detail-cell">
+            <div class="detail-label">Duration</div>
+            <div class="detail-val">2 Days<br/>12–14 Hours</div>
+          </div>
+          <div class="detail-cell">
+            <div class="detail-label">Format</div>
+            <div class="detail-val">In-Person<br/>Interactive</div>
+          </div>
+        </div>
+        <div class="pricing-row">
+          <div class="price-cell">
+            <div class="price-tag">USD $400</div>
+            <div class="price-label">Early Bird Registration</div>
+          </div>
+          <div class="price-cell">
+            <div class="price-tag" style="color:var(--muted);">USD $500</div>
+            <div class="price-label">Regular Registration</div>
+          </div>
+          <div class="register-cell">
+            <a href="contact.html?enquiry=AI+Design+Thinking+Workshop" class="btn btn-gold">Register Now</a>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.78rem; color:var(--subtle); margin-top:1rem;">
+        Participants are encouraged to bring a laptop to maximize the hands-on experience. For group bookings or in-house delivery, contact <a href="mailto:info@enablemygrowth.com" style="color:var(--gold); text-decoration:none;">info@enablemygrowth.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY DIFFERENT -->
+  <section style="background:var(--surface); border-top:1px solid var(--border2);">
+    <div class="container-md">
+      <div class="gold-rule mb-lg"></div>
+      <p class="eyebrow mb-sm">Why This Workshop Is Different</p>
+      <h2 class="display display-md mb-md" style="max-width:580px;">Most AI workshops focus on tools. Most Design Thinking workshops focus on process.</h2>
+      <p>This workshop focuses on how AI and Design Thinking work together to improve the quality of thinking <em>before</em> decisions are made.</p>
+      <p>The assumptions you examine before committing. The perspectives you consider before concluding. The alternatives you explore before selecting. That is where the real value of AI lies — and that is what this workshop is designed to build.</p>
+      <p style="margin-top:1.4rem;">
+        Participants leave with practical skills, a repeatable innovation process, access to AI Thinking Studio™ Lite, a toolkit for continued application, and greater confidence in using AI to solve real business challenges.
+      </p>
+      <div class="mt-lg">
+        <a href="contact.html?enquiry=AI+Design+Thinking+Workshop" class="btn btn-gold">Register for July 2026</a>
+        <a href="ideas.html#cbc" class="btn btn-outline" style="margin-left:1rem;">The Ideas Behind It</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+</body>
+</html>
