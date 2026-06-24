@@ -4,391 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Commitment Is the Result, Not the Decision — Feras Banna</title>
-  <meta name="description" content="What if commitment is not the decision? What if commitment is the result? An essay by Feras Banna." />
+  <meta name="description" content="Most discussions about commitment begin in the wrong place. They begin with the decision. An essay by Feras Banna." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-
-    /* ── ESSAY LAYOUT ── */
-    .essay-wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 3rem;
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    /* ── ESSAY BODY ── */
-    .essay-body {
-      max-width: 640px;
-    }
-
-    .essay-meta {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border2);
-    }
-
-    .essay-meta-tag {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      padding: 0.25rem 0.7rem;
-      border-radius: 2px;
-    }
-
-    .essay-meta-info {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-
-    .essay-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--text);
-      margin-bottom: 2.5rem;
-    }
-
-    /* Essay prose */
-    .essay-prose p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: var(--text);
-      line-height: 1.85;
-      margin-bottom: 1.4rem;
-    }
-
-    /* Short standalone lines get special treatment */
-    .essay-prose p.standalone {
-      font-style: italic;
-      color: var(--gold);
-      font-size: 1.1rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    /* Condition list items */
-    .essay-prose p.condition {
-      padding-left: 1.5rem;
-      border-left: 2px solid var(--gold-dim);
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-    }
-
-    /* Closing pull */
-    .essay-closing {
-      margin-top: 3rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border2);
-    }
-
-    .essay-closing p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-    }
-
-    /* ── SIDEBAR ── */
-    .essay-sidebar {
-      position: sticky;
-      top: 6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .sidebar-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 1.6rem 1.4rem;
-    }
-
-    .sidebar-card-label {
-      font-size: 0.62rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-
-    .sidebar-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-
-    .sidebar-card p {
-      font-size: 0.8rem;
-      line-height: 1.7;
-    }
-
-    .sidebar-nav-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .sidebar-nav-list li {
-      border-bottom: 1px solid var(--border2);
-    }
-
-    .sidebar-nav-list li:first-child {
-      border-top: 1px solid var(--border2);
-    }
-
-    .sidebar-nav-list a {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.95rem;
-      font-style: italic;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 0.65rem 0;
-      transition: color 0.2s;
-      line-height: 1.35;
-    }
-
-    .sidebar-nav-list a:hover { color: var(--gold); }
-    .sidebar-nav-list a.current { color: var(--text); font-style: normal; }
-
-    /* ── ESSAY FOOTER ── */
-    .essay-footer {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 3rem 3rem 0;
-      border-top: 1px solid var(--border2);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .essay-footer-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .author-initial {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .author-name-block .name {
-      font-size: 0.88rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .author-name-block .role {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 0.15rem;
-    }
-
-    @media (max-width: 900px) {
-      .essay-wrap { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
-      .essay-sidebar { position: static; }
-      .essay-footer { padding: 2rem 1.5rem 0; flex-direction: column; align-items: flex-start; }
-    }
+    .essay-wrap { max-width:1080px; margin:0 auto; padding:0 3rem; display:grid; grid-template-columns:1fr 260px; gap:6rem; align-items:start; }
+    .essay-body { max-width:640px; }
+    .essay-meta { display:flex; align-items:center; gap:1.5rem; margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border2); }
+    .essay-meta-tag { font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold-dim); padding:0.25rem 0.7rem; border-radius:2px; }
+    .essay-meta-info { font-size:0.75rem; color:var(--muted); letter-spacing:0.06em; }
+    .essay-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.6rem); font-weight:300; line-height:1.1; color:var(--text); margin-bottom:2.5rem; }
+    .essay-prose p { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; color:var(--text); line-height:1.85; margin-bottom:1.4rem; }
+    .essay-prose p.standalone { font-style:italic; color:var(--gold); font-size:1.1rem; margin:2rem 0; text-align:center; }
+    .essay-prose p.condition { padding-left:1.5rem; border-left:2px solid var(--gold-dim); color:var(--muted); font-size:1.1rem; margin-bottom:0.6rem; }
+    .essay-prose p.litany { padding-left:1.5rem; font-style:italic; color:var(--muted); font-size:1.05rem; margin-bottom:0.5rem; line-height:1.5; }
+    .essay-closing { margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--border2); }
+    .essay-closing p { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.8; margin-bottom:1.2rem; }
+    .essay-sidebar { position:sticky; top:6rem; display:flex; flex-direction:column; gap:2rem; }
+    .sidebar-card { background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:1.6rem 1.4rem; }
+    .sidebar-card-label { font-size:0.62rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+    .sidebar-card-title { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:400; color:var(--text); line-height:1.4; margin-bottom:0.5rem; }
+    .sidebar-card p { font-size:0.8rem; line-height:1.7; }
+    .sidebar-nav-list { list-style:none; display:flex; flex-direction:column; gap:0; }
+    .sidebar-nav-list li { border-bottom:1px solid var(--border2); }
+    .sidebar-nav-list li:first-child { border-top:1px solid var(--border2); }
+    .sidebar-nav-list a { display:block; font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-style:italic; color:var(--muted); text-decoration:none; padding:0.65rem 0; transition:color 0.2s; line-height:1.35; }
+    .sidebar-nav-list a:hover { color:var(--gold); }
+    .sidebar-nav-list a.current { color:var(--text); font-style:normal; }
+    .essay-footer { max-width:1080px; margin:0 auto; padding:3rem 3rem 0; border-top:1px solid var(--border2); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .essay-footer-author { display:flex; align-items:center; gap:1rem; }
+    .author-initial { width:42px; height:42px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--gold); flex-shrink:0; }
+    .author-name-block .name { font-size:0.88rem; color:var(--text); font-weight:500; }
+    .author-name-block .role { font-size:0.72rem; color:var(--muted); margin-top:0.15rem; }
+    @media (max-width:900px) { .essay-wrap { grid-template-columns:1fr; gap:3rem; padding:0 1.5rem; } .essay-sidebar { position:static; } .essay-footer { padding:2rem 1.5rem 0; flex-direction:column; align-items:flex-start; } }
   </style>
 </head>
 <body>
-
-  <!-- HERO -->
   <div class="page-hero" style="padding-bottom:3rem;">
     <div class="container">
       <a href="ideas.html#cbc" style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); text-decoration:none;">← Conditions Before Conviction</a>
     </div>
   </div>
 
-  <!-- ESSAY -->
   <section style="padding-top:2rem;">
     <div class="essay-wrap">
-
-      <!-- BODY -->
       <article class="essay-body">
-
         <div class="essay-meta">
           <span class="essay-meta-tag">Conditions Before Conviction</span>
           <span class="essay-meta-info">Essay · Feras Banna</span>
         </div>
-
         <h1 class="essay-title">Commitment Is the Result, Not the Decision</h1>
-
         <div class="essay-prose">
 
-          <p>Few words are praised more enthusiastically than commitment.</p>
+          <p>Most discussions about commitment begin in the wrong place.</p>
+          <p>They begin with the decision.</p>
+          <p>Someone decides to commit to a relationship, a role, a strategy, a project, or a goal. Commitment is treated as the act that starts the process. The decision comes first. The behavior follows.</p>
+          <p>This view is so common that it rarely attracts scrutiny.</p>
+          <p>Yet many of the most committed people I have encountered describe a different sequence entirely.</p>
+          <p>They do not speak about a moment of commitment. They speak about a gradual reduction of doubt. They speak about increasing clarity. They speak about alignment between expectations and reality. They speak about accumulating evidence.</p>
+          <p>What they describe sounds less like a decision and more like a conclusion.</p>
+          <p class="standalone">Commitment, in these cases, did not initiate the process.<br/>It emerged from it.</p>
+          <p>This distinction becomes easier to see when commitment disappears.</p>
+          <p>Organizations frequently complain about a lack of commitment. Leaders complain that teams are not committed to change. Employees complain that leaders are not committed to their people. Clients complain that suppliers are not committed to quality. Partners complain that organizations are not committed to promises.</p>
+          <p>The explanation often arrives immediately.</p>
+          <p class="litany">People simply need to decide. Decide to care. Decide to engage. Decide to support the initiative. Decide to take ownership.</p>
+          <p>Yet the assumption embedded in these explanations is rarely examined. It assumes commitment is available on demand. Experience suggests otherwise.</p>
+          <p>Consider the employee being asked to commit to a transformation initiative. The objectives continue changing. Leadership messages are inconsistent. Resources remain unclear. Prior initiatives have quietly disappeared without explanation.</p>
+          <p>The employee hesitates. The hesitation is interpreted as a lack of commitment.</p>
+          <p>Another interpretation is possible. The employee may be responding rationally to the evidence available. The problem is not necessarily commitment. The problem may be coherence.</p>
+          <p class="condition">Commitment appears easier when expectations are stable.</p>
+          <p class="condition">When consequences are understood.</p>
+          <p class="condition">When authority matches responsibility.</p>
+          <p class="condition">When effort appears connected to outcomes.</p>
+          <p class="condition">When promises survive contact with reality.</p>
+          <p>These conditions do not guarantee commitment. But their absence often makes commitment difficult regardless of intention.</p>
+          <p>This is one reason organizations frequently mistake compliance for commitment. People attend the meetings. Complete the training. Use the language. Follow the process. The behavior appears encouraging.</p>
+          <p>Yet compliance and commitment are not the same phenomenon.</p>
+          <p class="condition">Compliance responds to pressure. Commitment responds to conviction.</p>
+          <p class="condition">Compliance can be instructed. Commitment cannot.</p>
+          <p>The difference becomes visible when circumstances become difficult. Compliance weakens when pressure is removed. Commitment often survives the removal of pressure. Not because the individual became stronger. But because sufficient evidence exists to support continued effort.</p>
+          <p>The same pattern appears in personal decisions. People often describe commitment as though it were an act of will. The entrepreneur commits to the business. The athlete commits to training. The writer commits to the manuscript. The reality is frequently more complicated.</p>
+          <p>What appears to be commitment from the outside is often the visible expression of countless invisible confirmations. The entrepreneur begins seeing progress. The athlete begins seeing results. The writer begins seeing coherence emerge from scattered ideas. Confidence grows. Doubt recedes. Commitment strengthens.</p>
+          <p>The sequence matters. Because once commitment is treated as a decision, every absence of commitment becomes a character problem.</p>
+          <p class="litany">People are labeled hesitant. Unmotivated. Undisciplined. Uncommitted.</p>
+          <p>The conditions surrounding the behavior receive less attention. Yet many of the behaviors we admire are not independent causes. They are downstream effects.</p>
+          <p>Commitment belongs in this category. It is often celebrated as the engine. In practice, it may be the indicator — an indicator that enough conditions have aligned to make sustained action reasonable.</p>
+          <p>We often treat commitment as evidence of character. It may be evidence of conditions.</p>
 
-          <p>Organizations seek committed employees. Leaders seek committed teams. Parents seek committed children. Coaches seek committed athletes. Partners seek committed relationships.</p>
-
-          <p>The assumption is almost always the same: commitment is a choice.</p>
-
-          <p class="standalone">Decide. Commit. Follow through.</p>
-
-          <p>When commitment fails to appear, we often conclude that something is wrong with the person. They lack discipline. They lack courage. They lack motivation. They are avoiding responsibility. They are not serious enough.</p>
-
-          <p>Yet experience repeatedly suggests a different possibility.</p>
-
-          <p class="standalone">What if commitment is not the decision?<br/>What if commitment is the result?</p>
-
-          <p>Over the years, I have worked with leaders, managers, technical experts, high-potential employees, executives, and teams across industries. I have listened to people explain why they could not move forward, why they hesitated, why they delayed, why they seemed resistant, and why they struggled to sustain momentum.</p>
-
-          <p>What struck me was not how different these situations were.</p>
-
-          <p>It was how similar they were.</p>
-
-          <p>The explanations were different. The conditions were not.</p>
-
-          <p>Again and again, people were being asked to commit before the environment had produced the conditions necessary for commitment to emerge.</p>
-
-          <p>The manager who appears indecisive may not be lacking confidence. They may be carrying responsibility without authority.</p>
-
-          <p>The employee who appears disengaged may not be lacking motivation. They may have learned that effort produces little influence over outcomes.</p>
-
-          <p>The executive who delays a decision may not be avoiding risk. They may be navigating competing consequences that cannot all be satisfied simultaneously.</p>
-
-          <p>From a distance, all three situations look like commitment problems. From inside the situation, they often look very different.</p>
-
-          <p>The modern tendency is to explain behavior through personal characteristics. We are comfortable describing people. We are less comfortable examining systems.</p>
-
-          <p>A person misses a deadline, and we discuss accountability. A team resists change, and we discuss mindset. An employee leaves, and we discuss loyalty. A leader hesitates, and we discuss confidence.</p>
-
-          <p>In many cases, the discussion begins with the individual before it has adequately examined the conditions surrounding the individual.</p>
-
-          <p>This sequence matters.</p>
-
-          <p>Because once we decide that commitment is a personal choice, every absence of commitment becomes a personal failure.</p>
-
-          <p>Yet commitment rarely appears in isolation. It emerges when multiple conditions align.</p>
-
-          <p class="condition">People commit more easily when consequences are understood.</p>
-          <p class="condition">People commit more easily when expectations are clear.</p>
-          <p class="condition">People commit more easily when authority matches responsibility.</p>
-          <p class="condition">People commit more easily when rewards and sacrifices are coherent.</p>
-          <p class="condition">People commit more easily when they believe their actions can meaningfully influence outcomes.</p>
-
-          <p>None of this guarantees commitment. But the absence of these conditions makes commitment increasingly difficult regardless of how motivated, intelligent, or experienced a person may be.</p>
-
-          <p>This becomes particularly visible in organizations.</p>
-
-          <p>Leaders frequently ask for ownership while maintaining approval structures that limit autonomy. They ask for innovation while punishing mistakes. They ask for collaboration while rewarding individual competition. They ask for accountability while creating ambiguity.</p>
-
-          <p>When commitment fails to emerge, attention often turns toward the people rather than the contradictions.</p>
-
-          <p>The question becomes: <em>"Why aren't they more committed?"</em></p>
-
-          <p>Instead of: <em>"What conditions are making commitment difficult?"</em></p>
-
-          <p>The distinction may appear subtle. It is not.</p>
-
-          <p>One explanation treats behavior as the cause. The other treats behavior as the outcome.</p>
-
-          <p>This difference extends beyond organizations.</p>
-
-          <p>Consider how often individuals describe personal goals. They want to exercise consistently. Write a book. Change careers. Start a business. Develop a new skill.</p>
-
-          <p>The conversation frequently revolves around motivation. How do I become more motivated? How do I become more disciplined? How do I stay committed?</p>
-
-          <p>Yet motivation often receives credit for outcomes that were largely produced by structure.</p>
-
-          <p>A person who exercises regularly may have a supportive schedule, accessible facilities, social reinforcement, manageable obligations, and visible progress. Another person may possess equal desire but operate under entirely different conditions.</p>
-
-          <p>The difference is then interpreted as commitment. But commitment may simply be the visible expression of conditions that support continuation.</p>
-
-          <p>This does not mean people lack responsibility. Responsibility remains important. But responsibility and causality are not the same thing.</p>
-
-          <p>Holding someone responsible does not automatically explain why a behavior occurred. Nor does it explain why a behavior failed to occur.</p>
-
-          <p>We often merge these concepts because it is convenient. The individual is easier to examine than the system. The decision is easier to discuss than the conditions. The outcome is easier to observe than the mechanisms that produced it.</p>
-
-          <p>Yet many of the behaviors we admire are downstream effects rather than independent causes.</p>
-
-          <p>Commitment belongs in this category.</p>
-
-          <p>We tend to imagine commitment as the engine pulling behavior forward. Often it is the opposite. Commitment is what becomes visible after sufficient coherence has already been established.</p>
-
-          <p class="condition">When purpose aligns with incentives.</p>
-          <p class="condition">When responsibility aligns with authority.</p>
-          <p class="condition">When effort aligns with influence.</p>
-          <p class="condition">When expectations align with reality.</p>
-          <p class="condition">When sacrifice aligns with value.</p>
-
-          <p>Under these conditions, commitment often appears natural. Outside these conditions, commitment becomes fragile, inconsistent, or entirely absent.</p>
-
-          <p>This perspective challenges a popular narrative. The narrative says that committed people create the conditions. Experience suggests that conditions frequently create committed people.</p>
-
-          <p>Not entirely. Not always. But far more often than we are willing to acknowledge.</p>
-
-          <p>This does not reduce human agency. It simply places agency within reality rather than above it.</p>
-
-          <p>People still choose. People still act. People still accept responsibility for their decisions. But decisions do not occur in a vacuum.</p>
-
-          <p>Every decision emerges from a structure of incentives, consequences, constraints, expectations, experiences, and relationships. When these elements align, commitment becomes easier to sustain. When they conflict, commitment becomes increasingly difficult to maintain regardless of intention.</p>
-
-          <p>Perhaps this is why demands for commitment often fail. They attempt to produce an outcome directly. They treat commitment as the starting point. But commitment is rarely a starting point.</p>
-
-          <p>It is more often evidence.</p>
-
-          <p>Evidence that enough conditions have aligned to make sustained action reasonable.</p>
-
-          <p>The lesson is not that commitment is unimportant. The lesson is that commitment may tell us less about a person's character than we think — and more about the conditions surrounding them than we are willing to examine.</p>
         </div>
-
         <div class="essay-closing">
-          <p>Before asking why someone lacks commitment, it may be worth asking a different question.</p>
-          <p>What conditions would have to exist for commitment to become the natural result?</p>
-          <p>The answer is often more revealing than the judgment.</p>
+          <p>The distinction matters because one explanation blames the person.</p>
+          <p>The other examines the environment that made the behavior possible in the first place.</p>
         </div>
-
       </article>
 
-      <!-- SIDEBAR -->
       <aside class="essay-sidebar">
-
         <div class="sidebar-card">
           <div class="sidebar-card-label">Part of</div>
           <div class="sidebar-card-title">Conditions Before Conviction</div>
           <p>A developing body of work exploring how commitment, confidence, and action emerge from conditions rather than willpower alone.</p>
           <a href="ideas.html#cbc" class="btn-text btn" style="margin-top:1rem; display:inline-block;">Explore the idea</a>
         </div>
-
         <div class="sidebar-card">
           <div class="sidebar-card-label">Essays in this series</div>
           <ul class="sidebar-nav-list">
@@ -397,25 +115,18 @@
             <li><a href="essay-conviction.html">Conviction Cannot Be Demanded</a></li>
           </ul>
         </div>
-
         <div class="sidebar-card">
           <div class="sidebar-card-label">Newsletter</div>
           <p style="margin-bottom:1rem;">Essays like this, delivered occasionally.</p>
           <form onsubmit="handleCapture(event)" style="display:flex; flex-direction:column; gap:0.6rem;">
-            <input type="email" id="essay-email" placeholder="Your email"
-              style="background:var(--bg); border:1px solid var(--border); border-radius:2px; padding:0.65rem 0.9rem; font-family:Inter,sans-serif; font-size:0.82rem; color:var(--text); outline:none;" />
-            <button type="submit"
-              style="background:var(--gold); border:none; border-radius:2px; padding:0.65rem; font-family:Inter,sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); cursor:pointer;">
-              Subscribe
-            </button>
+            <input type="email" id="essay-email" placeholder="Your email" style="background:var(--bg); border:1px solid var(--border); border-radius:2px; padding:0.65rem 0.9rem; font-family:Inter,sans-serif; font-size:0.82rem; color:var(--text); outline:none;" />
+            <button type="submit" style="background:var(--gold); border:none; border-radius:2px; padding:0.65rem; font-family:Inter,sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); cursor:pointer;">Subscribe</button>
           </form>
         </div>
-
       </aside>
     </div>
   </section>
 
-  <!-- ESSAY FOOTER -->
   <section style="padding-top:3rem; padding-bottom:5rem;">
     <div class="essay-footer">
       <div class="essay-footer-author">
@@ -433,16 +144,8 @@
   </section>
 
   <script>
-    function handleCapture(e) {
-      e.preventDefault();
-      const el = document.getElementById('essay-email');
-      if (!el.value.trim()) return;
-      // TODO: wire to newsletter provider
-      alert('Thank you. You\'re on the list.');
-      el.value = '';
-    }
+    function handleCapture(e) { e.preventDefault(); const el=document.getElementById('essay-email'); if(!el.value.trim())return; alert('Thank you. You\'re on the list.'); el.value=''; }
   </script>
-
   <script src="nav.js"></script>
 </body>
 </html>
