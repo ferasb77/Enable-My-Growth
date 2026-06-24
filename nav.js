@@ -3,11 +3,11 @@
   const pages = [
     { href: 'index.html',    label: 'Home' },
     { href: 'ideas.html',    label: 'Ideas' },
+    { href: 'training.html', label: 'Training' },
     { href: 'hogan.html',    label: 'Hogan Assessment' },
     { href: 'advisory.html', label: 'Advisory' },
     { href: 'speaking.html', label: 'Speaking' },
     { href: 'books.html',    label: 'Books' },
-    { href: 'resources.html',label: 'Resources' },
     { href: 'contact.html',  label: 'Contact', cta: true },
   ];
 
@@ -48,6 +48,7 @@
         <div class="footer-col">
           <h4>Work</h4>
           <ul>
+            <li><a href="training.html">Training &amp; Facilitation</a></li>
             <li><a href="hogan.html">Hogan Assessment</a></li>
             <li><a href="advisory.html">Advisory</a></li>
             <li><a href="speaking.html">Speaking</a></li>
