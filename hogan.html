@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hogan Assessment — Feras Banna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hogan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--border2);
+      margin-top: 3rem;
+    }
+    .hogan-tile {
+      background: var(--surface);
+      padding: 2.8rem 2.2rem;
+    }
+    .hogan-tile-abbr {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(201,169,110,0.15);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .hogan-tile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .app-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2rem 1.8rem;
+    }
+    .app-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.7rem;
+    }
+
+    .approach-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 2px 2px 0;
+      padding: 2.5rem 2.5rem 2.5rem 2.8rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .hogan-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow mb-sm">Hogan Assessment</p>
+      <h1 class="display display-xl" style="max-width:720px;">Assessment without context creates false confidence.</h1>
+      <p style="margin-top:1.5rem; max-width:540px; font-size:1rem; line-height:1.85;">
+        Scores become meaningful only when examined alongside role demands, organizational context, leadership challenges, and individual experience. Assessment should improve judgment — not replace it.
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow mb-sm">What Hogan Measures</p>
+      <h2 class="display display-md" style="max-width:560px;">Three lenses. One coherent picture.</h2>
+      <div class="hogan-grid">
+        <div class="hogan-tile">
+          <div class="hogan-tile-abbr">HPI</div>
+          <div class="hogan-tile-name">Personality Inventory</div>
+          <p style="font-size:0.88rem;">How a person typically behaves when at their best — the strengths and characteristics they bring to their everyday performance and leadership.</p>
+        </div>
+        <div class="hogan-tile">
+          <div class="hogan-tile-abbr">HDS</div>
+          <div class="hogan-tile-name">Development Survey</div>
+          <p style="font-size:0.88rem;">The behaviors that tend to emerge under pressure, stress, or disengagement — the patterns most likely to derail a leader's effectiveness or relationships.</p>
+        </div>
+        <div class="hogan-tile">
+          <div class="hogan-tile-abbr">MVPI</div>
+          <div class="hogan-tile-name">Motives, Values & Preferences</div>
+          <p style="font-size:0.88rem;">What a person fundamentally wants from work — the values and motivators that drive satisfaction, commitment, and the environments in which they are likely to thrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface);">
+    <div class="container">
+      <p class="eyebrow mb-sm">Applications</p>
+      <h2 class="display display-md" style="max-width:520px; margin-bottom:0;">Where assessment creates the most value</h2>
+      <div class="apps-grid">
+        <div class="app-card">
+          <span class="card-accent"></span>
+          <div class="app-card-title">Executive Development</div>
+          <p style="font-size:0.88rem;">Individual assessment and debrief for senior leaders — understanding strengths, risks, and the conditions that bring out the best and worst in their leadership.</p>
+        </div>
+        <div class="app-card">
+          <span class="card-accent"></span>
+          <div class="app-card-title">Leadership Selection</div>
+          <p style="font-size:0.88rem;">Using assessment to inform — not determine — selection decisions. Understanding how a candidate's profile aligns with the specific demands of a role and organization.</p>
+        </div>
+        <div class="app-card">
+          <span class="card-accent"></span>
+          <div class="app-card-title">Succession Planning</div>
+          <p style="font-size:0.88rem;">Identifying development priorities and readiness considerations for leaders being prepared for greater responsibility.</p>
+        </div>
+        <div class="app-card">
+          <span class="card-accent"></span>
+          <div class="app-card-title">Team Effectiveness</div>
+          <p style="font-size:0.88rem;">Examining how individual profiles interact at the team level — understanding collective strengths, blind spots, and cultural tendencies.</p>
+        </div>
+        <div class="app-card">
+          <span class="card-accent"></span>
+          <div class="app-card-title">Coaching &amp; Development</div>
+          <p style="font-size:0.88rem;">Using assessment as a structured starting point for development conversations — providing language and evidence for patterns that might otherwise be difficult to examine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-md">
+      <p class="eyebrow mb-sm">My Approach</p>
+      <h2 class="display display-md mb-md">I do not view assessment scores as explanations.</h2>
+      <p>In the wrong hands, psychometric data becomes a new form of premature explanation — personality labels that substitute for genuine understanding. The HPI does not explain why a leader struggled in a particular role. The HDS does not tell us whether a derailer will manifest, or under what conditions.</p>
+      <p>What assessment data does is provide a structured starting point — a set of hypotheses that need to be examined in context, not accepted as conclusions.</p>
+
+      <div class="approach-block">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.5;">
+          "Assessment should improve judgment, not replace it."
+        </p>
+      </div>
+
+      <p style="margin-top:2rem;">Every debrief I conduct begins from this position. The scores are a starting point for a conversation — not a verdict about a person. The most valuable outcome of a well-conducted assessment is not a profile summary. It's a leader who understands themselves more clearly and can use that understanding to make better decisions.</p>
+      <div class="mt-lg">
+        <a href="contact.html" class="btn btn-gold">Enquire About Assessment</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

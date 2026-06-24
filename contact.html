@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Feras Banna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-aside {
+      position: sticky;
+      top: 6rem;
+    }
+    .context-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border2);
+    }
+    .context-item:first-child { border-top: 1px solid var(--border2); }
+    .context-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 0.4rem;
+    }
+    .context-val {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .context-val em { font-style: italic; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+      .contact-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow mb-sm">Contact</p>
+      <h1 class="display display-xl" style="max-width:640px;">Start with a conversation.</h1>
+      <p style="margin-top:1.5rem; max-width:520px; font-size:1rem; line-height:1.85;">
+        If you're exploring leadership assessment, executive development, organizational challenges, or simply wrestling with an important decision — let's begin with a discussion.
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <div class="contact-layout">
+      <div class="contact-aside">
+        <h2 class="display display-sm mb-lg" style="max-width:340px;">What are you trying to understand, decide, or improve?</h2>
+        <div class="context-item">
+          <div class="context-label">For Advisory Enquiries</div>
+          <div class="context-val">Executive development, decision support, organizational consulting, and leadership programs.</div>
+        </div>
+        <div class="context-item">
+          <div class="context-label">For Hogan Assessment</div>
+          <div class="context-val">Individual executive assessment, team assessment, or organizational assessment program design.</div>
+        </div>
+        <div class="context-item">
+          <div class="context-label">For Speaking</div>
+          <div class="context-val">Please include your event date, audience, and the context for the engagement.</div>
+        </div>
+        <div class="context-item">
+          <div class="context-label">Response Time</div>
+          <div class="context-val">I aim to respond to all enquiries within two business days.</div>
+        </div>
+        <div class="context-item">
+          <div class="context-label">Based In</div>
+          <div class="context-val">Middle East — working globally.</div>
+        </div>
+      </div>
+
+      <div>
+        <form class="form-grid" onsubmit="handleContact(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="c-org">Organization</label>
+              <input type="text" id="c-org" placeholder="Company or institution" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="c-role">Your Role</label>
+            <input type="text" id="c-role" placeholder="e.g. Chief Executive Officer" />
+          </div>
+          <div class="form-group">
+            <label for="c-type">Nature of Enquiry</label>
+            <select id="c-type">
+              <option value="" disabled selected>Select an area</option>
+              <option>Executive Advisory</option>
+              <option>Hogan Assessment</option>
+              <option>Leadership Development Program</option>
+              <option>Speaking Engagement</option>
+              <option>Organizational Consulting</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-message">What are you trying to understand, decide, or improve?</label>
+            <textarea id="c-message" placeholder="Describe the challenge, decision, or development priority you're working through. The more specific, the better I can assess how I might be useful."></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-gold" style="width:100%; font-size:0.78rem; padding:1rem;">Send Enquiry</button>
+            <p style="font-size:0.72rem; color:var(--subtle); margin-top:0.75rem; text-align:center;">I respond to all enquiries personally.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function handleContact(e) {
+      e.preventDefault();
+      // TODO: wire to Formspree (https://formspree.io) or Netlify Forms
+      // For Formspree: set action="https://formspree.io/f/YOUR_ID" method="POST" and remove this JS
+      alert('Thank you — I\'ll be in touch within two business days.');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Feras Banna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-layout {
+      max-width: 1080px; margin: 0 auto; padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 6rem;
+      align-items: start;
+    }
+    .portrait-block {
+      position: sticky;
+      top: 6rem;
+    }
+    .portrait-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .portrait-frame p { font-size: 0.78rem; color: var(--subtle); letter-spacing: 0.08em; }
+    .portrait-creds { font-size: 0.78rem; color: var(--muted); line-height: 1.8; }
+    .portrait-creds em { font-style: italic; color: var(--muted); }
+    .portrait-creds strong { color: var(--text); font-weight: 500; }
+
+    .about-body-section { padding: 2.5rem 0; border-top: 1px solid var(--border2); }
+    .about-body-section:first-child { border-top: none; padding-top: 0; }
+    .about-section-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--subtle); margin-bottom: 1.2rem; }
+
+    .perspective-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+    }
+
+    .work-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+    .work-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .work-list li::before {
+      content: '—';
+      color: var(--gold-dim);
+      flex-shrink: 0;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border2);
+    }
+    .stat-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+
+    @media (max-width: 900px) {
+      .about-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+      .portrait-block { position: static; }
+      .portrait-frame { aspect-ratio: 4/3; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow mb-sm">About</p>
+      <h1 class="display display-xl" style="max-width:720px;">Helping leaders reconsider what they think they know.</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="about-layout">
+      <div>
+        <div class="about-body-section">
+          <div class="about-section-label">Background</div>
+          <p>I am a leadership consultant, certified Hogan assessor, facilitator, and advisor with more than two decades of experience supporting leaders, teams, and organizations across the Middle East and beyond.</p>
+          <p>My work spans executive assessment, leadership development, organizational effectiveness, talent strategy, and decision-making. The common thread is not the methodology — it's the question: what conditions are shaping what we're seeing here?</p>
+          <div class="stats-row">
+            <div><div class="stat-val">20+</div><div class="stat-label">Years Experience</div></div>
+            <div><div class="stat-val">1000+</div><div class="stat-label">Leaders Developed</div></div>
+            <div><div class="stat-val">20+</div><div class="stat-label">Countries Served</div></div>
+          </div>
+        </div>
+
+        <div class="about-body-section">
+          <div class="about-section-label">Perspective</div>
+          <div class="perspective-text">Most explanations arrive too quickly.</div>
+          <p>Organizations explain performance through personality. Leaders explain hesitation through motivation. Teams explain disagreement through resistance.</p>
+          <p>In many cases, the explanation is accepted before the conditions have been examined. My work is built around challenging that tendency — and creating the space for better questions before commitment to an explanation.</p>
+        </div>
+
+        <div class="about-body-section">
+          <div class="about-section-label">What I Do</div>
+          <p>I help leaders and organizations:</p>
+          <ul class="work-list">
+            <li>Improve decision quality before commitment is required</li>
+            <li>Understand leadership strengths and risks through evidence-based assessment</li>
+            <li>Navigate complexity and uncertainty with greater clarity</li>
+            <li>Build stronger leadership systems and talent practices</li>
+            <li>Examine assumptions before acting on them</li>
+          </ul>
+        </div>
+
+        <div class="about-body-section">
+          <div class="about-section-label" style="margin-bottom:1.5rem;">Work With Me</div>
+          <a href="contact.html" class="btn btn-gold">Start a Conversation</a>
+          <a href="advisory.html" class="btn btn-outline" style="margin-left:1rem;">Advisory Services</a>
+        </div>
+      </div>
+
+      <div class="portrait-block">
+        <div class="portrait-frame">
+          <p>Your photo here</p>
+        </div>
+        <div class="portrait-creds">
+          <strong>Feras Banna</strong><br/>
+          Certified Hogan Assessor<br/>
+          Leadership Consultant &amp; Facilitator<br/>
+          Author of <em>The Inner Conversation</em> (forthcoming)<br/>
+          Based in the Middle East
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisory — Feras Banna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .advisory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .advisory-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2.6rem 2rem;
+    }
+    .advisory-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .nav-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+    .nav-list li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .nav-list li::before { content: '·'; color: var(--gold-dim); flex-shrink: 0; }
+
+    @media (max-width: 900px) {
+      .advisory-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow mb-sm">Advisory</p>
+      <h1 class="display display-xl" style="max-width:700px;">Structured challenge for leaders facing important decisions.</h1>
+      <p style="margin-top:1.5rem; max-width:540px; font-size:1rem; line-height:1.85;">
+        Not coaching in the conventional sense. A thinking partnership — for people who want to examine their situation more carefully before they commit to a direction.
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow mb-sm">How I Work</p>
+      <h2 class="display display-md" style="max-width:600px;">Three areas of engagement</h2>
+      <div class="advisory-grid">
+        <div class="advisory-card">
+          <span class="card-accent"></span>
+          <div class="advisory-card-title">Executive Advisory</div>
+          <p style="font-size:0.88rem;">One-to-one support for executives navigating high-stakes challenges where clear thinking matters most.</p>
+          <ul class="nav-list">
+            <li>Complex decisions and strategic choices</li>
+            <li>Organizational change and transition</li>
+            <li>Leadership transitions and new roles</li>
+            <li>Stakeholder challenges and dynamics</li>
+            <li>Personal leadership effectiveness</li>
+          </ul>
+        </div>
+        <div class="advisory-card">
+          <span class="card-accent"></span>
+          <div class="advisory-card-title">Leadership Development</div>
+          <p style="font-size:0.88rem;">Programs and interventions designed to strengthen leadership capability and decision quality — for individuals and groups.</p>
+          <ul class="nav-list">
+            <li>Assessment-based development</li>
+            <li>Leadership group programs</li>
+            <li>High-potential development</li>
+            <li>Team effectiveness work</li>
+            <li>Leadership system design</li>
+          </ul>
+        </div>
+        <div class="advisory-card">
+          <span class="card-accent"></span>
+          <div class="advisory-card-title">Organizational Consulting</div>
+          <p style="font-size:0.88rem;">Supporting organizations in improving leadership effectiveness, assessment practices, and the talent systems that shape who leads and how.</p>
+          <ul class="nav-list">
+            <li>Assessment practice design</li>
+            <li>Talent strategy and succession</li>
+            <li>Leadership culture diagnosis</li>
+            <li>Decision quality improvement</li>
+            <li>Organizational effectiveness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface);">
+    <div class="container-md">
+      <div class="gold-rule mb-lg"></div>
+      <h2 class="display display-md mb-md">This is not therapy. It's not cheerleading.</h2>
+      <p>Most advisory relationships promise support, encouragement, and accountability. Mine offers something different: a serious examination of the situation before conclusions are drawn.</p>
+      <p>That means asking questions that are sometimes uncomfortable. Challenging explanations that have been accepted too quickly. Examining assumptions before they harden into decisions. And resisting the pressure to reassure when what the situation actually requires is clearer thinking.</p>
+      <p>The goal is not to feel better about a difficult situation. The goal is to understand it better — and from that understanding, make better decisions.</p>
+      <div class="mt-lg">
+        <a href="contact.html" class="btn btn-gold">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
