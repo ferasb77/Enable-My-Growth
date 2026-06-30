@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block PDFs from being indexed (capability statement, CV)
+Disallow: /feras-banna-capability-statement.pdf
+Disallow: /feras-banna-cv.pdf
+
+Sitemap: https://enablemygrowth.com/sitemap.xml

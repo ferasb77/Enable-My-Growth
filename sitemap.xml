@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://enablemygrowth.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://enablemygrowth.com/ideas.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://enablemygrowth.com/training.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://enablemygrowth.com/hogan.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/advisory.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/speaking.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/events.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/decision-lab.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/books.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://enablemygrowth.com/resources.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://enablemygrowth.com/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://enablemygrowth.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Essays — Conditions Before Conviction -->
+  <url><loc>https://enablemygrowth.com/essay-commitment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/essay-preparation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/essay-conviction.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Essays — Context Before Explanation -->
+  <url><loc>https://enablemygrowth.com/essay-context.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/essay-scores.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/essay-potential.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Essays — Decision Integrity -->
+  <url><loc>https://enablemygrowth.com/essay-conditions.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/essay-better-people.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://enablemygrowth.com/essay-integrity.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+</urlset>
