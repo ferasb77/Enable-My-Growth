@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Feras Banna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .notfound-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    .notfound-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,169,110,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .notfound-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(6rem, 20vw, 14rem);
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(201,169,110,0.15);
+      margin-bottom: 0;
+      letter-spacing: -0.04em;
+    }
+    .notfound-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--text);
+      margin: 0.5rem 0 1.5rem;
+    }
+    .notfound-body {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 420px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+    .notfound-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gold-rule-center {
+      width: 36px; height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 0 auto 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="notfound-wrap">
+    <div class="notfound-num">404</div>
+    <div class="gold-rule-center"></div>
+    <h1 class="notfound-title">This page doesn't exist.</h1>
+    <p class="notfound-body">
+      The page you were looking for may have moved, been renamed, or never existed.
+      The ideas, however, are still here.
+    </p>
+    <div class="notfound-links">
+      <a href="index.html" class="btn btn-gold">Return Home</a>
+      <a href="ideas.html" class="btn btn-outline">Explore the Ideas</a>
+      <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

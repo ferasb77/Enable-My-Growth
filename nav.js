@@ -67,7 +67,7 @@
     </div>
     <div class="footer-copy">
       <span>&copy; ${new Date().getFullYear()} Feras Banna — EnableMyGrowth.com</span>
-      <span>All rights reserved.</span>
+      <a href="privacy.html" style="font-size:0.7rem; color:var(--subtle); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='var(--subtle)'">Privacy Policy</a>
     </div>
   </footer>`;
 
