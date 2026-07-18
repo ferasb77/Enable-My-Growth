@@ -25,23 +25,28 @@
       padding: 8rem 0 5rem;
       position: relative;
     }
+    /* Gold glow behind the Möbius */
     #hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 72% 46%, rgba(201,169,110,.07), transparent 65%);
+      background: radial-gradient(ellipse 55% 70% at 78% 50%, rgba(201,169,110,.06), transparent 60%);
       pointer-events: none;
     }
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 0;
       align-items: center;
-      max-width: 1180px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 3rem;
+      padding: 0;
       width: 100%;
       position: relative;
+    }
+    /* Copy column: padded normally */
+    .hero-copy-col {
+      padding: 0 4rem 0 max(3rem, calc((100vw - 1180px) / 2 + 3rem));
     }
     /* Blueprint-locked eyebrow: PERSPECTIVE · JUDGMENT · GROWTH */
     .hero-pillars {
@@ -71,22 +76,25 @@
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
 
-    /* Möbius — identity guide: "let the sculpture hold the horizon"
-       The form emerges from darkness — no visible box, no shadow border */
+    /* Möbius column: full height, image fills naturally, no border */
     .hero-mark {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      overflow: visible;
-      /* Allow image to bleed beyond column right edge */
-      margin-right: -3rem;
+      justify-content: flex-start;
+      min-height: 100vh;
+      /* Stretch to viewport right edge */
+      padding-right: 0;
+      overflow: hidden;
     }
     .hero-mark img {
-      width: 110%;
-      max-width: 660px;
-      height: auto;
+      /* Fill the column completely — no max-width constraint */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Crop to show the Möbius centred in the right column */
+      object-position: 35% 50%;
       display: block;
-      /* No drop-shadow — sculpture emerges from matching dark background */
+      min-height: 100vh;
     }
 
     /* ── TENSION SECTION (blueprint §01) ── */
@@ -132,11 +140,12 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      #hero { min-height: auto; padding: 7rem 0 4rem; }
-      .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2.5rem; }
+      #hero { min-height: auto; padding: 0; }
+      .hero-inner { grid-template-columns: 1fr; padding: 0; gap: 0; }
       .hero-mark { order: -1; }
-      .hero-mark { margin-right: 0; justify-content: center; }
-      .hero-mark img { width: 100%; max-width: 380px; }
+      .hero-copy-col { padding: 0 1.5rem; }
+      .hero-mark { min-height: 70vw; order: -1; }
+      .hero-mark img { min-height: 70vw; object-position: 50% 40%; }
       .hero-headline { font-size: clamp(3rem, 14vw, 4.5rem); }
       .movement-cards { grid-template-columns: 1fr; }
       .doctrine-grid { grid-template-columns: 1fr 1fr !important; }
@@ -152,7 +161,7 @@
     <!-- 01 / HERO — blueprint-locked composition and copy -->
     <section id="hero">
       <div class="hero-inner">
-        <div>
+        <div class="hero-copy-col">
           <!-- LOCKED eyebrow: PERSPECTIVE · JUDGMENT · GROWTH -->
           <p class="hero-pillars">Perspective <span>·</span> Judgment <span>·</span> Growth</p>
           <!-- LOCKED H1 -->
