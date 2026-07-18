@@ -5,6 +5,7 @@
     { href: 'philosophy.html', label: 'Philosophy' },
     { href: 'ideas.html',      label: 'Insights' },
     { href: 'work.html',       label: 'Work with Feras' },
+    { href: 'training.html',   label: 'Workshops' },
     { href: 'about.html',      label: 'About' },
     { href: 'contact.html',    label: 'Begin a Conversation', cta: true },
   ];
@@ -87,6 +88,7 @@
           <h4>Engage</h4>
           <ul>
             <li><a href="work.html">Work with Feras</a></li>
+            <li><a href="training.html">Workshops &amp; Facilitation</a></li>
             <li><a href="contact.html">Begin a conversation</a></li>
           </ul>
         </div>

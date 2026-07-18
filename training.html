@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Training & Facilitation — Feras Banna</title>
-  <meta name="description" content="Leadership, assessment, and organizational development programs across the Middle East." />
+  <title>Workshops &amp; Facilitation — Enable My Growth</title>
+  <meta name="description" content="Contextual leadership workshops, Hogan certification and advanced practitioner workshops, facilitation, and professional development across the GCC and MENA." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* STATS */
     .stats-band {
       background: var(--surface);
       border-top: 1px solid var(--border2);
@@ -19,7 +19,7 @@
     }
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       max-width: 1080px;
       margin: 0 auto;
@@ -34,49 +34,63 @@
       line-height: 1;
     }
     .stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
       line-height: 1.5;
     }
+    .section-intro { max-width: 680px; }
+    .section-intro > p:last-child { margin-top: 1.1rem; }
 
-    /* SIGNATURE */
-    .sig-grid {
+    .design-grid,
+    .hogan-grid,
+    .formats-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 1.5px;
       background: var(--border2);
       margin-top: 3rem;
     }
-    .sig-tile {
+    .design-grid { grid-template-columns: repeat(4, 1fr); }
+    .hogan-grid { grid-template-columns: repeat(3, 1fr); }
+    .formats-grid { grid-template-columns: repeat(3, 1fr); }
+    .design-card,
+    .hogan-card,
+    .format-card {
       background: var(--surface);
-      padding: 2.8rem 2.4rem;
-      transition: background 0.2s;
+      padding: 2.4rem 2rem;
     }
-    .sig-tile:hover { background: #141420; }
-    .sig-tag {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-      display: block;
-    }
-    .sig-title {
+    .design-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
+      font-size: 3.4rem;
+      font-weight: 300;
+      color: rgba(201,169,110,0.18);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
       font-weight: 400;
       color: var(--text);
       line-height: 1.25;
+      margin-bottom: 0.8rem;
+    }
+    .card-copy { font-size: 0.84rem; line-height: 1.75; }
+    .hogan-label {
+      display: block;
+      color: var(--gold);
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       margin-bottom: 0.9rem;
     }
 
-    /* EXPERTISE AREAS */
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 3rem;
     }
@@ -95,12 +109,13 @@
       padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--border2);
     }
-    .expertise-list {
+    .expertise-list,
+    .sector-orgs {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
     }
+    .expertise-list { gap: 0.45rem; }
     .expertise-list li {
       font-size: 0.83rem;
       color: var(--muted);
@@ -115,10 +130,9 @@
       font-size: 0.7rem;
     }
 
-    /* SECTORS */
     .sectors-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 3rem;
     }
@@ -128,36 +142,23 @@
       padding: 2rem 1.8rem;
     }
     .sector-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1rem;
       padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--border2);
     }
-    .sector-orgs {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .sector-orgs { gap: 0.4rem; }
     .sector-orgs li {
       font-size: 0.82rem;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.45;
     }
-    .sector-more {
-      font-size: 0.72rem;
-      color: var(--subtle);
-      font-style: italic;
-      margin-top: 0.6rem;
-    }
-
-    /* PHILOSOPHY */
     .philosophy-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
       font-weight: 300;
       font-style: italic;
       color: var(--text);
@@ -166,258 +167,161 @@
       padding-left: 2rem;
       margin: 2.5rem 0;
     }
+    .final-cta {
+      background: linear-gradient(135deg, rgba(201,169,110,0.10), rgba(17,17,24,0.35));
+      border-top: 1px solid var(--border2);
+      text-align: center;
+    }
+    .final-cta .container-sm { display: flex; flex-direction: column; align-items: center; }
 
     @media (max-width: 900px) {
       .stats-row { grid-template-columns: 1fr 1fr; padding: 0 1.5rem; }
-      .sig-grid { grid-template-columns: 1fr; }
-      .expertise-grid { grid-template-columns: 1fr; }
-      .sectors-grid { grid-template-columns: 1fr; }
+      .design-grid, .hogan-grid, .formats-grid, .expertise-grid, .sectors-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+  <main>
+    <header class="page-hero">
+      <div class="container">
+        <p class="eyebrow mb-sm">Workshops &amp; Facilitation</p>
+        <h1 class="display display-xl" style="max-width:820px;">Learning experiences built around the decisions leaders actually face.</h1>
+        <p style="margin-top:1.5rem; max-width:650px; font-size:1rem; line-height:1.85;">
+          I design and facilitate leadership and professional-development experiences across the GCC and MENA. Every program is shaped by the audience, organizational context, and outcomes that matter—not delivered as a generic, off-the-shelf course.
+        </p>
+        <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-gold">Discuss a Program</a>
+          <a href="#capabilities" class="btn btn-outline">Explore Workshop Capabilities</a>
+        </div>
+      </div>
+    </header>
 
-  <!-- HERO -->
-  <div class="page-hero">
-    <div class="container">
-      <p class="eyebrow mb-sm">Training &amp; Facilitation</p>
-      <h1 class="display display-xl" style="max-width:780px;">Leadership, Assessment, and Organizational Development Programs</h1>
-      <p style="margin-top:1.5rem; max-width:600px; font-size:1rem; line-height:1.85;">
-        For more than two decades, I have designed and delivered customized learning experiences across government, banking, energy, healthcare, telecommunications, and private-sector organizations throughout the Middle East.
-      </p>
-      <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a href="resources.html#capability" class="btn btn-gold">Download Capability Statement</a>
-        <a href="contact.html" class="btn btn-outline">Discuss a Program</a>
+    <div class="stats-band" aria-label="Experience at a glance">
+      <div class="stats-row">
+        <div class="stat-block"><div class="stat-val">25+</div><div class="stat-label">Years Designing &amp; Delivering Programs</div></div>
+        <div class="stat-block"><div class="stat-val">1,000+</div><div class="stat-label">Professionals Trained Annually</div></div>
+        <div class="stat-block"><div class="stat-val">100+</div><div class="stat-label">Leaders Coached Annually</div></div>
+        <div class="stat-block"><div class="stat-val">GCC<br/>&amp; MENA</div><div class="stat-label">Regional Experience Across Diverse Sectors</div></div>
       </div>
     </div>
-  </div>
 
-  <!-- STATS -->
-  <div class="stats-band">
-    <div class="stats-row">
-      <div class="stat-block">
-        <div class="stat-val">20+</div>
-        <div class="stat-label">Years Designing &amp; Delivering Programs</div>
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow mb-sm">How the Learning Is Designed</p>
+          <h2 class="display display-md">Learning should change more than what people know.</h2>
+          <p>The most valuable learning experiences help people reconsider what they see, strengthen how they think, and apply that shift to the situations they are responsible for.</p>
+        </div>
+        <div class="design-grid">
+          <article class="design-card"><div class="design-num">01</div><h3 class="card-title">Context before content</h3><p class="card-copy">The design begins with the organization, audience, and situations participants actually face.</p></article>
+          <article class="design-card"><div class="design-num">02</div><h3 class="card-title">Application over information</h3><p class="card-copy">Concepts are connected to real decisions, relationships, responsibilities, and performance expectations.</p></article>
+          <article class="design-card"><div class="design-num">03</div><h3 class="card-title">Constructive challenge</h3><p class="card-copy">Participants are invited to examine assumptions and consider alternatives—not simply absorb prescribed answers.</p></article>
+          <article class="design-card"><div class="design-num">04</div><h3 class="card-title">Transfer into practice</h3><p class="card-copy">Activities, reflection, and follow-through help the learning survive beyond the workshop.</p></article>
+        </div>
       </div>
-      <div class="stat-block">
-        <div class="stat-val">1,000+</div>
-        <div class="stat-label">Leaders Developed, Assessed &amp; Trained</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-val">100+</div>
-        <div class="stat-label">Programs Delivered Across the Region</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-val">7</div>
-        <div class="stat-label">Countries Across the GCC &amp; Middle East</div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- SIGNATURE PROGRAMS -->
-  <section>
-    <div class="container">
-      <p class="eyebrow mb-sm">Signature Programs</p>
-      <h2 class="display display-md" style="max-width:620px;">Programs built from original ideas — not adapted from someone else's framework.</h2>
-      <div class="sig-grid">
-        <div class="sig-tile">
-          <span class="sig-tag">Decision-Making · Experiential Learning · Team Dynamics</span>
-          <h3 class="sig-title">Decision Lab™</h3>
-          <p style="font-size:0.88rem;">An experiential laboratory where participants experience how changing organizational conditions reshape team decisions over time — and leave with a structured replay of their own decision journey. No scores. No predetermined answers. Learning through reconstruction. <a href="decision-lab.html" style="color:var(--gold); text-decoration:none;">Explore Decision Lab™ →</a></p>
+    <section id="capabilities" style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow mb-sm">Workshop Capabilities</p>
+          <h2 class="display display-md">Established programs across six areas of practice.</h2>
+          <p>Topics are selected and adapted according to audience seniority, organizational priorities, and the situations in which participants need to perform.</p>
         </div>
-        <div class="sig-tile">
-          <span class="sig-tag">AI · Design Thinking · Decision Quality</span>
-          <h3 class="sig-title">AI-Powered Design Thinking</h3>
-          <p style="font-size:0.88rem;">A two-day workshop exploring how AI and Design Thinking work together to improve the quality of thinking before decisions are made. Participants learn to use AI as a structured thinking partner — not an answer engine — for innovation, problem-solving, and decision quality. <a href="events.html" style="color:var(--gold); text-decoration:none;">Next session: July 21–22, 2026, Beirut →</a></p>
+        <div class="expertise-grid">
+          <article class="expertise-card">
+            <h3 class="expertise-title">Leadership &amp; People Management</h3>
+            <ul class="expertise-list"><li>Leadership Development Programs</li><li>Supervisory Essentials</li><li>Developing and Coaching People</li><li>Managing Performance</li><li>High-Performing Teams</li><li>Leading Change</li><li>Motivation and Engagement</li></ul>
+          </article>
+          <article class="expertise-card">
+            <h3 class="expertise-title">Communication, Coaching &amp; Influence</h3>
+            <ul class="expertise-list"><li>Communicating with Influence</li><li>Presentation Skills</li><li>Giving Effective Feedback</li><li>Coaching Skills for Leaders</li><li>Conflict Resolution</li><li>Negotiation</li></ul>
+          </article>
+          <article class="expertise-card">
+            <h3 class="expertise-title">Talent, Assessment &amp; Performance</h3>
+            <ul class="expertise-list"><li>Competency-Based Interviewing</li><li>Assessment Centers</li><li>Training Needs Analysis</li><li>Train the Trainer</li><li>KPI Development</li><li>High-Potential Assessment</li></ul>
+          </article>
+          <article class="expertise-card">
+            <h3 class="expertise-title">Decisions &amp; Organizational Effectiveness</h3>
+            <ul class="expertise-list"><li>Problem Solving and Decision Making</li><li>Planning and Delivering Results</li><li>Decision-Making Under Pressure</li><li>Business Ethics and Professional Judgment</li><li>Time, Priority, and Stress Management</li></ul>
+          </article>
+          <article class="expertise-card">
+            <h3 class="expertise-title">Sales &amp; Customer Excellence</h3>
+            <ul class="expertise-list"><li>Consultative Selling</li><li>Managing Sales Teams</li><li>Service Excellence</li><li>Internal Customer Experience</li></ul>
+          </article>
+          <article class="expertise-card">
+            <h3 class="expertise-title">Modern Workplace &amp; AI</h3>
+            <ul class="expertise-list"><li>Generative AI for Professionals</li><li>AI Tools for Productivity</li><li>AI-Supported Learning and Performance</li><li>Using AI as a Thinking Partner</li></ul>
+          </article>
         </div>
-        <div class="sig-tile">
-          <span class="sig-tag">Conditions Before Conviction</span>
-          <h3 class="sig-title">Conditions Before Conviction</h3>
-          <p style="font-size:0.88rem;">A workshop exploring how commitment, confidence, and action emerge from conditions rather than intention alone — and what that means for how leaders decide, build trust, and create momentum in their organizations.</p>
-        </div>
-        <div class="sig-tile">
-          <span class="sig-tag">Context Before Explanation</span>
-          <h3 class="sig-title">Context Before Explanation</h3>
-          <p style="font-size:0.88rem;">Understanding behavior before rushing to conclusions. A structured examination of how organizations explain performance and potential through personality before examining the conditions that shaped it.</p>
-        </div>
-        <div class="sig-tile">
-          <span class="sig-tag">Decision Integrity</span>
-          <h3 class="sig-title">Leadership Decisions Under Uncertainty</h3>
-          <p style="font-size:0.88rem;">Improving decision quality when information is incomplete and pressure is high. A practical program for leaders who want to think more carefully before committing — and build organizations that do the same.</p>
-        </div>
-        <div class="sig-tile">
-          <span class="sig-tag">Hogan Assessment</span>
-          <h3 class="sig-title">Understanding Leadership Risk</h3>
-          <p style="font-size:0.88rem;">Using Hogan insights to identify strengths, development risks, and the conditions most likely to derail leadership effectiveness. A program that goes well beyond personality scores into meaningful organizational application.</p>
-        </div>
+        <p style="margin-top:2rem; font-size:0.82rem; color:var(--subtle);">A broader topic listing is available in the capability statement. &nbsp;<a href="resources.html#capability" style="color:var(--gold); text-decoration:none;">Download PDF →</a></p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- AREAS OF EXPERTISE -->
-  <section style="background:var(--surface); border-top:1px solid var(--border2);">
-    <div class="container">
-      <p class="eyebrow mb-sm">Areas of Expertise</p>
-      <h2 class="display display-md" style="max-width:600px;">Two decades of program delivery across six disciplines.</h2>
-      <p style="margin-top:1rem; max-width:580px;">A full capability statement listing individual programs is available to download. The areas below reflect where the majority of work has been concentrated.</p>
-      <div class="expertise-grid">
-        <div class="expertise-card">
-          <div class="expertise-title">Leadership Development</div>
-          <ul class="expertise-list">
-            <li>Leadership Development Programs</li>
-            <li>Supervisory Essentials</li>
-            <li>Developing People</li>
-            <li>Managing Performance</li>
-            <li>High Performance Team Management</li>
-            <li>Strategic Change Management</li>
-            <li>Motivating Your Workforce</li>
-          </ul>
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow mb-sm">Hogan Practitioner Development</p>
+          <h2 class="display display-md">Specialist workshops for responsible, confident Hogan practice.</h2>
+          <p>In addition to integrating Hogan insights into leadership development, I deliver three dedicated practitioner workshops covering certification, advanced interpretation, and advanced feedback.</p>
         </div>
-        <div class="expertise-card">
-          <div class="expertise-title">Communication &amp; Influence</div>
-          <ul class="expertise-list">
-            <li>Communicating with Style &amp; Influence</li>
-            <li>Presentation Skills</li>
-            <li>Giving Effective Feedback</li>
-            <li>Coaching Skills for Leaders</li>
-            <li>Conflict Resolution &amp; Negotiation</li>
-          </ul>
+        <div class="hogan-grid">
+          <article class="hogan-card"><span class="hogan-label">Practitioner Foundation</span><h3 class="card-title">Hogan Certification Workshop</h3><p class="card-copy">A structured certification experience that develops the knowledge and practical foundation required to interpret and apply Hogan assessment results responsibly.</p></article>
+          <article class="hogan-card"><span class="hogan-label">Advanced Practice</span><h3 class="card-title">Hogan Advanced Interpretation Workshop</h3><p class="card-copy">A deeper examination of how assessment scales interact, how patterns should be interpreted, and how context changes the meaning and relevance of a profile.</p></article>
+          <article class="hogan-card"><span class="hogan-label">Advanced Practice</span><h3 class="card-title">Hogan Advanced Feedback Workshop</h3><p class="card-copy">Developing the judgment and conversational skill required to translate assessment evidence into constructive, balanced, and development-focused feedback.</p></article>
         </div>
-        <div class="expertise-card">
-          <div class="expertise-title">Talent &amp; Human Resources</div>
-          <ul class="expertise-list">
-            <li>Competency-Based Interviewing</li>
-            <li>Training Needs Analysis</li>
-            <li>Train the Trainer</li>
-            <li>Performance Management</li>
-            <li>KPI Development</li>
-            <li>Assessment Centers</li>
-          </ul>
-        </div>
-        <div class="expertise-card">
-          <div class="expertise-title">Decision-Making &amp; Productivity</div>
-          <ul class="expertise-list">
-            <li>Problem Solving &amp; Decision Making</li>
-            <li>Planning and Delivering Results</li>
-            <li>Time &amp; Stress Management</li>
-            <li>Business Ethics &amp; Professional Conduct</li>
-          </ul>
-        </div>
-        <div class="expertise-card">
-          <div class="expertise-title">Sales &amp; Customer Excellence</div>
-          <ul class="expertise-list">
-            <li>Effective Selling Skills</li>
-            <li>Managing Sales Teams</li>
-            <li>Service Excellence</li>
-            <li>Internal Customer Service</li>
-          </ul>
-        </div>
-        <div class="expertise-card">
-          <div class="expertise-title">Modern Workplace &amp; AI</div>
-          <ul class="expertise-list">
-            <li>AI Tools for Better Productivity</li>
-            <li>AI-Augmented Learning &amp; Performance</li>
-            <li>Generative AI for Professionals</li>
-          </ul>
-        </div>
+        <div class="philosophy-quote">Assessment provides evidence and vocabulary. It should deepen the inquiry—not become a verdict about the person.</div>
       </div>
-      <p style="margin-top:2rem; font-size:0.82rem; color:var(--subtle);">
-        A complete program catalog is available in the capability statement. &nbsp;<a href="resources.html#capability" style="color:var(--gold); text-decoration:none;">Download PDF →</a>
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- ORGANIZATIONS -->
-  <section>
-    <div class="container">
-      <p class="eyebrow mb-sm">Organizations Served</p>
-      <h2 class="display display-md" style="max-width:600px;">Work across government, energy, banking, healthcare, and beyond.</h2>
-      <div class="sectors-grid">
-        <div class="sector-card">
-          <div class="sector-title">Government &amp; Public Sector</div>
-          <ul class="sector-orgs">
-            <li>UAE Ministry of Labor</li>
-            <li>Environment Agency Abu Dhabi</li>
-            <li>The Executive Council of Dubai</li>
-            <li>Qatar Museums</li>
-            <li>Qatar Fund for Development</li>
-            <li>Qatar Development Bank</li>
-            <li>State Audit Bureau, Kuwait</li>
-          </ul>
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow mb-sm">Delivery Formats</p>
+          <h2 class="display display-md">The format follows the context.</h2>
+          <p>Duration, sequence, and delivery method are determined after understanding the audience, desired outcome, and environment in which the learning must be applied.</p>
         </div>
-        <div class="sector-card">
-          <div class="sector-title">Energy &amp; Utilities</div>
-          <ul class="sector-orgs">
-            <li>ADNOC Distribution</li>
-            <li>QatarGas / RasGas</li>
-            <li>DEWA</li>
-            <li>Kahramaa</li>
-            <li>SABIC</li>
-            <li>Maaden</li>
-            <li>Saudi Arabian Chevron</li>
-          </ul>
-          <div class="sector-more">+ Takreer, Tasnee, Oman utilities</div>
-        </div>
-        <div class="sector-card">
-          <div class="sector-title">Banking &amp; Financial Services</div>
-          <ul class="sector-orgs">
-            <li>Qatar National Bank</li>
-            <li>HSBC</li>
-            <li>Riyadh Bank</li>
-            <li>Kuwait Finance House</li>
-            <li>Dubai Islamic Bank</li>
-            <li>Bank Muscat</li>
-            <li>Alinma Bank</li>
-          </ul>
-          <div class="sector-more">+ 7 additional regional banks</div>
-        </div>
-        <div class="sector-card">
-          <div class="sector-title">Telecommunications &amp; Technology</div>
-          <ul class="sector-orgs">
-            <li>Vodafone Qatar</li>
-            <li>Ooredoo</li>
-            <li>Omantel</li>
-            <li>Oman Data Park</li>
-            <li>Thales</li>
-          </ul>
-        </div>
-        <div class="sector-card">
-          <div class="sector-title">Healthcare</div>
-          <ul class="sector-orgs">
-            <li>Primary Health Care Corporation</li>
-            <li>Sheikh Shakhbout Medical City</li>
-            <li>Dar Al Shifa Hospital</li>
-            <li>AstraZeneca</li>
-          </ul>
-        </div>
-        <div class="sector-card">
-          <div class="sector-title">Infrastructure &amp; Real Estate</div>
-          <ul class="sector-orgs">
-            <li>Qatar Rail</li>
-            <li>Qatari Diar</li>
-            <li>Msheireb Properties</li>
-            <li>RTA Dubai</li>
-          </ul>
+        <div class="formats-grid">
+          <article class="format-card"><h3 class="card-title">In-House Workshops</h3><p class="card-copy">Focused programs adapted to organizational priorities and participant needs.</p></article>
+          <article class="format-card"><h3 class="card-title">Development Journeys</h3><p class="card-copy">Multi-stage experiences combining workshops, application, reflection, and follow-through.</p></article>
+          <article class="format-card"><h3 class="card-title">Executive &amp; Team Retreats</h3><p class="card-copy">Facilitated sessions focused on leadership priorities, alignment, decisions, and team effectiveness.</p></article>
+          <article class="format-card"><h3 class="card-title">Public Programs</h3><p class="card-copy">Open-enrolment learning for professionals from different organizations and sectors.</p></article>
+          <article class="format-card"><h3 class="card-title">Partner-Led Engagements</h3><p class="card-copy">Delivery within the frameworks and client relationships of training, consulting, and assessment partners.</p></article>
+          <article class="format-card"><h3 class="card-title">Flexible Delivery</h3><p class="card-copy">In-person, virtual, and blended formats designed around access, participation, and application.</p></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PHILOSOPHY -->
-  <section style="background:var(--surface); border-top:1px solid var(--border2);">
-    <div class="container-md">
-      <p class="eyebrow mb-sm">Training Philosophy</p>
-      <h2 class="display display-md">I do not believe learning happens through information alone.</h2>
-      <div class="philosophy-quote">
-        The most valuable learning experiences create moments of reconsideration — where something previously accepted is examined more carefully, and something new becomes possible as a result.
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow mb-sm">Selected Experience</p>
+          <h2 class="display display-md">Delivery across government, energy, banking, healthcare, telecommunications, and infrastructure.</h2>
+          <p>The organizations below provide a representative view of the environments in which I have worked.</p>
+        </div>
+        <div class="sectors-grid">
+          <article class="sector-card"><h3 class="sector-title">Government &amp; Public Sector</h3><ul class="sector-orgs"><li>UAE Ministry of Labor</li><li>Environment Agency Abu Dhabi</li><li>The Executive Council of Dubai</li><li>Qatar Museums</li><li>Qatar Development Bank</li></ul></article>
+          <article class="sector-card"><h3 class="sector-title">Energy &amp; Utilities</h3><ul class="sector-orgs"><li>ADNOC Distribution</li><li>QatarGas / RasGas</li><li>DEWA</li><li>SABIC</li><li>Saudi Arabian Chevron</li></ul></article>
+          <article class="sector-card"><h3 class="sector-title">Banking &amp; Financial Services</h3><ul class="sector-orgs"><li>Qatar National Bank</li><li>HSBC</li><li>Riyadh Bank</li><li>Kuwait Finance House</li><li>Bank Muscat</li></ul></article>
+          <article class="sector-card"><h3 class="sector-title">Telecommunications &amp; Technology</h3><ul class="sector-orgs"><li>Vodafone Qatar</li><li>Ooredoo</li><li>Omantel</li><li>Oman Data Park</li><li>Thales</li></ul></article>
+          <article class="sector-card"><h3 class="sector-title">Healthcare</h3><ul class="sector-orgs"><li>Primary Health Care Corporation</li><li>Sheikh Shakhbout Medical City</li><li>Dar Al Shifa Hospital</li><li>AstraZeneca</li></ul></article>
+          <article class="sector-card"><h3 class="sector-title">Infrastructure &amp; Real Estate</h3><ul class="sector-orgs"><li>Qatar Rail</li><li>Qatari Diar</li><li>Msheireb Properties</li><li>RTA Dubai</li></ul></article>
+        </div>
       </div>
-      <p>Participants should leave with better questions, stronger judgment, greater self-awareness, and practical application they can use immediately. Most importantly, they should leave seeing something differently than they did when they arrived.</p>
-      <div class="mt-lg">
-        <a href="contact.html" class="btn btn-gold">Discuss a Program</a>
-        <a href="resources.html#capability" class="btn btn-outline" style="margin-left:1rem;">Download Capability Statement</a>
+    </section>
+
+    <section class="final-cta">
+      <div class="container-sm">
+        <p class="eyebrow mb-md">Begin with the Outcome</p>
+        <h2 class="display display-lg mb-md">What do your people need to do differently?</h2>
+        <p>Tell me about the audience, the situations they are navigating, and what better performance would make possible. From there, we can shape the right learning experience.</p>
+        <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+          <a href="contact.html" class="btn btn-gold">Discuss a Program</a>
+          <a href="resources.html#capability" class="btn btn-outline">Download Capability Statement</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <script src="analytics.js"></script>
   <script src="nav.js"></script>
