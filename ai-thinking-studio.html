@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Thinking Studio — Enable My Growth</title>
+  <meta name="description" content="A structured environment for examining decisions before reaching conclusions. The AI Thinking Studio is an Enable My Growth application developed by Feras Banna." />
+  <meta property="og:title" content="AI Thinking Studio — Enable My Growth" />
+  <meta property="og:description" content="Examine conclusions more thoroughly before reaching them." />
+  <meta property="og:image" content="https://enablemygrowth.com/emg-mobius-hero.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .studio-hero { padding: 11rem 0 6rem; position: relative; overflow: hidden; }
+    .studio-hero::after { content:''; position:absolute; width:38rem; height:38rem; right:-14rem; top:-10rem; border:1px solid rgba(201,169,110,.12); border-radius:50%; box-shadow:0 0 0 7rem rgba(201,169,110,.018),0 0 0 14rem rgba(201,169,110,.012); pointer-events:none; }
+    .studio-hero-inner { position:relative; z-index:1; max-width:850px; }
+    .studio-edition { display:inline-block; color:var(--muted); border-left:1px solid var(--gold); padding-left:1rem; margin:1.5rem 0 2rem; font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; }
+    .studio-actions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.5rem; }
+    .studio-note { font-size:.75rem; margin-top:1.2rem; }
+    .promise-panel { max-width:900px; margin:0 auto; border-left:1px solid var(--gold); padding:1rem 0 1rem 2.5rem; }
+    .promise-panel p { font-family:'Cormorant Garamond',serif; font-size:clamp(1.65rem,3vw,2.55rem); color:var(--text); line-height:1.4; }
+    .promise-panel p + p { margin-top:.75rem; }
+    .promise-panel .responsibility { color:var(--gold); font-style:italic; }
+    .sequence { display:grid; grid-template-columns:repeat(7,1fr); margin-top:3rem; border-top:1px solid var(--border); }
+    .stage { padding:1.6rem 1rem 1.5rem 0; border-right:1px solid var(--border2); }
+    .stage:last-child { border-right:0; }
+    .stage-number { color:var(--gold); font-size:.65rem; letter-spacing:.18em; }
+    .stage h3 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; line-height:1.2; margin-top:.8rem; }
+    .examine-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:3rem; border-top:1px solid var(--border); border-left:1px solid var(--border); }
+    .examine-item { padding:2rem; border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .examine-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; margin-bottom:.55rem; }
+    .examine-item p { font-size:.84rem; }
+    .trust-note { border-top:1px solid var(--gold-dim); padding-top:1.5rem; margin-top:2.2rem; font-size:.82rem; }
+    @media (max-width:900px) { .sequence { grid-template-columns:1fr; } .stage { border-right:0; border-bottom:1px solid var(--border2); padding:1.2rem 0; } .examine-grid { grid-template-columns:1fr; } .studio-hero::after { opacity:.5; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="studio-hero">
+      <div class="container">
+        <div class="studio-hero-inner">
+          <p class="eyebrow">An Enable My Growth application</p>
+          <div class="studio-edition">AI Thinking Studio™ · Workshop Edition</div>
+          <h1 class="display display-xl">Examine the decision before you accelerate it.</h1>
+          <p class="lead mt-md">A structured environment for examining decisions before reaching conclusions.</p>
+          <p class="mt-sm">Developed by Feras Banna to bring the Enable My Growth philosophy into a guided, practical thinking experience.</p>
+          <div class="studio-actions">
+            <a href="https://studio.enablemygrowth.com/" class="btn btn-gold" target="_blank" rel="noopener">Enter the Studio</a>
+            <a href="#method" class="btn btn-outline">Explore the method</a>
+          </div>
+          <p class="studio-note">The Studio opens in a new window.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--surface);">
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">A different role for AI</p>
+          <h2 class="display display-lg">Not an answer machine. A thinking environment.</h2>
+        </div>
+        <div>
+          <p class="lead">The value of AI is not only in producing answers. It can also help us notice the questions, assumptions, and perspectives we might otherwise miss.</p>
+          <p>The Studio is not a chatbot, recommender, or substitute decision-maker. It creates a disciplined pause in which you can clarify the challenge, separate observation from interpretation, consider other human perspectives, and test the consequences of possible choices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="eyebrow mb-lg">The Studio promise</p>
+        <div class="promise-panel">
+          <p>This Studio will not tell you what to think.</p>
+          <p>It is not designed to help you reach conclusions faster.</p>
+          <p>It is designed to help you examine conclusions more thoroughly before reaching them.</p>
+          <p class="responsibility">You remain responsible for your judgments, decisions, and actions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" style="background:var(--surface);">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mb-sm">The method</p>
+          <h2 class="display display-lg">Seven rooms. One deliberate movement in thinking.</h2>
+          <p class="lead mt-md">Each room changes the angle of examination without taking the decision away from you.</p>
+        </div>
+        <div class="sequence">
+          <div class="stage"><span class="stage-number">01</span><h3>Session Setup</h3></div>
+          <div class="stage"><span class="stage-number">02</span><h3>Mirror Room</h3></div>
+          <div class="stage"><span class="stage-number">03</span><h3>Human Room</h3></div>
+          <div class="stage"><span class="stage-number">04</span><h3>Possibility Room</h3></div>
+          <div class="stage"><span class="stage-number">05</span><h3>Challenge Room</h3></div>
+          <div class="stage"><span class="stage-number">06</span><h3>Future Room</h3></div>
+          <div class="stage"><span class="stage-number">07</span><h3>Thinking Record</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mb-sm">What it helps you examine</p>
+          <h2 class="display display-lg">Bring a decision, tension, or possibility that deserves more than a quick answer.</h2>
+        </div>
+        <div class="examine-grid">
+          <div class="examine-item"><h3>The framing</h3><p>How the challenge has been defined—and what that definition may exclude.</p></div>
+          <div class="examine-item"><h3>The assumptions</h3><p>What is being treated as true before it has been adequately examined.</p></div>
+          <div class="examine-item"><h3>The people</h3><p>Whose experience, incentives, concerns, or knowledge might change the picture.</p></div>
+          <div class="examine-item"><h3>The possibilities</h3><p>What becomes visible when the first or most familiar answer is not the only one.</p></div>
+          <div class="examine-item"><h3>The conditions</h3><p>What would need to be true for a choice to be responsible and workable.</p></div>
+          <div class="examine-item"><h3>The consequences</h3><p>What each option may create now, later, and for the people affected.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--surface);">
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">Designed for consequential thinking</p>
+          <h2 class="display display-lg">For leaders, teams, and workshop participants.</h2>
+        </div>
+        <div>
+          <p class="lead">Use it when a situation is complex enough that confidence alone is not sufficient.</p>
+          <p>You leave with a reframed challenge, a more visible set of assumptions and questions, and a structured Thinking Record that captures the movement in your reasoning.</p>
+          <p class="trust-note"><strong>Human judgment remains central.</strong> AI output can be incomplete or mistaken. Treat it as material for examination, not authority—and do not enter sensitive or confidential information unless you are authorized to do so.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container-sm">
+        <p class="eyebrow mb-md">Perspective changes what becomes possible</p>
+        <h2 class="display display-lg mb-md">Enter with a question. Leave with a better examined decision.</h2>
+        <p>The AI Thinking Studio is ready when the situation deserves a wider view.</p>
+        <a href="https://studio.enablemygrowth.com/" class="btn btn-gold mt-lg" target="_blank" rel="noopener">Enter the Studio</a>
+      </div>
+    </section>
+  </main>
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

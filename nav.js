@@ -4,6 +4,7 @@
   const pages = [
     { href: 'philosophy.html', label: 'Philosophy' },
     { href: 'ideas.html',      label: 'Insights' },
+    { href: 'ai-thinking-studio.html', label: 'AI Studio' },
     { href: 'work.html',       label: 'Work with Feras' },
     { href: 'training.html',   label: 'Workshops' },
     { href: 'about.html',      label: 'About' },
@@ -59,6 +60,7 @@
           <ul>
             <li><a href="philosophy.html">Philosophy</a></li>
             <li><a href="ideas.html">Insights</a></li>
+            <li><a href="ai-thinking-studio.html">AI Thinking Studio</a></li>
             <li><a href="about.html">About Feras</a></li>
           </ul>
         </div>
