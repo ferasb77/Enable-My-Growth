@@ -1,153 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Feras Banna — Enable My Growth</title>
-  <meta name="description" content="Feras Banna — leadership advisor, facilitator, and certified Hogan assessor. Founder of Enable My Growth." />
-    <link rel="icon" href="favicon.ico" sizes="any" />
+  <meta name="description" content="Meet Feras Banna, founder of Enable My Growth and a leadership advisor focused on improving human judgment in context." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="favicon-128.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .about-layout {
-      align-items: start;
-      display: grid;
-      gap: 6rem;
-      grid-template-columns: 1fr 340px;
-      margin: 0 auto;
-      max-width: 1080px;
-      padding: 0 3rem;
-    }
-    .portrait-block { position: sticky; top: 7rem; }
-    .portrait-frame {
-      border: 1px solid var(--border);
-      margin-bottom: 1.8rem;
-      overflow: hidden;
-    }
-    .portrait-frame img { display: block; width: 100%; filter: saturate(.75); }
-    .portrait-creds {
-      color: var(--muted);
-      font-size: 0.8rem;
-      line-height: 2;
-    }
-    .portrait-creds strong { color: var(--text); font-weight: 500; }
-    .portrait-creds em { font-style: italic; color: var(--muted); }
-
-    .about-body-section {
-      border-top: 1px solid var(--border2);
-      padding: 3rem 0;
-    }
-    .about-body-section:first-child { border-top: 0; padding-top: 0; }
-    .about-section-label {
-      color: var(--gold);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      margin-bottom: 1.4rem;
-      text-transform: uppercase;
-    }
-
-    /* Credential tags — replaces generic stat row */
-    .cred-list {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .cred-tag {
-      border: 1px solid var(--border);
-      border-radius: 1px;
-      color: var(--muted);
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      padding: 0.4rem 0.85rem;
-    }
-
-    @media (max-width: 900px) {
-      .about-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
-      .portrait-block { position: static; }
-      /* Portrait above copy on mobile */
-      .portrait-block { order: -1; max-width: 280px; }
-    }
+    .about-layout { align-items:start; display:grid; gap:6rem; grid-template-columns:1fr 360px; margin:0 auto; max-width:1080px; padding:0 3rem; }
+    .portrait-block { position:sticky; top:7rem; }
+    .portrait-frame { border:1px solid var(--border); margin-bottom:1.5rem; overflow:hidden; }
+    .portrait-frame img { display:block; width:100%; }
+    .portrait-creds { color:var(--muted); font-size:.78rem; line-height:1.9; }
+    .about-body-section { border-top:1px solid var(--border2); padding:2.8rem 0; }
+    .about-body-section:first-child { border-top:0; padding-top:0; }
+    .about-section-label { color:var(--subtle); font-size:.65rem; letter-spacing:.2em; margin-bottom:1.2rem; text-transform:uppercase; }
+    .stats-row { border-top:1px solid var(--border2); display:grid; gap:1.5rem; grid-template-columns:repeat(3,1fr); margin-top:2rem; padding-top:2rem; }
+    .stat-val { color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; line-height:1; }
+    .stat-label { color:var(--muted); font-size:.66rem; letter-spacing:.1em; margin-top:.35rem; text-transform:uppercase; }
+    @media(max-width:900px){.about-layout{grid-template-columns:1fr;gap:3rem;padding:0 1.5rem}.portrait-block{position:static}.stats-row{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
   <main>
-
-    <!-- PAGE HERO -->
-    <header class="page-hero">
-      <div class="container">
-        <p class="eyebrow mb-sm">About</p>
-        <h1 class="display display-xl" style="max-width:760px;">Judgment improves when it is examined.</h1>
-        <p class="lead mt-md" style="max-width:640px;">Feras Banna works where leadership, human behavior, and consequential decisions meet — helping organizations and individuals reason more carefully before they conclude.</p>
-      </div>
-    </header>
-
-    <!-- MAIN ABOUT SECTION -->
+    <header class="page-hero"><div class="container"><p class="eyebrow mb-sm">About</p><h1 class="display display-xl" style="max-width:760px;">The person behind Enable My Growth.</h1><p class="lead mt-md" style="max-width:670px;">Feras Banna works where leadership, human behavior, and consequential decisions meet.</p></div></header>
     <section>
       <div class="about-layout">
-
-        <!-- LEFT: BODY COPY -->
         <div>
           <div class="about-body-section">
             <div class="about-section-label">The work</div>
-            <p>For more than two decades, I have supported leaders, teams, and organizations across the Middle East and beyond. The settings have varied — executive assessment, leadership development, organizational effectiveness, talent strategy, facilitated dialogue, and advisory work — but one question keeps returning:</p>
-            <p class="lead" style="margin: 1.5rem 0;">What conditions are shaping the judgment we are seeing here?</p>
+            <p>For more than two decades, I have supported leaders, teams, and organizations across the Middle East and beyond. The settings have varied—executive assessment, leadership development, organizational effectiveness, talent strategy, facilitated dialogue, and advisory work—but one question keeps returning:</p>
+            <p class="lead">What conditions are shaping the judgment we are seeing here?</p>
             <p>That question became the foundation of Enable My Growth: a founder-led philosophy and practice for examining context, evidence, assumptions, and conditions before reaching consequential conclusions.</p>
-            <div class="cred-list">
-              <span class="cred-tag">20+ years</span>
-              <span class="cred-tag">Leadership advisory</span>
-              <span class="cred-tag">Executive assessment</span>
-              <span class="cred-tag">Certified Hogan assessor</span>
-              <span class="cred-tag">GCC &amp; MENA region</span>
-              <span class="cred-tag">Global reach</span>
-            </div>
+            <div class="stats-row"><div><div class="stat-val">20+</div><div class="stat-label">Years' experience</div></div><div><div class="stat-val">1000+</div><div class="stat-label">Leaders developed</div></div><div><div class="stat-val">20+</div><div class="stat-label">Countries served</div></div></div>
           </div>
-
           <div class="about-body-section">
             <div class="about-section-label">Perspective</div>
-            <div class="quote-panel">
-              <blockquote>Most explanations arrive too quickly.</blockquote>
-            </div>
+            <div class="quote-panel"><blockquote>Most explanations arrive too quickly.</blockquote></div>
             <p class="mt-md">Organizations explain performance through personality. Leaders explain hesitation through motivation. Teams explain disagreement through resistance. These explanations may contain truth, yet they can also close inquiry before the conditions have been examined.</p>
-            <p>My role is to create enough structure and space for a better question to emerge — and then help the people responsible make a decision they can genuinely own.</p>
+            <p>My role is to create enough structure and space for a better question to emerge—and then help the people responsible make a decision they can genuinely own.</p>
           </div>
-
           <div class="about-body-section">
             <div class="about-section-label">How I work</div>
-            <p>The form follows the context. I may work as an advisor, assessor, facilitator, development partner, or speaker — and often combine those modes deliberately. What remains constant is a respect for professional judgment, disciplined inquiry, and the human responsibility at the center of every consequential choice.</p>
-            <p>I am currently completing <em>The Inner Conversation</em> — a book about the assumptions leaders carry and rarely examine, and what becomes possible when those assumptions are brought into the open.</p>
+            <p>The form follows the context. I may work as an advisor, assessor, facilitator, development partner, or speaker—and often combine those modes deliberately. What remains constant is a respect for professional judgment, disciplined inquiry, and the human responsibility at the center of every consequential choice.</p>
           </div>
-
-          <div class="about-body-section" style="padding-bottom:0;">
-            <a href="work.html" class="btn btn-outline">How the work takes shape</a>
-            <a href="contact.html" class="btn btn-gold" style="margin-left:1rem;">Begin a conversation</a>
-          </div>
+          <div class="about-body-section"><a href="work.html" class="btn btn-outline">How the work takes shape</a><a href="contact.html" class="btn btn-gold" style="margin-left:1rem;">Begin a conversation</a></div>
         </div>
-
-        <!-- RIGHT: PORTRAIT -->
-        <aside class="portrait-block">
-          <div class="portrait-frame">
-            <img src="feras-banna.jpg" alt="Feras Banna, founder of Enable My Growth" />
-          </div>
-          <div class="portrait-creds">
-            <strong>Feras Banna</strong><br />
-            Founder, Enable My Growth<br />
-            Leadership advisor &amp; facilitator<br />
-            Certified Hogan assessor<br />
-            Author, <em>The Inner Conversation</em> (forthcoming)<br />
-            Based in Beirut · Working globally
-          </div>
-        </aside>
-
+        <aside class="portrait-block"><div class="portrait-frame"><img src="feras-banna.jpg" alt="Feras Banna" /></div><div class="portrait-creds"><strong>Feras Banna</strong><br/>Founder, Enable My Growth<br/>Leadership advisor &amp; facilitator<br/>Certified Hogan assessor<br/>Author of <em>The Inner Conversation</em> (forthcoming)<br/>Based in the Middle East, working globally</div></aside>
       </div>
     </section>
-
   </main>
-  <script src="analytics.js"></script>
-  <script src="nav.js"></script>
+  <script src="analytics.js"></script><script src="nav.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@ This is a static website and does not require a build step. Upload the contents 
 - `philosophy.html` — the broader philosophy and five commitments
 - `ideas.html` — insights and existing essays
 - `work.html` — founder-led engagement model
+- `training.html` — workshops, facilitation, and capability-statement access
 - `about.html` — Feras Banna and the origin of the work
 - `contact.html` — contextual enquiry form
 
@@ -20,8 +21,8 @@ Before launch, submit one test enquiry and verify that the Formspree confirmatio
 
 ## Identity assets
 
-- `emg-mobius-hero.png` — primary website hero image
-- `emg-symbol.png` — navigation and footer symbol
+- `emg-mobius-hero.png` — approved dimensional Möbius used in the navigation, footer, and social preview
+- `enable-my-growth-capability-statement.pdf` — current downloadable capability statement
 - `favicon.svg`, `favicon.ico`, `favicon-32.png` — browser icons
 
-Legacy service pages remain in the package for continuity, but they have been intentionally removed from the primary navigation. The public journey now begins with the philosophy and the visitor's context rather than a service catalogue.
+The homepage hero is intentionally copy-led and does not repeat the Möbius artwork. Workshops remain directly accessible from the primary navigation.

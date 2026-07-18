@@ -18,38 +18,23 @@
   <style>
 
     /* ═══════════════════════════════════════════
-       HERO — Möbius as full-bleed background image
-       Copy overlays the left half
-       No img tag = no visible rectangle
+       HERO — restrained, copy-led composition
     ═══════════════════════════════════════════ */
     #hero {
       min-height: 100vh;
       position: relative;
       display: flex;
       align-items: center;
-      /* Möbius as background — fills the whole section seamlessly */
       background-color: #000004;
-      background-image: url('emg-mobius-hero.png');
-      background-size: cover;
-      background-position: 62% center;
-      background-repeat: no-repeat;
       overflow: hidden;
     }
 
-    /* Gradient overlay — makes left side readable, lets right side show the sculpture */
+    /* Quiet depth without repeating the brand mark. */
     #hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      /* Strong dark gradient on left for copy legibility, fades to transparent on right */
-      background: linear-gradient(
-        to right,
-        #000004 0%,
-        #000004 32%,
-        rgba(0,0,4,0.85) 48%,
-        rgba(0,0,4,0.3) 65%,
-        transparent 80%
-      );
+      background: radial-gradient(ellipse 58% 72% at 78% 45%, rgba(201,169,110,.07), transparent 70%);
       pointer-events: none;
       z-index: 1;
     }
@@ -65,7 +50,7 @@
     }
 
     .hero-copy-inner {
-      max-width: 580px;
+      max-width: 760px;
     }
 
     .hero-pillars {
@@ -93,7 +78,7 @@
       line-height: 1.85;
       color: var(--muted);
       margin-bottom: 2.5rem;
-      max-width: 460px;
+      max-width: 580px;
     }
 
     .hero-actions {
@@ -143,17 +128,8 @@
        RESPONSIVE
     ═══════════════════════════════════════════ */
     @media (max-width: 900px) {
-      #hero {
-        /* On mobile: sculpture centred, stronger overlay for readability */
-        background-position: 60% center;
-      }
       #hero::before {
-        background: linear-gradient(
-          to bottom,
-          rgba(0,0,4,0.92) 0%,
-          rgba(0,0,4,0.85) 60%,
-          rgba(0,0,4,0.7) 100%
-        );
+        background: radial-gradient(ellipse 90% 65% at 50% 35%, rgba(201,169,110,.06), transparent 72%);
       }
       .hero-copy-wrap { padding: 8rem 1.5rem 4rem; }
       .hero-copy-inner { max-width: 100%; }

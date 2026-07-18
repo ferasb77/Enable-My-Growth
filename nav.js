@@ -13,19 +13,8 @@
   const current      = location.pathname.split('/').pop() || 'index.html';
   const insightPages = current === 'ideas.html' || current.startsWith('essay-');
 
-  /* Official inline SVG symbol — viewBox 800 800, scaled to 34×34 in nav */
-  const symbolSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"
-      width="34" height="34" aria-hidden="true" focusable="false"
-      fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M400 95 C455 95 690 300 690 375 C690 460 590 660 505 690 C420 720 155 610 130 525 C105 440 315 95 400 95 Z" stroke="#C9A96E" stroke-width="122"/>
-    <path d="M400 95 C455 95 690 300 690 375 C690 460 590 660 505 690 C420 720 155 610 130 525 C105 440 315 95 400 95 Z" stroke="#EDEAE3" stroke-width="114"/>
-    <path d="M400 95 C455 95 690 300 690 375 C690 460 590 660 505 690 C420 720 155 610 130 525 C105 440 315 95 400 95 Z" stroke="#111118" stroke-width="102"/>
-    <path d="M684 404 C675 510 595 648 505 690" stroke="#EDEAE3" stroke-width="114"/>
-    <path d="M684 404 C675 510 595 648 505 690" stroke="#C9A96E" stroke-width="102"/>
-    <path d="M505 690 C420 720 240 650 165 575" stroke="#C9A96E" stroke-width="122"/>
-    <path d="M505 690 C420 720 240 650 165 575" stroke="#EDEAE3" stroke-width="114"/>
-    <path d="M505 690 C420 720 240 650 165 575" stroke="#111118" stroke-width="102"/>
-  </svg>`;
+  /* Approved dimensional Möbius, cropped responsively from the brand hero asset. */
+  const symbolSVG = `<span aria-hidden="true" style="display:block;width:48px;height:42px;flex:0 0 48px;background:url('emg-mobius-hero.png') right center / auto 42px no-repeat;"></span>`;
 
   const navHTML = `
   <nav id="site-nav" aria-label="Primary navigation">
@@ -51,19 +40,8 @@
     </div>
   </nav>`;
 
-  /* Footer — official lockup: symbol + "Enable My Growth" with gold "Growth" */
-  const footerSymbol = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"
-      width="44" height="44" aria-hidden="true" focusable="false"
-      fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M400 95 C455 95 690 300 690 375 C690 460 590 660 505 690 C420 720 155 610 130 525 C105 440 315 95 400 95 Z" stroke="#C9A96E" stroke-width="122"/>
-    <path d="M400 95 C455 95 690 300 690 375 C690 460 590 660 505 690 C420 720 155 610 130 525 C105 440 315 95 400 95 Z" stroke="#EDEAE3" stroke-width="114"/>
-    <path d="M400 95 C455 95 690 300 690 375 C690 460 590 660 505 690 C420 720 155 610 130 525 C105 440 315 95 400 95 Z" stroke="#111118" stroke-width="102"/>
-    <path d="M684 404 C675 510 595 648 505 690" stroke="#EDEAE3" stroke-width="114"/>
-    <path d="M684 404 C675 510 595 648 505 690" stroke="#C9A96E" stroke-width="102"/>
-    <path d="M505 690 C420 720 240 650 165 575" stroke="#C9A96E" stroke-width="122"/>
-    <path d="M505 690 C420 720 240 650 165 575" stroke="#EDEAE3" stroke-width="114"/>
-    <path d="M505 690 C420 720 240 650 165 575" stroke="#111118" stroke-width="102"/>
-  </svg>`;
+  /* Use the same approved dimensional mark in the footer lockup. */
+  const footerSymbol = `<span aria-hidden="true" style="display:block;width:54px;height:50px;flex:0 0 54px;background:url('emg-mobius-hero.png') right center / auto 50px no-repeat;"></span>`;
 
   const footerHTML = `
   <footer>
