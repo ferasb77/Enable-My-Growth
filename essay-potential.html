@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Potential and Leadership Performance — Feras Banna</title>  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .essay-wrap { max-width:1080px; margin:0 auto; padding:0 3rem; display:grid; grid-template-columns:1fr 260px; gap:6rem; align-items:start; }
+    .essay-body { max-width:640px; }
+    .essay-meta { display:flex; align-items:center; gap:1.5rem; margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border2); }
+    .essay-meta-tag { font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold-dim); padding:0.25rem 0.7rem; border-radius:2px; }
+    .essay-meta-info { font-size:0.75rem; color:var(--muted); letter-spacing:0.06em; }
+    .essay-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.6rem); font-weight:300; line-height:1.1; color:var(--text); margin-bottom:2.5rem; }
+    .essay-prose p { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; color:var(--text); line-height:1.85; margin-bottom:1.4rem; }
+    .essay-prose p.standalone { font-style:italic; color:var(--gold); font-size:1.1rem; margin:2rem 0; text-align:center; }
+    .essay-prose p.condition { padding-left:1.5rem; border-left:2px solid var(--gold-dim); color:var(--muted); font-size:1.1rem; margin-bottom:0.6rem; }
+    .essay-prose p.litany { padding-left:1.5rem; font-style:italic; color:var(--muted); font-size:1.05rem; margin-bottom:0.5rem; line-height:1.5; }
+    .essay-closing { margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--border2); }
+    .essay-closing p { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.8; margin-bottom:1.2rem; }
+    .essay-sidebar { position:sticky; top:6rem; display:flex; flex-direction:column; gap:2rem; }
+    .sidebar-card { background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:1.6rem 1.4rem; }
+    .sidebar-card-label { font-size:0.62rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+    .sidebar-card-title { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:400; color:var(--text); line-height:1.4; margin-bottom:0.5rem; }
+    .sidebar-card p { font-size:0.8rem; line-height:1.7; }
+    .sidebar-nav-list { list-style:none; display:flex; flex-direction:column; gap:0; }
+    .sidebar-nav-list li { border-bottom:1px solid var(--border2); }
+    .sidebar-nav-list li:first-child { border-top:1px solid var(--border2); }
+    .sidebar-nav-list a { display:block; font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-style:italic; color:var(--muted); text-decoration:none; padding:0.65rem 0; transition:color 0.2s; line-height:1.35; }
+    .sidebar-nav-list a:hover { color:var(--gold); }
+    .sidebar-nav-list a.current { color:var(--text); font-style:normal; }
+    .essay-footer { max-width:1080px; margin:0 auto; padding:3rem 3rem 0; border-top:1px solid var(--border2); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .essay-footer-author { display:flex; align-items:center; gap:1rem; }
+    .author-initial { width:42px; height:42px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--gold); flex-shrink:0; }
+    .author-name-block .name { font-size:0.88rem; color:var(--text); font-weight:500; }
+    .author-name-block .role { font-size:0.72rem; color:var(--muted); margin-top:0.15rem; }
+    @media (max-width:900px) { .essay-wrap { grid-template-columns:1fr; gap:3rem; padding:0 1.5rem; } .essay-sidebar { position:static; } .essay-footer { padding:2rem 1.5rem 0; flex-direction:column; align-items:flex-start; } }
+
+  /* Reading progress bar */
+  #reading-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--gold);
+    z-index: 500;
+    transition: width 0.1s linear;
+  }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://enablemygrowth.com/essay-potential.html" />
+
+  <!-- SEO: Meta description -->
+  <meta name="description" content="Potential and performance are not the same question. Yet organizations treat them as interchangeable. An essay on the conditions that separate them. By Feras Banna." />
+  <meta name="author" content="Feras Banna" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Leadership Potential and Leadership Performance — Feras Banna" />
+  <meta property="og:description" content="Potential and performance are not the same question. Yet organizations treat them as interchangeable. An essay on the conditions that separate them. By Feras Banna." />
+  <meta property="og:url" content="https://enablemygrowth.com/essay-potential.html" />
+  <meta property="og:site_name" content="Feras Banna — EnableMyGrowth" />
+  <meta property="og:image" content="https://enablemygrowth.com/feras-banna.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- SEO: Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leadership Potential and Leadership Performance — Feras Banna" />
+  <meta name="twitter:description" content="Potential and performance are not the same question. Yet organizations treat them as interchangeable. An essay on the conditions that separate them. By Feras Banna." />
+  <meta name="twitter:image" content="https://enablemygrowth.com/feras-banna.jpg" />
+
+  <!-- SEO: Favicon & Web App Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Leadership Potential and Leadership Performance",
+  "description": "Potential and performance are not the same question. Yet organizations treat them as interchangeable. An essay on the conditions that separate them. By Feras Banna.",
+  "url": "https://enablemygrowth.com/essay-potential.html",
+  "author": {
+    "@type": "Person",
+    "name": "Feras Banna",
+    "url": "https://enablemygrowth.com"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Feras Banna"
+  },
+  "mainEntityOfPage": "https://enablemygrowth.com/essay-potential.html"
+}
+  </script>
+</head>
+<body>
+  <div id="reading-progress"></div>
+  <div class="page-hero" style="padding-bottom:3rem;">
+    <div class="container">
+      <a href="ideas.html#context" style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); text-decoration:none;">← Context Before Explanation</a>
+    </div>
+  </div>
+
+  <section style="padding-top:2rem;">
+    <div class="essay-wrap">
+      <article class="essay-body">
+        <div class="essay-meta">
+          <span class="essay-meta-tag">Context Before Explanation</span>
+          <span class="essay-meta-info">Essay · Feras Banna</span>
+        </div>
+        <h1 class="essay-title">Leadership Potential and Leadership Performance</h1>
+        <div class="essay-prose">
+
+          <p>Organizations routinely invest substantial resources identifying leadership potential. Assessment centers are built around it. Succession plans depend upon it. Talent reviews revolve around it. Development programs are designed to accelerate it.</p>
+          <p>The logic is difficult to challenge. Few organizational decisions carry consequences as significant as selecting future leaders.</p>
+          <p>Yet hidden beneath many talent discussions is an assumption that deserves closer examination — the assumption that leadership potential and leadership performance are closely related.</p>
+          <p>Sometimes they are. Sometimes they are separated by years. Sometimes by opportunity. Sometimes by circumstance. And occasionally by conditions that no assessment process is measuring.</p>
+          <p>This becomes easier to understand when the two concepts are treated as answers to different questions.</p>
+          <p class="condition">Leadership potential concerns what may become possible.</p>
+          <p class="condition">Leadership performance concerns what is currently occurring.</p>
+          <p class="condition">Potential looks forward. Performance looks outward.</p>
+          <p class="condition">Potential concerns capacity. Performance concerns expression.</p>
+          <p>The distinction appears straightforward. In practice, organizations frequently blur it. A high-performing employee is identified as future leadership material. A high-potential employee is expected to become an effective leader. The transition appears logical.</p>
+          <p>Yet experience repeatedly demonstrates that the path between potential and performance is neither direct nor guaranteed.</p>
+          <p>Many organizations have encountered technically exceptional individuals who struggled once promoted into leadership positions. The explanation often focuses on the individual: they were not ready, they lacked leadership skills, they could not make the transition. Sometimes these explanations are accurate. Sometimes they overlook something important.</p>
+          <p>The role changed. The conditions changed. The requirements changed. The individual remained largely the same.</p>
+          <p>Success in one environment does not automatically translate into success in another. A technical expert may thrive in a role where expertise drives credibility. The same individual may struggle in a role where influence, ambiguity, stakeholder management, and delegation become more important than technical knowledge. The performance changes. Not necessarily because capability disappeared. But because different capabilities became relevant.</p>
+          <p>The reverse can also occur. Some individuals possess leadership capabilities that remain largely invisible for years. Their role provides limited opportunities to exercise them. Their manager restricts autonomy. Their environment rewards compliance rather than initiative. Their potential exists. The conditions required to reveal it do not. As a result, performance may underestimate future capability just as easily as it can overestimate it.</p>
+          <p>This creates a challenge for talent systems. Organizations naturally prefer certainty. Potential promises certainty. Performance appears to provide evidence. Together they create an appealing narrative — the future leader has been identified, the path appears visible, the uncertainty seems reduced.</p>
+          <p>Reality tends to be less cooperative.</p>
+          <p class="standalone">Potential is not destiny. Nor is performance.<br/>Both are heavily influenced by context.</p>
+          <p>A person may possess significant leadership potential and still fail in a poorly matched environment. A person may demonstrate strong leadership performance while operating within conditions uniquely suited to their strengths. Neither observation invalidates the individual. Neither invalidates the assessment. Both simply remind us that leadership effectiveness emerges through interaction — between strengths and demands, between capability and circumstance, between the individual and the environment in which they operate.</p>
+          <p>This is one reason experienced assessors often become cautious when discussing potential. Not because potential lacks value. Because potential is easy to misunderstand. Potential is frequently treated as a prediction. It is more accurately understood as a possibility — a possibility supported by evidence, not a future guaranteed by it.</p>
+          <p>The distinction matters because possibilities require conditions. Conditions create opportunities. Conditions expose capabilities. Conditions allow strengths to become visible. Without those conditions, even substantial potential may remain largely unrealized.</p>
+          <p>Talent discussions often focus heavily on identifying potential. Far less attention is devoted to understanding what allows potential to become performance. Yet that transition is where most leadership success or failure ultimately occurs.</p>
+          <p>The challenge is not simply finding capable people. Organizations do that every day. The greater challenge is understanding the conditions under which capability becomes contribution.</p>
+
+        </div>
+        <div class="essay-closing">
+          <p>Potential concerns what a person may be capable of becoming.</p>
+          <p>Performance reveals what the environment currently allows that capability to produce.</p>
+          <p>The two are connected. They are not the same. Much of leadership development begins when organizations stop treating them as though they are.</p>
+        </div>
+      </article>
+
+      <aside class="essay-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Part of</div>
+          <div class="sidebar-card-title">Context Before Explanation</div>
+          <p>We routinely explain behavior through the person before examining the conditions that made the behavior reasonable.</p>
+          <a href="ideas.html#context" class="btn-text btn" style="margin-top:1rem; display:inline-block;">Explore the idea</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Essays in this series</div>
+          <ul class="sidebar-nav-list">
+            <li><a href="essay-context.html">Context Before Explanation</a></li>
+            <li><a href="essay-scores.html">Why Assessment Scores Are Not Explanations</a></li>
+            <li><a href="essay-potential.html" class="current">Leadership Potential and Leadership Performance</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Newsletter</div>
+          <p style="margin-bottom:1rem;">Essays like this, delivered occasionally.</p>
+          <form onsubmit="handleCapture(event)" style="display:flex; flex-direction:column; gap:0.6rem;">
+            <input type="email" id="essay-email" placeholder="Your email" style="background:var(--bg); border:1px solid var(--border); border-radius:2px; padding:0.65rem 0.9rem; font-family:Inter,sans-serif; font-size:0.82rem; color:var(--text); outline:none;" />
+            <button type="submit" style="background:var(--gold); border:none; border-radius:2px; padding:0.65rem; font-family:Inter,sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); cursor:pointer;">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section style="padding-top:3rem; padding-bottom:5rem;">
+    <div class="essay-footer">
+      <div class="essay-footer-author">
+        <div class="author-initial">F</div>
+        <div class="author-name-block">
+          <div class="name">Feras Banna</div>
+          <div class="role">Certified Hogan Assessor · Leadership Consultant · Author</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="ideas.html" class="btn btn-outline" style="font-size:0.72rem; padding:0.65rem 1.4rem;">All Ideas</a>
+        <a href="contact.html" class="btn btn-gold" style="font-size:0.72rem; padding:0.65rem 1.4rem;">Work With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    
+  </script>
+  <script>
+  function handleCapture(e) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('input[type="email"]').value.trim();
+    if (!email) return;
+    const btn = form.querySelector('button');
+    btn.textContent = 'Subscribing...';
+    btn.disabled = true;
+    fetch('https://formspree.io/f/xnjkjvkz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: email, _subject: 'New newsletter subscriber — EnableMyGrowth.com', type: 'newsletter' })
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.ok) {
+        form.innerHTML = '<p style="font-size:0.82rem; color:var(--gold); font-family:Inter,sans-serif;">Thank you. You\'re on the list.</p>';
+      } else {
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    });
+  }
+  function handleNotify(e) { handleCapture(e); }
+  </script>
+  <script>
+  // Reading progress bar
+  (function() {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', function() {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct  = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+  })();
+  </script>
+
+  <section style="padding:3rem 0; border-top:1px solid var(--border2);">
+    <div class="container-md">
+      <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Continue Reading</p>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem;">
+        <li><a href="essay-context.html" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--text); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">Context Before Explanation</a></li><li><a href="essay-scores.html" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--text); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">Why Assessment Scores Are Not Explanations</a></li>
+      </ul>
+    </div>
+  </section>
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

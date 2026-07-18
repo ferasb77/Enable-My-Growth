@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enable My Growth — Perspective changes what becomes possible.</title>
+  <meta name="description" content="Enable My Growth helps leaders and organizational decision-makers examine context, evidence, assumptions, and conditions before reaching consequential conclusions." />
+  <meta property="og:title" content="Enable My Growth — Perspective changes what becomes possible." />
+  <meta property="og:description" content="Structured thinking for leaders who want to examine context, evidence, and assumptions before reaching consequential conclusions." />
+  <meta property="og:image" content="https://enablemygrowth.com/emg-mobius-hero.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 8rem 0 5rem;
+      position: relative;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 72% 46%, rgba(201,169,110,.07), transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.88fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      width: 100%;
+      position: relative;
+    }
+    /* Blueprint-locked eyebrow: PERSPECTIVE · JUDGMENT · GROWTH */
+    .hero-pillars {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+    }
+    .hero-pillars span { color: var(--gold-dim); margin: 0 0.6em; }
+    /* Blueprint-locked H1 */
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.4rem, 6.5vw, 6.4rem);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 0.96;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+    .hero-copy {
+      font-size: 1rem;
+      line-height: 1.85;
+      max-width: 540px;
+      color: var(--muted);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
+
+    /* Möbius — identity guide composition: form emerges from right, copy space left */
+    .hero-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-mark img {
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      display: block;
+      /* Subtle depth — identity guide allows drop shadows on the sculpture */
+      filter: drop-shadow(0 32px 64px rgba(0,0,0,.55));
+    }
+
+    /* ── TENSION SECTION (blueprint §01) ── */
+    .statement { max-width: 800px; }
+
+    /* ── DOCTRINE (blueprint §02) ── */
+    .doctrine-grid { grid-template-columns: repeat(4, 1fr); }
+
+    /* ── THREE MOVEMENTS (blueprint §03) — open, differentiated ── */
+    .movement-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .movement-card { border-top: 1px solid var(--border); padding-top: 2rem; }
+    .movement-card .rule { width: 28px; height: 1px; background: var(--gold); margin-bottom: 1.6rem; opacity: .7; }
+    .movement-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .movement-card p { font-size: 0.88rem; }
+
+    /* ── FOUNDER (blueprint §06) ── */
+    .founder-photo { border: 1px solid var(--border); filter: saturate(.75); width: 100%; display: block; }
+
+    /* ── FEATURED INSIGHT (blueprint §04) ── */
+    .insight-link {
+      color: var(--text);
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      font-style: italic;
+      line-height: 1.2;
+      margin: 1.4rem 0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .insight-link:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero { min-height: auto; padding: 7rem 0 4rem; }
+      .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2.5rem; }
+      .hero-mark { order: -1; }
+      .hero-mark img { max-width: 340px; }
+      .hero-headline { font-size: clamp(3rem, 14vw, 4.5rem); }
+      .movement-cards { grid-template-columns: 1fr; }
+      .doctrine-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 560px) {
+      .doctrine-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- 01 / HERO — blueprint-locked composition and copy -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div>
+          <!-- LOCKED eyebrow: PERSPECTIVE · JUDGMENT · GROWTH -->
+          <p class="hero-pillars">Perspective <span>·</span> Judgment <span>·</span> Growth</p>
+          <!-- LOCKED H1 -->
+          <h1 class="hero-headline">Perspective changes what becomes possible.</h1>
+          <!-- LOCKED supporting copy -->
+          <p class="hero-copy">Structured thinking for leaders and organizational decision-makers who want to examine context, evidence, and assumptions before reaching consequential conclusions.</p>
+          <div class="hero-actions">
+            <!-- LOCKED CTAs: "Explore the thinking" primary, "Begin a conversation" secondary -->
+            <a href="philosophy.html" class="btn btn-gold">Explore the thinking</a>
+            <a href="contact.html" class="btn btn-outline">Begin a conversation</a>
+          </div>
+        </div>
+        <div class="hero-mark">
+          <!-- Official identity package hero — 3D Möbius sculpture, preferred composition -->
+          <img
+            src="emg-mobius-hero.png"
+            alt="The Enable My Growth Möbius — one continuous surface carrying Enable, My, and Growth. A continuous act of becoming."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 / TENSION — "Create recognition" (blueprint §01) -->
+    <section>
+      <div class="container statement">
+        <p class="eyebrow mb-md">The recurring pattern</p>
+        <h2 class="display display-lg">The patterns that made a leader effective can become the limits of their next chapter.</h2>
+        <p class="lead mt-md">Capability is not the constraint. The constraint is how the situation is being seen — which assumptions are invisible, which conditions are unexamined, and which conclusions are being reached before the evidence justifies them.</p>
+        <p>Enable My Growth exists to improve that quality of judgment. Not by replacing professional experience with a process, but by giving it enough structure to distinguish observation from interpretation, evidence from confidence, and conviction from pressure.</p>
+      </div>
+    </section>
+
+    <!-- 03 / PHILOSOPHY — "State the doctrine" (blueprint §02) -->
+    <section style="background:var(--surface);">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mb-sm">The doctrine</p>
+          <h2 class="display display-lg">A more disciplined route to judgment</h2>
+        </div>
+        <div class="doctrine-grid" style="display:grid; gap:1px; background:var(--border2);">
+          <article class="principle-card">
+            <div class="number">01</div>
+            <h3>Context before interpretation</h3>
+            <p>Understand the setting that makes a behavior, signal, or choice meaningful before deciding what it means.</p>
+          </article>
+          <article class="principle-card">
+            <div class="number">02</div>
+            <h3>Evidence before confidence</h3>
+            <p>Separate what is observed from what is inferred. Keep confidence and certainty distinguishable.</p>
+          </article>
+          <article class="principle-card">
+            <div class="number">03</div>
+            <h3>Conditions before conviction</h3>
+            <p>Ask what must be true before commitment becomes responsible rather than premature.</p>
+          </article>
+          <article class="principle-card">
+            <div class="number">04</div>
+            <h3>Human judgment remains central</h3>
+            <p>Use structure and tools to strengthen judgment — not to replace the person accountable for it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / THREE MOVEMENTS — "Make the method memorable" (blueprint §03) -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mb-sm">Three movements</p>
+          <h2 class="display display-lg">See clearly. Decide deliberately. Grow with intention.</h2>
+        </div>
+        <div class="movement-cards">
+          <div class="movement-card">
+            <div class="rule"></div>
+            <h3>See clearly</h3>
+            <p>Widen the frame, question the default explanation, and distinguish signal from story before settling on a meaning.</p>
+          </div>
+          <div class="movement-card">
+            <div class="rule"></div>
+            <h3>Decide deliberately</h3>
+            <p>Give evidence, alternatives, uncertainty, and consequences a visible place in the reasoning — before the pressure to conclude.</p>
+          </div>
+          <div class="movement-card">
+            <div class="rule"></div>
+            <h3>Grow with intention</h3>
+            <p>Turn decisions into learning by examining not only outcomes, but the quality of judgment that produced them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / FEATURED INSIGHT — "Demonstrate authority" (blueprint §04) -->
+    <section>
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">Featured insight</p>
+          <div class="gold-rule"></div>
+        </div>
+        <div>
+          <a class="insight-link" href="essay-conditions.html">The Conditions We Forget to Examine</a>
+          <p>When a decision or behavior disappoints us, we often locate the failure in the person. A wider view asks which conditions made that outcome understandable — and what must change before a different outcome becomes likely.</p>
+          <a href="ideas.html" class="btn btn-text mt-md">Explore all insights</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / FOUNDER — "Establish human trust" (blueprint §06) -->
+    <section style="background:var(--surface);">
+      <div class="container split-feature">
+        <div>
+          <img class="founder-photo" src="feras-banna.jpg" alt="Feras Banna, founder of Enable My Growth" />
+        </div>
+        <div>
+          <p class="eyebrow mb-md">Founded and led by Feras Banna</p>
+          <h2 class="display display-lg mb-md">A philosophy made practical through founder-led work</h2>
+          <p class="lead">The work begins with a real situation — not a predetermined service.</p>
+          <p>Feras works with senior leaders and organizational decision-makers to improve the quality of judgment surrounding consequential choices. The method may involve assessment, facilitated dialogue, advisory work, development, or a deliberately combined approach. The context determines the form.</p>
+          <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:2.5rem;">
+            <a href="about.html" class="btn btn-outline">About Feras</a>
+            <a href="work.html" class="btn btn-text">How the work takes shape</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / CTA — "Create a deliberate next step" (blueprint §08) -->
+    <section class="cta-band">
+      <div class="container-sm">
+        <p class="eyebrow mb-md">Begin with the situation</p>
+        <h2 class="display display-lg mb-md">What conclusion are you being asked to reach?</h2>
+        <p>Bring the decision, the tension, or the context. We can determine the useful form of work from there.</p>
+        <a href="contact.html" class="btn btn-gold mt-lg">Begin a conversation</a>
+      </div>
+    </section>
+
+  </main>
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

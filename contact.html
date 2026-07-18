@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Begin a Conversation — Enable My Growth</title>
+  <meta name="description" content="Bring the decision, tension, or leadership situation. Begin a contextual conversation with Feras Banna." />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Layout: form takes left column (wider), context sits right */
+    .contact-layout {
+      align-items: start;
+      display: grid;
+      gap: 6rem;
+      grid-template-columns: 1fr 380px;
+      margin: 0 auto;
+      max-width: 1080px;
+      padding: 0 3rem;
+    }
+
+    /* Context panel */
+    .contact-aside { position: sticky; top: 7rem; }
+    .context-item {
+      border-bottom: 1px solid var(--border2);
+      padding: 1.5rem 0;
+    }
+    .context-item:first-of-type { border-top: 1px solid var(--border2); }
+    .context-label {
+      color: var(--gold);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .context-val {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    /* Form refinements */
+    .form-section-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 1rem;
+      margin-top: 1.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--border2);
+    }
+    .form-section-label:first-of-type { margin-top: 0; border-top: none; }
+
+    .form-submit-note {
+      font-size: 0.72rem;
+      text-align: center;
+      color: var(--subtle);
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+      .contact-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- PAGE HERO -->
+    <header class="page-hero">
+      <div class="container">
+        <p class="eyebrow mb-sm">Begin a conversation</p>
+        <h1 class="display display-xl" style="max-width:780px;">What decision or situation are you carrying?</h1>
+        <p class="lead mt-md" style="max-width:620px;">You do not need to diagnose the service. Start with the context and the outcome that matters.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="contact-layout">
+
+        <!-- LEFT: FORM -->
+        <div>
+          <form class="form-grid" action="https://formspree.io/f/xnjkjvkz" method="POST">
+            <input type="hidden" name="_next" value="https://enablemygrowth.com/contact.html?submitted=true" />
+            <input type="hidden" name="_subject" value="New contextual enquiry — Enable My Growth" />
+
+            <div class="form-section-label">About you</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Name</label>
+                <input type="text" id="c-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="form-group">
+                <label for="c-role">Role</label>
+                <input type="text" id="c-role" name="role" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-org">Organization</label>
+                <input type="text" id="c-org" name="organization" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label for="c-email">Email</label>
+                <input type="email" id="c-email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-section-label">The situation</div>
+
+            <div class="form-group">
+              <label for="c-type">This is primarily about</label>
+              <select id="c-type" name="context_type" required>
+                <option value="" disabled selected>Select the closest context</option>
+                <option>A consequential decision</option>
+                <option>A leadership or team situation</option>
+                <option>Individual development or assessment</option>
+                <option>An organizational challenge</option>
+                <option>A workshop or speaking engagement</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="c-question">What question, decision, or situation are you carrying?</label>
+              <textarea id="c-question" name="situation" placeholder="Describe the context, the people involved, and why it matters now." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="c-outcome">What would a useful outcome make possible?</label>
+              <textarea id="c-outcome" name="useful_outcome" placeholder="You do not need a predefined solution — only a sense of what better would mean." required></textarea>
+            </div>
+
+            <div class="form-section-label">Preferences</div>
+
+            <div class="form-group">
+              <label for="c-method">Preferred first contact</label>
+              <select id="c-method" name="preferred_contact">
+                <option>Email</option>
+                <option>Video call</option>
+                <option>Phone call</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width:100%; padding:1rem; margin-top:0.5rem;">Send the context</button>
+            <p class="form-submit-note">Your information is used only to respond to this enquiry.</p>
+
+          </form>
+        </div>
+
+        <!-- RIGHT: ASIDE -->
+        <aside class="contact-aside">
+          <h2 class="display display-sm mb-lg" style="max-width:340px;">A useful first conversation gives the situation enough shape.</h2>
+          <div class="context-item">
+            <div class="context-label">Bring</div>
+            <div class="context-val">A consequential choice, leadership tension, development priority, or organizational question.</div>
+          </div>
+          <div class="context-item">
+            <div class="context-label">We will examine</div>
+            <div class="context-val">What is known, what may be assumed, who is involved, and which conditions matter.</div>
+          </div>
+          <div class="context-item">
+            <div class="context-label">Then decide</div>
+            <div class="context-val">Whether I can be useful — and what the smallest useful form of engagement might be.</div>
+          </div>
+          <div class="context-item">
+            <div class="context-label">Response time</div>
+            <div class="context-val">I read every enquiry personally and aim to respond within two business days.</div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    if (location.search.includes('submitted=true')) {
+      const m = document.createElement('div');
+      m.className = 'submission-toast';
+      m.textContent = 'Thank you. I will be in touch within two business days.';
+      m.style.cssText = 'position:fixed;bottom:2rem;right:2rem;max-width:340px;background:#C9A96E;color:#0A0A0F;padding:1rem 1.5rem;z-index:999;font:500 .82rem Inter,sans-serif;border-radius:2px';
+      document.body.appendChild(m);
+      setTimeout(() => m.remove(), 7000);
+    }
+  </script>
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
