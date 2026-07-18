@@ -34,8 +34,8 @@
     }
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 0.88fr;
-      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
       align-items: center;
       max-width: 1180px;
       margin: 0 auto;
@@ -71,19 +71,22 @@
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
 
-    /* Möbius — identity guide composition: form emerges from right, copy space left */
+    /* Möbius — identity guide: "let the sculpture hold the horizon"
+       The form emerges from darkness — no visible box, no shadow border */
     .hero-mark {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      overflow: visible;
+      /* Allow image to bleed beyond column right edge */
+      margin-right: -3rem;
     }
     .hero-mark img {
-      width: 100%;
-      max-width: 580px;
+      width: 110%;
+      max-width: 660px;
       height: auto;
       display: block;
-      /* Subtle depth — identity guide allows drop shadows on the sculpture */
-      filter: drop-shadow(0 32px 64px rgba(0,0,0,.55));
+      /* No drop-shadow — sculpture emerges from matching dark background */
     }
 
     /* ── TENSION SECTION (blueprint §01) ── */
@@ -132,7 +135,8 @@
       #hero { min-height: auto; padding: 7rem 0 4rem; }
       .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2.5rem; }
       .hero-mark { order: -1; }
-      .hero-mark img { max-width: 340px; }
+      .hero-mark { margin-right: 0; justify-content: center; }
+      .hero-mark img { width: 100%; max-width: 380px; }
       .hero-headline { font-size: clamp(3rem, 14vw, 4.5rem); }
       .movement-cards { grid-template-columns: 1fr; }
       .doctrine-grid { grid-template-columns: 1fr 1fr !important; }
