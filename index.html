@@ -16,94 +16,97 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── HERO ── */
+
+    /* ═══════════════════════════════════════════
+       HERO — Möbius as full-bleed background image
+       Copy overlays the left half
+       No img tag = no visible rectangle
+    ═══════════════════════════════════════════ */
     #hero {
       min-height: 100vh;
+      position: relative;
       display: flex;
       align-items: center;
+      /* Möbius as background — fills the whole section seamlessly */
+      background-color: #000004;
+      background-image: url('emg-mobius-hero.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
       overflow: hidden;
-      padding: 8rem 0 5rem;
-      position: relative;
     }
-    /* Gold glow behind the Möbius */
+
+    /* Gradient overlay — makes left side readable, lets right side show the sculpture */
     #hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 55% 70% at 78% 50%, rgba(201,169,110,.06), transparent 60%);
+      /* Strong dark gradient on left for copy legibility, fades to transparent on right */
+      background: linear-gradient(
+        to right,
+        #000004 0%,
+        #000004 32%,
+        rgba(0,0,4,0.85) 48%,
+        rgba(0,0,4,0.3) 65%,
+        transparent 80%
+      );
       pointer-events: none;
+      z-index: 1;
     }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      align-items: center;
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0;
-      width: 100%;
+
+    /* Copy sits above the gradient overlay */
+    .hero-copy-wrap {
       position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 9rem 3rem;
+      width: 100%;
     }
-    /* Copy column: padded normally */
-    .hero-copy-col {
-      padding: 0 4rem 0 max(3rem, calc((100vw - 1180px) / 2 + 3rem));
+
+    .hero-copy-inner {
+      max-width: 580px;
     }
-    /* Blueprint-locked eyebrow: PERSPECTIVE · JUDGMENT · GROWTH */
+
     .hero-pillars {
       font-size: 0.62rem;
       font-weight: 500;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
     }
-    .hero-pillars span { color: var(--gold-dim); margin: 0 0.6em; }
-    /* Blueprint-locked H1 */
+    .hero-pillars span { color: var(--gold-dim); margin: 0 0.5em; }
+
     .hero-headline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.4rem, 6.5vw, 6.4rem);
+      font-size: clamp(3.2rem, 5.5vw, 5.8rem);
       font-weight: 300;
       letter-spacing: -0.025em;
-      line-height: 0.96;
+      line-height: 1.0;
       color: var(--text);
       margin-bottom: 2rem;
     }
-    .hero-copy {
-      font-size: 1rem;
+
+    .hero-sub {
+      font-size: 0.95rem;
       line-height: 1.85;
-      max-width: 540px;
       color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 460px;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
 
-    /* Möbius column: full height, image fills naturally, no border */
-    .hero-mark {
+    .hero-actions {
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      /* Stretch to viewport right edge */
-      padding-right: 0;
-      overflow: hidden;
-    }
-    .hero-mark img {
-      /* Fill the column completely — no max-width constraint */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* Crop to show the Möbius centred in the right column */
-      object-position: 35% 50%;
-      display: block;
-      min-height: 100vh;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    /* ── TENSION SECTION (blueprint §01) ── */
+    /* ═══════════════════════════════════════════
+       REMAINING SECTIONS
+    ═══════════════════════════════════════════ */
     .statement { max-width: 800px; }
 
-    /* ── DOCTRINE (blueprint §02) ── */
-    .doctrine-grid { grid-template-columns: repeat(4, 1fr); }
-
-    /* ── THREE MOVEMENTS (blueprint §03) — open, differentiated ── */
     .movement-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -111,7 +114,7 @@
       margin-top: 3rem;
     }
     .movement-card { border-top: 1px solid var(--border); padding-top: 2rem; }
-    .movement-card .rule { width: 28px; height: 1px; background: var(--gold); margin-bottom: 1.6rem; opacity: .7; }
+    .movement-card .rule { width: 28px; height: 1px; background: var(--gold); margin-bottom: 1.6rem; opacity: .65; }
     .movement-card h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
@@ -121,10 +124,8 @@
     }
     .movement-card p { font-size: 0.88rem; }
 
-    /* ── FOUNDER (blueprint §06) ── */
     .founder-photo { border: 1px solid var(--border); filter: saturate(.75); width: 100%; display: block; }
 
-    /* ── FEATURED INSIGHT (blueprint §04) ── */
     .insight-link {
       color: var(--text);
       display: block;
@@ -138,15 +139,25 @@
     }
     .insight-link:hover { color: var(--gold); }
 
-    /* ── RESPONSIVE ── */
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
     @media (max-width: 900px) {
-      #hero { min-height: auto; padding: 0; }
-      .hero-inner { grid-template-columns: 1fr; padding: 0; gap: 0; }
-      .hero-mark { order: -1; }
-      .hero-copy-col { padding: 0 1.5rem; }
-      .hero-mark { min-height: 70vw; order: -1; }
-      .hero-mark img { min-height: 70vw; object-position: 50% 40%; }
-      .hero-headline { font-size: clamp(3rem, 14vw, 4.5rem); }
+      #hero {
+        /* On mobile: sculpture centred, stronger overlay for readability */
+        background-position: 70% center;
+      }
+      #hero::before {
+        background: linear-gradient(
+          to bottom,
+          rgba(0,0,4,0.92) 0%,
+          rgba(0,0,4,0.85) 60%,
+          rgba(0,0,4,0.7) 100%
+        );
+      }
+      .hero-copy-wrap { padding: 8rem 1.5rem 4rem; }
+      .hero-copy-inner { max-width: 100%; }
+      .hero-headline { font-size: clamp(2.8rem, 12vw, 4rem); }
       .movement-cards { grid-template-columns: 1fr; }
       .doctrine-grid { grid-template-columns: 1fr 1fr !important; }
     }
@@ -158,33 +169,22 @@
 <body>
   <main>
 
-    <!-- 01 / HERO — blueprint-locked composition and copy -->
-    <section id="hero">
-      <div class="hero-inner">
-        <div class="hero-copy-col">
-          <!-- LOCKED eyebrow: PERSPECTIVE · JUDGMENT · GROWTH -->
+    <!-- ═══ HERO ═══ -->
+    <section id="hero" role="banner">
+      <div class="hero-copy-wrap">
+        <div class="hero-copy-inner">
           <p class="hero-pillars">Perspective <span>·</span> Judgment <span>·</span> Growth</p>
-          <!-- LOCKED H1 -->
           <h1 class="hero-headline">Perspective changes what becomes possible.</h1>
-          <!-- LOCKED supporting copy -->
-          <p class="hero-copy">Structured thinking for leaders and organizational decision-makers who want to examine context, evidence, and assumptions before reaching consequential conclusions.</p>
+          <p class="hero-sub">Structured thinking for leaders and organizational decision-makers who want to examine context, evidence, and assumptions before reaching consequential conclusions.</p>
           <div class="hero-actions">
-            <!-- LOCKED CTAs: "Explore the thinking" primary, "Begin a conversation" secondary -->
             <a href="philosophy.html" class="btn btn-gold">Explore the thinking</a>
             <a href="contact.html" class="btn btn-outline">Begin a conversation</a>
           </div>
         </div>
-        <div class="hero-mark">
-          <!-- Official identity package hero — 3D Möbius sculpture, preferred composition -->
-          <img
-            src="emg-mobius-hero.png"
-            alt="The Enable My Growth Möbius — one continuous surface carrying Enable, My, and Growth. A continuous act of becoming."
-          />
-        </div>
       </div>
     </section>
 
-    <!-- 02 / TENSION — "Create recognition" (blueprint §01) -->
+    <!-- ═══ TENSION ═══ -->
     <section>
       <div class="container statement">
         <p class="eyebrow mb-md">The recurring pattern</p>
@@ -194,14 +194,14 @@
       </div>
     </section>
 
-    <!-- 03 / PHILOSOPHY — "State the doctrine" (blueprint §02) -->
+    <!-- ═══ DOCTRINE ═══ -->
     <section style="background:var(--surface);">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow mb-sm">The doctrine</p>
           <h2 class="display display-lg">A more disciplined route to judgment</h2>
         </div>
-        <div class="doctrine-grid" style="display:grid; gap:1px; background:var(--border2);">
+        <div class="doctrine-grid" style="display:grid; gap:1px; background:var(--border2); grid-template-columns:repeat(4,1fr);">
           <article class="principle-card">
             <div class="number">01</div>
             <h3>Context before interpretation</h3>
@@ -226,7 +226,7 @@
       </div>
     </section>
 
-    <!-- 04 / THREE MOVEMENTS — "Make the method memorable" (blueprint §03) -->
+    <!-- ═══ THREE MOVEMENTS ═══ -->
     <section>
       <div class="container">
         <div class="section-heading">
@@ -253,7 +253,7 @@
       </div>
     </section>
 
-    <!-- 05 / FEATURED INSIGHT — "Demonstrate authority" (blueprint §04) -->
+    <!-- ═══ FEATURED INSIGHT ═══ -->
     <section>
       <div class="container split-feature">
         <div>
@@ -268,7 +268,7 @@
       </div>
     </section>
 
-    <!-- 06 / FOUNDER — "Establish human trust" (blueprint §06) -->
+    <!-- ═══ FOUNDER ═══ -->
     <section style="background:var(--surface);">
       <div class="container split-feature">
         <div>
@@ -287,7 +287,7 @@
       </div>
     </section>
 
-    <!-- 07 / CTA — "Create a deliberate next step" (blueprint §08) -->
+    <!-- ═══ CTA ═══ -->
     <section class="cta-band">
       <div class="container-sm">
         <p class="eyebrow mb-md">Begin with the situation</p>
