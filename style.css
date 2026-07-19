@@ -141,14 +141,23 @@ nav {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 .nav-toggle span {
   display: block;
   width: 22px; height: 1px;
-  background: var(--text);
+  background: var(--gold);
   transition: 0.2s;
 }
+.nav-toggle:hover span,
+.nav-toggle:focus-visible span { background: var(--text); }
+.nav-toggle:focus-visible { outline: 1px solid var(--gold-dim); outline-offset: 4px; }
 
 /* ── BUTTONS ── */
 .btn {
