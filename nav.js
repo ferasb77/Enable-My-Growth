@@ -6,6 +6,7 @@
     { href: 'ideas.html',      label: 'Insights' },
     { href: 'ai-thinking-studio.html', label: 'AI Studio' },
     { href: 'contextual.html', label: 'Contextual' },
+    { href: 'capability-os.html', label: 'CapabilityOS' },
     { href: 'work.html',       label: 'Work with Feras' },
     { href: 'training.html',   label: 'Workshops' },
     { href: 'about.html',      label: 'About' },
@@ -63,6 +64,7 @@
             <li><a href="ideas.html">Insights</a></li>
             <li><a href="ai-thinking-studio.html">AI Thinking Studio</a></li>
             <li><a href="contextual.html">Contextual</a></li>
+            <li><a href="capability-os.html">CapabilityOS</a></li>
             <li><a href="about.html">About Feras</a></li>
           </ul>
         </div>

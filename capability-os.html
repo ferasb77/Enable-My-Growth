@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapabilityOS — Enable My Growth</title>
+  <meta name="description" content="CapabilityOS is the operating system for capability development organizations — managing every stage of client delivery from contract award to organizational intelligence in one integrated environment." />
+  <link rel="canonical" href="https://enablemygrowth.com/capability-os.html" />
+  <meta property="og:title" content="CapabilityOS — Enable My Growth" />
+  <meta property="og:description" content="The operating system for capability development organizations." />
+  <meta property="og:url" content="https://enablemygrowth.com/capability-os.html" />
+  <meta property="og:image" content="https://enablemygrowth.com/emg-mobius-hero.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ─────────────────────────────────────────────────────────────── */
+    .product-hero { padding:11rem 0 6rem; position:relative; overflow:hidden; }
+    .product-hero::after {
+      content:''; position:absolute; width:38rem; height:38rem;
+      right:-14rem; top:-10rem;
+      border:1px solid rgba(201,169,110,.12); border-radius:50%;
+      box-shadow:0 0 0 7rem rgba(201,169,110,.018), 0 0 0 14rem rgba(201,169,110,.012);
+      pointer-events:none;
+    }
+    .product-hero-inner { position:relative; z-index:1; max-width:880px; }
+    .product-edition {
+      display:inline-block; color:var(--muted);
+      border-left:1px solid var(--gold); padding-left:1rem;
+      margin:1.5rem 0 2rem; font-size:.76rem;
+      letter-spacing:.16em; text-transform:uppercase;
+    }
+    .product-name span { color:var(--gold); }
+    .product-actions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.5rem; }
+
+    /* ── PROMISE PANEL ──────────────────────────────────────────────────────── */
+    .promise-panel {
+      max-width:900px; margin:0 auto;
+      border-left:1px solid var(--gold); padding:1rem 0 1rem 2.5rem;
+    }
+    .promise-panel p {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(1.55rem,3vw,2.35rem);
+      color:var(--text); line-height:1.4;
+    }
+    .promise-panel p + p { margin-top:.75rem; }
+
+    /* ── FLOW DIAGRAM ───────────────────────────────────────────────────────── */
+    .flow-col { display:flex; flex-direction:column; align-items:flex-start; gap:0; }
+    .flow-node {
+      display:grid; grid-template-columns:36px 1fr; gap:0; width:100%;
+    }
+    .flow-num {
+      display:flex; align-items:center; justify-content:center;
+      background:var(--surface2); border:1px solid var(--border);
+      font-family:'Cormorant Garamond',serif; font-size:.85rem;
+      color:var(--gold-dim); min-height:56px;
+    }
+    .flow-body {
+      padding:1rem 1.3rem; background:var(--surface);
+      border:1px solid var(--border); border-left:none;
+    }
+    .flow-body-title {
+      font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+      color:var(--text); margin-bottom:.2rem;
+    }
+    .flow-body-desc { font-size:.8rem; color:var(--muted); line-height:1.55; }
+    .flow-conn {
+      width:1px; height:20px;
+      background:linear-gradient(to bottom,var(--gold-dim),var(--border));
+      margin-left:17px;
+    }
+    .flow-node.accent .flow-num { color:var(--gold); border-color:var(--gold-dim); }
+    .flow-node.accent .flow-body { border-top:2px solid var(--gold); }
+    .flow-node.accent .flow-body-title { color:var(--gold); }
+
+    /* ── CHAOS GRID ─────────────────────────────────────────────────────────── */
+    .chaos-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:1px;
+      background:var(--border2); margin-top:2rem;
+    }
+    .chaos-item {
+      background:var(--surface); padding:.9rem 1.1rem;
+      font-size:.82rem; color:var(--muted); line-height:1.5;
+      display:flex; align-items:center; gap:.6rem;
+      transition:background .2s;
+    }
+    .chaos-item:hover { background:var(--surface2); color:var(--text); }
+    .chaos-item::before { content:'—'; color:var(--border); flex-shrink:0; }
+
+    /* ── CAPABILITY CARDS ───────────────────────────────────────────────────── */
+    .cap-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1px; background:var(--border2); margin-top:3rem;
+    }
+    .cap-card {
+      background:var(--surface); padding:2.2rem 1.8rem;
+      transition:background .2s;
+    }
+    .cap-card:hover { background:var(--surface2); }
+    .cap-card.accent { border-top:2px solid var(--gold); background:rgba(201,169,110,.02); }
+    .cap-num {
+      font-family:'Cormorant Garamond',serif; font-size:2.4rem;
+      font-weight:300; color:rgba(201,169,110,.15); line-height:1; margin-bottom:1rem;
+    }
+    .cap-title {
+      font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+      color:var(--text); margin-bottom:.9rem; line-height:1.2;
+    }
+    .cap-list { list-style:none; display:flex; flex-direction:column; gap:0; }
+    .cap-list li {
+      display:flex; align-items:baseline; gap:.55rem;
+      font-size:.82rem; color:var(--muted); padding:.4rem 0;
+      border-bottom:1px solid var(--border2); line-height:1.5;
+    }
+    .cap-list li:last-child { border-bottom:none; }
+    .cap-list li::before { content:'—'; color:var(--gold-dim); flex-shrink:0; }
+
+    /* ── STAKEHOLDER GRID ───────────────────────────────────────────────────── */
+    .sh-grid {
+      display:grid; grid-template-columns:repeat(5,1fr);
+      gap:1px; background:var(--border2); margin-top:3rem;
+    }
+    .sh-card {
+      background:var(--surface); padding:2rem 1.4rem;
+      transition:background .2s; cursor:default;
+    }
+    .sh-card:hover { background:var(--surface2); }
+    .sh-card:hover .sh-bar { width:100%; }
+    .sh-bar {
+      height:2px; width:20px; background:var(--gold);
+      margin-bottom:1.2rem; transition:width .4s ease;
+    }
+    .sh-role {
+      font-size:.62rem; font-weight:500; letter-spacing:.2em;
+      text-transform:uppercase; color:var(--gold); margin-bottom:.5rem;
+    }
+    .sh-title {
+      font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+      color:var(--text); margin-bottom:.6rem; line-height:1.25;
+    }
+    .sh-desc { font-size:.8rem; color:var(--muted); line-height:1.65; }
+
+    /* ── INTEL FLOW ─────────────────────────────────────────────────────────── */
+    .intel-flow { display:flex; flex-direction:column; align-items:center; gap:0; }
+    .intel-step {
+      width:100%; background:var(--surface); border:1px solid var(--border);
+      padding:1.4rem 1.8rem; text-align:center; transition:border-color .3s;
+    }
+    .intel-step:hover { border-color:var(--gold-dim); }
+    .intel-step.accent { border-color:var(--gold-dim); background:rgba(201,169,110,.03); }
+    .intel-step-num {
+      font-size:.6rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:.4rem;
+    }
+    .intel-step-title {
+      font-family:'Cormorant Garamond',serif; font-size:1.3rem;
+      font-weight:300; color:var(--text); line-height:1.25;
+    }
+    .intel-step.accent .intel-step-title { color:var(--gold); }
+    .intel-conn {
+      width:1px; height:28px;
+      background:linear-gradient(to bottom,var(--gold),var(--gold-dim));
+    }
+
+    /* ── COMPARISON ─────────────────────────────────────────────────────────── */
+    .comp-header {
+      display:grid; grid-template-columns:1fr 1fr;
+      border-bottom:1px solid var(--border);
+    }
+    .comp-header-cell {
+      padding:.9rem 1.8rem; font-size:.65rem; font-weight:500;
+      letter-spacing:.18em; text-transform:uppercase;
+    }
+    .comp-header-trad { color:var(--muted); border-right:1px solid var(--border2); }
+    .comp-header-os { color:var(--gold); }
+    .comp-row {
+      display:grid; grid-template-columns:1fr 1fr;
+      border-bottom:1px solid var(--border2);
+    }
+    .comp-row:first-of-type { border-top:1px solid var(--border2); }
+    .comp-cell { padding:1.4rem 1.8rem; font-size:.9rem; line-height:1.6; }
+    .comp-trad { color:var(--muted); border-right:1px solid var(--border2); }
+    .comp-os { color:var(--text); background:rgba(201,169,110,.022); }
+
+    /* ── WHY CARDS ──────────────────────────────────────────────────────────── */
+    .why-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1px; background:var(--border2); margin-top:3rem;
+    }
+    .why-card { background:var(--surface); padding:2.2rem 1.8rem; }
+    .why-card.accent { border-top:2px solid var(--gold); background:rgba(201,169,110,.02); }
+    .why-num {
+      font-family:'Cormorant Garamond',serif; font-size:.85rem;
+      color:var(--gold-dim); margin-bottom:1rem;
+    }
+    .why-num.accent { color:var(--gold); }
+    .why-title {
+      font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+      color:var(--text); margin-bottom:.75rem; line-height:1.3;
+    }
+    .why-desc { font-size:.83rem; color:var(--muted); line-height:1.75; }
+
+    /* ── STAT GRID ──────────────────────────────────────────────────────────── */
+    .stat-grid {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:1px; background:var(--border2); margin-top:3rem;
+    }
+    .stat-tile { background:var(--surface); padding:1.8rem 1.5rem; }
+    .stat-num {
+      font-family:'Cormorant Garamond',serif; font-size:2.6rem;
+      font-weight:300; color:var(--gold); line-height:1; margin-bottom:.4rem;
+    }
+    .stat-label { font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+
+    /* ── DOCTRINE QUOTE ─────────────────────────────────────────────────────── */
+    .doctrine-quote {
+      margin-top:2.5rem; padding:1.8rem 1.8rem 1.8rem 2.2rem;
+      border-left:2px solid var(--gold);
+      background:rgba(201,169,110,.05); border-radius:0 2px 2px 0;
+    }
+    .doctrine-quote p {
+      font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+      font-style:italic; color:var(--text); line-height:1.5;
+    }
+
+    /* ── ROADMAP TILES ──────────────────────────────────────────────────────── */
+    .roadmap-grid {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:1px; background:var(--border2); margin-top:3rem;
+    }
+    .roadmap-tile {
+      background:var(--surface); padding:1.8rem 1.5rem; transition:background .2s;
+    }
+    .roadmap-tile:hover { background:var(--surface2); }
+    .roadmap-label {
+      font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:.75rem;
+    }
+    .roadmap-title {
+      font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+      color:var(--text); line-height:1.3;
+    }
+
+    /* ── AI PRINCIPLES ──────────────────────────────────────────────────────── */
+    .ai-box {
+      background:var(--bg); border:1px solid var(--border);
+      border-radius:2px; padding:1.8rem;
+    }
+    .ai-row {
+      display:flex; align-items:baseline; gap:1rem;
+      padding:.85rem 0; border-bottom:1px solid var(--border2);
+    }
+    .ai-row:last-child { border-bottom:none; }
+    .ai-label {
+      font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+      font-style:italic; color:var(--gold); flex-shrink:0; min-width:90px;
+    }
+    .ai-desc { font-size:.83rem; color:var(--muted); line-height:1.7; }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────────── */
+    @media (max-width:900px) {
+      .cap-grid, .why-grid { grid-template-columns:1fr; }
+      .sh-grid { grid-template-columns:1fr 1fr; }
+      .stat-grid, .roadmap-grid { grid-template-columns:1fr 1fr; }
+      .comp-header, .comp-row { grid-template-columns:1fr; }
+      .comp-trad, .comp-header-trad { border-right:none; border-bottom:1px solid var(--border2); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="product-hero">
+      <div class="container">
+        <div class="product-hero-inner">
+          <p class="eyebrow">Enterprise Platform</p>
+          <div class="product-edition">Enable My Growth Technology · Practitioner-Built</div>
+          <h1 class="display display-xl product-name">Capability<span>OS</span></h1>
+          <p class="lead mt-md" style="max-width:660px;">The operating system for capability development organizations.</p>
+          <p style="max-width:600px; margin-top:1.2rem; color:var(--muted); line-height:1.85;">
+            CapabilityOS helps capability development organizations manage every stage of client delivery — from contract award to organizational insight — in one integrated operating environment.
+          </p>
+          <div class="product-actions">
+            <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn btn-gold">Request a Demonstration</a>
+            <a href="#architecture" class="btn btn-outline">See How It Works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROBLEM ═══ -->
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">Why It Exists</p>
+          <h2 class="display display-lg">The operational reality behind every successful program.</h2>
+          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
+            Most capability providers deliver exceptional learning experiences. What happens behind those experiences is rarely exceptional.
+          </p>
+          <div class="doctrine-quote">
+            <p>CapabilityOS was designed to close the gap between delivery excellence and operational clarity.</p>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow mb-sm">Behind every program, organizations manage:</p>
+          <div class="chaos-grid">
+            <div class="chaos-item">Spreadsheets</div>
+            <div class="chaos-item">Email chains</div>
+            <div class="chaos-item">WhatsApp groups</div>
+            <div class="chaos-item">Certificate generation</div>
+            <div class="chaos-item">Facilitator coordination</div>
+            <div class="chaos-item">Participant tracking</div>
+            <div class="chaos-item">Survey management</div>
+            <div class="chaos-item">Logistics planning</div>
+            <div class="chaos-item">Invoice processing</div>
+            <div class="chaos-item">Delivery reporting</div>
+            <div class="chaos-item">Client communication</div>
+            <div class="chaos-item">Outcome documentation</div>
+          </div>
+          <p style="font-size:.82rem; color:var(--muted); margin-top:1.5rem; line-height:1.8;">
+            As organizations grow, these disconnected systems create operational complexity that limits scalability, visibility, and decision-making.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARCHITECTURE ═══ -->
+    <section id="architecture">
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">The Architecture</p>
+          <h2 class="display display-lg">Built around capability delivery — not courses.</h2>
+          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
+            Traditional training systems manage courses. CapabilityOS manages capability delivery. That single distinction shapes every design decision in the platform.
+          </p>
+          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
+            Every capability development organization already moves through these seven stages. CapabilityOS makes that movement visible, coordinated, and intelligent.
+          </p>
+          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
+            Most platforms start at Stage 4. CapabilityOS starts at Stage 1 — because that is where capability development actually begins. And it ends at Stage 7 — because delivery data that doesn't inform decisions is merely a record, not an asset.
+          </p>
+        </div>
+        <div>
+          <div class="flow-col">
+            <div class="flow-node">
+              <div class="flow-num">01</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Client</div>
+                <div class="flow-body-desc">The organization commissioning capability development.</div>
+              </div>
+            </div>
+            <div class="flow-conn"></div>
+            <div class="flow-node">
+              <div class="flow-num">02</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Contract</div>
+                <div class="flow-body-desc">The commitment, scope, and commercial agreement that governs delivery.</div>
+              </div>
+            </div>
+            <div class="flow-conn"></div>
+            <div class="flow-node">
+              <div class="flow-num">03</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Engagement</div>
+                <div class="flow-body-desc">The planned program of experiences within a contract.</div>
+              </div>
+            </div>
+            <div class="flow-conn"></div>
+            <div class="flow-node">
+              <div class="flow-num">04</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Experience</div>
+                <div class="flow-body-desc">Individual sessions, workshops, assessments, or learning events.</div>
+              </div>
+            </div>
+            <div class="flow-conn"></div>
+            <div class="flow-node">
+              <div class="flow-num">05</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Delivery</div>
+                <div class="flow-body-desc">Facilitators, participants, materials, scheduling, and logistics.</div>
+              </div>
+            </div>
+            <div class="flow-conn"></div>
+            <div class="flow-node">
+              <div class="flow-num">06</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Evidence</div>
+                <div class="flow-body-desc">Observations, surveys, certificates, and outcome records.</div>
+              </div>
+            </div>
+            <div class="flow-conn"></div>
+            <div class="flow-node accent">
+              <div class="flow-num">07</div>
+              <div class="flow-body">
+                <div class="flow-body-title">Organizational Intelligence</div>
+                <div class="flow-body-desc">The accumulated insight that emerges from delivery — and improves every program that follows.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STAKEHOLDERS ═══ -->
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container">
+        <div class="section-intro" style="max-width:680px;">
+          <p class="eyebrow mb-sm">One Platform</p>
+          <h2 class="display display-md">Every stakeholder. One environment.</h2>
+          <p>Most organizations manage different stakeholders through different tools. CapabilityOS brings them together — each with the visibility they need, none with more than they require.</p>
+        </div>
+        <div class="sh-grid">
+          <div class="sh-card">
+            <div class="sh-bar"></div>
+            <div class="sh-role">Clients</div>
+            <div class="sh-title">Real-time delivery visibility</div>
+            <div class="sh-desc">See program progress, participant completion, and outcome evidence without waiting for a report.</div>
+          </div>
+          <div class="sh-card">
+            <div class="sh-bar"></div>
+            <div class="sh-role">Facilitators</div>
+            <div class="sh-title">Intelligent delivery tools</div>
+            <div class="sh-desc">Manage schedules, access materials, record observations, and submit reports — all in one place.</div>
+          </div>
+          <div class="sh-card">
+            <div class="sh-bar"></div>
+            <div class="sh-role">Coordinators</div>
+            <div class="sh-title">Operational clarity</div>
+            <div class="sh-desc">Coordinate complex multi-facilitator, multi-cohort engagements without spreadsheets or email chains.</div>
+          </div>
+          <div class="sh-card">
+            <div class="sh-bar"></div>
+            <div class="sh-role">Participants</div>
+            <div class="sh-title">Seamless experience</div>
+            <div class="sh-desc">Access schedules, materials, surveys, and certificates through a single participant-facing interface.</div>
+          </div>
+          <div class="sh-card">
+            <div class="sh-bar"></div>
+            <div class="sh-role">Leadership</div>
+            <div class="sh-title">Organizational intelligence</div>
+            <div class="sh-desc">Monitor delivery performance, client health, and capability trends through live operational dashboards.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CAPABILITY AREAS ═══ -->
+    <section>
+      <div class="container">
+        <div class="section-intro" style="max-width:680px;">
+          <p class="eyebrow mb-sm">What CapabilityOS Does</p>
+          <h2 class="display display-md">Six capability areas. One operating environment.</h2>
+          <p>These are not software modules. They are business capabilities — the things capability development organizations need to do in order to deliver well.</p>
+        </div>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="cap-num">01</div>
+            <div class="cap-title">Contract &amp; Delivery</div>
+            <ul class="cap-list">
+              <li>Engagement planning</li>
+              <li>Session scheduling</li>
+              <li>Experience design</li>
+              <li>Logistics coordination</li>
+            </ul>
+          </div>
+          <div class="cap-card">
+            <div class="cap-num">02</div>
+            <div class="cap-title">People</div>
+            <ul class="cap-list">
+              <li>Facilitator management</li>
+              <li>Participant registration</li>
+              <li>Client relationship tracking</li>
+            </ul>
+          </div>
+          <div class="cap-card">
+            <div class="cap-num">03</div>
+            <div class="cap-title">Learning Experience</div>
+            <ul class="cap-list">
+              <li>Materials management</li>
+              <li>Survey design &amp; delivery</li>
+              <li>Certificate generation</li>
+            </ul>
+          </div>
+          <div class="cap-card">
+            <div class="cap-num">04</div>
+            <div class="cap-title">Operations</div>
+            <ul class="cap-list">
+              <li>Financial tracking</li>
+              <li>Asset management</li>
+              <li>Communication coordination</li>
+            </ul>
+          </div>
+          <div class="cap-card accent">
+            <div class="cap-num">05</div>
+            <div class="cap-title">Intelligence</div>
+            <ul class="cap-list">
+              <li>AI-assisted observations</li>
+              <li>Delivery reporting</li>
+              <li>Organizational analytics</li>
+            </ul>
+          </div>
+          <div class="cap-card">
+            <div class="cap-num">06</div>
+            <div class="cap-title">Client Experience</div>
+            <ul class="cap-list">
+              <li>Client portal access</li>
+              <li>Executive visibility dashboards</li>
+              <li>Evidence reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ AI ═══ -->
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">Artificial Intelligence</p>
+          <h2 class="display display-lg">AI where it matters. Humans where it counts.</h2>
+          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
+            CapabilityOS uses AI to reduce operational overhead and surface insights that would otherwise remain invisible in delivery data. It does not use AI to make decisions on behalf of the people responsible for them.
+          </p>
+          <div class="doctrine-quote">
+            <p>AI recommends.<br/>Humans decide.</p>
+          </div>
+        </div>
+        <div>
+          <div class="ai-box">
+            <p style="font-size:.82rem; color:var(--muted); margin-bottom:1.2rem;">CapabilityOS uses AI to help organizations:</p>
+            <div class="ai-row">
+              <div class="ai-label">Summarize</div>
+              <div class="ai-desc">Convert facilitator observations into structured, readable session summaries — without losing the facilitator's judgment.</div>
+            </div>
+            <div class="ai-row">
+              <div class="ai-label">Identify</div>
+              <div class="ai-desc">Surface patterns across multiple delivery events that would be impossible to detect manually at scale.</div>
+            </div>
+            <div class="ai-row">
+              <div class="ai-label">Support</div>
+              <div class="ai-desc">Generate delivery report drafts that coordinators review, edit, and approve — not publish automatically.</div>
+            </div>
+            <div class="ai-row">
+              <div class="ai-label">Surface</div>
+              <div class="ai-desc">Bring operational insights to leadership attention — not as recommendations, but as observations that inform judgment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ INTELLIGENCE FLOW ═══ -->
+    <section>
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">From Delivery to Intelligence</p>
+          <h2 class="display display-lg">CapabilityOS doesn't simply record what happened.</h2>
+          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
+            It helps organizations understand what their delivery is telling them. Every session, every observation, and every participant response becomes part of a coherent operational picture — not a separate report that gets filed and forgotten.
+          </p>
+          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
+            Over time, the platform transforms operational data into organizational insight — the kind of evidence-based understanding that improves decisions about people, programs, and performance.
+          </p>
+        </div>
+        <div>
+          <div class="intel-flow" style="max-width:400px; margin:0 auto;">
+            <div class="intel-step">
+              <div class="intel-step-num">Stage 1</div>
+              <div class="intel-step-title">Deliver Programs</div>
+            </div>
+            <div class="intel-conn"></div>
+            <div class="intel-step">
+              <div class="intel-step-num">Stage 2</div>
+              <div class="intel-step-title">Collect Evidence</div>
+            </div>
+            <div class="intel-conn"></div>
+            <div class="intel-step">
+              <div class="intel-step-num">Stage 3</div>
+              <div class="intel-step-title">Reveal Patterns</div>
+            </div>
+            <div class="intel-conn"></div>
+            <div class="intel-step accent">
+              <div class="intel-step-num">Stage 4</div>
+              <div class="intel-step-title">Improve Decisions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COMPARISON ═══ -->
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container">
+        <div class="section-intro" style="max-width:680px;">
+          <p class="eyebrow mb-sm">The Difference</p>
+          <h2 class="display display-md">A different category of platform.</h2>
+        </div>
+        <div style="margin-top:3rem;">
+          <div class="comp-header">
+            <div class="comp-header-cell comp-header-trad">Traditional Training Platforms</div>
+            <div class="comp-header-cell comp-header-os">CapabilityOS</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-cell comp-trad">Manage courses</div>
+            <div class="comp-cell comp-os">Manages enterprise capability delivery</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-cell comp-trad">Measure attendance</div>
+            <div class="comp-cell comp-os">Builds organizational intelligence</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-cell comp-trad">Store data</div>
+            <div class="comp-cell comp-os">Generates operational insight</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-cell comp-trad">Start at the session</div>
+            <div class="comp-cell comp-os">Start at the client relationship</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-cell comp-trad">End when the session ends</div>
+            <div class="comp-cell comp-os">End at organizational intelligence</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PRACTITIONERS ═══ -->
+    <section>
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">Built by Practitioners</p>
+          <h2 class="display display-lg">Created by people who have delivered capability development.</h2>
+          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
+            CapabilityOS was not developed by software engineers trying to understand learning. It was built from years of experience designing, delivering, and managing capability development programs across government, energy, banking, healthcare, and private-sector organizations throughout the Middle East.
+          </p>
+          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
+            The operational problems CapabilityOS solves are problems we have experienced ourselves. That experience is embedded in every design decision — in what the platform chooses to track, how it presents information, and where it keeps humans in control of judgment.
+          </p>
+        </div>
+        <div>
+          <div class="stat-grid">
+            <div class="stat-tile">
+              <div class="stat-num">25+</div>
+              <div class="stat-label">Years Delivering<br/>Capability Programs</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-num">1,000+</div>
+              <div class="stat-label">Participants<br/>Trained Annually</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-num">50+</div>
+              <div class="stat-label">Client<br/>Organizations</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-num">7</div>
+              <div class="stat-label">Countries of<br/>Active Delivery</div>
+            </div>
+          </div>
+          <p style="font-size:.75rem; color:var(--subtle); margin-top:.9rem; line-height:1.7;">
+            Enable My Growth consulting experience underlying the CapabilityOS platform.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHY ═══ -->
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container">
+        <div class="section-intro" style="max-width:680px;">
+          <p class="eyebrow mb-sm">Why Organizations Choose CapabilityOS</p>
+          <h2 class="display display-md">Not features. Outcomes.</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <div class="why-title">Operational Simplicity</div>
+            <div class="why-desc">One operating environment replaces the spreadsheets, email chains, and disconnected tools that currently manage delivery.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <div class="why-title">Client Visibility</div>
+            <div class="why-desc">Clients see delivery progress, participant outcomes, and program evidence without requesting a report.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <div class="why-title">Facilitator Intelligence</div>
+            <div class="why-desc">Capture facilitator expertise and observations in a structured way — before it disappears when the session ends.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <div class="why-title">Evidence-Based Decisions</div>
+            <div class="why-desc">Move beyond attendance reports. Build an evidence base that informs decisions about people, programs, and organizational performance.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">05</div>
+            <div class="why-title">Scalable Operations</div>
+            <div class="why-desc">Grow program volume without multiplying administrative effort. The platform scales with delivery — not against it.</div>
+          </div>
+          <div class="why-card accent">
+            <div class="why-num accent">06</div>
+            <div class="why-title">Built for Capability Providers</div>
+            <div class="why-desc">Not adapted from education software or project management tools. Designed specifically for organizations whose business is developing people.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ROADMAP ═══ -->
+    <section>
+      <div class="container">
+        <div class="section-intro" style="max-width:680px;">
+          <p class="eyebrow mb-sm">What's Coming</p>
+          <h2 class="display display-md">Continued advances in organizational intelligence.</h2>
+          <p>CapabilityOS is an actively developing platform. Future capability areas are guided by the same principle that shaped the current build — reducing operational complexity so organizations can focus on decisions that matter.</p>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-tile">
+            <div class="roadmap-label">Coming</div>
+            <div class="roadmap-title">AI-Assisted Reporting</div>
+          </div>
+          <div class="roadmap-tile">
+            <div class="roadmap-label">Coming</div>
+            <div class="roadmap-title">Organizational Intelligence Dashboards</div>
+          </div>
+          <div class="roadmap-tile">
+            <div class="roadmap-label">Coming</div>
+            <div class="roadmap-title">Executive Visibility Suite</div>
+          </div>
+          <div class="roadmap-tile">
+            <div class="roadmap-label">Coming</div>
+            <div class="roadmap-title">Evidence-Based Capability Measurement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PHILOSOPHY CLOSE ═══ -->
+    <section style="background:var(--surface); border-top:1px solid var(--border2);">
+      <div class="container-sm" style="text-align:center;">
+        <p class="eyebrow mb-md">The Principle Behind the Platform</p>
+        <div class="promise-panel" style="border-left:none; padding-left:0; text-align:center;">
+          <p>Technology should reduce the operational complexity of developing people, so that people can focus their attention on decisions that matter.</p>
+        </div>
+        <p style="font-size:.75rem; color:var(--subtle); margin-top:1.5rem; letter-spacing:.06em;">— The founding principle of CapabilityOS</p>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta-band">
+      <div class="container-sm">
+        <p class="eyebrow mb-md">Get Started</p>
+        <h2 class="display display-lg mb-md">Ready to transform capability delivery?</h2>
+        <p style="max-width:520px; margin:0 auto; color:var(--muted); line-height:1.9;">
+          Request a demonstration to see how CapabilityOS can help your organization deliver with greater visibility, coordination, and intelligence.
+        </p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2.5rem;">
+          <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn btn-gold">Request a Demonstration</a>
+          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
