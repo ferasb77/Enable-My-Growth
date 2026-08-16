@@ -3,6 +3,7 @@
 
   const pages = [
     { href: 'philosophy.html', label: 'Philosophy' },
+    { href: 'conditions-before-conviction.html', label: 'The Book' },
     { href: 'ideas.html',      label: 'Insights' },
     { href: 'ai-thinking-studio.html', label: 'AI Studio' },
     { href: 'contextual.html', label: 'Contextual' },
@@ -61,6 +62,7 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="conditions-before-conviction.html">Conditions Before Conviction</a></li>
             <li><a href="ideas.html">Insights</a></li>
             <li><a href="ai-thinking-studio.html">AI Thinking Studio</a></li>
             <li><a href="contextual.html">Contextual</a></li>
