@@ -132,4 +132,18 @@
     });
   });
 
+  /* Dynamic scroll styling */
+  const siteNav = document.getElementById('site-nav');
+  function handleNavScroll() {
+    if (siteNav) {
+      if (window.scrollY > 30) {
+        siteNav.classList.add('nav-scrolled');
+      } else {
+        siteNav.classList.remove('nav-scrolled');
+      }
+    }
+  }
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  handleNavScroll();
+
 })();
