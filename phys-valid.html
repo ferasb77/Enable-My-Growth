@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phys-Valid — Deterministic Constraint Validation &amp; Governance — Enable My Growth Tech</title>
+  <meta name="description" content="Phys-Valid is a deterministic constraint-validation and governance screening platform for high-consequence engineering and operational environments." />
+  <link rel="canonical" href="https://enablemygrowth.com/phys-valid.html" />
+  <meta property="og:title" content="Phys-Valid — Enable My Growth Tech" />
+  <meta property="og:description" content="Deterministic constraint-validation and governance screening for high-consequence operational environments." />
+  <meta property="og:image" content="https://enablemygrowth.com/emg-mobius-hero.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .phys-hero { padding: 11rem 0 6rem; position: relative; overflow: hidden; }
+    .phys-hero::after {
+      content: ''; position: absolute; width: 38rem; height: 38rem;
+      right: -14rem; top: -10rem;
+      border: 1px solid rgba(201,169,110,.12); border-radius: 50%;
+      box-shadow: 0 0 0 7rem rgba(201,169,110,.018), 0 0 0 14rem rgba(201,169,110,.012);
+      pointer-events: none;
+    }
+    .phys-hero-inner { position: relative; z-index: 1; max-width: 880px; }
+    .promise-panel {
+      max-width: 900px; margin: 0 auto;
+      border-left: 1px solid var(--gold); padding: 1rem 0 1rem 2.5rem;
+    }
+    .promise-panel p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      color: var(--text); line-height: 1.4;
+    }
+    .promise-panel p + p { margin-top: .75rem; }
+    .promise-panel .responsibility { color: var(--gold); font-style: italic; }
+    .sequence { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 3rem; border-top: 1px solid var(--border); }
+    .stage { padding: 1.6rem 1.2rem 1.5rem 0; border-right: 1px solid var(--border2); }
+    .stage:last-child { border-right: 0; }
+    .stage-number { color: var(--gold); font-size: .65rem; letter-spacing: .18em; }
+    .stage h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; line-height: 1.2; margin-top: .8rem; }
+    .stage p { font-size: .78rem; margin-top: .55rem; }
+    .examine-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+    .examine-item { padding: 2rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .examine-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; margin-bottom: .55rem; }
+    .examine-item p { font-size: .84rem; }
+    .governance-disclaimer {
+      background: rgba(17,17,24,0.7);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold);
+      padding: 1.8rem 2rem;
+      border-radius: 2px;
+      margin-top: 2rem;
+    }
+    .governance-disclaimer h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .governance-disclaimer p {
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+      .sequence, .examine-grid { grid-template-columns: 1fr; }
+      .stage { border-right: 0; border-bottom: 1px solid var(--border2); padding: 1.2rem 0; }
+      .phys-hero::after { opacity: .5; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- ═══ HERO ═══ -->
+    <header class="phys-hero" role="banner">
+      <div class="container">
+        <div class="phys-hero-inner">
+          <nav class="tech-breadcrumb" aria-label="Breadcrumb">
+            <a href="tech.html">Enable My Growth Tech</a>
+            <span>/</span>
+            <span>Platforms</span>
+            <span>/</span>
+            <span>Phys-Valid</span>
+          </nav>
+
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
+            <span class="tech-badge badge-dev">In Development · Pilot</span>
+            <span class="tech-pill-tag">Constraint Validation</span>
+          </div>
+
+          <h1 class="display display-xl">Phys-Valid™</h1>
+          <p class="lead mt-md">Deterministic constraint-validation and governance screening for high-consequence environments.</p>
+          <p class="mt-sm">A rigorous digital system for evaluating declared operating conditions, verifying evidence admissibility, and making technical decision boundaries explicit and auditable.</p>
+          
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem;">
+            <a href="contact.html?enquiry=Phys-Valid+Pilot" class="btn btn-gold">Discuss Pilot Access</a>
+            <a href="#method" class="btn btn-outline">Explore the Architecture</a>
+          </div>
+          <p style="font-size:0.75rem; margin-top:1.2rem; color:var(--muted);">Currently deployed in controlled pilot environments.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ PURPOSE & POSITIONING ═══ -->
+    <section style="background:var(--surface);">
+      <div class="container split-feature">
+        <div>
+          <p class="eyebrow mb-md">Governance Before Assumption</p>
+          <h2 class="display display-lg">Conditions must be declared before conclusions are granted.</h2>
+        </div>
+        <div>
+          <p class="lead">In high-consequence operational, engineering, and capital asset settings, failures of governance rarely happen because formulas are incorrect. They happen because operating conditions drift, boundary constraints are left implicit, or assumptions are treated as facts.</p>
+          <p>Phys-Valid establishes a disciplined screening layer that verifies whether declared operational parameters satisfy required constraint envelopes before decision packages are submitted for engineering review.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ THE PROMISE & BOUNDARIES ═══ -->
+    <section>
+      <div class="container">
+        <p class="eyebrow mb-lg">Platform Principles &amp; Governance</p>
+        <div class="promise-panel">
+          <p>Phys-Valid does not replace professional engineering judgment.</p>
+          <p>It does not predict equipment failure or calculate remaining life.</p>
+          <p>It enforces explicit constraint validation, evidence admissibility, and complete audit traceability.</p>
+          <p class="responsibility">Licensed engineers and accountable operational authorities remain responsible for all consequential decisions.</p>
+        </div>
+
+        <div class="governance-disclaimer">
+          <h4>Engineering Governance &amp; Standards Notice</h4>
+          <p>Phys-Valid is a deterministic screening and decision governance tool. It does not replace applicable industrial codes, API standards, ASME requirements, or statutory engineering certifications. It provides structured validation of declared inputs against established mathematical and operational criteria, ensuring that anomalies are flagged and routed through proper engineering review workflows.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SCREENING SEQUENCE ═══ -->
+    <section id="method" style="background:var(--surface);">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mb-sm">Screening Architecture</p>
+          <h2 class="display display-lg">Five stages of deterministic validation</h2>
+          <p class="lead mt-md">A transparent progression from input declaration to verified governance trail.</p>
+        </div>
+
+        <div class="sequence">
+          <div class="stage">
+            <span class="stage-number">01</span>
+            <h3>Declare Conditions</h3>
+            <p>Operational data, design envelopes, temperature/pressure parameters, and inspection records are explicitly declared.</p>
+          </div>
+          <div class="stage">
+            <span class="stage-number">02</span>
+            <h3>Admissibility Check</h3>
+            <p>Verification of data completeness, measurement lineage, valid sensor calibration, and required evidence provenance.</p>
+          </div>
+          <div class="stage">
+            <span class="stage-number">03</span>
+            <h3>Constraint Screening</h3>
+            <p>Deterministic mathematical evaluation of operating conditions against strict structural and operational boundary limits.</p>
+          </div>
+          <div class="stage">
+            <span class="stage-number">04</span>
+            <h3>Escalation Routing</h3>
+            <p>Any parameter violation, ambiguity, or boundary threshold automatically routes to designated engineering authorities.</p>
+          </div>
+          <div class="stage">
+            <span class="stage-number">05</span>
+            <h3>Traceable Audit Log</h3>
+            <p>An immutable, time-stamped validation record is generated, capturing all rules, inputs, reviews, and sign-offs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CAPABILITY MATRIX ═══ -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mb-sm">Core Capabilities</p>
+          <h2 class="display display-lg">Designed for high-consequence operational clarity</h2>
+        </div>
+
+        <div class="examine-grid">
+          <div class="examine-item">
+            <h3>Declared Conditions</h3>
+            <p>Makes operational assumptions and boundary envelopes explicit rather than buried across disparate spreadsheets.</p>
+          </div>
+          <div class="examine-item">
+            <h3>Deterministic Logic</h3>
+            <p>Pure mathematical rule evaluation without black-box statistical hallucinations or unpredictable inferences.</p>
+          </div>
+          <div class="examine-item">
+            <h3>Admissibility Gating</h3>
+            <p>Prevents unverified or stale inspection evidence from being quietly accepted into decision packages.</p>
+          </div>
+          <div class="examine-item">
+            <h3>Escalation Workflows</h3>
+            <p>Structured pathways that immediately elevate out-of-envelope parameters to senior technical authorities.</p>
+          </div>
+          <div class="examine-item">
+            <h3>Evidence Traceability</h3>
+            <p>End-to-end lineage mapping connecting raw data sources, validation rules, and accountable human sign-offs.</p>
+          </div>
+          <div class="examine-item">
+            <h3>Engineering Centricity</h3>
+            <p>Constructed around how integrity and operations teams actually review, debate, and authorize operational decisions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA BAND ═══ -->
+    <section class="cta-band">
+      <div class="container-sm">
+        <p class="eyebrow mb-md">Pilot Deployment &amp; Inquiry</p>
+        <h2 class="display display-lg mb-md">Examine operational constraints with complete rigor.</h2>
+        <p>Contact Feras Banna to discuss pilot collaboration, technical briefings, or decision governance integration.</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2.5rem;">
+          <a href="contact.html?enquiry=Phys-Valid+Pilot" class="btn btn-gold">Discuss Pilot Access</a>
+          <a href="tech.html" class="btn btn-outline">Enable My Growth Tech Hub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="analytics.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

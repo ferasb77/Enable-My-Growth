@@ -29,7 +29,7 @@
           <input type="hidden" name="_subject" value="New contextual enquiry — Enable My Growth" />
           <div class="form-row"><div class="form-group"><label for="c-name">Name</label><input type="text" id="c-name" name="name" autocomplete="name" required /></div><div class="form-group"><label for="c-role">Role</label><input type="text" id="c-role" name="role" /></div></div>
           <div class="form-row"><div class="form-group"><label for="c-org">Organization</label><input type="text" id="c-org" name="organization" autocomplete="organization" /></div><div class="form-group"><label for="c-email">Email</label><input type="email" id="c-email" name="email" autocomplete="email" required /></div></div>
-          <div class="form-group"><label for="c-type">The situation is primarily about</label><select id="c-type" name="context_type" required><option value="" disabled selected>Select the closest context</option><option>A consequential decision</option><option>A leadership or team situation</option><option>Individual development or assessment</option><option>An organizational challenge</option><option>A workshop or speaking engagement</option><option>Something else</option></select></div>
+          <div class="form-group"><label for="c-type">The situation is primarily about</label><select id="c-type" name="context_type" required><option value="" disabled selected>Select the closest context</option><option>A consequential decision</option><option>A leadership or team situation</option><option>Individual development or assessment</option><option>An organizational challenge</option><option>A workshop or speaking engagement</option><option>Technology requirement / platform discussion</option><option>Custom digital solution / platform development</option><option>Something else</option></select></div>
           <div class="form-group"><label for="c-question">What question, decision, or situation are you carrying?</label><textarea id="c-question" name="situation" placeholder="Describe the context, the people involved, and why it matters now." required></textarea></div>
           <div class="form-group"><label for="c-outcome">What would a useful outcome make possible?</label><textarea id="c-outcome" name="useful_outcome" placeholder="You do not need a predefined solution—only a sense of what better would mean." required></textarea></div>
           <div class="form-group"><label for="c-method">Preferred first contact</label><select id="c-method" name="preferred_contact"><option>Email</option><option>Video call</option><option>Phone call</option></select></div>
@@ -39,7 +39,32 @@
       </div>
     </section>
   </main>
-  <script>if(location.search.includes('submitted=true')){const m=document.createElement('div');m.className='submission-toast';m.textContent='Thank you. I will be in touch within two business days.';m.style.cssText='position:fixed;bottom:2rem;right:2rem;max-width:340px;background:#C9A96E;color:#0A0A0F;padding:1rem 1.5rem;z-index:999;font:500 .82rem Inter,sans-serif';document.body.appendChild(m);setTimeout(()=>m.remove(),7000)}</script>
+  <script>
+    if(location.search.includes('submitted=true')){
+      const m=document.createElement('div');m.className='submission-toast';
+      m.textContent='Thank you. I will be in touch within two business days.';
+      m.style.cssText='position:fixed;bottom:2rem;right:2rem;max-width:340px;background:#C9A96E;color:#0A0A0F;padding:1rem 1.5rem;z-index:999;font:500 .82rem Inter,sans-serif';
+      document.body.appendChild(m);
+      setTimeout(()=>m.remove(),7000);
+    }
+    const params = new URLSearchParams(location.search);
+    const enquiry = params.get('enquiry');
+    if (enquiry) {
+      const select = document.getElementById('c-type');
+      if (enquiry.toLowerCase().includes('tech') || enquiry.toLowerCase().includes('platform') || enquiry.toLowerCase().includes('pilot') || enquiry.toLowerCase().includes('intelligence') || enquiry.toLowerCase().includes('valid') || enquiry.toLowerCase().includes('studio') || enquiry.toLowerCase().includes('contextual') || enquiry.toLowerCase().includes('capabilityos')) {
+        for (let opt of select.options) {
+          if (opt.text.includes('Technology requirement')) {
+            opt.selected = true;
+            break;
+          }
+        }
+      }
+      const question = document.getElementById('c-question');
+      if (question && !question.value) {
+        question.placeholder = 'Discussing: ' + enquiry + '. Describe your organizational context and specific requirements.';
+      }
+    }
+  </script>
   <script src="analytics.js"></script><script src="nav.js"></script>
 </body>
 </html>

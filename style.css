@@ -469,3 +469,538 @@ footer {
   .split-feature { gap: 3rem; }
   .nav-brand-copy small { display: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ENABLE MY GROWTH TECH — DESIGN SYSTEM & COMPONENTS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── TECH HERO & ACCENTS ── */
+.tech-hero {
+  padding: 10.5rem 0 5.5rem;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,169,110,0.06), transparent 70%);
+}
+
+.tech-hero::after {
+  content: '';
+  position: absolute;
+  width: 44rem;
+  height: 44rem;
+  right: -16rem;
+  top: -12rem;
+  border: 1px solid rgba(201,169,110,.08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8rem rgba(201,169,110,.012), 0 0 0 16rem rgba(201,169,110,.008);
+  pointer-events: none;
+}
+
+.tech-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.tech-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-hero-eyebrow .eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.26em;
+}
+
+.tech-pill-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,169,110,0.08);
+  border: 1px solid rgba(201,169,110,0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+/* ── JUMP / FILTER BAR ── */
+.tech-jump-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border2);
+}
+
+.tech-jump-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.tech-jump-link:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: var(--surface2);
+}
+
+/* ── STATUS BADGES ── */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.tech-badge::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.badge-available {
+  color: #79d799;
+  background: rgba(121,215,153,0.08);
+  border: 1px solid rgba(121,215,153,0.25);
+}
+.badge-available::before { background: #79d799; }
+
+.badge-pilot {
+  color: #e5b96f;
+  background: rgba(229,185,111,0.08);
+  border: 1px solid rgba(229,185,111,0.25);
+}
+.badge-pilot::before { background: #e5b96f; }
+
+.badge-dev {
+  color: #7db8f0;
+  background: rgba(125,184,240,0.08);
+  border: 1px solid rgba(125,184,240,0.25);
+}
+.badge-dev::before { background: #7db8f0; }
+
+.badge-enterprise {
+  color: #d1a8f8;
+  background: rgba(209,168,248,0.08);
+  border: 1px solid rgba(209,168,248,0.25);
+}
+.badge-enterprise::before { background: #d1a8f8; }
+
+.badge-concept {
+  color: #a0a0b8;
+  background: rgba(160,160,184,0.08);
+  border: 1px solid rgba(160,160,184,0.25);
+}
+.badge-concept::before { background: #a0a0b8; }
+
+/* ── BREADCRUMBS ── */
+.tech-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.tech-breadcrumb a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.tech-breadcrumb a:hover {
+  color: var(--text);
+}
+
+.tech-breadcrumb span {
+  color: var(--subtle);
+}
+
+/* ── CAPABILITY CARDS ── */
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  margin-top: 3rem;
+}
+
+.capability-card {
+  background: var(--surface);
+  padding: 2.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.capability-card:hover {
+  background: var(--surface2);
+}
+
+.capability-card .card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: rgba(201,169,110,0.2);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.capability-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  line-height: 1.25;
+}
+
+.capability-card p {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.capability-features {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border2);
+}
+
+.capability-features li {
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 0.35rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.capability-features li::before {
+  content: '▪';
+  color: var(--gold-dim);
+  font-size: 0.6rem;
+}
+
+/* ── PLATFORM PORTFOLIO CARDS ── */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.platform-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.platform-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.platform-card:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.platform-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.platform-card-category {
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.platform-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.platform-card-prop {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.platform-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.platform-meta-block {
+  background: rgba(10,10,15,0.6);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.platform-meta-item {
+  font-size: 0.76rem;
+  color: var(--muted);
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+.platform-meta-item:last-child { margin-bottom: 0; }
+.platform-meta-item strong { color: var(--text); font-weight: 500; }
+
+.platform-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border2);
+}
+
+/* ── 5-STEP ENGAGEMENT MODEL ── */
+.engagement-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  margin-top: 3rem;
+}
+
+.step-card {
+  background: var(--surface);
+  padding: 2.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.step-card:hover {
+  background: var(--surface2);
+}
+
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  opacity: 0.85;
+}
+
+.step-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+
+.step-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── TECH STACK GRID ── */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.stack-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.8rem;
+  border-radius: 2px;
+}
+
+.stack-group h4 {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.stack-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stack-items li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stack-items li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+}
+
+/* ── ENTERPRISE TRUST ── */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  margin-top: 3rem;
+}
+
+.trust-card {
+  background: var(--surface);
+  padding: 2.2rem 2rem;
+}
+
+.trust-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.7rem;
+}
+
+.trust-card p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── CASE STUDY ARTIFACTS ── */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.case-study-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 3rem;
+}
+
+.case-study-header {
+  border-bottom: 1px solid var(--border2);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.case-study-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.case-study-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text);
+}
+
+.case-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.case-flow-step {
+  border-top: 1px solid var(--border2);
+  padding-top: 1rem;
+}
+
+.case-flow-label {
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.case-flow-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE TECH EXTENSIONS ── */
+@media (max-width: 1024px) {
+  .capability-grid { grid-template-columns: repeat(2, 1fr); }
+  .engagement-steps { grid-template-columns: repeat(3, 1fr); }
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-flow { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .platform-grid, .platform-grid-3 { grid-template-columns: 1fr; }
+  .capability-grid { grid-template-columns: 1fr; }
+  .engagement-steps { grid-template-columns: 1fr; }
+  .stack-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .case-flow { grid-template-columns: 1fr; }
+  .case-study-box { padding: 2rem 1.5rem; }
+  .platform-card { padding: 1.8rem 1.4rem; }
+}

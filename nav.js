@@ -4,11 +4,8 @@
   const pages = [
     { href: 'philosophy.html', label: 'Philosophy' },
     { href: 'conditions-before-conviction.html', label: 'The Book' },
+    { href: 'tech.html',       label: 'Enable My Growth Tech' },
     { href: 'ideas.html',      label: 'Insights' },
-    { href: 'ai-thinking-studio.html', label: 'AI Studio' },
-    { href: 'contextual.html', label: 'Contextual' },
-    { href: 'capability-os.html', label: 'CapabilityOS' },
-    { href: 'work.html',       label: 'Work with Feras' },
     { href: 'training.html',   label: 'Workshops' },
     { href: 'about.html',      label: 'About' },
     { href: 'contact.html',    label: 'Begin a Conversation', cta: true },
@@ -16,6 +13,7 @@
 
   const current      = location.pathname.split('/').pop() || 'index.html';
   const insightPages = current === 'ideas.html' || current.startsWith('essay-');
+  const techPages    = current === 'tech.html' || current === 'ai-thinking-studio.html' || current === 'contextual.html' || current === 'capability-os.html' || current === 'phys-valid.html' || current === 'phoenix.html';
 
   /* Approved dimensional Möbius, cropped responsively from the brand hero asset. */
   const symbolSVG = `<span aria-hidden="true" style="display:block;width:48px;height:42px;flex:0 0 48px;background:url('emg-mobius-hero.png') right center / auto 42px no-repeat;"></span>`;
@@ -31,7 +29,9 @@
     </a>
     <ul class="nav-links" id="nav-links">
       ${pages.map(p => {
-        const active = current === p.href || (p.href === 'ideas.html' && insightPages);
+        const active = current === p.href || 
+                       (p.href === 'ideas.html' && insightPages) || 
+                       (p.href === 'tech.html' && techPages);
         return `<li><a href="${p.href}" class="${p.cta ? 'nav-cta ' : ''}${active ? 'active' : ''}">${p.label}</a></li>`;
       }).join('')}
     </ul>
@@ -63,11 +63,19 @@
           <ul>
             <li><a href="philosophy.html">Philosophy</a></li>
             <li><a href="conditions-before-conviction.html">Conditions Before Conviction</a></li>
-            <li><a href="ideas.html">Insights</a></li>
-            <li><a href="ai-thinking-studio.html">AI Thinking Studio</a></li>
+            <li><a href="ideas.html">Insights &amp; Essays</a></li>
+            <li><a href="about.html">About Feras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Tech &amp; Platforms</h4>
+          <ul>
+            <li><a href="tech.html"><strong>Enable My Growth Tech</strong></a></li>
+            <li><a href="ai-thinking-studio.html">Thinking Studio</a></li>
             <li><a href="contextual.html">Contextual</a></li>
             <li><a href="capability-os.html">CapabilityOS</a></li>
-            <li><a href="about.html">About Feras</a></li>
+            <li><a href="phys-valid.html">Phys-Valid</a></li>
+            <li><a href="phoenix.html">Phoenix Intelligence</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -75,6 +83,7 @@
           <ul>
             <li><a href="work.html">Work with Feras</a></li>
             <li><a href="training.html">Workshops &amp; Facilitation</a></li>
+            <li><a href="tech.html#custom-solutions">Custom Technology Solutions</a></li>
             <li><a href="contact.html">Begin a conversation</a></li>
           </ul>
         </div>
