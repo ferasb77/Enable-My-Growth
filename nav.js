@@ -13,7 +13,7 @@
 
   const current      = location.pathname.split('/').pop() || 'index.html';
   const insightPages = current === 'ideas.html' || current.startsWith('essay-');
-  const techPages    = current === 'tech.html' || current === 'ai-thinking-studio.html' || current === 'contextual.html' || current === 'capability-os.html' || current === 'phys-valid.html' || current === 'phoenix.html';
+  const techPages    = current === 'tech.html' || current === 'ai-thinking-studio.html' || current === 'contextual.html' || current === 'capability-os.html' || current === 'phys-valid.html';
 
   /* Approved dimensional Möbius, cropped responsively from the brand hero asset. */
   const symbolSVG = `<span aria-hidden="true" style="display:block;width:48px;height:42px;flex:0 0 48px;background:url('emg-mobius-hero.png') right center / auto 42px no-repeat;"></span>`;
@@ -75,7 +75,6 @@
             <li><a href="contextual.html">Contextual</a></li>
             <li><a href="capability-os.html">CapabilityOS</a></li>
             <li><a href="phys-valid.html">Phys-Valid</a></li>
-            <li><a href="phoenix.html">Phoenix Intelligence</a></li>
           </ul>
         </div>
         <div class="footer-col">
