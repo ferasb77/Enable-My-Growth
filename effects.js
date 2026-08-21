@@ -178,6 +178,7 @@
      ═══════════════════════════════════════════════════════════ */
   function initScrollReveal() {
     if (prefersReducedMotion) return;
+    document.documentElement.classList.add('js-reveal');
 
     const revealElements = document.querySelectorAll(
       'section .container > *, .capability-card, .platform-card, .step-card, .trust-card, .case-study-box, .principle-card, .split-feature, .stack-group'
@@ -245,6 +246,39 @@
     sections.forEach((sec) => spyObserver.observe(sec));
   }
 
+  
+  /* ═══════════════════════════════════════════════════════════
+     5. TECH SHOWCASE INTERACTIVE TAB SWITCHER
+     ═══════════════════════════════════════════════════════════ */
+  function initShowcaseTabs() {
+    const tabButtons = document.querySelectorAll('.showcase-tab-btn');
+    const panels = document.querySelectorAll('.showcase-panel');
+    if (!tabButtons.length || !panels.length) return;
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab');
+
+        // Update active tab buttons
+        tabButtons.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Switch panels with smooth fade
+        panels.forEach((p) => {
+          if (p.id === targetId) {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
+
   /* ═══════════════════════════════════════════════════════════
      INIT ON DOM READY
      ═══════════════════════════════════════════════════════════ */
@@ -254,11 +288,13 @@
       initCardSpotlights();
       initScrollReveal();
       initScrollspy();
+      initShowcaseTabs();
     });
   } else {
     initHeroCanvas();
     initCardSpotlights();
     initScrollReveal();
     initScrollspy();
+      initShowcaseTabs();
   }
 })();
