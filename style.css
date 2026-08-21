@@ -2948,3 +2948,34 @@ html, body {
     padding: 0.4rem;
   }
 }
+
+/* ── DEMO NOTICE & MOCKUP DATA DISCLOSURE ── */
+.tech-demo-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(201, 169, 110, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.16);
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.demo-notice-icon {
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.mockup-tag-demo {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--border) !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
