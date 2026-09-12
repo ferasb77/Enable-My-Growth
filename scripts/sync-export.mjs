@@ -1,4 +1,4 @@
-import fs from 'fs';
+﻿import fs from 'fs';
 import path from 'path';
 
 const outDir = path.resolve('out');
@@ -27,20 +27,17 @@ for (const entry of rootEntries) {
   }
 }
 
-// 3. Copy Next.js pre-rendered tech.html (from out/tech.html or out/index.html)
-const srcTechHtml = path.join(outDir, 'tech.html');
-const srcIndexHtml = path.join(outDir, 'index.html');
-const destTechHtml = path.join(deployDir, 'tech.html');
+// 3. Copy Next.js pre-rendered tech.html (from out/index.html)
+const srcHtml = path.join(outDir, 'index.html');
+const destHtml = path.join(deployDir, 'tech.html');
 const rootTechHtml = path.join(rootDir, 'tech.html');
 
-const srcHtml = fs.existsSync(srcTechHtml) ? srcTechHtml : srcIndexHtml;
-
 if (fs.existsSync(srcHtml)) {
-  fs.copyFileSync(srcHtml, destTechHtml);
-  fs.copyFileSync(srcHtml, rootTechHtml); // Keep root tech.html in sync
-  console.log(`✓ Successfully copied ${path.relative(outDir, srcHtml)} to clean deploy directory`);
+  fs.copyFileSync(srcHtml, destHtml);
+  fs.copyFileSync(srcHtml, rootTechHtml); // Also keep local tech.html in sync
+  console.log('✓ Successfully copied tech.html to clean deploy directory');
 } else {
-  console.error('✗ Neither out/tech.html nor out/index.html found!');
+  console.error('✗ out/index.html not found!');
   process.exit(1);
 }
 

@@ -1,12 +1,6 @@
-'use client';
-
-import React, { useState } from 'react';
-
-type PortfolioFilter = 'all' | 'capos' | 'thinking-studio' | 'contextual' | 'phys-valid';
+﻿import React from 'react';
 
 export function TechnologyPortfolio() {
-  const [filter, setFilter] = useState<PortfolioFilter>('all');
-
   return (
     <section id="portfolio" className="tech-section" style={{ background: 'var(--surface)' }}>
       <div id="platforms" style={{ position: 'relative', top: '-80px' }} />
@@ -22,70 +16,10 @@ export function TechnologyPortfolio() {
           </p>
         </div>
 
-        {/* Ecosystem Filter & Satellite Focus Switcher */}
-        <div className="ecosystem-nav-bar" role="tablist" aria-label="Ecosystem platform selector">
-          <button
-            type="button"
-            className={'ecosystem-nav-btn' + (filter === 'all' ? ' active' : '')}
-            onClick={() => setFilter('all')}
-            role="tab"
-            aria-selected={filter === 'all'}
-          >
-            <span className="eco-nav-dot" aria-hidden="true" />
-            Complete Ecosystem (All 4)
-          </button>
-          <button
-            type="button"
-            className={'ecosystem-nav-btn' + (filter === 'capos' ? ' active' : '')}
-            onClick={() => setFilter('capos')}
-            role="tab"
-            aria-selected={filter === 'capos'}
-          >
-            <span className="eco-nav-dot" aria-hidden="true" />
-            CapabilityOS™
-          </button>
-          <button
-            type="button"
-            className={'ecosystem-nav-btn' + (filter === 'thinking-studio' ? ' active' : '')}
-            onClick={() => setFilter('thinking-studio')}
-            role="tab"
-            aria-selected={filter === 'thinking-studio'}
-          >
-            <span className="eco-nav-dot" aria-hidden="true" />
-            AI Thinking Studio™
-          </button>
-          <button
-            type="button"
-            className={'ecosystem-nav-btn' + (filter === 'contextual' ? ' active' : '')}
-            onClick={() => setFilter('contextual')}
-            role="tab"
-            aria-selected={filter === 'contextual'}
-          >
-            <span className="eco-nav-dot" aria-hidden="true" />
-            Contextual™
-          </button>
-          <button
-            type="button"
-            className={'ecosystem-nav-btn' + (filter === 'phys-valid' ? ' active' : '')}
-            onClick={() => setFilter('phys-valid')}
-            role="tab"
-            aria-selected={filter === 'phys-valid'}
-          >
-            <span className="eco-nav-dot" aria-hidden="true" />
-            Phys-Valid™
-          </button>
-        </div>
-
         {/* 2x2 Portfolio Grid */}
         <div className="portfolio-grid-2x2">
           {/* Product Card 1: CapabilityOS */}
-          <article
-            className={
-              'tech-product-card spotlight-card' +
-              (filter === 'all' || filter === 'capos' ? ' focused' : ' dimmed')
-            }
-            id="card-capos"
-          >
+          <article className="tech-product-card spotlight-card" id="card-capos">
             <div className="card-top">
               <div className="card-status-bar">
                 <span className="tech-badge badge-operational">Active Platform</span>
@@ -157,13 +91,7 @@ export function TechnologyPortfolio() {
           </article>
 
           {/* Product Card 2: AI Thinking Studio */}
-          <article
-            className={
-              'tech-product-card spotlight-card' +
-              (filter === 'all' || filter === 'thinking-studio' ? ' focused' : ' dimmed')
-            }
-            id="card-thinking-studio"
-          >
+          <article className="tech-product-card spotlight-card" id="card-thinking-studio">
             <div className="card-top">
               <div className="card-status-bar">
                 <span className="tech-badge badge-available">Available · Pilot</span>
@@ -229,13 +157,7 @@ export function TechnologyPortfolio() {
           </article>
 
           {/* Product Card 3: Contextual */}
-          <article
-            className={
-              'tech-product-card spotlight-card' +
-              (filter === 'all' || filter === 'contextual' ? ' focused' : ' dimmed')
-            }
-            id="card-contextual"
-          >
+          <article className="tech-product-card spotlight-card" id="card-contextual">
             <div className="card-top">
               <div className="card-status-bar">
                 <span className="tech-badge badge-available">Available · Approved Access</span>
@@ -297,13 +219,7 @@ export function TechnologyPortfolio() {
           </article>
 
           {/* Product Card 4: Phys-Valid */}
-          <article
-            className={
-              'tech-product-card spotlight-card' +
-              (filter === 'all' || filter === 'phys-valid' ? ' focused' : ' dimmed')
-            }
-            id="card-phys-valid"
-          >
+          <article className="tech-product-card spotlight-card" id="card-phys-valid">
             <div className="card-top">
               <div className="card-status-bar">
                 <span className="tech-badge badge-pilot">Active Pilot</span>
