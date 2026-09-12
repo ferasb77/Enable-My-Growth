@@ -2578,7 +2578,45 @@ footer {
   display: none;
 }
 
-/* ── 2x2 PORTFOLIO GRID ── */
+/* ── 2x2 PORTFOLIO GRID & ECOSYSTEM ARCHITECTURE ── */
+.portfolio-ecosystem-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(201, 169, 110, 0.03);
+  border: 1px solid var(--tech-border);
+  border-radius: 3px;
+  padding: 0.85rem 1.4rem;
+  margin-bottom: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--tech-text-muted);
+}
+
+.portfolio-ecosystem-bar .eco-purpose-tag {
+  color: var(--tech-gold);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.portfolio-ecosystem-bar .eco-pillar-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.portfolio-ecosystem-bar .eco-pillar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--tech-subtle);
+}
+
+.portfolio-ecosystem-bar .eco-pillar-item strong {
+  color: #fff;
+  font-weight: 500;
+}
+
 .portfolio-grid-2x2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2605,6 +2643,16 @@ footer {
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(201, 169, 110, 0.08);
 }
 
+.tech-product-card.card-flagship {
+  border-color: rgba(201, 169, 110, 0.32);
+  background: linear-gradient(175deg, rgba(201, 169, 110, 0.035) 0%, var(--tech-surface) 35%);
+}
+
+.tech-product-card.card-flagship:hover {
+  border-color: rgba(201, 169, 110, 0.6);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(201, 169, 110, 0.12);
+}
+
 .card-top {
   margin-bottom: 1.2rem;
 }
@@ -2616,6 +2664,58 @@ footer {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+/* ── STATUS BADGE STYLING ── */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.tech-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tech-badge.badge-operational {
+  background: rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  color: var(--tech-gold-bright);
+}
+
+.tech-badge.badge-operational .badge-dot {
+  background: var(--tech-gold);
+  box-shadow: 0 0 8px var(--tech-gold);
+}
+
+.tech-badge.badge-available {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--tech-border-light);
+  color: #e0e0ea;
+}
+
+.tech-badge.badge-available .badge-dot {
+  background: #a0a0b8;
+}
+
+.tech-badge.badge-pilot {
+  background: rgba(201, 169, 110, 0.06);
+  border: 1px solid var(--tech-border-light);
+  color: var(--tech-text-muted);
+}
+
+.tech-badge.badge-pilot .badge-dot {
+  background: var(--tech-subtle);
 }
 
 .card-tags {
@@ -2647,61 +2747,36 @@ footer {
 }
 
 .product-summary {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 400;
-  color: var(--tech-gold);
-  line-height: 1.45;
+  color: #d2d2dc;
+  line-height: 1.5;
   margin-bottom: 0.75rem;
 }
 
-.product-body {
-  font-size: 0.85rem;
-  color: var(--tech-text-muted);
-  line-height: 1.65;
-}
-
-/* Product Visual Motif */
-.product-visual-motif {
-  background: #09090e;
-  border: 1px solid var(--tech-border);
+.product-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 1.1rem 0 1rem;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 2px;
-  padding: 0.8rem 1rem;
-  margin: 1.2rem 0;
+  padding: 0.85rem 1rem;
 }
 
-.motif-header {
+.product-signal-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--tech-text-muted);
 }
 
-.motif-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  font-weight: 500;
-  text-transform: uppercase;
+.product-signal-row strong {
   color: var(--tech-gold);
-  letter-spacing: 0.1em;
-}
-
-.motif-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  color: var(--tech-subtle);
-}
-
-.motif-graphic-wrapper {
-  width: 100%;
-  height: 95px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.motif-svg {
-  width: 100%;
-  height: 100%;
+  font-weight: 500;
 }
 
 .product-highlights {
@@ -2723,8 +2798,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.4rem;
-  padding-top: 0.85rem;
+  margin-top: auto;
+  padding-top: 1rem;
   border-top: 1px solid var(--tech-border);
 }
 
@@ -3514,6 +3589,22 @@ footer {
 
   .tech-product-card {
     padding: 1.6rem 1.25rem 1.4rem;
+  }
+
+  .portfolio-ecosystem-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .portfolio-ecosystem-bar .eco-pillar-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .product-signal-row {
+    line-height: 1.45;
   }
 
   .product-actions-footer {
