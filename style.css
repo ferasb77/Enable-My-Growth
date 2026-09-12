@@ -3123,76 +3123,148 @@ footer {
   border-top: 1px solid var(--tech-border);
 }
 
-/* ── ONE PHILOSOPHY PIPELINE ── */
-.philosophy-pipeline-wrapper {
-  position: relative;
-  margin-top: 2rem;
+/* ── ONE PHILOSOPHY ARCHITECTURAL LEDGER ── */
+.philosophy-ledger-wrapper {
+  margin-top: 2.5rem;
 }
 
-.pipeline-steps-grid {
+.philosophy-ledger-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  background: rgba(13, 14, 22, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.philosophy-ledger-col {
+  padding: 2.2rem 1.8rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
   position: relative;
-  z-index: 2;
+  transition: background-color 0.25s ease;
 }
 
-.pipeline-card {
-  background: var(--tech-surface);
-  border: 1px solid var(--tech-border);
-  border-radius: 2px;
-  padding: 1.8rem 1.4rem;
-  position: relative;
-  transition: all 0.25s ease;
+.philosophy-ledger-col:last-child {
+  border-right: none;
 }
 
-.pipeline-card:hover {
-  border-color: var(--tech-border-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+.philosophy-ledger-col:hover {
+  background: rgba(201, 169, 110, 0.03);
 }
 
-.pipeline-num {
+.philosophy-num-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.philosophy-num {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--tech-gold);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
 }
 
-.pipeline-pillar {
-  font-size: 0.72rem;
+.philosophy-pillar-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--tech-subtle);
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.12em;
 }
 
-.pipeline-headline {
+.philosophy-headline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.35rem;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.25;
-  margin-bottom: 0.65rem;
+  margin: 0 0 0.85rem 0;
+  letter-spacing: 0.01em;
 }
 
-.pipeline-desc {
-  font-size: 0.8rem;
+.philosophy-desc {
+  font-size: 0.82rem;
   color: var(--tech-text-muted);
   line-height: 1.6;
-  margin-bottom: 1.2rem;
+  margin: 0;
 }
 
-.pipeline-platform-pill {
+.philosophy-closing-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+}
+
+.philosophy-closing-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.25), transparent);
+}
+
+.philosophy-closing-text {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
-  color: var(--tech-text-muted);
-  padding-top: 0.65rem;
-  border-top: 1px solid var(--tech-border);
+  color: var(--tech-gold-bright);
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.5;
 }
 
-.pipeline-platform-pill strong {
-  color: var(--tech-gold);
+@media (max-width: 960px) {
+  .philosophy-ledger-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .philosophy-ledger-col:nth-child(2) {
+    border-right: none;
+  }
+
+  .philosophy-ledger-col:nth-child(1),
+  .philosophy-ledger-col:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}
+
+@media (max-width: 680px) {
+  .philosophy-ledger-grid {
+    grid-template-columns: 1fr;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: 1rem;
+  }
+
+  .philosophy-ledger-col {
+    background: rgba(13, 14, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 2px solid var(--tech-gold);
+    border-radius: 3px;
+    padding: 1.4rem 1.25rem;
+    border-right: none;
+  }
+
+  .philosophy-ledger-col:nth-child(1),
+  .philosophy-ledger-col:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .philosophy-closing-statement {
+    margin-top: 1.75rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .philosophy-closing-rule {
+    width: 60%;
+  }
 }
 
 /* ── DECISION ENVIRONMENT MATRIX ── */
