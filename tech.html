@@ -20,7 +20,7 @@
 <body class="tech-page-body">
   <main>
 
-    <!-- ═══ SECTION 1: IMMERSIVE HERO ═══ -->
+    <!-- ═══ SECTION 1: IMMERSIVE HERO WITH PERSPECTIVE NETWORK ═══ -->
     <header class="tech-hero-redesign" role="banner" id="hero">
       <div class="tech-grid-overlay" aria-hidden="true"></div>
       <div class="tech-ambient-glow" aria-hidden="true"></div>
@@ -28,18 +28,18 @@
       <div class="container tech-hero-container">
         <div class="tech-hero-layout">
           
-          <!-- Hero Left: Content -->
+          <!-- Hero Left: Strategic Content -->
           <div class="tech-hero-content">
             <div class="tech-hero-badge">
               <span class="tech-dot-pulse"></span>
-              <span class="eyebrow" style="color:var(--gold); letter-spacing:0.22em;">Enable My Growth Tech</span>
+              <span class="eyebrow" style="color:var(--gold); letter-spacing:0.22em;">Enable My Growth Technology</span>
               <span class="tech-meta-tag">Decision Systems &amp; Platforms</span>
             </div>
             
-            <h1 class="tech-hero-h1">Technology built around consequential human decisions.</h1>
+            <h1 class="tech-hero-h1">Technology designed around better human judgment.</h1>
             
             <p class="tech-hero-lead">
-              AI-enabled platforms, decision systems, and purpose-built digital infrastructure that help organizations examine evidence, govern complexity, and strengthen capability.
+              We build technology that connects participation, evidence, context, and intelligence—helping organizations see more clearly and act with greater confidence.
             </p>
             
             <div class="tech-hero-actions">
@@ -49,79 +49,102 @@
 
             <!-- Section Jump Bar -->
             <nav class="tech-jump-bar" aria-label="Section shortcuts">
+              <a href="#perspective-journey" class="tech-jump-link">The Perspective Story</a>
               <a href="#portfolio" class="tech-jump-link">Portfolio</a>
-              <a href="#philosophy" class="tech-jump-link">One Philosophy</a>
-              <a href="#matrix" class="tech-jump-link">Environment Matrix</a>
-              <a href="#showcase" class="tech-jump-link">Systems in Practice</a>
-              <a href="#architecture" class="tech-jump-link">Architecture</a>
-              <a href="#governance" class="tech-jump-link">Governance</a>
+              <a href="#capos-showcase" class="tech-jump-link">CapOS™</a>
+              <a href="#thinking-studio-showcase" class="tech-jump-link">Thinking Studio™</a>
+              <a href="#philosophy" class="tech-jump-link">Philosophy</a>
+              <a href="#matrix" class="tech-jump-link">Matrix</a>
             </nav>
           </div>
 
-          <!-- Hero Right: Interactive Systems Ecosystem Visual -->
-          <div class="tech-hero-visual-wrapper" aria-label="Interactive Enable My Growth Tech Ecosystem Visual">
-            <div class="tech-system-diagram">
+          <!-- Hero Right: Perspective Network Visual Centerpiece -->
+          <div class="tech-hero-visual-wrapper" aria-label="Perspective Network Visual: Isolated Information Connecting into Perspective and Better Judgment">
+            <div class="perspective-network-card spotlight-card" id="perspective-network" data-state="resolved">
               
-              <!-- Center Flow Track -->
-              <div class="tech-diagram-core">
-                <div class="core-flow-track">
-                  <div class="flow-step" data-platform="contextual">
-                    <span class="flow-step-idx">01</span>
-                    <span class="flow-step-label">Context</span>
-                  </div>
-                  <div class="flow-connector"><span class="flow-pulse"></span></div>
-                  
-                  <div class="flow-step" data-platform="capabilityos">
-                    <span class="flow-step-idx">02</span>
-                    <span class="flow-step-label">Evidence</span>
-                  </div>
-                  <div class="flow-connector"><span class="flow-pulse"></span></div>
-                  
-                  <div class="flow-step" data-platform="physvalid">
-                    <span class="flow-step-idx">03</span>
-                    <span class="flow-step-label">Conditions</span>
-                  </div>
-                  <div class="flow-connector"><span class="flow-pulse"></span></div>
-                  
-                  <div class="flow-step" data-platform="thinkingstudio">
-                    <span class="flow-step-idx">04</span>
-                    <span class="flow-step-label">Judgment</span>
-                  </div>
+              <div class="network-header">
+                <div class="network-status-indicator">
+                  <span class="network-pulse-dot"></span>
+                  <span class="network-state-text" id="network-state-label">State: Connected Perspective</span>
+                </div>
+                <div class="network-controls" aria-label="Perspective Network State Switcher">
+                  <button type="button" class="net-ctrl-btn" data-stage="isolated" title="View Isolated Data">Isolated</button>
+                  <button type="button" class="net-ctrl-btn" data-stage="connected" title="View Connected Structure">Connected</button>
+                  <button type="button" class="net-ctrl-btn active" data-stage="resolved" title="View Resolved Perspective">Perspective</button>
                 </div>
               </div>
 
-              <!-- Satellite Product Nodes with Live Links -->
-              <a href="contextual.html" class="diagram-node node-contextual" title="Explore Contextual™">
-                <div class="node-badge">Contextual™</div>
-                <div class="node-desc">Assessor Preparation</div>
-                <span class="node-link-hint">Explore →</span>
-              </a>
+              <!-- Interactive SVG Network Stage -->
+              <div class="perspective-stage">
+                <svg class="network-svg-canvas" viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Ambient background guide rings -->
+                  <circle cx="250" cy="190" r="140" stroke="rgba(201, 169, 110, 0.06)" stroke-width="1" stroke-dasharray="3 6" />
+                  <circle cx="250" cy="190" r="75" stroke="rgba(201, 169, 110, 0.1)" stroke-width="1" />
+                  
+                  <!-- Connecting Relationship Lines (animated via CSS stroke-dashoffset) -->
+                  <g class="network-connectors">
+                    <!-- Lines connecting outer nodes together -->
+                    <line class="net-wire wire-ring" x1="100" y1="90" x2="400" y2="90" />
+                    <line class="net-wire wire-ring" x1="400" y1="90" x2="430" y2="280" />
+                    <line class="net-wire wire-ring" x1="430" y1="280" x2="70" y2="280" />
+                    <line class="net-wire wire-ring" x1="70" y1="280" x2="100" y2="90" />
+                    <line class="net-wire wire-ring" x1="250" y1="55" x2="430" y2="280" />
+                    <line class="net-wire wire-ring" x1="250" y1="55" x2="70" y2="280" />
 
-              <a href="capability-os.html" class="diagram-node node-capabilityos" title="Explore CapabilityOS™">
-                <div class="node-badge">CapabilityOS™</div>
-                <div class="node-desc">Capability Infrastructure</div>
-                <span class="node-link-hint">Explore →</span>
-              </a>
+                    <!-- Lines converging to Central Perspective -->
+                    <line class="net-wire wire-core" x1="100" y1="90" x2="250" y2="190" />
+                    <line class="net-wire wire-core" x1="400" y1="90" x2="250" y2="190" />
+                    <line class="net-wire wire-core" x1="250" y1="55" x2="250" y2="190" />
+                    <line class="net-wire wire-core" x1="70" y1="280" x2="250" y2="190" />
+                    <line class="net-wire wire-core" x1="430" y1="280" x2="250" y2="190" />
+                  </g>
 
-              <a href="phys-valid.html" class="diagram-node node-physvalid" title="Explore Phys-Valid™">
-                <div class="node-badge">Phys-Valid™</div>
-                <div class="node-desc">Constraint Screening</div>
-                <span class="node-link-hint">Explore →</span>
-              </a>
+                  <!-- Central Perspective Core Glow & Node -->
+                  <g class="network-central-node" id="central-perspective-node">
+                    <circle cx="250" cy="190" r="48" fill="rgba(12, 12, 19, 0.95)" stroke="var(--tech-gold)" stroke-width="1.75" />
+                    <circle cx="250" cy="190" r="54" fill="none" stroke="rgba(201, 169, 110, 0.25)" stroke-width="1" stroke-dasharray="4 4" class="core-rotate-ring" />
+                    <text x="250" y="185" text-anchor="middle" fill="#FFFFFF" font-family="'Cormorant Garamond', Georgia, serif" font-size="14" font-weight="600" letter-spacing="0.05em">Perspective</text>
+                    <text x="250" y="201" text-anchor="middle" fill="var(--tech-gold-bright)" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" letter-spacing="0.1em">BETTER JUDGMENT</text>
+                  </g>
+                </svg>
 
-              <a href="ai-thinking-studio.html" class="diagram-node node-thinkingstudio" title="Explore AI Thinking Studio™">
-                <div class="node-badge">Thinking Studio™</div>
-                <div class="node-desc">Structured Deliberation</div>
-                <span class="node-link-hint">Explore →</span>
-              </a>
+                <!-- Independent Concept Nodes (HTML overlays for crisp typography & hover states) -->
+                <div class="concept-node node-pos-people" data-node="people" title="People: Agency, judgment, leadership">
+                  <span class="c-node-dot"></span>
+                  <span class="c-node-title">People</span>
+                  <span class="c-node-sub">Capability &amp; Judgment</span>
+                </div>
 
-              <!-- Background SVG Signal Connections -->
-              <svg class="diagram-svg-wires" viewBox="0 0 540 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path class="wire-path wire-1" d="M120 70 C 120 140, 160 180, 210 200" />
-                <path class="wire-path wire-2" d="M120 330 C 120 260, 190 220, 250 200" />
-                <path class="wire-path wire-3" d="M420 330 C 420 260, 350 220, 290 200" />
-                <path class="wire-path wire-4" d="M420 70 C 420 140, 380 180, 330 200" />
-              </svg>
+                <div class="concept-node node-pos-programs" data-node="programs" title="Programs: Coordinated development and initiatives">
+                  <span class="c-node-dot"></span>
+                  <span class="c-node-title">Programs</span>
+                  <span class="c-node-sub">Delivery Structure</span>
+                </div>
+
+                <div class="concept-node node-pos-evidence" data-node="evidence" title="Evidence: Empirical data and telemetry">
+                  <span class="c-node-dot"></span>
+                  <span class="c-node-title">Evidence</span>
+                  <span class="c-node-sub">Empirical Telemetry</span>
+                </div>
+
+                <div class="concept-node node-pos-context" data-node="context" title="Context: Situational conditions and demands">
+                  <span class="c-node-dot"></span>
+                  <span class="c-node-title">Context</span>
+                  <span class="c-node-sub">Operational Reality</span>
+                </div>
+
+                <div class="concept-node node-pos-decisions" data-node="decisions" title="Decisions: Consequential organizational commitments">
+                  <span class="c-node-dot"></span>
+                  <span class="c-node-title">Decisions</span>
+                  <span class="c-node-sub">Defensible Action</span>
+                </div>
+
+              </div>
+
+              <!-- Footnote Metaphor -->
+              <div class="network-footer">
+                <span class="network-legend-tag">Isolated Information → Connected Perspective → Better Decisions</span>
+              </div>
 
             </div>
           </div>
@@ -130,8 +153,108 @@
       </div>
     </header>
 
-    <!-- ═══ SECTION 2: INTERACTIVE PRODUCT PORTFOLIO (2x2 GRID) ═══ -->
-    <section id="portfolio" class="tech-section">
+    <!-- ═══ SECTION 2: SCROLL-DRIVEN PERSPECTIVE STORY ═══ -->
+    <section id="perspective-journey" class="tech-section perspective-journey-section">
+      <div class="container">
+        
+        <div class="tech-section-header">
+          <p class="eyebrow mb-xs">Core Creative Metaphor</p>
+          <h2 class="tech-section-h2">Perspective changes what becomes possible.</h2>
+          <p class="tech-section-sub">
+            In consequential decisions, raw information is almost never enough. Real clarity occurs when isolated data points are placed into structured relationships.
+          </p>
+        </div>
+
+        <!-- 4-Stage Progressive Transformation Stepper -->
+        <div class="perspective-stepper-wrapper" id="perspective-stepper">
+          
+          <div class="stepper-progress-track" aria-hidden="true">
+            <div class="stepper-progress-fill" id="stepper-fill-bar"></div>
+          </div>
+
+          <div class="stepper-stages-grid">
+            
+            <!-- Stage A -->
+            <div class="perspective-stage-card spotlight-card active" data-step="1">
+              <div class="p-stage-header">
+                <span class="p-stage-index">Stage A</span>
+                <span class="p-stage-state">Isolated</span>
+              </div>
+              <h3 class="p-stage-title">Isolated Information</h3>
+              <p class="p-stage-desc">
+                Data points, evaluation scores, and feedback exist in silos. Without contextual relationships, information fragments attention and conceals root causes.
+              </p>
+              <div class="p-stage-visual visual-isolated">
+                <div class="mini-node">People</div>
+                <div class="mini-node">Programs</div>
+                <div class="mini-node">Evidence</div>
+                <div class="mini-node">Decisions</div>
+              </div>
+              <div class="p-stage-meta">Data alone is fragmented</div>
+            </div>
+
+            <!-- Stage B -->
+            <div class="perspective-stage-card spotlight-card" data-step="2">
+              <div class="p-stage-header">
+                <span class="p-stage-index">Stage B</span>
+                <span class="p-stage-state">Connected</span>
+              </div>
+              <h3 class="p-stage-title">Connected Through Structure</h3>
+              <p class="p-stage-desc">
+                When people, program delivery, and longitudinal evidence are actively linked, patterns appear that no isolated metric could reveal.
+              </p>
+              <div class="p-stage-visual visual-connected">
+                <span class="mini-conn-link">People ↔ Programs</span>
+                <span class="mini-conn-link">Evidence ↔ Context</span>
+              </div>
+              <div class="p-stage-meta">Connection creates structure</div>
+            </div>
+
+            <!-- Stage C -->
+            <div class="perspective-stage-card spotlight-card" data-step="3">
+              <div class="p-stage-header">
+                <span class="p-stage-index">Stage C</span>
+                <span class="p-stage-state">Interpreted</span>
+              </div>
+              <h3 class="p-stage-title">Structured Interpretation</h3>
+              <p class="p-stage-desc">
+                Disciplined examination separates declared assumptions from verified conditions, transforming ambiguous signals into coherent perspectives.
+              </p>
+              <div class="p-stage-visual visual-interpreted">
+                <span class="mini-signal">Patterns</span>
+                <span class="mini-arrow">→</span>
+                <span class="mini-signal">Signals</span>
+                <span class="mini-arrow">→</span>
+                <span class="mini-signal gold">Perspective</span>
+              </div>
+              <div class="p-stage-meta">Perspective creates insight</div>
+            </div>
+
+            <!-- Stage D -->
+            <div class="perspective-stage-card spotlight-card" data-step="4">
+              <div class="p-stage-header">
+                <span class="p-stage-index">Stage D</span>
+                <span class="p-stage-state">Actionable</span>
+              </div>
+              <h3 class="p-stage-title">Defensible Action</h3>
+              <p class="p-stage-desc">
+                Leaders and practitioners act with verified confidence. Decisions are traceable, human accountability is preserved, and capability compounds over time.
+              </p>
+              <div class="p-stage-visual visual-action">
+                <span class="mini-badge-outcome">Better Judgment</span>
+                <span class="mini-badge-outcome">Better Outcomes</span>
+              </div>
+              <div class="p-stage-meta">Confidence enables execution</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 3: TECHNOLOGY PORTFOLIO OVERVIEW ═══ -->
+    <section id="portfolio" class="tech-section" style="background:var(--surface);">
       <!-- Target anchors for external inbound links -->
       <div id="platforms" style="position:relative; top:-80px;"></div>
       <div id="ai-digital-solutions" style="position:relative; top:-80px;"></div>
@@ -140,15 +263,76 @@
         
         <div class="tech-section-header">
           <p class="eyebrow mb-xs">Specialized Platforms</p>
-          <h2 class="tech-section-h2">Four platforms. Different decision environments.</h2>
+          <h2 class="tech-section-h2">A portfolio of decision environments.</h2>
           <p class="tech-section-sub">
-            Purpose-built software environments developed by Enable My Growth to address structured thinking, talent assessment, capability delivery, and operational governance.
+            Purpose-built software systems developed by Enable My Growth to address capability delivery, disciplined deliberation, assessor preparation, and operational governance.
           </p>
         </div>
 
         <div class="portfolio-grid-2x2">
 
-          <!-- Product Card 1: AI Thinking Studio -->
+          <!-- Product Card 1: CapabilityOS -->
+          <article class="tech-product-card spotlight-card" id="card-capability-os">
+            <div class="card-top">
+              <div class="card-status-bar">
+                <span class="tech-badge badge-enterprise">Enterprise Deployment</span>
+                <div class="card-tags">
+                  <span class="tech-meta-tag">Operations</span>
+                  <span class="tech-meta-tag">Telemetry</span>
+                  <span class="tech-meta-tag">Memory</span>
+                </div>
+              </div>
+
+              <h3 class="product-title">CapOS™</h3>
+              <p class="product-summary">Participation → Evidence → Follow-through → Intelligence</p>
+              <p class="product-body">
+                The enterprise capability operating layer. Coordinates delivery across complex programs, captures longitudinal evidence, and turns multi-cohort learning into organizational memory.
+              </p>
+            </div>
+
+            <!-- Product Visual Motif: Connected Capability Hub -->
+            <div class="product-visual-motif motif-capability">
+              <div class="motif-header">
+                <span class="motif-title">Operational Operating Layer</span>
+                <span class="motif-tag">Multi-Cohort</span>
+              </div>
+              <div class="motif-graphic-wrapper">
+                <svg viewBox="0 0 380 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="motif-svg">
+                  <circle cx="190" cy="60" r="18" fill="var(--surface3)" stroke="var(--gold)" stroke-width="1.5" />
+                  <text x="190" y="63" text-anchor="middle" fill="var(--gold-light)" font-size="8" font-family="'JetBrains Mono', monospace">CapOS</text>
+                  
+                  <line x1="70" y1="35" x2="175" y2="55" stroke="var(--border-gold)" stroke-width="1" />
+                  <line x1="70" y1="85" x2="175" y2="65" stroke="var(--border-gold)" stroke-width="1" />
+                  <line x1="310" y1="35" x2="205" y2="55" stroke="var(--border-gold)" stroke-width="1" />
+                  <line x1="310" y1="85" x2="205" y2="65" stroke="var(--border-gold)" stroke-width="1" />
+                  
+                  <circle cx="70" cy="35" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
+                  <text x="70" y="38" text-anchor="middle" fill="var(--muted)" font-size="7.5" font-family="'JetBrains Mono', monospace">Clients</text>
+                  
+                  <circle cx="70" cy="85" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
+                  <text x="70" y="88" text-anchor="middle" fill="var(--muted)" font-size="7" font-family="'JetBrains Mono', monospace">Facilitators</text>
+                  
+                  <circle cx="310" cy="35" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
+                  <text x="310" y="38" text-anchor="middle" fill="var(--muted)" font-size="7" font-family="'JetBrains Mono', monospace">Cohorts</text>
+                  
+                  <circle cx="310" cy="85" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
+                  <text x="310" y="88" text-anchor="middle" fill="var(--gold)" font-size="7" font-family="'JetBrains Mono', monospace">Evidence</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="product-highlights">
+              <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Enterprise L&amp;D teams, capability providers, program directors.</div>
+              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Not an LMS. An operating system built around delivery realities, participant evidence, and client visibility.</div>
+            </div>
+
+            <div class="product-actions-footer">
+              <a href="#capos-showcase" class="btn btn-outline btn-sm">Explore CapOS Flow <span class="btn-arrow">↓</span></a>
+              <a href="capability-os.html" class="btn btn-gold btn-sm">Platform Briefing</a>
+            </div>
+          </article>
+
+          <!-- Product Card 2: AI Thinking Studio -->
           <article class="tech-product-card spotlight-card" id="card-thinking-studio">
             <div class="card-top">
               <div class="card-status-bar">
@@ -161,13 +345,13 @@
               </div>
 
               <h3 class="product-title">AI Thinking Studio™</h3>
-              <p class="product-summary">A structured environment for examining decisions before conclusions harden.</p>
+              <p class="product-summary">Question → Structured reasoning → Better judgment</p>
               <p class="product-body">
-                A guided environment designed to help leaders, teams, facilitators, and learning cohorts examine assumptions, alternate perspectives, trade-offs, and consequences before settling on a conclusion.
+                A disciplined environment for examining decisions before conclusions harden. Helps leaders and teams unpack assumptions, perspectives, and consequences.
               </p>
             </div>
 
-            <!-- Product Visual Motif 1: Branching Reasoning Pathways -->
+            <!-- Product Visual Motif: Branching Reasoning Pathways -->
             <div class="product-visual-motif motif-thinking">
               <div class="motif-header">
                 <span class="motif-title">Deliberation Architecture</span>
@@ -196,17 +380,17 @@
             </div>
 
             <div class="product-highlights">
-              <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Senior leaders, strategy teams, facilitators, workshop cohorts.</div>
-              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> AI supports disciplined inquiry and better examination rather than simply generating answers.</div>
+              <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Senior executives, strategy teams, facilitators, workshop cohorts.</div>
+              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Not a chatbot. AI supports disciplined inquiry and better examination rather than generating rushed answers.</div>
             </div>
 
             <div class="product-actions-footer">
-              <a href="ai-thinking-studio.html" class="btn btn-outline btn-sm">Explore Platform <span class="btn-arrow">→</span></a>
-              <a href="https://studio.enablemygrowth.com/" class="btn-text" target="_blank" rel="noopener">Enter Studio ↗</a>
+              <a href="#thinking-studio-showcase" class="btn btn-outline btn-sm">Explore Deliberation Tree <span class="btn-arrow">↓</span></a>
+              <a href="ai-thinking-studio.html" class="btn-text">Studio Overview ↗</a>
             </div>
           </article>
 
-          <!-- Product Card 2: Contextual -->
+          <!-- Product Card 3: Contextual -->
           <article class="tech-product-card spotlight-card" id="card-contextual">
             <div class="card-top">
               <div class="card-status-bar">
@@ -219,13 +403,13 @@
               </div>
 
               <h3 class="product-title">Contextual™</h3>
-              <p class="product-summary">Interpret the evidence before you explain the person.</p>
+              <p class="product-summary">Evidence + Role Demands → Nuanced Assessment Debrief</p>
               <p class="product-body">
-                A professional preparation environment for qualified practitioners who want to examine assessment evidence alongside role demands, situational pressures, and competing interpretations before forming a debrief position.
+                A professional preparation environment for certified assessors who want to examine assessment evidence alongside real role demands and situational pressures before forming a debrief posture.
               </p>
             </div>
 
-            <!-- Product Visual Motif 2: Contextual Psychometric Matrix -->
+            <!-- Product Visual Motif: Contextual Psychometric Matrix -->
             <div class="product-visual-motif motif-contextual">
               <div class="motif-header">
                 <span class="motif-title">Assessor Preparation Mapping</span>
@@ -251,74 +435,13 @@
             </div>
 
             <div class="product-highlights">
-              <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Certified assessors, executive coaches, talent professionals.</div>
-              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Supports professional judgment and preparation; it does not diagnose the person or automate employment decisions.</div>
+              <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Certified Hogan assessors, executive coaches, talent practitioners.</div>
+              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Supports professional preparation and hypothesis testing; it never automates employment decisions or diagnoses individuals.</div>
             </div>
 
             <div class="product-actions-footer">
-              <a href="contextual.html" class="btn btn-outline btn-sm">Explore Platform <span class="btn-arrow">→</span></a>
-              <a href="https://contextual.enablemygrowth.com/" class="btn-text" target="_blank" rel="noopener">Enter Contextual ↗</a>
-            </div>
-          </article>
-
-          <!-- Product Card 3: CapabilityOS -->
-          <article class="tech-product-card spotlight-card" id="card-capability-os">
-            <div class="card-top">
-              <div class="card-status-bar">
-                <span class="tech-badge badge-enterprise">Enterprise Deployment</span>
-                <div class="card-tags">
-                  <span class="tech-meta-tag">Operations</span>
-                  <span class="tech-meta-tag">Telemetry</span>
-                  <span class="tech-meta-tag">Delivery</span>
-                </div>
-              </div>
-
-              <h3 class="product-title">CapabilityOS™</h3>
-              <p class="product-summary">Enterprise capability delivery infrastructure.</p>
-              <p class="product-body">
-                A purpose-built environment for organizations delivering complex learning and development experiences at scale—coordinating delivery, participant engagement, operational visibility, and longitudinal evidence in one unified system.
-              </p>
-            </div>
-
-            <!-- Product Visual Motif 3: Connected Capability Hub -->
-            <div class="product-visual-motif motif-capability">
-              <div class="motif-header">
-                <span class="motif-title">Operational Coordination Hub</span>
-                <span class="motif-tag">Multi-Stakeholder</span>
-              </div>
-              <div class="motif-graphic-wrapper">
-                <svg viewBox="0 0 380 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="motif-svg">
-                  <circle cx="190" cy="60" r="18" fill="var(--surface3)" stroke="var(--gold)" stroke-width="1.5" />
-                  <text x="190" y="63" text-anchor="middle" fill="var(--gold-light)" font-size="8" font-family="'JetBrains Mono', monospace">OS Hub</text>
-                  
-                  <line x1="70" y1="35" x2="175" y2="55" stroke="var(--border-gold)" stroke-width="1" />
-                  <line x1="70" y1="85" x2="175" y2="65" stroke="var(--border-gold)" stroke-width="1" />
-                  <line x1="310" y1="35" x2="205" y2="55" stroke="var(--border-gold)" stroke-width="1" />
-                  <line x1="310" y1="85" x2="205" y2="65" stroke="var(--border-gold)" stroke-width="1" />
-                  
-                  <circle cx="70" cy="35" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
-                  <text x="70" y="38" text-anchor="middle" fill="var(--muted)" font-size="7.5" font-family="'JetBrains Mono', monospace">Clients</text>
-                  
-                  <circle cx="70" cy="85" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
-                  <text x="70" y="88" text-anchor="middle" fill="var(--muted)" font-size="7" font-family="'JetBrains Mono', monospace">Facilitators</text>
-                  
-                  <circle cx="310" cy="35" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
-                  <text x="310" y="38" text-anchor="middle" fill="var(--muted)" font-size="7" font-family="'JetBrains Mono', monospace">Cohorts</text>
-                  
-                  <circle cx="310" cy="85" r="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" />
-                  <text x="310" y="88" text-anchor="middle" fill="var(--gold)" font-size="7" font-family="'JetBrains Mono', monospace">Evidence</text>
-                </svg>
-              </div>
-            </div>
-
-            <div class="product-highlights">
-              <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Training organizations, capability providers, enterprise L&amp;D teams, and program leaders.</div>
-              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Designed around the realities of professional capability delivery rather than adapted from generic education software.</div>
-            </div>
-
-            <div class="product-actions-footer">
-              <a href="capability-os.html" class="btn btn-outline btn-sm">Explore Platform <span class="btn-arrow">→</span></a>
-              <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn btn-gold btn-sm">Request Demonstration</a>
+              <a href="contextual.html" class="btn btn-outline btn-sm">Explore Contextual <span class="btn-arrow">→</span></a>
+              <a href="https://contextual.enablemygrowth.com/" class="btn-text" target="_blank" rel="noopener">Enter Portal ↗</a>
             </div>
           </article>
 
@@ -335,13 +458,13 @@
               </div>
 
               <h3 class="product-title">Phys-Valid™</h3>
-              <p class="product-summary">Deterministic constraint validation and governance screening for high-consequence environments.</p>
+              <p class="product-summary">Declared Conditions + Constraint Boundaries → Admissibility Gate</p>
               <p class="product-body">
                 A structured screening environment for engineering and operational contexts where declared conditions must be tested against explicit boundary constraints before review or execution.
               </p>
             </div>
 
-            <!-- Product Visual Motif 4: Deterministic Gate Pipeline -->
+            <!-- Product Visual Motif: Deterministic Gate Pipeline -->
             <div class="product-visual-motif motif-physvalid">
               <div class="motif-header">
                 <span class="motif-title">Constraint Screening Pipeline</span>
@@ -371,11 +494,11 @@
 
             <div class="product-highlights">
               <div class="highlight-item"><strong style="color:var(--text);">Primary Users:</strong> Integrity engineers, operational risk teams, governance reviewers.</div>
-              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Deterministic screening with auditable evidence and accountable human escalation; it does not predict failure or replace licensed engineering standards.</div>
+              <div class="highlight-item"><strong style="color:var(--text);">Core Distinction:</strong> Deterministic mathematical screening with auditable evidence and accountable human escalation; it does not replace licensed engineering standards.</div>
             </div>
 
             <div class="product-actions-footer">
-              <a href="phys-valid.html" class="btn btn-outline btn-sm">Explore Platform <span class="btn-arrow">→</span></a>
+              <a href="phys-valid.html" class="btn btn-outline btn-sm">Explore Phys-Valid <span class="btn-arrow">→</span></a>
               <a href="contact.html?enquiry=Phys-Valid+Pilot" class="btn-text">Discuss Pilot Access</a>
             </div>
           </article>
@@ -384,7 +507,216 @@
       </div>
     </section>
 
-    <!-- ═══ SECTION 3: "ONE PHILOSOPHY. DIFFERENT SYSTEMS." (FLOW DIAGRAM) ═══ -->
+    <!-- ═══ SECTION 4: CAPOS DISTINCTIVE OPERATING LAYER ═══ -->
+    <section id="capos-showcase" class="tech-section capos-deep-dive-section">
+      <div class="container">
+        
+        <div class="tech-section-header">
+          <p class="eyebrow mb-xs" style="color:var(--gold);">Enterprise Operating Layer</p>
+          <h2 class="tech-section-h2">CapOS™: Connecting programs, evidence, and intelligence.</h2>
+          <p class="tech-section-sub">
+            CapOS connects what happens across programs and experiences—participation, evidence, follow-through, and intelligence—into one coherent operating layer. Not an LMS. An organizational capability system.
+          </p>
+        </div>
+
+        <div class="capos-interactive-wrapper spotlight-card" id="capos-flow-container">
+          
+          <div class="capos-flow-header">
+            <div class="capos-flow-badge">
+              <span class="tech-dot-pulse"></span>
+              <span>Longitudinal Capability Pipeline</span>
+            </div>
+            <div class="capos-step-indicators" aria-label="Capability flow steps">
+              <button type="button" class="capos-step-btn active" data-flow-step="1">01 Participation</button>
+              <button type="button" class="capos-step-btn" data-flow-step="2">02 Evidence</button>
+              <button type="button" class="capos-step-btn" data-flow-step="3">03 Follow-Through</button>
+              <button type="button" class="capos-step-btn" data-flow-step="4">04 Intelligence</button>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Pipeline Graphic -->
+          <div class="capos-pipeline-graphic">
+            <svg class="capos-svg" viewBox="0 0 880 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Connecting Backplane Track -->
+              <line x1="80" y1="90" x2="800" y2="90" stroke="var(--tech-border-light)" stroke-width="2" />
+              <line class="capos-progress-line" id="capos-line-fill" x1="80" y1="90" x2="260" y2="90" stroke="var(--tech-gold)" stroke-width="2.5" />
+              
+              <!-- Pipeline Node 1 -->
+              <g class="cap-flow-node-g active" data-flow-idx="1" transform="translate(100, 90)">
+                <circle cx="0" cy="0" r="28" fill="var(--tech-surface-raised)" stroke="var(--tech-gold)" stroke-width="2" />
+                <circle cx="0" cy="0" r="34" fill="none" stroke="rgba(201, 169, 110, 0.3)" stroke-width="1" stroke-dasharray="3 3" />
+                <text x="0" y="4" text-anchor="middle" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">01</text>
+                <text x="0" y="-42" text-anchor="middle" fill="#FFFFFF" font-family="'Cormorant Garamond', Georgia, serif" font-size="15" font-weight="600">Participation</text>
+                <text x="0" y="48" text-anchor="middle" fill="var(--tech-text-muted)" font-family="'JetBrains Mono', monospace" font-size="8.5">Cohort Engagement</text>
+              </g>
+
+              <!-- Pipeline Node 2 -->
+              <g class="cap-flow-node-g" data-flow-idx="2" transform="translate(320, 90)">
+                <circle cx="0" cy="0" r="24" fill="var(--tech-surface)" stroke="var(--tech-border-light)" stroke-width="1.5" />
+                <text x="0" y="4" text-anchor="middle" fill="var(--tech-text-muted)" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">02</text>
+                <text x="0" y="-38" text-anchor="middle" fill="var(--tech-text)" font-family="'Cormorant Garamond', Georgia, serif" font-size="15" font-weight="400">Evidence</text>
+                <text x="0" y="46" text-anchor="middle" fill="var(--tech-text-muted)" font-family="'JetBrains Mono', monospace" font-size="8.5">Artifacts &amp; Work</text>
+              </g>
+
+              <!-- Pipeline Node 3 -->
+              <g class="cap-flow-node-g" data-flow-idx="3" transform="translate(560, 90)">
+                <circle cx="0" cy="0" r="24" fill="var(--tech-surface)" stroke="var(--tech-border-light)" stroke-width="1.5" />
+                <text x="0" y="4" text-anchor="middle" fill="var(--tech-text-muted)" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">03</text>
+                <text x="0" y="-38" text-anchor="middle" fill="var(--tech-text)" font-family="'Cormorant Garamond', Georgia, serif" font-size="15" font-weight="400">Follow-Through</text>
+                <text x="0" y="46" text-anchor="middle" fill="var(--tech-text-muted)" font-family="'JetBrains Mono', monospace" font-size="8.5">Accountable Practice</text>
+              </g>
+
+              <!-- Pipeline Node 4 -->
+              <g class="cap-flow-node-g" data-flow-idx="4" transform="translate(780, 90)">
+                <circle cx="0" cy="0" r="24" fill="var(--tech-surface)" stroke="var(--tech-border-light)" stroke-width="1.5" />
+                <text x="0" y="4" text-anchor="middle" fill="var(--tech-text-muted)" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">04</text>
+                <text x="0" y="-38" text-anchor="middle" fill="var(--tech-text)" font-family="'Cormorant Garamond', Georgia, serif" font-size="15" font-weight="400">Intelligence</text>
+                <text x="0" y="46" text-anchor="middle" fill="var(--tech-gold)" font-family="'JetBrains Mono', monospace" font-size="8.5">Organizational Memory</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Active Step Explanation Box -->
+          <div class="capos-step-card-active" id="capos-active-desc">
+            <div class="step-card-col">
+              <span class="step-card-num" id="capos-desc-num">Pillar 01</span>
+              <h4 class="step-card-title" id="capos-desc-title">Participation across the organizational lifecycle</h4>
+              <p class="step-card-text" id="capos-desc-text">
+                Rather than treating learning sessions as ephemeral events, CapOS coordinates participants, facilitators, leadership sponsors, and cohorts in a shared, transparent environment with real-time operational visibility.
+              </p>
+            </div>
+            <div class="step-card-outcomes">
+              <div class="capos-metric-badge">
+                <span class="capos-metric-val">100%</span>
+                <span class="capos-metric-lbl">Session Traceability</span>
+              </div>
+              <div class="capos-metric-badge">
+                <span class="capos-metric-val">Zero</span>
+                <span class="capos-metric-lbl">LMS Generic Friction</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 5: AI THINKING STUDIO BRANCHING DELIBERATION ═══ -->
+    <section id="thinking-studio-showcase" class="tech-section thinking-studio-deep-dive" style="background:var(--surface);">
+      <div class="container">
+        
+        <div class="tech-section-header">
+          <p class="eyebrow mb-xs" style="color:var(--gold);">Disciplined Deliberation Architecture</p>
+          <h2 class="tech-section-h2">AI Thinking Studio™: Thinking becoming structured.</h2>
+          <p class="tech-section-sub">
+            The Studio slows down premature certainty. A consequential question branches into its component assumptions, evidence, alternatives, risks, and implications before synthesizing into defensible judgment.
+          </p>
+        </div>
+
+        <div class="deliberation-studio-card spotlight-card" id="thinking-tree-container">
+          
+          <div class="deliberation-topbar">
+            <div class="deliberation-meta">
+              <span class="delib-dot"></span>
+              <span class="delib-label">Inquiry Canvas · Interactive Deliberation Tree</span>
+            </div>
+            <div class="deliberation-actions">
+              <button type="button" class="delib-branch-btn active" data-branch="assumptions">01 Assumptions</button>
+              <button type="button" class="delib-branch-btn" data-branch="evidence">02 Evidence</button>
+              <button type="button" class="delib-branch-btn" data-branch="alternatives">03 Alternatives</button>
+              <button type="button" class="delib-branch-btn" data-branch="risks">04 Risks</button>
+              <button type="button" class="delib-branch-btn" data-branch="implications">05 Implications</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Branching Graphic -->
+          <div class="deliberation-layout">
+            
+            <!-- Root Inquiry -->
+            <div class="inquiry-root-card">
+              <span class="inquiry-tag">The Consequential Question</span>
+              <h3 class="inquiry-question">"Should we expand into the regulated enterprise tier this fiscal quarter?"</h3>
+              <p class="inquiry-hint">Examining the question before reaching premature consensus.</p>
+            </div>
+
+            <!-- Visual Branching SVG Tree -->
+            <div class="inquiry-tree-graphic">
+              <svg viewBox="0 0 100 240" preserveAspectRatio="none" class="tree-svg-connectors">
+                <path class="tree-branch-line" id="branch-line-1" d="M10 120 C 50 120, 50 30, 90 30" />
+                <path class="tree-branch-line" id="branch-line-2" d="M10 120 C 50 120, 50 75, 90 75" />
+                <path class="tree-branch-line" id="branch-line-3" d="M10 120 C 50 120, 50 120, 90 120" />
+                <path class="tree-branch-line" id="branch-line-4" d="M10 120 C 50 120, 50 165, 90 165" />
+                <path class="tree-branch-line" id="branch-line-5" d="M10 120 C 50 120, 50 210, 90 210" />
+              </svg>
+            </div>
+
+            <!-- Deliberation Branch Breakdown Details -->
+            <div class="deliberation-branches-container">
+              
+              <div class="branch-node-card active" id="branch-assumptions" data-branch-name="assumptions">
+                <div class="branch-card-header">
+                  <span class="branch-idx">01</span>
+                  <h4 class="branch-title">Declared Assumptions</h4>
+                </div>
+                <p class="branch-body">What are you taking for granted as true? Are you assuming regulatory approval timelines match historical SaaS rollouts?</p>
+                <div class="branch-verdict">Tested: High sensitivity to compliance turnaround times.</div>
+              </div>
+
+              <div class="branch-node-card" id="branch-evidence" data-branch-name="evidence">
+                <div class="branch-card-header">
+                  <span class="branch-idx">02</span>
+                  <h4 class="branch-title">Empirical Evidence</h4>
+                </div>
+                <p class="branch-body">What verified data supports this move? Separate declared interest in sales discovery from confirmed enterprise commitments.</p>
+                <div class="branch-verdict">Tested: 3 letters of intent verified; 5 remain speculative.</div>
+              </div>
+
+              <div class="branch-node-card" id="branch-alternatives" data-branch-name="alternatives">
+                <div class="branch-card-header">
+                  <span class="branch-idx">03</span>
+                  <h4 class="branch-title">Viable Alternatives</h4>
+                </div>
+                <p class="branch-body">What other ways exist to accomplish this capability without taking on full regulatory overhead immediately?</p>
+                <div class="branch-verdict">Tested: Phased pilot deployment via audited partner network.</div>
+              </div>
+
+              <div class="branch-node-card" id="branch-risks" data-branch-name="risks">
+                <div class="branch-card-header">
+                  <span class="branch-idx">04</span>
+                  <h4 class="branch-title">Asymmetric Risks</h4>
+                </div>
+                <p class="branch-body">If this choice fails, is the downside catastrophic or reversible? Does failure damage core practice reputation?</p>
+                <div class="branch-verdict">Tested: Containable financial risk; governance failure is non-linear.</div>
+              </div>
+
+              <div class="branch-node-card" id="branch-implications" data-branch-name="implications">
+                <div class="branch-card-header">
+                  <span class="branch-idx">05</span>
+                  <h4 class="branch-title">Second-Order Consequences</h4>
+                </div>
+                <p class="branch-body">What organizational capacity will this starve over the next 18 months? What work will your senior engineers stop doing?</p>
+                <div class="branch-verdict">Tested: Diverts 40% of technical lead bandwidth from core platform.</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Structured Judgment Resolution Strip -->
+          <div class="deliberation-convergence">
+            <div class="convergence-badge">Deliberation Synthesis</div>
+            <div class="convergence-content">
+              <strong>Structured Judgment:</strong> The question is reframed from <em>"Can we build it?"</em> to <em>"Can we defend the risk posture while protecting core focus?"</em> The decision becomes deliberate, explicit, and accountable.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 6: "ONE PHILOSOPHY. DIFFERENT SYSTEMS." (FLOW DIAGRAM) ═══ -->
     <section id="philosophy" class="tech-section" style="background:var(--surface);">
       <div class="container">
         
