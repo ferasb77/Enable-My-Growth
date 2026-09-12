@@ -1,4 +1,4 @@
-﻿name: Deploy Static Website with Next.js Tech Hub
+﻿name: Deploy Clean Static Website with Next.js Tech Hub
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -30,18 +30,26 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
-      - name: Build Next.js static export
+      - name: Build Next.js static export & Assemble Clean Deployment Bundle
         run: npm run build
 
-      - name: Verify static exports
+      - name: Verify Clean Deployment Directory
         run: |
-          test -f tech.html
-          test -d _next
+          test -f dist-deploy/index.html
+          test -f dist-deploy/tech.html
+          test -f dist-deploy/about.html
+          test -f dist-deploy/CNAME
+          test -d dist-deploy/_next
+          # Verify development files are NOT in deploy artifact
+          test ! -d dist-deploy/src
+          test ! -d dist-deploy/node_modules
+          test ! -f dist-deploy/package.json
+          test ! -f dist-deploy/tsconfig.json
 
-      - name: Upload artifact for GitHub Pages
+      - name: Upload clean artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'dist-deploy'
 
   deploy:
     environment:

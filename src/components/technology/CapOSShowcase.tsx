@@ -5,42 +5,42 @@ import React, { useState } from 'react';
 const caposSteps = {
   1: {
     num: 'Pillar 01',
-    title: 'Experience & Participation across the organizational lifecycle',
-    text: 'Rather than treating sessions or programs as isolated events, CapOS coordinates participants, facilitators, leadership sponsors, and cohorts in a shared, transparent environment with real-time operational visibility across Provider, Enterprise, and Event environments.',
+    title: 'People & Participation across programs and experiences',
+    text: 'Coordinates participants, facilitators, leadership sponsors, and cohorts in a shared, transparent environment. Reflects verifiable session attendance and engagement without administrative overhead.',
     lineX2: 100,
     metrics: [
-      { val: '3 Environments', lbl: 'Provider · Enterprise · Events' },
-      { val: '100%', lbl: 'Session Traceability' },
+      { val: 'Verifiable', lbl: 'Participation Records' },
+      { val: 'Direct', lbl: 'Facilitator Coordination' },
     ],
   },
   2: {
     num: 'Pillar 02',
-    title: 'Verifiable Evidence collected continuously in practice',
-    text: 'Action projects, capability artifacts, feedback loops, and observed behavioral shifts are captured continuously as structured proof rather than buried in static evaluation spreadsheets.',
+    title: 'Structured Evidence captured directly in context',
+    text: 'Action deliverables, participant artifacts, and completed assessments are organized as concrete proof of work rather than buried in static spreadsheets. Captures only what was actually produced.',
     lineX2: 320,
     metrics: [
-      { val: 'Artifact-Led', lbl: 'Authentic Work Evidence' },
-      { val: 'Zero', lbl: 'LMS Generic Friction' },
+      { val: 'Artifacts', lbl: 'Work-Product Proof' },
+      { val: 'Grounded', lbl: 'No Speculative Claims' },
     ],
   },
   3: {
     num: 'Pillar 03',
-    title: 'Accountable Follow-Through & behavioral compounding',
-    text: 'Capability fails when program momentum evaporates. CapOS institutionalizes structured peer coaching check-ins, application milestones, and supervisor alignment cadences over 6–18 months.',
+    title: 'Follow-Through & application where captured',
+    text: 'Tracks post-session checkpoints, milestone submissions, and supervisory check-ins where established. Documents execution progress without inventing causality or unverified behavior change.',
     lineX2: 560,
     metrics: [
-      { val: '6-18 Mo', lbl: 'Longitudinal Compounding' },
-      { val: 'Human-Led', lbl: 'Supervisory Alignment' },
+      { val: 'Documented', lbl: 'Milestone Progress' },
+      { val: 'Traceable', lbl: 'Check-In History' },
     ],
   },
   4: {
     num: 'Pillar 04',
-    title: 'Strategic Intelligence & institutional memory',
-    text: 'Synthesizes enterprise-wide capability signals into actionable executive dashboards. Leaders see where capability is compounding, where friction persists, and how capability investments translate into real performance.',
+    title: 'Portfolio Visibility & institutional memory',
+    text: 'Aggregates structured program evidence into operational intelligence dashboards. Provides leadership with clear portfolio visibility based strictly on verified records and documented follow-through.',
     lineX2: 780,
     metrics: [
-      { val: 'Continuous', lbl: 'Capability Telemetry' },
-      { val: 'Executive', lbl: 'Strategic Memory' },
+      { val: 'Portfolio', lbl: 'Executive Visibility' },
+      { val: 'Institutional', lbl: 'Structured Memory' },
     ],
   },
 };
@@ -54,21 +54,54 @@ export function CapOSShowcase() {
       <div className="container">
         <div className="tech-section-header">
           <p className="eyebrow mb-xs" style={{ color: 'var(--gold)' }}>
-            Capability Operating Infrastructure
+            Operating Infrastructure
           </p>
-          <h2 className="tech-section-h2">CapOS™: Connecting programs, evidence, and intelligence.</h2>
+          <h2 className="tech-section-h2">CapOS™: Connecting people, evidence, and intelligence.</h2>
           <p className="tech-section-sub">
-            CapOS connects what happens across programs and experiences—participation, evidence,
-            follow-through, and intelligence—into one coherent operating layer. Serving capability
-            providers, enterprise academies, and high-impact events from a shared foundation.
+            CapOS provides a shared operating foundation—connecting participants, structured evidence,
+            and institutional memory across three distinct environments.
           </p>
         </div>
 
+        {/* 3 Distinct Operating Environments Overview */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem', marginBottom: '2.5rem' }}>
+          <div className="pipeline-card spotlight-card" style={{ padding: '1.5rem 1.4rem' }}>
+            <span className="tech-meta-tag" style={{ color: 'var(--gold)' }}>Environment 01</span>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.35rem', color: '#fff', margin: '0.6rem 0 0.4rem' }}>
+              Provider
+            </h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: '1.55', margin: 0 }}>
+              Facilitated capability delivery for professional training firms and advisory practices coordinating client cohorts.
+            </p>
+          </div>
+
+          <div className="pipeline-card spotlight-card" style={{ padding: '1.5rem 1.4rem' }}>
+            <span className="tech-meta-tag" style={{ color: 'var(--gold)' }}>Environment 02</span>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.35rem', color: '#fff', margin: '0.6rem 0 0.4rem' }}>
+              Enterprise
+            </h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: '1.55', margin: 0 }}>
+              Strategic capability development and internal leadership academy operations with auditable executive visibility.
+            </p>
+          </div>
+
+          <div className="pipeline-card spotlight-card" style={{ padding: '1.5rem 1.4rem' }}>
+            <span className="tech-meta-tag" style={{ color: 'var(--gold)' }}>Environment 03</span>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.35rem', color: '#fff', margin: '0.6rem 0 0.4rem' }}>
+              Events
+            </h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: '1.55', margin: 0 }}>
+              Live-event participant engagement, real-time coordination, session materials, and sponsor monetization.
+            </p>
+          </div>
+        </div>
+
+        {/* Shared CapOS Core Interactive Flow */}
         <div className="capos-interactive-wrapper spotlight-card" id="capos-flow-container">
           <div className="capos-flow-header">
             <div className="capos-flow-badge">
               <span className="tech-dot-pulse" />
-              <span>Shared CapOS Capability Pipeline</span>
+              <span>Shared CapOS Core Pipeline</span>
             </div>
             <div className="capos-step-indicators" aria-label="Capability flow steps">
               {([1, 2, 3, 4] as const).map((step) => (
@@ -78,8 +111,8 @@ export function CapOSShowcase() {
                   className={'capos-step-btn' + (activeStep === step ? ' active' : '')}
                   onClick={() => setActiveStep(step)}
                 >
-                  {step === 1 && '01 Participation'}
-                  {step === 2 && '02 Evidence'}
+                  {step === 1 && '01 People & Participation'}
+                  {step === 2 && '02 Structured Evidence'}
                   {step === 3 && '03 Follow-Through'}
                   {step === 4 && '04 Intelligence'}
                 </button>
@@ -111,8 +144,8 @@ export function CapOSShowcase() {
                 <circle cx="0" cy="0" r="28" fill="var(--tech-surface-raised)" stroke={activeStep === 1 ? 'var(--tech-gold)' : 'var(--tech-border-light)'} strokeWidth="2" />
                 <circle cx="0" cy="0" r="34" fill="none" stroke="rgba(201, 169, 110, 0.3)" strokeWidth="1" strokeDasharray="3 3" />
                 <text x="0" y="4" textAnchor="middle" fill="#FFFFFF" fontFamily="'JetBrains Mono', monospace" fontSize="11" fontWeight="600">01</text>
-                <text x="0" y="-42" textAnchor="middle" fill="#FFFFFF" fontFamily="'Cormorant Garamond', Georgia, serif" fontSize="15" fontWeight="600">Participation</text>
-                <text x="0" y="48" textAnchor="middle" fill="var(--tech-text-muted)" fontFamily="'JetBrains Mono', monospace" fontSize="8.5">Cohort Engagement</text>
+                <text x="0" y="-42" textAnchor="middle" fill="#FFFFFF" fontFamily="'Cormorant Garamond', Georgia, serif" fontSize="15" fontWeight="600">People</text>
+                <text x="0" y="48" textAnchor="middle" fill="var(--tech-text-muted)" fontFamily="'JetBrains Mono', monospace" fontSize="8.5">Participation Records</text>
               </g>
 
               {/* Pipeline Node 2 */}
@@ -124,7 +157,7 @@ export function CapOSShowcase() {
                 <circle cx="0" cy="0" r="24" fill="var(--tech-surface)" stroke={activeStep === 2 ? 'var(--tech-gold)' : 'var(--tech-border-light)'} strokeWidth="1.5" />
                 <text x="0" y="4" textAnchor="middle" fill={activeStep === 2 ? '#fff' : 'var(--tech-text-muted)'} fontFamily="'JetBrains Mono', monospace" fontSize="11" fontWeight="500">02</text>
                 <text x="0" y="-38" textAnchor="middle" fill="var(--tech-text)" fontFamily="'Cormorant Garamond', Georgia, serif" fontSize="15">Evidence</text>
-                <text x="0" y="46" textAnchor="middle" fill="var(--tech-text-muted)" fontFamily="'JetBrains Mono', monospace" fontSize="8.5">Artifacts & Work</text>
+                <text x="0" y="46" textAnchor="middle" fill="var(--tech-text-muted)" fontFamily="'JetBrains Mono', monospace" fontSize="8.5">Work-Product Proof</text>
               </g>
 
               {/* Pipeline Node 3 */}
@@ -136,7 +169,7 @@ export function CapOSShowcase() {
                 <circle cx="0" cy="0" r="24" fill="var(--tech-surface)" stroke={activeStep === 3 ? 'var(--tech-gold)' : 'var(--tech-border-light)'} strokeWidth="1.5" />
                 <text x="0" y="4" textAnchor="middle" fill={activeStep === 3 ? '#fff' : 'var(--tech-text-muted)'} fontFamily="'JetBrains Mono', monospace" fontSize="11" fontWeight="500">03</text>
                 <text x="0" y="-38" textAnchor="middle" fill="var(--tech-text)" fontFamily="'Cormorant Garamond', Georgia, serif" fontSize="15">Follow-Through</text>
-                <text x="0" y="46" textAnchor="middle" fill="var(--tech-text-muted)" fontFamily="'JetBrains Mono', monospace" fontSize="8.5">Accountable Practice</text>
+                <text x="0" y="46" textAnchor="middle" fill="var(--tech-text-muted)" fontFamily="'JetBrains Mono', monospace" fontSize="8.5">Milestone Checkpoints</text>
               </g>
 
               {/* Pipeline Node 4 */}

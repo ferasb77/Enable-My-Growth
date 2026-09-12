@@ -5,8 +5,8 @@ export function TechnologyMatrix() {
     {
       product: 'CapOS™',
       problem: 'Fragmented capability delivery & lost follow-through',
-      primaryUser: 'Capability Providers, Enterprise Academies, Program Leads',
-      decisionOutcome: 'Coordinated execution, verifiable participant evidence, compounding institutional memory',
+      primaryUser: 'Capability Providers, Enterprise Academies, Event Organizers',
+      decisionOutcome: 'Coordinated execution, verifiable participant records, structured institutional memory',
       status: 'Active Multi-Environment',
     },
     {

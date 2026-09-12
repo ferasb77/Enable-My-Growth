@@ -17,36 +17,36 @@ const branches: Record<
   assumptions: {
     num: '01',
     title: 'Declared Assumptions',
-    body: 'What are you taking for granted as true? Are you assuming regulatory approval timelines match historical SaaS rollouts?',
-    verdict: 'Tested: High sensitivity to compliance turnaround times.',
+    body: 'What is being taken for granted as true? Are operational readiness timelines assuming standard rollout cycles without external dependency delays?',
+    verdict: 'Examination note: High sensitivity to partner approval turnarounds.',
     lineIndex: 1,
   },
   evidence: {
     num: '02',
-    title: 'Empirical Evidence',
-    body: 'What verified data supports this move? Separate declared interest in sales discovery from confirmed enterprise commitments.',
-    verdict: 'Tested: 3 letters of intent verified; 5 remain speculative.',
+    title: 'Available Evidence',
+    body: 'What documented proof exists today? Distinguish between early exploratory interest and formal enterprise commitments.',
+    verdict: 'Examination note: Documented commitments verified; pipeline inquiries remain exploratory.',
     lineIndex: 2,
   },
   alternatives: {
     num: '03',
     title: 'Viable Alternatives',
-    body: 'What other ways exist to accomplish this capability without taking on full regulatory overhead immediately?',
-    verdict: 'Tested: Phased pilot deployment via audited partner network.',
+    body: 'What alternative pathways exist to establish capability without taking on immediate full organizational commitment?',
+    verdict: 'Examination note: Phased pilot deployment via audited partner network identified.',
     lineIndex: 3,
   },
   risks: {
     num: '04',
     title: 'Asymmetric Risks',
-    body: 'If this choice fails, is the downside catastrophic or reversible? Does failure damage core practice reputation?',
-    verdict: 'Tested: Containable financial risk; governance failure is non-linear.',
+    body: 'If this choice encounters friction, is the downside containable or structural? Does delivery failure impact core practice focus?',
+    verdict: 'Examination note: Containable cost exposure; reputation impact requires explicit mitigation.',
     lineIndex: 4,
   },
   implications: {
     num: '05',
     title: 'Second-Order Consequences',
-    body: 'What organizational capacity will this starve over the next 18 months? What work will your senior engineers stop doing?',
-    verdict: 'Tested: Diverts 40% of technical lead bandwidth from core platform.',
+    body: 'What team capacity will this commitment absorb over the horizon? Which existing priorities will lose leadership focus?',
+    verdict: 'Examination note: Technical lead attention diverted from core product continuity.',
     lineIndex: 5,
   },
 };
@@ -76,7 +76,7 @@ export function ThinkingStudioShowcase() {
           <div className="deliberation-topbar">
             <div className="deliberation-meta">
               <span className="delib-dot" />
-              <span className="delib-label">Inquiry Canvas · Interactive Deliberation Tree</span>
+              <span className="delib-label">Illustrative Scenario · Deliberation Tree</span>
             </div>
             <div className="deliberation-actions">
               {(Object.keys(branches) as BranchKey[]).map((key) => (
@@ -95,11 +95,11 @@ export function ThinkingStudioShowcase() {
           <div className="deliberation-layout">
             {/* Root Inquiry */}
             <div className="inquiry-root-card">
-              <span className="inquiry-tag">The Consequential Question</span>
+              <span className="inquiry-tag">Illustrative Question</span>
               <h3 className="inquiry-question">
                 &ldquo;Should we expand into the regulated enterprise tier this fiscal quarter?&rdquo;
               </h3>
-              <p className="inquiry-hint">Examining the question before reaching premature consensus.</p>
+              <p className="inquiry-hint">Demonstrating structured inquiry before reaching premature consensus.</p>
             </div>
 
             {/* Visual Branching SVG Tree */}

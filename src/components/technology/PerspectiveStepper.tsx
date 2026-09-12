@@ -24,7 +24,7 @@ const stages = [
     stage: 'Stage B',
     state: 'Connected',
     title: 'Connected Through Structure',
-    desc: 'When people, program delivery, and longitudinal evidence are actively linked, patterns appear that no isolated metric could reveal.',
+    desc: 'When people, program delivery, and longitudinal records are actively linked, patterns appear that no isolated metric could reveal.',
     meta: 'Connection creates structure',
     visual: (
       <div className="p-stage-visual visual-connected">
@@ -55,12 +55,12 @@ const stages = [
     stage: 'Stage D',
     state: 'Actionable',
     title: 'Defensible Action',
-    desc: 'Leaders and practitioners act with verified confidence. Decisions are traceable, human accountability is preserved, and capability compounds over time.',
-    meta: 'Confidence enables execution',
+    desc: 'Leaders and practitioners act with clearer confidence. Decisions are traceable, human accountability is preserved, and evidence remains transparent over time.',
+    meta: 'Clarity enables execution',
     visual: (
       <div className="p-stage-visual visual-action">
         <span className="mini-badge-outcome">Better Judgment</span>
-        <span className="mini-badge-outcome">Better Outcomes</span>
+        <span className="mini-badge-outcome">Accountable Action</span>
       </div>
     ),
   },

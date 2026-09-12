@@ -31,9 +31,9 @@ export function TechnologyPortfolio() {
               </div>
 
               <h3 className="product-title">CapabilityOS™</h3>
-              <p className="product-summary">Experience → Participation → Evidence → Follow-Through → Intelligence</p>
+              <p className="product-summary">People → Participation → Evidence → Intelligence</p>
               <p className="product-body">
-                A purpose-built delivery infrastructure for capability organizations, enterprise academies, and programs. Connects cohorts, facilitators, client stakeholders, and verifiable evidence in one unified operational layer.
+                A purpose-built delivery infrastructure for capability organizations, enterprise academies, and events. Connects cohorts, facilitators, client stakeholders, and verifiable evidence in one unified operational layer.
               </p>
             </div>
 
@@ -41,14 +41,14 @@ export function TechnologyPortfolio() {
             <div className="product-visual-motif motif-capos">
               <div className="motif-header">
                 <span className="motif-title">Operating Architecture</span>
-                <span className="motif-tag">Multi-Environment Core</span>
+                <span className="motif-tag">Shared Core</span>
               </div>
               <div className="motif-graphic-wrapper">
                 <svg viewBox="0 0 380 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="motif-svg">
                   <line x1="30" y1="60" x2="350" y2="60" stroke="var(--border2)" strokeWidth="1" />
                   <circle cx="60" cy="60" r="16" fill="var(--surface2)" stroke="var(--gold)" strokeWidth="1.5" />
                   <text x="60" y="63" textAnchor="middle" fill="var(--gold)" fontSize="9" fontFamily="'JetBrains Mono', monospace">01</text>
-                  <text x="60" y="95" textAnchor="middle" fill="var(--muted)" fontSize="8" fontFamily="'JetBrains Mono', monospace">Program</text>
+                  <text x="60" y="95" textAnchor="middle" fill="var(--muted)" fontSize="8" fontFamily="'JetBrains Mono', monospace">People</text>
 
                   <line x1="76" y1="60" x2="134" y2="60" stroke="var(--gold)" strokeWidth="1.5" />
 
@@ -73,7 +73,7 @@ export function TechnologyPortfolio() {
 
             <div className="product-highlights">
               <div className="highlight-item">
-                <strong style={{ color: 'var(--text)' }}>Shared Proposition:</strong> Unifies Provider, Enterprise, and Event environments into one capability pipeline.
+                <strong style={{ color: 'var(--text)' }}>Shared Core:</strong> Spans Provider, Enterprise, and Event environments with traceable participation and structured evidence.
               </div>
               <div className="highlight-item">
                 <strong style={{ color: 'var(--text)' }}>Core Distinction:</strong> Not an LMS. An operating layer built around delivery realities, participant proof, and institutional memory.
