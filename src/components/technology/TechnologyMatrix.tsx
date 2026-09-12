@@ -1,34 +1,30 @@
-﻿import React from 'react';
+import React from 'react';
 
 export function TechnologyMatrix() {
-  const rows = [
+  const routes = [
     {
+      challenge: 'Fragmented capability delivery, uncoordinated cohort execution, and lost operational follow-through.',
       product: 'CapOS™',
-      problem: 'Fragmented capability delivery & lost follow-through',
-      primaryUser: 'Capability Providers, Enterprise Academies, Event Organizers',
-      decisionOutcome: 'Coordinated execution, verifiable participant records, structured institutional memory',
-      status: 'Active Multi-Environment',
+      users: 'Capability Providers · Enterprise Academies · Event Organizers',
+      outcome: 'Coordinated execution, verifiable participant records, and structured institutional memory across programs.',
     },
     {
+      challenge: 'Premature executive consensus, unexamined strategic assumptions, and unvetted risk exposure before commitments are made.',
       product: 'AI Thinking Studio™',
-      problem: 'Premature consensus & unexamined strategic assumptions',
-      primaryUser: 'Senior Executives, Strategy Teams, Facilitators',
-      decisionOutcome: 'Disciplined deliberation, structured reasoning tree, defensible decision rationale',
-      status: 'Available · Pilot',
+      users: 'Executive Teams · Strategy Groups · Facilitators',
+      outcome: 'Disciplined deliberation, structured reasoning trees, and defensible decision rationale.',
     },
     {
+      challenge: 'Uncontextualized psychometric data, generic debrief reports, and evaluations isolated from actual operating pressures.',
       product: 'Contextual™',
-      problem: 'Uncontextualized psychometric reports & rote debriefs',
-      primaryUser: 'Certified Leadership Assessors & Coaches',
-      decisionOutcome: 'Nuanced debrief posture informed by real role demands and situational pressures',
-      status: 'Available · Approved Access',
+      users: 'Certified Leadership Assessors · Executive Coaches',
+      outcome: 'Nuanced debrief posture placing psychometric evidence alongside real role demands and operating pressures.',
     },
     {
+      challenge: 'Unverified assumptions entering high-consequence operational models.',
       product: 'Phys-Valid™',
-      problem: 'Unverified assumptions entering high-risk operational models',
-      primaryUser: 'Integrity Engineers & Operational Risk Teams',
-      decisionOutcome: 'Deterministic mathematical constraint evaluation, admissibility gates, audit log',
-      status: 'Active Pilot',
+      users: 'Integrity Engineers · Operational Risk Teams',
+      outcome: 'Deterministic mathematical constraint evaluation, physical limit validation, and auditable admissibility gates.',
     },
   ];
 
@@ -43,36 +39,53 @@ export function TechnologyMatrix() {
           </p>
         </div>
 
+        {/* Desktop 3-Column Decision Routing Ledger */}
         <div className="matrix-table-container">
           <div className="matrix-grid" role="table" aria-label="Decision environment matrix">
             <div className="matrix-header-row" role="row">
-              <div className="matrix-col-th" role="columnheader">Platform</div>
-              <div className="matrix-col-th" role="columnheader">Core Challenge</div>
-              <div className="matrix-col-th" role="columnheader">Primary Users</div>
-              <div className="matrix-col-th" role="columnheader">Decision Outcome</div>
-              <div className="matrix-col-th" role="columnheader">Deployment</div>
+              <div className="matrix-col-th col-challenge" role="columnheader">Operating Challenge</div>
+              <div className="matrix-col-th col-platform" role="columnheader">Technology System</div>
+              <div className="matrix-col-th col-outcome" role="columnheader">Decision / Operational Outcome</div>
             </div>
 
-            {rows.map((r, i) => (
+            {routes.map((r, i) => (
               <div key={i} className="matrix-row" role="row">
-                <div className="matrix-cell font-serif font-bold text-white" role="cell">
-                  {r.product}
+                <div className="matrix-cell col-challenge" role="cell">
+                  <p className="matrix-challenge-text">{r.challenge}</p>
                 </div>
-                <div className="matrix-cell" role="cell">
-                  {r.problem}
+                <div className="matrix-cell col-platform" role="cell">
+                  <span className="matrix-platform-name">{r.product}</span>
+                  <span className="matrix-user-meta">{r.users}</span>
                 </div>
-                <div className="matrix-cell" role="cell">
-                  {r.primaryUser}
-                </div>
-                <div className="matrix-cell" role="cell">
-                  {r.decisionOutcome}
-                </div>
-                <div className="matrix-cell" role="cell">
-                  <span className="tech-meta-tag">{r.status}</span>
+                <div className="matrix-cell col-outcome" role="cell">
+                  <p className="matrix-outcome-text">{r.outcome}</p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile Vertical Decision Routing Sequence (Zero Horizontal Scrolling) */}
+        <div className="matrix-mobile-routes" aria-label="Decision routing guide">
+          {routes.map((r, i) => (
+            <div key={i} className="matrix-mobile-card">
+              <div className="mobile-route-tier">
+                <span className="mobile-tier-label">Challenge</span>
+                <p className="mobile-challenge-text">{r.challenge}</p>
+              </div>
+              <div className="mobile-route-tier">
+                <span className="mobile-tier-label">Relevant System</span>
+                <div className="mobile-platform-group">
+                  <span className="mobile-platform-name">{r.product}</span>
+                  <span className="mobile-user-meta">{r.users}</span>
+                </div>
+              </div>
+              <div className="mobile-route-tier">
+                <span className="mobile-tier-label">Outcome</span>
+                <p className="mobile-outcome-text">{r.outcome}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
