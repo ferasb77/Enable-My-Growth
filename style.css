@@ -2188,6 +2188,94 @@ footer {
   background: #08080d;
 }
 
+/* ── SECTION 4: CAPOS SHOWCASE ── */
+.capos-environments-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.capos-env-entry {
+  background: rgba(14, 15, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 2px solid rgba(201, 169, 110, 0.45);
+  border-radius: 3px;
+  padding: 1.15rem 1.25rem;
+  position: relative;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.capos-env-entry:hover {
+  border-color: rgba(201, 169, 110, 0.35);
+  border-top-color: var(--tech-gold);
+  background: rgba(18, 19, 30, 0.75);
+}
+
+.capos-env-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.capos-env-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.capos-env-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.capos-env-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 0.45rem 0;
+  letter-spacing: 0.01em;
+}
+
+.capos-env-desc {
+  font-size: 0.78rem;
+  color: var(--tech-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.capos-environments-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 640px;
+  margin: 0 auto 2.25rem;
+}
+
+.capos-connector-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.25), transparent);
+}
+
+.capos-connector-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--tech-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .capos-interactive-wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -2249,16 +2337,17 @@ footer {
   color: var(--tech-gold-bright);
 }
 
+/* Desktop Graphic */
 .capos-pipeline-graphic {
   width: 100%;
-  overflow-x: auto;
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
+  display: block;
 }
 
 .capos-svg {
   width: 100%;
-  min-width: 720px;
-  height: 180px;
+  height: 170px;
+  display: block;
 }
 
 .capos-progress-line {
@@ -2278,6 +2367,61 @@ footer {
   stroke: var(--tech-gold);
   stroke-width: 2.2;
   filter: drop-shadow(0 0 10px rgba(201, 169, 110, 0.3));
+}
+
+/* Mobile Vertical Pipeline Stepper (hidden on desktop) */
+.capos-mobile-stepper {
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.capos-mobile-step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--tech-border);
+  border-radius: 3px;
+  color: var(--tech-text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.capos-mobile-step-item.active {
+  background: rgba(201, 169, 110, 0.1);
+  border-color: var(--tech-gold);
+  color: #ffffff;
+}
+
+.capos-mobile-step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--tech-gold);
+  padding: 0.25rem 0.45rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 2px;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.capos-mobile-step-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  flex: 1;
+}
+
+.capos-mobile-step-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold-bright);
 }
 
 .capos-step-card-active {
@@ -2332,7 +2476,7 @@ footer {
 .capos-metric-val {
   display: block;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--tech-gold-bright);
 }
@@ -2344,6 +2488,61 @@ footer {
   letter-spacing: 0.05em;
   margin-top: 0.2rem;
   display: block;
+}
+
+/* Responsive adjustments for CapOS Showcase */
+@media (max-width: 860px) {
+  .capos-environments-band {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .capos-interactive-wrapper {
+    padding: 1.4rem 1.25rem;
+  }
+
+  .capos-pipeline-graphic {
+    display: none;
+  }
+
+  .capos-mobile-stepper {
+    display: flex;
+  }
+
+  .capos-step-indicators {
+    display: none;
+  }
+
+  .capos-step-card-active {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .step-card-outcomes {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 520px) {
+  .step-card-outcomes {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .capos-metric-badge {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .capos-metric-lbl {
+    margin-top: 0;
+  }
 }
 
 /* ── SECTION 5: AI THINKING STUDIO DELIBERATION TREE ── */
