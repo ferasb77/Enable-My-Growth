@@ -3432,6 +3432,146 @@ footer {
   }
 }
 
+/* ── ENTERPRISE TRUST & DEPLOYMENT ARCHITECTURAL LEDGER ── */
+.trust-ledger-wrapper {
+  margin-top: 2.5rem;
+}
+
+.trust-ledger-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(13, 14, 22, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.trust-ledger-col {
+  padding: 2.2rem 1.75rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.trust-ledger-col:last-child {
+  border-right: none;
+}
+
+.trust-num-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.trust-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--tech-gold);
+  letter-spacing: 0.08em;
+}
+
+.trust-pillar-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.trust-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 0.85rem 0;
+  letter-spacing: 0.01em;
+}
+
+.trust-desc {
+  font-size: 0.82rem;
+  color: var(--tech-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.trust-closing-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 860px;
+  margin: 2.5rem auto 0;
+}
+
+.trust-closing-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.25), transparent);
+}
+
+.trust-closing-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--tech-text-muted);
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .trust-ledger-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-ledger-col:nth-child(2) {
+    border-right: none;
+  }
+
+  .trust-ledger-col:nth-child(1),
+  .trust-ledger-col:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}
+
+@media (max-width: 680px) {
+  .trust-ledger-grid {
+    grid-template-columns: 1fr;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: 1rem;
+  }
+
+  .trust-ledger-col {
+    background: rgba(13, 14, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 2px solid var(--tech-gold);
+    border-radius: 3px;
+    padding: 1.4rem 1.25rem;
+    border-right: none;
+  }
+
+  .trust-ledger-col:nth-child(1),
+  .trust-ledger-col:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .trust-closing-statement {
+    margin-top: 1.75rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .trust-closing-rule {
+    width: 60%;
+  }
+}
+
 /* ── SYSTEMS IN PRACTICE SHOWCASE ── */
 .showcase-interactive-container {
   max-width: 1040px;
