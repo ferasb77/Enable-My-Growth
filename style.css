@@ -1699,13 +1699,13 @@ footer {
 .perspective-network-card {
   position: relative;
   width: 100%;
-  background: rgba(12, 12, 19, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--tech-border-gold);
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 169, 110, 0.35);
   border-radius: 4px;
   padding: 1.25rem 1.4rem;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(201, 169, 110, 0.08);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.75), 0 0 28px rgba(201, 169, 110, 0.08);
   overflow: hidden;
 }
 
@@ -1722,7 +1722,7 @@ footer {
 .network-status-indicator {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .network-pulse-dot {
@@ -1739,45 +1739,73 @@ footer {
   color: var(--tech-gold-bright);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-weight: 500;
 }
 
-.network-controls {
+.network-actions {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.net-replay-btn {
+  background: rgba(201, 169, 110, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   gap: 0.35rem;
+  transition: all 0.25s ease;
+}
+
+.net-replay-btn:hover {
+  background: rgba(201, 169, 110, 0.15);
+  border-color: var(--tech-gold);
+  color: #ffffff;
+}
+
+/* Optional dev inspector toolbar */
+.network-dev-controls {
+  display: flex;
+  gap: 0.25rem;
   background: rgba(255, 255, 255, 0.03);
   padding: 2px;
   border-radius: 3px;
   border: 1px solid var(--tech-border);
 }
 
-.net-ctrl-btn {
+.net-dev-btn {
   background: transparent;
   border: none;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   color: var(--tech-text-muted);
-  padding: 0.25rem 0.6rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.net-ctrl-btn:hover {
+.net-dev-btn:hover {
   color: #ffffff;
 }
 
-.net-ctrl-btn.active {
-  background: rgba(201, 169, 110, 0.15);
+.net-dev-btn.active {
+  background: rgba(201, 169, 110, 0.2);
   color: var(--tech-gold-bright);
-  border: 1px solid rgba(201, 169, 110, 0.3);
 }
 
 /* Perspective Network SVG Stage & Concept Nodes */
-.perspective-stage {
+.network-stage-canvas {
   position: relative;
   width: 100%;
   height: 380px;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0 0.5rem;
 }
 
 .network-svg-canvas {
@@ -1791,11 +1819,18 @@ footer {
 .net-wire {
   stroke: rgba(201, 169, 110, 0.28);
   stroke-width: 1.25;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: stroke 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-width 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wire-ring {
   stroke-dasharray: 4 4;
+}
+
+.wire-interpret {
+  stroke: var(--tech-gold-bright);
+  stroke-width: 1.75;
 }
 
 .core-rotate-ring {
@@ -1809,30 +1844,33 @@ footer {
 }
 
 .network-central-node {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: 250px 190px;
 }
 
-/* Concept Node HTML Elements */
+/* Concept Node Base Styling */
 .concept-node {
   position: absolute;
   z-index: 3;
-  background: rgba(18, 18, 28, 0.94);
+  background: rgba(18, 18, 28, 0.95);
   border: 1px solid var(--tech-border);
   border-radius: 3px;
   padding: 0.45rem 0.75rem;
   display: flex;
   flex-direction: column;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              background 0.4s ease,
+              box-shadow 0.4s ease,
+              opacity 0.5s ease;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
   user-select: none;
 }
 
 .concept-node:hover {
   border-color: var(--tech-gold);
   background: rgba(24, 24, 38, 0.98);
-  transform: translateY(-2px) scale(1.02);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7), 0 0 14px rgba(201, 169, 110, 0.2);
 }
 
@@ -1859,31 +1897,49 @@ footer {
   letter-spacing: 0.02em;
 }
 
-/* Concept Node Absolute Coordinates (matched to SVG nodes) */
-.node-pos-people    { top: 55px;  left: 20px; }
-.node-pos-context   { top: 25px;  left: 200px; transform: translateX(-50%); }
-.node-pos-programs  { top: 55px;  right: 20px; }
-.node-pos-evidence  { bottom: 50px; left: 15px; }
-.node-pos-decisions { bottom: 50px; right: 15px; }
+/* Concept Node Absolute Anchor Points (SVG 500x380) */
+.node-pos-people    { top: 75px;  left: 35px; }
+.node-pos-context   { top: 40px;  left: 250px; transform: translateX(-50%); }
+.node-pos-programs  { top: 75px;  right: 35px; }
+.node-pos-evidence  { top: 290px; left: 45px; }
+.node-pos-decisions { top: 290px; right: 45px; }
 
-/* Network States: Isolated vs Connected vs Resolved */
-[data-state="isolated"] .network-connectors line {
+/* ── 4-STATE SPATIAL REORGANIZATION ── */
+
+/* STATE 1: FRAGMENTED */
+[data-state="fragmented"] .node-pos-people    { transform: translate(-16px, -18px); border-color: var(--tech-border); }
+[data-state="fragmented"] .node-pos-context   { transform: translate(-50%, -22px); border-color: var(--tech-border); }
+[data-state="fragmented"] .node-pos-programs  { transform: translate(16px, -18px); border-color: var(--tech-border); }
+[data-state="fragmented"] .node-pos-evidence  { transform: translate(-16px, 18px); border-color: var(--tech-border); }
+[data-state="fragmented"] .node-pos-decisions { transform: translate(16px, 18px); border-color: var(--tech-border); }
+
+[data-state="fragmented"] .network-connectors line {
   opacity: 0;
-  stroke-dashoffset: 40;
 }
 
-[data-state="isolated"] .network-central-node {
-  opacity: 0.15;
-  transform: scale(0.92);
+[data-state="fragmented"] .network-central-node {
+  opacity: 0;
+  transform: scale(0.8);
 }
 
-[data-state="isolated"] .concept-node {
-  border-color: var(--tech-border);
-  filter: grayscale(0.5);
+[data-state="fragmented"] .concept-node {
+  opacity: 0.75;
+  filter: grayscale(0.6);
 }
+
+/* STATE 2: CONNECTED */
+[data-state="connected"] .node-pos-people    { transform: translate(0, 0); }
+[data-state="connected"] .node-pos-context   { transform: translate(-50%, 0); }
+[data-state="connected"] .node-pos-programs  { transform: translate(0, 0); }
+[data-state="connected"] .node-pos-evidence  { transform: translate(0, 0); }
+[data-state="connected"] .node-pos-decisions { transform: translate(0, 0); }
 
 [data-state="connected"] .network-connectors .wire-ring {
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+[data-state="connected"] .network-connectors .wire-interpret {
+  opacity: 0.2;
 }
 
 [data-state="connected"] .network-connectors .wire-core {
@@ -1891,17 +1947,65 @@ footer {
 }
 
 [data-state="connected"] .network-central-node {
-  opacity: 0.55;
-  transform: scale(0.96);
+  opacity: 0.35;
+  transform: scale(0.92);
 }
 
-[data-state="resolved"] .network-connectors line {
+[data-state="connected"] .concept-node {
   opacity: 1;
+  filter: grayscale(0);
+}
+
+/* STATE 3: INTERPRETED */
+[data-state="interpreted"] .node-pos-people    { transform: translate(8px, 6px); }
+[data-state="interpreted"] .node-pos-context   { transform: translate(-50%, 10px); }
+[data-state="interpreted"] .node-pos-programs  { transform: translate(-8px, 6px); }
+[data-state="interpreted"] .node-pos-evidence  { transform: translate(8px, -6px); }
+[data-state="interpreted"] .node-pos-decisions { transform: translate(-8px, -6px); }
+
+[data-state="interpreted"] .network-connectors .wire-ring {
+  opacity: 0.35;
+}
+
+[data-state="interpreted"] .network-connectors .wire-interpret {
+  opacity: 0.95;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 6px rgba(201, 169, 110, 0.4));
+}
+
+[data-state="interpreted"] .network-connectors .wire-core {
+  opacity: 0.65;
+}
+
+[data-state="interpreted"] .network-central-node {
+  opacity: 0.8;
+  transform: scale(1.0);
+}
+
+/* STATE 4: RESOLVED */
+[data-state="resolved"] .node-pos-people    { transform: translate(14px, 12px); border-color: var(--tech-gold); }
+[data-state="resolved"] .node-pos-context   { transform: translate(-50%, 16px); border-color: var(--tech-gold); }
+[data-state="resolved"] .node-pos-programs  { transform: translate(-14px, 12px); border-color: var(--tech-gold); }
+[data-state="resolved"] .node-pos-evidence  { transform: translate(14px, -12px); border-color: var(--tech-gold); }
+[data-state="resolved"] .node-pos-decisions { transform: translate(-14px, -12px); border-color: var(--tech-gold); }
+
+[data-state="resolved"] .network-connectors .wire-ring {
+  opacity: 0.6;
+}
+
+[data-state="resolved"] .network-connectors .wire-interpret {
+  opacity: 0.8;
+}
+
+[data-state="resolved"] .network-connectors .wire-core {
+  opacity: 1;
+  stroke-width: 1.75;
+  filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.35));
 }
 
 [data-state="resolved"] .network-central-node {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1.05);
 }
 
 .network-footer {
@@ -3653,20 +3757,40 @@ html, body {
     grid-template-columns: 1fr;
   }
   .perspective-network-card {
-    padding: 1.25rem 1rem;
+    padding: 1.1rem 0.85rem;
   }
   .network-stage-canvas {
-    height: 320px;
+    height: 330px;
   }
   .concept-node {
-    padding: 0.35rem 0.5rem;
+    padding: 0.32rem 0.55rem;
   }
   .c-node-title {
     font-size: 0.82rem;
   }
   .c-node-sub {
-    font-size: 0.55rem;
+    font-size: 0.54rem;
   }
+
+  /* Mobile Spatial Adaptations (prevent edge clipping on narrow viewports) */
+  .node-pos-people    { top: 55px;  left: 10px; }
+  .node-pos-context   { top: 20px;  left: 50%; transform: translateX(-50%); }
+  .node-pos-programs  { top: 55px;  right: 10px; }
+  .node-pos-evidence  { top: 260px; left: 15px; }
+  .node-pos-decisions { top: 260px; right: 15px; }
+
+  [data-state="fragmented"] .node-pos-people    { transform: translate(-6px, -10px); }
+  [data-state="fragmented"] .node-pos-context   { transform: translate(-50%, -12px); }
+  [data-state="fragmented"] .node-pos-programs  { transform: translate(6px, -10px); }
+  [data-state="fragmented"] .node-pos-evidence  { transform: translate(-6px, 10px); }
+  [data-state="fragmented"] .node-pos-decisions { transform: translate(6px, 10px); }
+
+  [data-state="resolved"] .node-pos-people    { transform: translate(8px, 8px); }
+  [data-state="resolved"] .node-pos-context   { transform: translate(-50%, 10px); }
+  [data-state="resolved"] .node-pos-programs  { transform: translate(-8px, 8px); }
+  [data-state="resolved"] .node-pos-evidence  { transform: translate(8px, -8px); }
+  [data-state="resolved"] .node-pos-decisions { transform: translate(-8px, -8px); }
+
   .capos-interactive-wrapper,
   .deliberation-studio-card {
     padding: 1.25rem 1rem;
@@ -3708,10 +3832,16 @@ html, body {
   .capos-progress-line {
     transition: none !important;
   }
-  [data-state="isolated"] .network-connectors line {
-    opacity: 0.5 !important;
+  [data-state="fragmented"] .network-connectors line {
+    opacity: 0.8 !important;
   }
-  [data-state="isolated"] .network-central-node {
+  [data-state="fragmented"] .network-central-node {
     opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+  [data-state="fragmented"] .concept-node {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
 }
