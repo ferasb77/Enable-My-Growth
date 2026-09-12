@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 
@@ -8,51 +8,59 @@ const branches: Record<
   BranchKey,
   {
     num: string;
-    title: string;
-    body: string;
-    verdict: string;
-    lineIndex: number;
+    stageLabel: string;
+    inquiry: string;
+    examination: string;
+    finding: string;
   }
 > = {
   assumptions: {
     num: '01',
-    title: 'Declared Assumptions',
-    body: 'What is being taken for granted as true? Are operational readiness timelines assuming standard rollout cycles without external dependency delays?',
-    verdict: 'Examination note: High sensitivity to partner approval turnarounds.',
-    lineIndex: 1,
+    stageLabel: 'Assumptions',
+    inquiry: 'What is being taken for granted as true before execution begins?',
+    examination:
+      'Are operational readiness timelines assuming standard rollout cycles without factoring external partner dependency delays and compliance reviews?',
+    finding: 'High sensitivity to partner approval turnarounds. Unbuffered critical paths pose deployment risks.',
   },
   evidence: {
     num: '02',
-    title: 'Available Evidence',
-    body: 'What documented proof exists today? Distinguish between early exploratory interest and formal enterprise commitments.',
-    verdict: 'Examination note: Documented commitments verified; pipeline inquiries remain exploratory.',
-    lineIndex: 2,
+    stageLabel: 'Evidence',
+    inquiry: 'What documented, auditable proof exists today?',
+    examination:
+      'Distinguish verified enterprise commitments and signed letters of intent from early exploratory inquiries and anecdotal pipeline signals.',
+    finding: 'Documented commitments verified for core capabilities; regulated tier demand remains preliminary.',
   },
   alternatives: {
     num: '03',
-    title: 'Viable Alternatives',
-    body: 'What alternative pathways exist to establish capability without taking on immediate full organizational commitment?',
-    verdict: 'Examination note: Phased pilot deployment via audited partner network identified.',
-    lineIndex: 3,
+    stageLabel: 'Alternatives',
+    inquiry: 'What alternative pathways achieve capability without immediate organizational lock-in?',
+    examination:
+      'Evaluate whether a phased pilot deployment or accredited partner network can validate readiness before committing internal engineering bandwidth.',
+    finding: 'Phased pilot deployment via audited partner network identified as a lower-friction validation route.',
   },
   risks: {
     num: '04',
-    title: 'Asymmetric Risks',
-    body: 'If this choice encounters friction, is the downside containable or structural? Does delivery failure impact core practice focus?',
-    verdict: 'Examination note: Containable cost exposure; reputation impact requires explicit mitigation.',
-    lineIndex: 4,
+    stageLabel: 'Risks',
+    inquiry: 'If this choice encounters friction, is downside exposure containable or structural?',
+    examination:
+      'Assess financial downside, contractual penalty exposure, and whether delivery strain impairs core practice continuity.',
+    finding: 'Direct cost exposure is containable; organizational reputation risk requires an explicit mitigation framework.',
   },
   implications: {
     num: '05',
-    title: 'Second-Order Consequences',
-    body: 'What team capacity will this commitment absorb over the horizon? Which existing priorities will lose leadership focus?',
-    verdict: 'Examination note: Technical lead attention diverted from core product continuity.',
-    lineIndex: 5,
+    stageLabel: 'Consequences',
+    inquiry: 'What second-order consequences will this decision create across the operating horizon?',
+    examination:
+      'Identify which executive priorities will lose focus and how senior engineering attention will be diverted from existing commitments.',
+    finding: 'Technical lead capacity diverted from core product roadmap continuity for at least two quarters.',
   },
 };
 
+const branchOrder: BranchKey[] = ['assumptions', 'evidence', 'alternatives', 'risks', 'implications'];
+
 export function ThinkingStudioShowcase() {
   const [activeBranch, setActiveBranch] = useState<BranchKey>('assumptions');
+  const active = branches[activeBranch];
 
   return (
     <section
@@ -67,86 +75,90 @@ export function ThinkingStudioShowcase() {
           </p>
           <h2 className="tech-section-h2">AI Thinking Studio™: Thinking becoming structured.</h2>
           <p className="tech-section-sub">
-            The Studio slows down premature certainty. A consequential question branches into its component
-            assumptions, evidence, alternatives, risks, and implications before synthesizing into defensible judgment.
+            The Studio slows down premature certainty. A consequential question is deliberately decomposed across five
+            reasoning dimensions before synthesizing into defensible judgment.
           </p>
         </div>
 
         <div className="deliberation-studio-card spotlight-card" id="thinking-tree-container">
+          {/* Top Control Bar with 5-Stage Stepper Navigation */}
           <div className="deliberation-topbar">
             <div className="deliberation-meta">
               <span className="delib-dot" />
-              <span className="delib-label">Illustrative Scenario · Deliberation Tree</span>
+              <span className="delib-label">Disciplined Inquiry Workspace</span>
             </div>
-            <div className="deliberation-actions">
-              {(Object.keys(branches) as BranchKey[]).map((key) => (
-                <button
-                  key={key}
-                  type="button"
-                  className={'delib-branch-btn' + (activeBranch === key ? ' active' : '')}
-                  onClick={() => setActiveBranch(key)}
-                >
-                  {branches[key].num} {branches[key].title}
-                </button>
-              ))}
+            <div className="deliberation-actions" aria-label="Deliberation stages">
+              {branchOrder.map((key) => {
+                const b = branches[key];
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    className={'delib-branch-btn' + (activeBranch === key ? ' active' : '')}
+                    onClick={() => setActiveBranch(key)}
+                  >
+                    <span className="delib-btn-num">{b.num}</span>
+                    <span>{b.stageLabel}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <div className="deliberation-layout">
-            {/* Root Inquiry */}
-            <div className="inquiry-root-card">
+          {/* Focused Deliberation Workspace: Question Anchor + Active Reasoning Stage */}
+          <div className="deliberation-workspace-grid">
+            {/* Left Column: Consequential Question Anchor */}
+            <div className="deliberation-anchor-card">
               <span className="inquiry-tag">Illustrative Question</span>
               <h3 className="inquiry-question">
                 &ldquo;Should we expand into the regulated enterprise tier this fiscal quarter?&rdquo;
               </h3>
-              <p className="inquiry-hint">Demonstrating structured inquiry before reaching premature consensus.</p>
+              <p className="inquiry-hint">
+                Human-led deliberation deconstructing high-stakes strategic choices before commitments are made.
+              </p>
+              <div className="inquiry-meta-row">
+                <span className="inquiry-status-pill">Active Inquiry</span>
+                <span className="inquiry-stage-count">Stage {active.num} of 05</span>
+              </div>
             </div>
 
-            {/* Visual Branching SVG Tree */}
-            <div className="inquiry-tree-graphic">
-              <svg viewBox="0 0 100 240" preserveAspectRatio="none" className="tree-svg-connectors">
-                <path
-                  className={'tree-branch-line' + (activeBranch === 'assumptions' ? ' active' : '')}
-                  d="M10 120 C 50 120, 50 30, 90 30"
-                />
-                <path
-                  className={'tree-branch-line' + (activeBranch === 'evidence' ? ' active' : '')}
-                  d="M10 120 C 50 120, 50 75, 90 75"
-                />
-                <path
-                  className={'tree-branch-line' + (activeBranch === 'alternatives' ? ' active' : '')}
-                  d="M10 120 C 50 120, 50 120, 90 120"
-                />
-                <path
-                  className={'tree-branch-line' + (activeBranch === 'risks' ? ' active' : '')}
-                  d="M10 120 C 50 120, 50 165, 90 165"
-                />
-                <path
-                  className={'tree-branch-line' + (activeBranch === 'implications' ? ' active' : '')}
-                  d="M10 120 C 50 120, 50 210, 90 210"
-                />
-              </svg>
-            </div>
+            {/* Right Column: Active Stage In-Depth Focus */}
+            <div className="deliberation-stage-card" key={activeBranch}>
+              <div className="stage-card-header">
+                <div className="stage-card-badge">
+                  <span className="stage-badge-num">{active.num}</span>
+                  <span className="stage-badge-label">Stage: {active.stageLabel}</span>
+                </div>
+                <div className="stage-nav-controls">
+                  {branchOrder.map((key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={'stage-dot-btn' + (activeBranch === key ? ' active' : '')}
+                      onClick={() => setActiveBranch(key)}
+                      aria-label={`Switch to ${branches[key].stageLabel}`}
+                    />
+                  ))}
+                </div>
+              </div>
 
-            {/* Deliberation Branch Breakdown Details */}
-            <div className="deliberation-branches-container">
-              {(Object.keys(branches) as BranchKey[]).map((key) => {
-                const b = branches[key];
-                return (
-                  <div
-                    key={key}
-                    className={'branch-node-card' + (activeBranch === key ? ' active' : '')}
-                    onClick={() => setActiveBranch(key)}
-                  >
-                    <div className="branch-card-header">
-                      <span className="branch-idx">{b.num}</span>
-                      <h4 className="branch-title">{b.title}</h4>
-                    </div>
-                    <p className="branch-body">{b.body}</p>
-                    <div className="branch-verdict">{b.verdict}</div>
-                  </div>
-                );
-              })}
+              {/* Inquiry Question */}
+              <div className="stage-block stage-inquiry-block">
+                <span className="stage-subhead">Inquiry Focus</span>
+                <p className="stage-inquiry-text">{active.inquiry}</p>
+              </div>
+
+              {/* What is Being Examined */}
+              <div className="stage-block stage-examination-block">
+                <span className="stage-subhead">Critical Examination</span>
+                <p className="stage-examination-text">{active.examination}</p>
+              </div>
+
+              {/* Auditable Finding / Note */}
+              <div className="stage-finding-strip">
+                <span className="stage-finding-label">Examination Note</span>
+                <p className="stage-finding-text">{active.finding}</p>
+              </div>
             </div>
           </div>
 

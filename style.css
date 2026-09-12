@@ -2546,6 +2546,7 @@ footer {
 }
 
 /* ── SECTION 5: AI THINKING STUDIO DELIBERATION TREE ── */
+/* ── SECTION 5: AI THINKING STUDIO DELIBERATION WORKSPACE ── */
 .thinking-studio-deep-dive {
   background: var(--tech-surface);
 }
@@ -2568,7 +2569,7 @@ footer {
   gap: 1rem;
   padding-bottom: 1.2rem;
   border-bottom: 1px solid var(--tech-border);
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .delib-dot {
@@ -2591,7 +2592,7 @@ footer {
 
 .deliberation-actions {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
 }
 
@@ -2601,10 +2602,18 @@ footer {
   color: var(--tech-text-muted);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
-  padding: 0.35rem 0.7rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 2px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   transition: all 0.2s ease;
+}
+
+.delib-btn-num {
+  color: var(--tech-gold);
+  font-weight: 600;
 }
 
 .delib-branch-btn:hover {
@@ -2618,19 +2627,24 @@ footer {
   color: var(--tech-gold-bright);
 }
 
-.deliberation-layout {
+/* 2-Column Deliberation Workspace */
+.deliberation-workspace-grid {
   display: grid;
-  grid-template-columns: 1fr 60px 1.45fr;
-  gap: 1.2rem;
-  align-items: center;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
-.inquiry-root-card {
+/* Left Column: Consequential Question Anchor */
+.deliberation-anchor-card {
   background: var(--tech-surface);
   border: 1px solid var(--tech-border-gold);
   border-radius: 3px;
-  padding: 1.6rem 1.4rem;
+  padding: 1.75rem 1.6rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .inquiry-tag {
@@ -2645,112 +2659,184 @@ footer {
 
 .inquiry-question {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1.35rem;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.3;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.85rem 0;
 }
 
 .inquiry-hint {
   font-size: 0.78rem;
   color: var(--tech-text-muted);
-  line-height: 1.5;
+  line-height: 1.55;
+  margin: 0;
 }
 
-.inquiry-tree-graphic {
-  width: 100%;
-  height: 240px;
-}
-
-.tree-svg-connectors {
-  width: 100%;
-  height: 100%;
-}
-
-.tree-branch-line {
-  stroke: var(--tech-border-light);
-  stroke-width: 1.5;
-  fill: none;
-  transition: all 0.3s ease;
-}
-
-.tree-branch-line.active {
-  stroke: var(--tech-gold);
-  stroke-width: 2;
-  filter: drop-shadow(0 0 6px rgba(201, 169, 110, 0.3));
-}
-
-.deliberation-branches-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.branch-node-card {
-  background: var(--tech-surface);
-  border: 1px solid var(--tech-border);
-  border-radius: 2px;
-  padding: 0.85rem 1.1rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.branch-node-card:hover {
-  border-color: var(--tech-border-light);
-  background: var(--tech-surface-raised);
-}
-
-.branch-node-card.active {
-  border-color: var(--tech-gold);
-  background: rgba(201, 169, 110, 0.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-}
-
-.branch-card-header {
+.inquiry-meta-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.branch-idx {
+.inquiry-status-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.5rem;
+  background: rgba(201, 169, 110, 0.08);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 2px;
+}
+
+.inquiry-stage-count {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
-  color: var(--tech-gold);
-  font-weight: 500;
-}
-
-.branch-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1.2;
-}
-
-.branch-body {
-  font-size: 0.78rem;
   color: var(--tech-text-muted);
-  line-height: 1.45;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
 }
 
-.branch-verdict {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--tech-gold-bright);
-}
-
-.deliberation-convergence {
-  margin-top: 1.8rem;
-  padding: 1.2rem 1.5rem;
-  background: rgba(201, 169, 110, 0.06);
+/* Right Column: Active Stage Detail Card */
+.deliberation-stage-card {
+  background: #0d0e17;
   border: 1px solid var(--tech-border-gold);
+  border-radius: 3px;
+  padding: 1.6rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.stage-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.stage-card-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.stage-badge-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #000;
+  background: var(--tech-gold);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+
+.stage-badge-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stage-nav-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.stage-dot-btn {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--tech-border);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.stage-dot-btn:hover {
+  border-color: var(--tech-gold);
+}
+
+.stage-dot-btn.active {
+  background: var(--tech-gold);
+  border-color: var(--tech-gold);
+  box-shadow: 0 0 6px var(--tech-gold);
+}
+
+.stage-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stage-subhead {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stage-inquiry-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.stage-examination-text {
+  font-size: 0.82rem;
+  color: var(--tech-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stage-finding-strip {
+  background: rgba(201, 169, 110, 0.05);
+  border-left: 2px solid var(--tech-gold);
+  padding: 0.85rem 1rem;
+  border-radius: 0 2px 2px 0;
+  margin-top: 0.2rem;
+}
+
+.stage-finding-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-gold-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+}
+
+.stage-finding-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #e5e5eb;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Deliberation Synthesis Strip */
+.deliberation-convergence {
+  margin-top: 1.75rem;
+  padding: 1.15rem 1.4rem;
+  background: rgba(201, 169, 110, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.25);
   border-radius: 3px;
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.25rem;
 }
 
 .convergence-badge {
@@ -2770,6 +2856,41 @@ footer {
   font-size: 0.82rem;
   color: var(--tech-text);
   line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .deliberation-studio-card {
+    padding: 1.4rem 1.25rem;
+  }
+
+  .deliberation-workspace-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .deliberation-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .deliberation-actions {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+  }
+
+  .delib-branch-btn {
+    flex-shrink: 0;
+  }
+
+  .deliberation-convergence {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 1rem 1.1rem;
+  }
 }
 
 /* Backward-compatible legacy aliases */
