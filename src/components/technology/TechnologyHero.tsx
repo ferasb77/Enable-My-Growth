@@ -64,16 +64,16 @@ export function TechnologyHero() {
           <g className="pf-paths-group">
             <path d="M 685 220 C 755 190, 820 175, 900 175" className="pf-curve pf-c1" />
             <path d="M 900 175 C 980 175, 1045 190, 1115 220" className="pf-curve pf-c2" />
-            <path d="M 1115 220 C 1150 310, 1130 415, 1080 500" className="pf-curve pf-c3" />
-            <path d="M 1080 500 C 990 560, 810 560, 720 500" className="pf-curve pf-c4" />
-            <path d="M 720 500 C 670 415, 650 310, 685 220" className="pf-curve pf-c5" />
+            <path d="M 1115 220 C 1160 300, 1160 400, 1130 480" className="pf-curve pf-c3" />
+            <path d="M 1130 480 C 1030 540, 770 540, 670 480" className="pf-curve pf-c4" />
+            <path d="M 670 480 C 640 400, 640 300, 685 220" className="pf-curve pf-c5" />
 
             {/* Inward Focal Rays */}
             <line x1="685" y1="220" x2="900" y2="370" className="pf-ray pf-ray-people" />
             <line x1="900" y1="175" x2="900" y2="370" className="pf-ray pf-ray-context" />
             <line x1="1115" y1="220" x2="900" y2="370" className="pf-ray pf-ray-programs" />
-            <line x1="720" y1="500" x2="900" y2="370" className="pf-ray pf-ray-evidence" />
-            <line x1="1080" y1="500" x2="900" y2="370" className="pf-ray pf-ray-decisions" />
+            <line x1="670" y1="480" x2="900" y2="370" className="pf-ray pf-ray-evidence" />
+            <line x1="1130" y1="480" x2="900" y2="370" className="pf-ray pf-ray-decisions" />
           </g>
 
           {/* Phase 3 & 4 — PERSPECTIVE Center & BETTER JUDGMENT Directional Alignment */}
@@ -88,11 +88,11 @@ export function TechnologyHero() {
             </text>
 
             {/* Downward Vector toward Defensible Action */}
-            <line x1="900" y1="432" x2="900" y2="486" className="pf-vector-line" />
-            <polygon points="895,484 905,484 900,494" className="pf-vector-head" />
+            <line x1="900" y1="432" x2="900" y2="580" className="pf-vector-line" />
+            <polygon points="894,578 906,578 900,590" className="pf-vector-head" />
 
-            {/* Settled Plaque: BETTER JUDGMENT (Refined vertical cushion) */}
-            <g className="pf-plaque-node" transform="translate(900, 524)">
+            {/* Settled Plaque: BETTER JUDGMENT (Lower vertical hierarchy with clear negative space) */}
+            <g className="pf-plaque-node" transform="translate(900, 624)">
               <rect x="-95" y="-16" width="190" height="32" rx="3" className="pf-plaque-rect" />
               <text x="0" y="5" textAnchor="middle" className="pf-plaque-label">
                 BETTER JUDGMENT

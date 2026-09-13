@@ -1853,8 +1853,8 @@ footer {
 .pf-vector-line {
   stroke: url(#judgmentBeamGrad);
   stroke-width: 2.2;
-  stroke-dasharray: 65;
-  stroke-dashoffset: 65;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
 }
 
 .pf-vector-head {
@@ -1937,12 +1937,12 @@ footer {
   margin-left: 0.15rem;
 }
 
-/* Desktop Anchor Coordinates pulled inward into ~58–60% visual zone */
+/* Desktop Anchor Coordinates pulled inward into ~58–60% visual zone (Clean vertical hierarchy) */
 .pf-node-people    { left: 47%; top: 23%; }
 .pf-node-context   { left: 63%; top: 15%; transform: translateX(-50%); }
 .pf-node-programs  { left: 77%; top: 23%; }
-.pf-node-evidence  { left: 50%; top: 67%; }
-.pf-node-decisions { left: 74%; top: 67%; }
+.pf-node-evidence  { left: 45%; top: 63%; }
+.pf-node-decisions { left: 78%; top: 63%; }
 
 /* Hero Foreground Content Overlaid cleanly (~40–42% editorial width) */
 .tech-hero-container {
@@ -2110,7 +2110,7 @@ footer {
 }
 
 @keyframes pfVectorDraw {
-  0%, 75% { stroke-dashoffset: 65; opacity: 0; }
+  0%, 75% { stroke-dashoffset: 150; opacity: 0; }
   85%, 100% { stroke-dashoffset: 0; opacity: 1; }
 }
 
@@ -2135,13 +2135,13 @@ footer {
 @keyframes pfPillEvidence {
   0% { transform: translate(-15px, 15px); opacity: 0.6; }
   50% { transform: translate(5px, -5px); opacity: 0.95; }
-  78%, 100% { transform: translate(12px, -10px); opacity: 1; border-color: var(--tech-gold); }
+  78%, 100% { transform: translate(-8px, -4px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 @keyframes pfPillDecisions {
   0% { transform: translate(15px, 15px); opacity: 0.6; }
   50% { transform: translate(-5px, -5px); opacity: 0.95; }
-  78%, 100% { transform: translate(-12px, -10px); opacity: 1; border-color: var(--tech-gold); }
+  78%, 100% { transform: translate(8px, -4px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 /* ── COMPACT PERSPECTIVE TRANSITION BRIDGE ── */
