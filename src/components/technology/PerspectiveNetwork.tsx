@@ -2,193 +2,299 @@
 
 import React, { useState, useEffect } from 'react';
 
-// The 5 key signals with their structural positions
-const primarySignals = [
-  { id: 'people', title: 'People', sub: 'Capability & Action' },
-  { id: 'context', title: 'Context', sub: 'Operational Reality' },
-  { id: 'programs', title: 'Programs', sub: 'Delivery Structure' },
-  { id: 'evidence', title: 'Evidence', sub: 'Empirical Telemetry' },
-  { id: 'decisions', title: 'Decisions', sub: 'Defensible Action' },
+export interface SignalItem {
+  id: string;
+  title: string;
+  sub: string;
+  category: string;
+  x: number;
+  y: number;
+  description: string;
+}
+
+export const primarySignals: SignalItem[] = [
+  {
+    id: 'people',
+    title: 'People',
+    sub: 'Capability & Action',
+    category: 'Human Agency',
+    x: 90,
+    y: 110,
+    description: 'Participants, facilitators, and leadership practitioners driving operational capability.',
+  },
+  {
+    id: 'context',
+    title: 'Context',
+    sub: 'Operational Reality',
+    category: 'Environment',
+    x: 270,
+    y: 60,
+    description: 'Operating constraints, regulatory mandates, and organizational pressures.',
+  },
+  {
+    id: 'programs',
+    title: 'Programs',
+    sub: 'Delivery Structure',
+    category: 'Architecture',
+    x: 450,
+    y: 110,
+    description: 'Structured enterprise academies, cohort sessions, and milestone governance.',
+  },
+  {
+    id: 'evidence',
+    title: 'Evidence',
+    sub: 'Empirical Telemetry',
+    category: 'Verifiable Proof',
+    x: 120,
+    y: 320,
+    description: 'Concrete work products, assessment telemetry, and verifiable audit records.',
+  },
+  {
+    id: 'decisions',
+    title: 'Decisions',
+    sub: 'Defensible Action',
+    category: 'Outcome',
+    x: 420,
+    y: 320,
+    description: 'Traceable executive commitments and auditable choices with preserved human accountability.',
+  },
 ];
 
 export function PerspectiveNetwork() {
   const [playCount, setPlayCount] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [activeSignal, setActiveSignal] = useState<string | null>(null);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  const handleReplay = () => {
+  const handleReplay = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveSignal(null);
     setPlayCount((prev) => prev + 1);
   };
 
+  const selectedSig = primarySignals.find((s) => s.id === activeSignal);
+
   return (
     <div
-      className="perspective-network-card spotlight-card perspective-field-card"
+      className="perspective-atmosphere-wrapper"
       id="perspective-network"
       aria-label="Perspective Field Strategic Transformation"
     >
-      {/* Network Header with Status & Replay Control */}
-      <div className="network-header">
-        <div className="network-status-indicator">
-          <span className="network-pulse-dot" aria-hidden="true" />
-          <span className="network-state-text" aria-live="polite">
-            Perspective Field · Better Judgment
-          </span>
+      {/* Background ambient light fields */}
+      <div className="pf-ambient-mesh" aria-hidden="true" />
+      <div className="pf-ambient-lens-light" aria-hidden="true" />
+
+      {/* Floating System HUD Header */}
+      <div className="pf-hud-header">
+        <div className="pf-status-badge">
+          <span className="pf-pulse-core" aria-hidden="true" />
+          <span className="pf-status-label">PERSPECTIVE FIELD</span>
+          <span className="pf-status-state">· Living Synthesis Engine</span>
         </div>
 
-        <div className="network-actions">
-          <button
-            type="button"
-            className="net-replay-btn"
-            onClick={handleReplay}
-            title="Replay the Perspective Field sequence"
-            aria-label="Replay Perspective Field sequence"
-          >
-            <span aria-hidden="true">↺</span> Replay
-          </button>
-        </div>
+        <button
+          type="button"
+          className="pf-replay-control"
+          onClick={handleReplay}
+          title="Restart Perspective Field synthesis"
+          aria-label="Restart Perspective Field synthesis"
+        >
+          <span className="pf-replay-icon" aria-hidden="true">↺</span>
+          <span className="pf-replay-text">Restart Field</span>
+        </button>
       </div>
 
-      {/* Animation Stage: keyed by playCount to force deterministic restart on replay */}
+      {/* Primary SVG Animation & Interactive Field */}
       <div
         key={playCount}
-        className={`perspective-field-stage ${isMounted ? 'is-running' : 'is-prerender'}`}
+        className={`perspective-field-canvas-wrap ${isMounted ? 'is-running' : 'is-prerender'} ${
+          activeSignal ? `inspecting-${activeSignal}` : ''
+        }`}
       >
         <svg
-          className="perspective-field-svg"
-          viewBox="0 0 520 400"
+          className="perspective-fluid-svg"
+          viewBox="0 0 540 420"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            {/* Subtle background glow for lens */}
-            <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="var(--tech-gold)" stopOpacity="0.12" />
-              <stop offset="60%" stopColor="var(--tech-gold)" stopOpacity="0.03" />
+            <radialGradient id="fieldCoreGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="var(--tech-gold)" stopOpacity="0.22" />
+              <stop offset="50%" stopColor="var(--tech-gold)" stopOpacity="0.06" />
               <stop offset="100%" stopColor="transparent" stopOpacity="0" />
             </radialGradient>
 
-            {/* Linear gradient for final Judgment beam */}
-            <linearGradient id="judgmentBeam" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="var(--tech-gold)" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="var(--tech-gold)" stopOpacity="0.15" />
+            <linearGradient id="fluidBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="var(--tech-gold)" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="var(--tech-gold-bright)" stopOpacity="0.3" />
             </linearGradient>
           </defs>
 
-          {/* ── PHASE 1: BACKGROUND SCATTERED SIGNALS (Faint noise fragments) ── */}
-          <g className="pf-scatter-field" aria-hidden="true">
-            <circle cx="55" cy="65" r="2" className="pf-scatter-dot dot-1" />
-            <circle cx="140" cy="45" r="1.5" className="pf-scatter-dot dot-2" />
-            <circle cx="410" cy="55" r="2" className="pf-scatter-dot dot-3" />
-            <circle cx="475" cy="95" r="1.5" className="pf-scatter-dot dot-4" />
-            <circle cx="35" cy="205" r="1.5" className="pf-scatter-dot dot-5" />
-            <circle cx="490" cy="245" r="2" className="pf-scatter-dot dot-6" />
-            <circle cx="65" cy="350" r="1.5" className="pf-scatter-dot dot-7" />
-            <circle cx="160" cy="375" r="2" className="pf-scatter-dot dot-8" />
-            <circle cx="380" cy="370" r="1.5" className="pf-scatter-dot dot-9" />
-            <circle cx="465" cy="340" r="2" className="pf-scatter-dot dot-10" />
+          {/* ── 1. AMBIENT SCATTERED PARTICLES & RETICLES ── */}
+          <g className="pf-scatter-points" aria-hidden="true">
+            <circle cx="45" cy="55" r="1.5" className="pf-sc-dot" />
+            <circle cx="150" cy="40" r="2" className="pf-sc-dot" />
+            <circle cx="390" cy="45" r="1.5" className="pf-sc-dot" />
+            <circle cx="495" cy="80" r="2" className="pf-sc-dot" />
+            <circle cx="30" cy="220" r="1.5" className="pf-sc-dot" />
+            <circle cx="510" cy="225" r="2" className="pf-sc-dot" />
+            <circle cx="55" cy="365" r="2" className="pf-sc-dot" />
+            <circle cx="170" cy="390" r="1.5" className="pf-sc-dot" />
+            <circle cx="370" cy="385" r="2" className="pf-sc-dot" />
+            <circle cx="485" cy="355" r="1.5" className="pf-sc-dot" />
 
-            {/* Subtle scattered stray dashes */}
-            <line x1="80" y1="130" x2="105" y2="115" className="pf-scatter-line line-1" />
-            <line x1="420" y1="140" x2="445" y2="160" className="pf-scatter-line line-2" />
-            <line x1="70" y1="270" x2="95" y2="290" className="pf-scatter-line line-3" />
-            <line x1="430" y1="280" x2="450" y2="260" className="pf-scatter-line line-4" />
+            <path d="M 270 20 L 270 40 M 270 380 L 270 400" className="pf-sc-reticle" />
+            <path d="M 20 195 L 40 195 M 500 195 L 520 195" className="pf-sc-reticle" />
           </g>
 
-          {/* ── PHASE 2: PERSPECTIVE LENS GEOMETRY ── */}
-          <g className="pf-lens-group" aria-hidden="true">
-            {/* Ambient radial lens illumination */}
-            <circle cx="260" cy="185" r="130" fill="url(#lensGlow)" className="pf-lens-glow" />
+          {/* ── 2. PERSPECTIVE LENS GEOMETRY ── */}
+          <g className="pf-lens-structure" aria-hidden="true">
+            <circle cx="270" cy="195" r="145" fill="url(#fieldCoreGlow)" className="pf-lens-aura" />
+            <circle cx="270" cy="195" r="138" className="pf-lens-orbit orbit-outer" />
+            <circle cx="270" cy="195" r="102" className="pf-lens-orbit orbit-mid" />
+            <circle cx="270" cy="195" r="68" className="pf-lens-orbit orbit-inner" />
 
-            {/* Outer structural geometric frame */}
-            <circle cx="260" cy="185" r="126" className="pf-lens-ring ring-outer" />
-            <circle cx="260" cy="185" r="92" className="pf-lens-ring ring-mid" />
-            <circle cx="260" cy="185" r="60" className="pf-lens-ring ring-inner" />
-
-            {/* Fine coordinate tick marks on lens */}
-            <line x1="260" y1="55" x2="260" y2="67" className="pf-lens-tick" />
-            <line x1="260" y1="303" x2="260" y2="315" className="pf-lens-tick" />
-            <line x1="130" y1="185" x2="142" y2="185" className="pf-lens-tick" />
-            <line x1="378" y1="185" x2="390" y2="185" className="pf-lens-tick" />
+            {/* Compass Axis Markings */}
+            <line x1="270" y1="52" x2="270" y2="62" className="pf-axis-tick" />
+            <line x1="270" y1="328" x2="270" y2="338" className="pf-axis-tick" />
+            <line x1="127" y1="195" x2="137" y2="195" className="pf-axis-tick" />
+            <line x1="403" y1="195" x2="413" y2="195" className="pf-axis-tick" />
           </g>
 
-          {/* ── PHASE 3: INTERPRETATION TRACES & RELATIONSHIPS ── */}
-          <g className="pf-relationship-paths" aria-hidden="true">
-            {/* Smooth curved paths linking the 5 signals through the lens */}
-            {/* People (100, 95) to Center & Context (260, 65) */}
-            <path d="M 100 95 C 170 75, 210 65, 260 65" className="pf-rel-path path-1" />
-            {/* Context (260, 65) to Programs (420, 95) */}
-            <path d="M 260 65 C 310 65, 350 75, 420 95" className="pf-rel-path path-2" />
-            {/* Programs (420, 95) to Decisions (395, 295) */}
-            <path d="M 420 95 C 440 180, 425 240, 395 295" className="pf-rel-path path-3" />
-            {/* Decisions (395, 295) to Evidence (125, 295) */}
-            <path d="M 395 295 C 320 325, 200 325, 125 295" className="pf-rel-path path-4" />
-            {/* Evidence (125, 295) to People (100, 95) */}
-            <path d="M 125 295 C 95 240, 80 180, 100 95" className="pf-rel-path path-5" />
+          {/* ── 3. DYNAMIC TRACES & FOCAL RAYS ── */}
+          <g className="pf-convergence-network" aria-hidden="true">
+            <path d="M 90 110 C 160 80, 210 60, 270 60" className="pf-trace-contour contour-1" />
+            <path d="M 270 60 C 330 60, 380 80, 450 110" className="pf-trace-contour contour-2" />
+            <path d="M 450 110 C 475 200, 455 260, 420 320" className="pf-trace-contour contour-3" />
+            <path d="M 420 320 C 340 355, 200 355, 120 320" className="pf-trace-contour contour-4" />
+            <path d="M 120 320 C 85 260, 65 200, 90 110" className="pf-trace-contour contour-5" />
 
-            {/* Convergent focal rays connecting signals directly to the center */}
-            <line x1="100" y1="95" x2="260" y2="185" className="pf-focal-ray ray-people" />
-            <line x1="260" y1="65" x2="260" y2="185" className="pf-focal-ray ray-context" />
-            <line x1="420" y1="95" x2="260" y2="185" className="pf-focal-ray ray-programs" />
-            <line x1="125" y1="295" x2="260" y2="185" className="pf-focal-ray ray-evidence" />
-            <line x1="395" y1="295" x2="260" y2="185" className="pf-focal-ray ray-decisions" />
+            <line
+              x1="90"
+              y1="110"
+              x2="270"
+              y2="195"
+              className={`pf-focal-beam beam-people ${activeSignal === 'people' ? 'beam-active' : ''}`}
+            />
+            <line
+              x1="270"
+              y1="60"
+              x2="270"
+              y2="195"
+              className={`pf-focal-beam beam-context ${activeSignal === 'context' ? 'beam-active' : ''}`}
+            />
+            <line
+              x1="450"
+              y1="110"
+              x2="270"
+              y2="195"
+              className={`pf-focal-beam beam-programs ${activeSignal === 'programs' ? 'beam-active' : ''}`}
+            />
+            <line
+              x1="120"
+              y1="320"
+              x2="270"
+              y2="195"
+              className={`pf-focal-beam beam-evidence ${activeSignal === 'evidence' ? 'beam-active' : ''}`}
+            />
+            <line
+              x1="420"
+              y1="320"
+              x2="270"
+              y2="195"
+              className={`pf-focal-beam beam-decisions ${activeSignal === 'decisions' ? 'beam-active' : ''}`}
+            />
           </g>
 
-          {/* ── PHASE 4: JUDGMENT CORE & DIRECTIONAL VECTOR ── */}
-          <g className="pf-judgment-core">
-            {/* Central structured disc */}
-            <circle cx="260" cy="185" r="44" className="pf-core-disc" />
-            <circle cx="260" cy="185" r="50" className="pf-core-border" />
+          {/* ── 4. SYNTHESIS CORE & BETTER JUDGMENT VECTOR ── */}
+          <g className="pf-judgment-hub">
+            <circle cx="270" cy="195" r="48" className="pf-hub-disc" />
+            <circle cx="270" cy="195" r="54" className="pf-hub-ring" />
 
-            {/* Center Label: PERSPECTIVE */}
-            <text x="260" y="180" textAnchor="middle" className="pf-text-perspective">
+            <text x="270" y="190" textAnchor="middle" className="pf-hub-title">
               PERSPECTIVE
             </text>
-            <text x="260" y="196" textAnchor="middle" className="pf-text-sub">
+            <text x="270" y="206" textAnchor="middle" className="pf-hub-meta">
               STRUCTURED CLARITY
             </text>
 
-            {/* Directional beam emerging toward Better Judgment */}
-            <line x1="260" y1="234" x2="260" y2="280" className="pf-judgment-beam" />
-            <polygon points="257,278 263,278 260,285" className="pf-judgment-arrowhead" />
+            <line x1="270" y1="249" x2="270" y2="295" className="pf-downward-vector" />
+            <polygon points="266,293 274,293 270,301" className="pf-vector-arrowhead" />
 
-            {/* Decisive Judgment Plaque / Anchor */}
-            <g className="pf-judgment-plaque" transform="translate(260, 310)">
-              <rect x="-85" y="-14" width="170" height="28" rx="2" className="pf-plaque-bg" />
-              <text x="0" y="4" textAnchor="middle" className="pf-plaque-text">
+            <g className="pf-plaque-group" transform="translate(270, 325)">
+              <rect x="-95" y="-16" width="190" height="32" rx="3" className="pf-plaque-container" />
+              <text x="0" y="5" textAnchor="middle" className="pf-plaque-caption">
                 BETTER JUDGMENT
               </text>
             </g>
           </g>
         </svg>
 
-        {/* ── 5 PRIMARY ORGANIZATIONAL SIGNALS ── */}
-        <div className="pf-signals-layer" aria-label="Five organizational signals">
-          {primarySignals.map((sig) => (
-            <div
-              key={sig.id}
-              className={`pf-signal-pill pf-sig-${sig.id}`}
-              data-signal={sig.id}
-            >
-              <span className="pf-sig-dot" />
-              <div className="pf-sig-content">
-                <span className="pf-sig-title">{sig.title}</span>
-                <span className="pf-sig-sub">{sig.sub}</span>
+        {/* ── 5. INTERACTIVE ORGANIZATIONAL SIGNAL NODES ── */}
+        <div className="pf-signals-constellation">
+          {primarySignals.map((sig) => {
+            const isSelected = activeSignal === sig.id;
+            return (
+              <button
+                key={sig.id}
+                type="button"
+                className={`pf-node-pill pf-node-${sig.id} ${isSelected ? 'is-selected' : ''}`}
+                onClick={() => setActiveSignal(isSelected ? null : sig.id)}
+                title={`Inspect ${sig.title}: ${sig.sub}`}
+                aria-pressed={isSelected}
+              >
+                <div className="pf-node-status-glow" aria-hidden="true" />
+                <span className="pf-node-marker" />
+                <div className="pf-node-text-wrap">
+                  <div className="pf-node-top">
+                    <span className="pf-node-title">{sig.title}</span>
+                    <span className="pf-node-tag">{sig.category}</span>
+                  </div>
+                  <span className="pf-node-sub">{sig.sub}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ── 6. ACTIVE INSPECTOR DRAWER / CONTEXT CARD ── */}
+        {selectedSig && (
+          <div className="pf-inspect-drawer" role="region" aria-label="Signal Inspector Details">
+            <div className="pf-drawer-inner">
+              <div className="pf-drawer-meta">
+                <span className="pf-drawer-eyebrow">Active Lens Focus</span>
+                <button
+                  type="button"
+                  className="pf-drawer-close"
+                  onClick={() => setActiveSignal(null)}
+                  aria-label="Close inspector"
+                >
+                  ✕
+                </button>
+              </div>
+              <h4 className="pf-drawer-title">
+                {selectedSig.title} · {selectedSig.sub}
+              </h4>
+              <p className="pf-drawer-desc">{selectedSig.description}</p>
+              <div className="pf-drawer-footer">
+                <span className="pf-drawer-cue">
+                  Synthesized through the <strong>Perspective Lens</strong> into defensible decision-making.
+                </span>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
 
-      {/* Narrative Metaphor Subtitle */}
-      <div className="network-footer">
-        <span className="network-legend-tag">
-          Scattered Signals → Perspective Lens → Disciplined Interpretation → Better Judgment
+      {/* Bottom Subtitle Caption */}
+      <div className="pf-atmosphere-footer">
+        <span className="pf-atmosphere-legend">
+          Click any signal node to trace its convergence into the perspective core.
         </span>
       </div>
     </div>
   );
 }
-

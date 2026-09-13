@@ -3,9 +3,7 @@ import { GlobalNav } from '../components/global/GlobalNav';
 import { GlobalFooter } from '../components/global/GlobalFooter';
 import { TechnologyHero } from '../components/technology/TechnologyHero';
 import { PerspectiveStepper } from '../components/technology/PerspectiveStepper';
-import { TechnologyPortfolio } from '../components/technology/TechnologyPortfolio';
-import { CapOSShowcase } from '../components/technology/CapOSShowcase';
-import { ThinkingStudioShowcase } from '../components/technology/ThinkingStudioShowcase';
+import { TechEcosystemExplorer } from '../components/technology/TechEcosystemExplorer';
 import { TechnologyPhilosophy } from '../components/technology/TechnologyPhilosophy';
 import { TechnologyMatrix } from '../components/technology/TechnologyMatrix';
 import { TechnologyCTA } from '../components/technology/TechnologyCTA';
@@ -17,9 +15,7 @@ export default function TechnologyPage() {
       <main>
         <TechnologyHero />
         <PerspectiveStepper />
-        <TechnologyPortfolio />
-        <CapOSShowcase />
-        <ThinkingStudioShowcase />
+        <TechEcosystemExplorer />
         <TechnologyPhilosophy />
         <TechnologyMatrix />
         <TechnologyCTA />
@@ -28,3 +24,4 @@ export default function TechnologyPage() {
     </>
   );
 }
+

@@ -1800,20 +1800,112 @@ footer {
   color: var(--tech-gold-bright);
 }
 
-/* Perspective Field Hero Animation & Stage */
-.perspective-field-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.perspective-field-stage {
+/* ══════════════════════════════════════════════════════════
+   LIVING PERSPECTIVE FIELD ATMOSPHERE & HERO STYLING
+   ══════════════════════════════════════════════════════════ */
+.perspective-atmosphere-wrapper {
   position: relative;
   width: 100%;
-  height: 380px;
-  margin: 0.75rem 0 0.5rem;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
 }
 
-.perspective-field-svg {
+.pf-ambient-mesh {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at 50% 45%, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pf-ambient-lens-light {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.12) 0%, rgba(201, 169, 110, 0.02) 50%, transparent 80%);
+  pointer-events: none;
+  filter: blur(28px);
+  z-index: 0;
+}
+
+.pf-hud-header {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  margin-bottom: 0.5rem;
+}
+
+.pf-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tech-text-muted);
+}
+
+.pf-pulse-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tech-gold);
+  box-shadow: 0 0 10px var(--tech-gold);
+  animation: pfCorePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pfCorePulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+.pf-status-label {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.pf-status-state {
+  color: var(--tech-gold-bright);
+}
+
+.pf-replay-control {
+  background: rgba(201, 169, 110, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 2px;
+  padding: 0.28rem 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold-bright);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.pf-replay-control:hover {
+  background: rgba(201, 169, 110, 0.15);
+  border-color: var(--tech-gold);
+  color: #ffffff;
+}
+
+/* Fluid SVG Canvas Container */
+.perspective-field-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  z-index: 2;
+}
+
+.perspective-fluid-svg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1822,100 +1914,106 @@ footer {
   pointer-events: none;
 }
 
-/* ── SVG ELEMENT STYLES ── */
-
-/* Scatter Noise Dots & Lines */
-.pf-scatter-dot {
+/* SVG Reticles & Particles */
+.pf-sc-dot {
   fill: var(--tech-gold);
-  opacity: 0.15;
-  transition: opacity 1s ease;
+  opacity: 0.2;
 }
 
-.pf-scatter-line {
-  stroke: var(--tech-gold);
+.pf-sc-reticle {
+  stroke: rgba(201, 169, 110, 0.15);
   stroke-width: 1;
-  opacity: 0.12;
-  stroke-dasharray: 2 4;
 }
 
-/* Lens Geometry */
-.pf-lens-ring {
+/* Perspective Lens Circles */
+.pf-lens-orbit {
   fill: none;
   stroke: var(--tech-gold);
-  transform-origin: 260px 185px;
+  transform-origin: 270px 195px;
 }
 
-.ring-outer {
+.orbit-outer {
   stroke-width: 1;
-  opacity: 0;
   stroke-dasharray: 4 6;
-}
-
-.ring-mid {
-  stroke-width: 1.25;
   opacity: 0;
 }
 
-.ring-inner {
+.orbit-mid {
+  stroke-width: 1.2;
+  opacity: 0;
+}
+
+.orbit-inner {
   stroke-width: 1;
-  opacity: 0;
-  stroke-dasharray: 2 3;
-}
-
-.pf-lens-tick {
-  stroke: var(--tech-gold);
-  stroke-width: 1.25;
+  stroke-dasharray: 3 4;
   opacity: 0;
 }
 
-.pf-lens-glow {
+.pf-lens-aura {
   opacity: 0;
-  transform-origin: 260px 185px;
+  transform-origin: 270px 195px;
 }
 
-/* Relationship Traces / Focal Rays */
-.pf-rel-path {
-  fill: none;
+.pf-axis-tick {
   stroke: var(--tech-gold);
   stroke-width: 1.5;
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
   opacity: 0;
 }
 
-.pf-focal-ray {
+/* Relationship Traces & Beams */
+.pf-trace-contour {
+  fill: none;
   stroke: var(--tech-gold);
-  stroke-width: 1;
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
+  stroke-width: 1.25;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
   opacity: 0;
 }
 
-/* Judgment Core & Plaque */
-.pf-core-disc {
+.pf-focal-beam {
+  stroke: var(--tech-gold);
+  stroke-width: 1.2;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  opacity: 0;
+  transition: stroke-width 0.3s ease, stroke 0.3s ease, opacity 0.3s ease;
+}
+
+.pf-focal-beam.beam-active {
+  stroke: #ffffff !important;
+  stroke-width: 2.2 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px var(--tech-gold));
+}
+
+/* Hub Core */
+.pf-hub-disc {
   fill: rgba(14, 14, 22, 0.96);
-  opacity: 0;
-  transform-origin: 260px 185px;
-}
-
-.pf-core-border {
-  fill: none;
   stroke: var(--tech-gold);
   stroke-width: 1.5;
   opacity: 0;
-  transform-origin: 260px 185px;
+  transform-origin: 270px 195px;
 }
 
-.pf-text-perspective {
+.pf-hub-ring {
+  fill: none;
+  stroke: rgba(201, 169, 110, 0.4);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0;
+  transform-origin: 270px 195px;
+}
+
+.pf-hub-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   letter-spacing: 0.18em;
   fill: #ffffff;
   opacity: 0;
 }
 
-.pf-text-sub {
+.pf-hub-meta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 7px;
   letter-spacing: 0.14em;
@@ -1923,329 +2021,366 @@ footer {
   opacity: 0;
 }
 
-.pf-judgment-beam {
-  stroke: url(#judgmentBeam);
-  stroke-width: 2;
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
+.pf-downward-vector {
+  stroke: url(#fluidBeam);
+  stroke-width: 2.2;
+  stroke-dasharray: 55;
+  stroke-dashoffset: 55;
   opacity: 0;
 }
 
-.pf-judgment-arrowhead {
+.pf-vector-arrowhead {
   fill: var(--tech-gold);
   opacity: 0;
 }
 
-.pf-judgment-plaque {
-  opacity: 0;
-  transform-origin: 260px 310px;
-}
-
-.pf-plaque-bg {
+.pf-plaque-container {
   fill: rgba(18, 18, 28, 0.98);
   stroke: var(--tech-gold);
   stroke-width: 1.25;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.8));
 }
 
-.pf-plaque-text {
+.pf-plaque-caption {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.16em;
   fill: var(--tech-gold-bright);
 }
 
-/* ── 5 PRIMARY SIGNAL PILLS ── */
-.pf-signals-layer {
+.pf-plaque-group {
+  opacity: 0;
+  transform-origin: 270px 325px;
+}
+
+/* Interactive Signal Constellation Overlay */
+.pf-signals-constellation {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
-.pf-signal-pill {
+.pf-node-pill {
   position: absolute;
-  background: rgba(18, 18, 28, 0.95);
+  background: rgba(18, 18, 28, 0.94);
   border: 1px solid var(--tech-border);
   border-radius: 3px;
   padding: 0.45rem 0.75rem;
   display: flex;
   align-items: flex-start;
-  gap: 0.45rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  gap: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   pointer-events: auto;
-  user-select: none;
-  opacity: 0.7;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.75;
 }
 
-.pf-sig-dot {
+.pf-node-pill:hover {
+  background: rgba(26, 26, 40, 0.98);
+  border-color: rgba(201, 169, 110, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(201, 169, 110, 0.15);
+  opacity: 1;
+}
+
+.pf-node-pill.is-selected {
+  background: rgba(30, 30, 48, 0.98);
+  border-color: var(--tech-gold);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.9), 0 0 20px rgba(201, 169, 110, 0.35);
+  opacity: 1;
+}
+
+.pf-node-marker {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: var(--tech-gold);
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   flex-shrink: 0;
 }
 
-.pf-sig-content {
+.pf-node-text-wrap {
   display: flex;
   flex-direction: column;
 }
 
-.pf-sig-title {
+.pf-node-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.pf-node-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.15;
 }
 
-.pf-sig-sub {
+.pf-node-tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pf-node-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
   color: var(--tech-text-muted);
   letter-spacing: 0.02em;
 }
 
-/* Anchor coordinates mapped to 520x400 SVG coordinate grid */
-.pf-sig-people    { left: 3.8%;  top: 17%; }
-.pf-sig-context   { left: 50%;   top: 6%; transform: translateX(-50%); }
-.pf-sig-programs  { right: 3.8%; top: 17%; }
-.pf-sig-evidence  { left: 6.7%;  bottom: 12%; }
-.pf-sig-decisions { right: 6.7%; bottom: 12%; }
+/* Signal Anchor Positions mapped to 540x420 coordinate field */
+.pf-node-people    { left: 3.5%;  top: 19%; }
+.pf-node-context   { left: 50%;   top: 5%; transform: translateX(-50%); }
+.pf-node-programs  { right: 3.5%; top: 19%; }
+.pf-node-evidence  { left: 6.5%;  bottom: 12%; }
+.pf-node-decisions { right: 6.5%; bottom: 12%; }
 
-/* ── KEYFRAME ANIMATIONS (Total Sequence: ~7.0s) ── */
-
-/* Sequence running state applied upon client mount */
-.is-running .pf-scatter-dot {
-  animation: pfNoiseFade 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Inspector Drawer for Active Signal Focus */
+.pf-inspect-drawer {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 440px;
+  z-index: 5;
+  background: rgba(14, 14, 24, 0.96);
+  border: 1px solid var(--tech-gold);
+  border-radius: 3px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9), 0 0 24px rgba(201, 169, 110, 0.2);
+  animation: pfDrawerPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.is-running .pf-lens-glow {
+@keyframes pfDrawerPop {
+  0% { opacity: 0; transform: translate(-50%, 12px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.pf-drawer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.pf-drawer-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pf-drawer-close {
+  background: none;
+  border: none;
+  color: var(--tech-text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.1rem 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.pf-drawer-close:hover {
+  color: #ffffff;
+}
+
+.pf-drawer-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0 0 0.4rem;
+}
+
+.pf-drawer-desc {
+  font-size: 0.8rem;
+  color: var(--tech-text);
+  line-height: 1.5;
+  margin: 0 0 0.6rem;
+}
+
+.pf-drawer-footer {
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+  padding-top: 0.45rem;
+}
+
+.pf-drawer-cue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-text-muted);
+}
+
+.pf-drawer-cue strong {
+  color: var(--tech-gold-bright);
+}
+
+.pf-atmosphere-footer {
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.pf-atmosphere-legend {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Keyframe Automations on Mount */
+.is-running .pf-lens-aura {
   animation: pfGlowAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .ring-outer {
+.is-running .orbit-outer {
   animation: pfRingOuter 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .ring-mid {
+.is-running .orbit-mid {
   animation: pfRingMid 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .ring-inner {
+.is-running .orbit-inner {
   animation: pfRingInner 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-lens-tick {
+.is-running .pf-axis-tick {
   animation: pfTicksAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-rel-path {
+.is-running .pf-trace-contour {
   animation: pfPathDraw 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-focal-ray {
+.is-running .pf-focal-beam {
   animation: pfRayDraw 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-core-disc,
-.is-running .pf-core-border {
+.is-running .pf-hub-disc,
+.is-running .pf-hub-ring {
   animation: pfCoreAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-text-perspective,
-.is-running .pf-text-sub {
+.is-running .pf-hub-title,
+.is-running .pf-hub-meta {
   animation: pfPerspectiveText 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-judgment-beam,
-.is-running .pf-judgment-arrowhead {
+.is-running .pf-downward-vector,
+.is-running .pf-vector-arrowhead {
   animation: pfBeamAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-judgment-plaque {
+.is-running .pf-plaque-group {
   animation: pfPlaqueResolve 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.is-running .pf-signal-pill {
-  animation: pfSignalPillTransform 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
+.is-running .pf-node-people    { animation: pfPillPeople 7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.is-running .pf-node-context   { animation: pfPillContext 7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.is-running .pf-node-programs  { animation: pfPillPrograms 7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.is-running .pf-node-evidence  { animation: pfPillEvidence 7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.is-running .pf-node-decisions { animation: pfPillDecisions 7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-/* Individual pill offsets for Phase 1 jitter -> Phase 2 & 4 convergence */
-.is-running .pf-sig-people    { animation-name: pfPillPeople; }
-.is-running .pf-sig-context   { animation-name: pfPillContext; }
-.is-running .pf-sig-programs  { animation-name: pfPillPrograms; }
-.is-running .pf-sig-evidence  { animation-name: pfPillEvidence; }
-.is-running .pf-sig-decisions { animation-name: pfPillDecisions; }
-
-/* ── KEYFRAME TIMINGS ── */
-
-/* 1. Scatter noise dots: visible in Phase 1, faint and stabilized in Phases 2-4 */
-@keyframes pfNoiseFade {
-  0% { opacity: 0.1; }
-  20% { opacity: 0.28; }
-  45% { opacity: 0.18; }
-  75%, 100% { opacity: 0.12; }
-}
-
-/* 2. Lens Glow */
 @keyframes pfGlowAppear {
   0%, 20% { opacity: 0; transform: scale(0.6); }
   50% { opacity: 0.9; transform: scale(1.05); }
-  75%, 100% { opacity: 0.7; transform: scale(1); }
+  75%, 100% { opacity: 0.75; transform: scale(1); }
 }
 
-/* 3. Outer Lens Ring */
 @keyframes pfRingOuter {
   0%, 20% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
   50% { opacity: 0.65; transform: scale(1) rotate(0deg); }
   75%, 100% { opacity: 0.45; transform: scale(1) rotate(10deg); }
 }
 
-/* 4. Mid Lens Ring */
 @keyframes pfRingMid {
   0%, 22% { opacity: 0; transform: scale(0.8); }
   52% { opacity: 0.85; transform: scale(1); }
   75%, 100% { opacity: 0.65; transform: scale(1); }
 }
 
-/* 5. Inner Lens Ring */
 @keyframes pfRingInner {
   0%, 25% { opacity: 0; transform: scale(0.6); }
   55% { opacity: 0.7; transform: scale(1); }
   75%, 100% { opacity: 0.5; transform: scale(1); }
 }
 
-/* 6. Coordinate ticks */
 @keyframes pfTicksAppear {
   0%, 30% { opacity: 0; }
   55%, 100% { opacity: 0.6; }
 }
 
-/* 7. Relationship paths */
 @keyframes pfPathDraw {
-  0%, 45% {
-    stroke-dashoffset: 320;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.85;
-  }
-  75%, 100% {
-    stroke-dashoffset: 0;
-    opacity: 0.75;
-  }
+  0%, 45% { stroke-dashoffset: 360; opacity: 0; }
+  50% { opacity: 0.85; }
+  75%, 100% { stroke-dashoffset: 0; opacity: 0.75; }
 }
 
-/* 8. Focal rays */
 @keyframes pfRayDraw {
-  0%, 50% {
-    stroke-dashoffset: 180;
-    opacity: 0;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  75%, 100% {
-    stroke-dashoffset: 0;
-    opacity: 0.4;
-  }
+  0%, 50% { stroke-dashoffset: 200; opacity: 0; }
+  60% { opacity: 0.6; }
+  75%, 100% { stroke-dashoffset: 0; opacity: 0.45; }
 }
 
-/* 9. Center Core disc */
 @keyframes pfCoreAppear {
-  0%, 35% {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  55% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  75%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0%, 35% { opacity: 0; transform: scale(0.7); }
+  55% { opacity: 1; transform: scale(1.05); }
+  75%, 100% { opacity: 1; transform: scale(1); }
 }
 
-/* 10. Perspective Text */
 @keyframes pfPerspectiveText {
-  0%, 40% {
-    opacity: 0;
-  }
-  60%, 100% {
-    opacity: 1;
-  }
+  0%, 40% { opacity: 0; }
+  60%, 100% { opacity: 1; }
 }
 
-/* 11. Beam emerging toward Better Judgment */
 @keyframes pfBeamAppear {
-  0%, 75% {
-    stroke-dashoffset: 50;
-    opacity: 0;
-  }
-  85% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
+  0%, 75% { stroke-dashoffset: 55; opacity: 0; }
+  85%, 100% { stroke-dashoffset: 0; opacity: 1; }
 }
 
-/* 12. Plaque resolve */
 @keyframes pfPlaqueResolve {
-  0%, 76% {
-    opacity: 0;
-    transform: translateY(-8px) scale(0.95);
-  }
-  88% {
-    opacity: 1;
-    transform: translateY(2px) scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0%, 76% { opacity: 0; transform: translateY(-8px) scale(0.95); }
+  88% { opacity: 1; transform: translateY(2px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* 13. Pill Keyframe Trajectories */
 @keyframes pfPillPeople {
-  0% { transform: translate(-14px, -14px); opacity: 0.65; border-color: var(--tech-border); }
-  22% { transform: translate(-10px, -8px); opacity: 0.75; }
-  50% { transform: translate(4px, 4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
-  78%, 100% { transform: translate(12px, 10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+  0% { transform: translate(-14px, -14px); opacity: 0.65; }
+  50% { transform: translate(4px, 4px); opacity: 0.95; }
+  78%, 100% { transform: translate(12px, 10px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 @keyframes pfPillContext {
-  0% { transform: translate(-50%, -18px); opacity: 0.65; border-color: var(--tech-border); }
-  22% { transform: translate(-50%, -12px); opacity: 0.75; }
-  50% { transform: translate(-50%, 4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
-  78%, 100% { transform: translate(-50%, 14px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+  0% { transform: translate(-50%, -18px); opacity: 0.65; }
+  50% { transform: translate(-50%, 4px); opacity: 0.95; }
+  78%, 100% { transform: translate(-50%, 14px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 @keyframes pfPillPrograms {
-  0% { transform: translate(14px, -14px); opacity: 0.65; border-color: var(--tech-border); }
-  22% { transform: translate(10px, -8px); opacity: 0.75; }
-  50% { transform: translate(-4px, 4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
-  78%, 100% { transform: translate(-12px, 10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+  0% { transform: translate(14px, -14px); opacity: 0.65; }
+  50% { transform: translate(-4px, 4px); opacity: 0.95; }
+  78%, 100% { transform: translate(-12px, 10px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 @keyframes pfPillEvidence {
-  0% { transform: translate(-14px, 14px); opacity: 0.65; border-color: var(--tech-border); }
-  22% { transform: translate(-10px, 8px); opacity: 0.75; }
-  50% { transform: translate(4px, -4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
-  78%, 100% { transform: translate(12px, -10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+  0% { transform: translate(-14px, 14px); opacity: 0.65; }
+  50% { transform: translate(4px, -4px); opacity: 0.95; }
+  78%, 100% { transform: translate(12px, -10px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 @keyframes pfPillDecisions {
-  0% { transform: translate(14px, 14px); opacity: 0.65; border-color: var(--tech-border); }
-  22% { transform: translate(10px, 8px); opacity: 0.75; }
-  50% { transform: translate(-4px, -4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
-  78%, 100% { transform: translate(-12px, -10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+  0% { transform: translate(14px, 14px); opacity: 0.65; }
+  50% { transform: translate(-4px, -4px); opacity: 0.95; }
+  78%, 100% { transform: translate(-12px, -10px); opacity: 1; border-color: var(--tech-gold); }
 }
 
 /* ── COMPACT PERSPECTIVE TRANSITION BRIDGE ── */
@@ -3110,6 +3245,617 @@ footer {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   TECH ECOSYSTEM COMMAND DECK & WORKBENCH STYLING
+   ══════════════════════════════════════════════════════════ */
+.tech-ecosystem-command-deck {
+  background: radial-gradient(circle at 50% 0%, rgba(201, 169, 110, 0.04) 0%, transparent 60%), #07070b;
+  padding: 5rem 0 4.5rem;
+  border-bottom: 1px solid var(--tech-border);
+}
+
+.deck-header {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 2.75rem;
+}
+
+.deck-eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.deck-pulse-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tech-gold);
+  box-shadow: 0 0 8px var(--tech-gold);
+}
+
+.deck-h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.35rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+.deck-sub {
+  font-size: 1.05rem;
+  color: var(--tech-text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Master System Switcher Navigation */
+.deck-system-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 2.25rem;
+}
+
+.deck-nav-btn {
+  background: rgba(14, 14, 22, 0.7);
+  border: 1px solid var(--tech-border);
+  border-radius: 3px;
+  padding: 1rem 1.15rem;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.deck-nav-btn:hover {
+  background: rgba(22, 22, 34, 0.9);
+  border-color: rgba(201, 169, 110, 0.5);
+  transform: translateY(-2px);
+}
+
+.deck-nav-btn.is-active {
+  background: rgba(24, 24, 38, 0.98);
+  border-color: var(--tech-gold);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(201, 169, 110, 0.18);
+}
+
+.deck-btn-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tech-border);
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.deck-nav-btn.is-active .deck-btn-indicator {
+  background: var(--tech-gold);
+  box-shadow: 0 0 8px var(--tech-gold);
+}
+
+.deck-btn-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.deck-btn-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.deck-btn-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-gold);
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
+}
+
+/* Stage Layout: Overview (Left) + Workbench (Right) */
+.deck-stage-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 1.35fr;
+  gap: 2.25rem;
+  background: rgba(12, 12, 20, 0.9);
+  border: 1px solid var(--tech-border);
+  border-radius: 4px;
+  padding: 2.5rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  animation: deckFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes deckFadeIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.deck-stage-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deck-status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.deck-role-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: var(--tech-text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.deck-overview-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 0.85rem;
+}
+
+.deck-overview-summary {
+  font-size: 0.92rem;
+  color: #c8c8d8;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+}
+
+.deck-pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.deck-pillar-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--tech-text-muted);
+}
+
+.deck-pillar-bullet {
+  color: var(--tech-gold);
+  font-size: 0.75rem;
+  margin-top: 0.1rem;
+}
+
+.deck-pillar-label {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.deck-pillar-text {
+  color: #a8a8b8;
+}
+
+.deck-users-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.75rem;
+  padding: 0.75rem 0.95rem;
+  background: rgba(201, 169, 110, 0.03);
+  border-left: 2px solid var(--tech-gold);
+}
+
+.deck-users-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.deck-users-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+.deck-actions-group {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+/* Simulator Workbench Right Column */
+.deck-stage-simulator {
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-workbench {
+  background: #08080e;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 4px;
+  padding: 1.6rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.sim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.15rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sim-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.sim-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold);
+  background: rgba(201, 169, 110, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sim-env-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-text-muted);
+}
+
+.sim-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-text-muted);
+}
+
+/* Step Button Bars across simulators */
+.sim-capos-nav,
+.sim-delib-nav,
+.sim-context-nav,
+.sim-phys-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.sim-context-nav,
+.sim-phys-nav {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sim-capos-btn,
+.sim-delib-btn,
+.sim-context-btn,
+.sim-phys-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--tech-border);
+  border-radius: 2px;
+  padding: 0.55rem 0.65rem;
+  color: var(--tech-text-muted);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  transition: all 0.2s ease;
+}
+
+.sim-capos-btn:hover,
+.sim-delib-btn:hover,
+.sim-context-btn:hover,
+.sim-phys-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.sim-capos-btn.active,
+.sim-delib-btn.active,
+.sim-context-btn.active,
+.sim-phys-btn.active {
+  background: rgba(201, 169, 110, 0.12);
+  border-color: var(--tech-gold);
+  color: #ffffff;
+}
+
+.sim-capos-btn-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--tech-gold);
+}
+
+.sim-capos-btn-sub {
+  font-size: 0.6rem;
+  color: var(--tech-text-muted);
+}
+
+/* Screen Card Inside Simulator */
+.sim-screen-card {
+  background: #0d0d15;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sim-panel-header {
+  margin-bottom: 0.75rem;
+}
+
+.sim-panel-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.sim-panel-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.sim-panel-text {
+  font-size: 0.85rem;
+  color: var(--tech-text);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.sim-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+}
+
+.sim-tele-item {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 2px;
+  padding: 0.6rem 0.75rem;
+}
+
+.sim-tele-val {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--tech-gold-bright);
+}
+
+.sim-tele-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--tech-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+/* Question Anchor & Deliberation Rows */
+.sim-question-anchor {
+  background: rgba(201, 169, 110, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.sim-anchor-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.sim-anchor-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.sim-delib-row {
+  margin-bottom: 0.85rem;
+}
+
+.sim-delib-head {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--tech-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.sim-delib-desc {
+  font-size: 0.84rem;
+  color: #c0c0d0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sim-delib-finding {
+  background: rgba(201, 169, 110, 0.08);
+  border-left: 2px solid var(--tech-gold);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.sim-indicator-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.sim-marker-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tech-gold-bright);
+  background: rgba(201, 169, 110, 0.08);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+}
+
+.sim-marker-tag.alert {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+/* ══════════════════════════════════════════════════════════
+   INTERACTIVE DECISION MATRIX FILTER CHIPS
+   ══════════════════════════════════════════════════════════ */
+.tech-matrix-interactive-section {
+  background: var(--tech-surface);
+}
+
+.matrix-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.matrix-filter-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--tech-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.matrix-filter-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.matrix-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--tech-border);
+  border-radius: 2px;
+  padding: 0.35rem 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tech-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.matrix-chip:hover {
+  border-color: var(--tech-gold);
+  color: #ffffff;
+}
+
+.matrix-chip.active {
+  background: rgba(201, 169, 110, 0.15);
+  border-color: var(--tech-gold);
+  color: var(--tech-gold-bright);
+  font-weight: 500;
+}
+
+.matrix-row.row-highlighted {
+  border-left: 2px solid var(--tech-gold);
+  background: rgba(201, 169, 110, 0.03);
+}
+
+.matrix-platform-tag,
+.mobile-platform-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--tech-gold);
+  background: rgba(201, 169, 110, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  margin-left: 0.45rem;
+  display: inline-block;
+}
+
+/* Responsive Rules for Ecosystem Command Deck */
+@media (max-width: 1024px) {
+  .deck-system-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .deck-stage-wrapper {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .deck-system-nav {
+    grid-template-columns: 1fr;
+  }
+  .sim-capos-nav,
+  .sim-delib-nav,
+  .sim-context-nav,
+  .sim-phys-nav {
+    grid-template-columns: 1fr;
+  }
+  .sim-telemetry-grid {
+    grid-template-columns: 1fr;
+  }
+  .deck-h2 {
+    font-size: 1.85rem;
+  }
 }
 
 .portfolio-ecosystem-bar .eco-pillar-item {
@@ -4686,9 +5432,42 @@ html, body {
   }
 }
 
+/* ── DEMO NOTICE & MOCKUP DATA DISCLOSURE ── */
+.tech-demo-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(201, 169, 110, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.16);
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.demo-notice-icon {
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.mockup-tag-demo {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--border) !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .tech-dot-pulse {
+  .tech-dot-pulse,
+  .pf-pulse-core {
     animation: none !important;
   }
   .perspective-stage-card,
@@ -4696,64 +5475,65 @@ html, body {
   .capos-progress-line {
     transition: none !important;
   }
-  .perspective-field-stage * {
+  .perspective-atmosphere-wrapper *,
+  .perspective-field-canvas-wrap * {
     animation: none !important;
     transition: none !important;
   }
-  .pf-scatter-dot {
-    opacity: 0.12 !important;
+  .pf-sc-dot {
+    opacity: 0.2 !important;
   }
-  .pf-lens-glow {
-    opacity: 0.7 !important;
+  .pf-lens-aura {
+    opacity: 0.75 !important;
   }
-  .ring-outer {
+  .orbit-outer {
     opacity: 0.45 !important;
     transform: none !important;
   }
-  .ring-mid {
+  .orbit-mid {
     opacity: 0.65 !important;
     transform: none !important;
   }
-  .ring-inner {
+  .orbit-inner {
     opacity: 0.5 !important;
     transform: none !important;
   }
-  .pf-lens-tick {
+  .pf-axis-tick {
     opacity: 0.6 !important;
   }
-  .pf-rel-path {
+  .pf-trace-contour {
     stroke-dashoffset: 0 !important;
     opacity: 0.75 !important;
   }
-  .pf-focal-ray {
+  .pf-focal-beam {
     stroke-dashoffset: 0 !important;
-    opacity: 0.4 !important;
+    opacity: 0.45 !important;
   }
-  .pf-core-disc,
-  .pf-core-border {
+  .pf-hub-disc,
+  .pf-hub-ring {
     opacity: 1 !important;
     transform: none !important;
   }
-  .pf-text-perspective,
-  .pf-text-sub {
+  .pf-hub-title,
+  .pf-hub-meta {
     opacity: 1 !important;
   }
-  .pf-judgment-beam,
-  .pf-judgment-arrowhead {
+  .pf-downward-vector,
+  .pf-vector-arrowhead {
     stroke-dashoffset: 0 !important;
     opacity: 1 !important;
   }
-  .pf-judgment-plaque {
+  .pf-plaque-group {
     opacity: 1 !important;
     transform: none !important;
   }
-  .pf-signal-pill {
+  .pf-node-pill {
     opacity: 1 !important;
     border-color: var(--tech-gold) !important;
   }
-  .pf-sig-people    { transform: translate(12px, 10px) !important; }
-  .pf-sig-context   { transform: translate(-50%, 14px) !important; }
-  .pf-sig-programs  { transform: translate(-12px, 10px) !important; }
-  .pf-sig-evidence  { transform: translate(12px, -10px) !important; }
-  .pf-sig-decisions { transform: translate(-12px, -10px) !important; }
+  .pf-node-people    { transform: translate(12px, 10px) !important; }
+  .pf-node-context   { transform: translate(-50%, 14px) !important; }
+  .pf-node-programs  { transform: translate(-12px, 10px) !important; }
+  .pf-node-evidence  { transform: translate(12px, -10px) !important; }
+  .pf-node-decisions { transform: translate(-12px, -10px) !important; }
 }
