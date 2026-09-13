@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { PerspectiveNetwork } from './PerspectiveNetwork';
 
 export function TechnologyHero() {
@@ -38,7 +38,7 @@ export function TechnologyHero() {
             {/* Section Jump Bar */}
             <nav className="tech-jump-bar" aria-label="Section shortcuts">
               <a href="#perspective-journey" className="tech-jump-link">
-                The Perspective Story
+                Perspective
               </a>
               <a href="#portfolio" className="tech-jump-link">
                 Portfolio
@@ -54,6 +54,9 @@ export function TechnologyHero() {
               </a>
               <a href="#matrix" className="tech-jump-link">
                 Matrix
+              </a>
+              <a href="#architecture" className="tech-jump-link">
+                Enterprise Trust
               </a>
             </nav>
           </div>
