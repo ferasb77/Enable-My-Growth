@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 export function TechnologyPhilosophy() {
   const steps = [
@@ -44,19 +44,26 @@ export function TechnologyPhilosophy() {
           </p>
         </div>
 
-        <div className="philosophy-pipeline-wrapper">
-          <div className="pipeline-steps-grid">
+        <div className="philosophy-ledger-wrapper">
+          <div className="philosophy-ledger-grid">
             {steps.map((st) => (
-              <div key={st.num} className="pipeline-card spotlight-card">
-                <div className="pipeline-num">{st.num}</div>
-                <div className="pipeline-pillar">{st.pillar}</div>
-                <h3 className="pipeline-headline">{st.headline}</h3>
-                <p className="pipeline-desc">{st.desc}</p>
-                <div className="pipeline-platform-pill">
-                  Exemplified in: <strong>{st.platform}</strong>
+              <div key={st.num} className="philosophy-ledger-col">
+                <div className="philosophy-num-row">
+                  <span className="philosophy-num">{st.num}</span>
+                  <span className="philosophy-pillar-tag">{st.pillar}</span>
                 </div>
+                <h3 className="philosophy-headline">{st.headline}</h3>
+                <p className="philosophy-desc">{st.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="philosophy-closing-statement">
+            <span className="philosophy-closing-rule" />
+            <span className="philosophy-closing-text">
+              Shared philosophy. Different systems emphasize different principles according to the decision environment.
+            </span>
+            <span className="philosophy-closing-rule" />
           </div>
         </div>
       </div>

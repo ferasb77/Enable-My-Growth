@@ -1,55 +1,87 @@
-﻿import React from 'react';
+import React from 'react';
 
 export function TechnologyCTA() {
   return (
     <>
-      {/* Enterprise Architecture & Governance Note */}
+      {/* Enterprise Trust & Deployment Architecture */}
       <section id="architecture" className="tech-section" style={{ background: 'var(--surface)' }}>
         <div className="container">
           <div className="tech-section-header">
-            <p className="eyebrow mb-xs">Enterprise Architecture</p>
-            <h2 className="tech-section-h2">Engineered for privacy, isolation, and control.</h2>
+            <p className="eyebrow mb-xs">Enterprise Trust &amp; Deployment</p>
+            <h2 className="tech-section-h2">Designed for control, accountability, and deployment flexibility.</h2>
             <p className="tech-section-sub">
-              Enable My Growth systems are deployed with single-tenant isolation, rigorous zero-retention data
-              boundaries, and auditable governance by design.
+              Enterprise environments require clear organizational boundaries, explicit data governance,
+              deterministic controls where consequences demand them, and deployment models aligned to operational
+              and residency requirements.
             </p>
           </div>
 
-          <div className="pipeline-steps-grid">
-            <div className="pipeline-card spotlight-card">
-              <div className="pipeline-num">01</div>
-              <h3 className="pipeline-headline">Tenant Isolation</h3>
-              <p className="pipeline-desc">
-                Dedicated database partitioning and encryption per enterprise client. Cohort and deliberation data
-                never co-mingle across organizations.
-              </p>
+          <div className="trust-ledger-wrapper">
+            <div className="trust-ledger-grid">
+              {/* 01 · Tenant Separation */}
+              <div className="trust-ledger-col">
+                <div className="trust-num-row">
+                  <span className="trust-num">01</span>
+                  <span className="trust-pillar-tag">Tenant Separation</span>
+                </div>
+                <h3 className="trust-headline">Organizational boundaries enforced at the data layer</h3>
+                <p className="trust-desc">
+                  CapabilityOS Standard uses database-level tenant policies to separate organizational workspaces
+                  and restrict records to authorized access. Dedicated instances can be considered where enterprise
+                  or regional requirements demand stronger infrastructure separation.
+                </p>
+              </div>
+
+              {/* 02 · AI & Data Governance */}
+              <div className="trust-ledger-col">
+                <div className="trust-num-row">
+                  <span className="trust-num">02</span>
+                  <span className="trust-pillar-tag">AI &amp; Data Governance</span>
+                </div>
+                <h3 className="trust-headline">Explicit boundaries around external AI use</h3>
+                <p className="trust-desc">
+                  AI integrations are handled server-side, with sensitive context minimized before model calls where
+                  the product workflow permits. Provider training, retention, and data-handling requirements are
+                  governed by the commercial API and deployment agreement in use.
+                </p>
+              </div>
+
+              {/* 03 · Deterministic Controls */}
+              <div className="trust-ledger-col">
+                <div className="trust-num-row">
+                  <span className="trust-num">03</span>
+                  <span className="trust-pillar-tag">Deterministic Controls</span>
+                </div>
+                <h3 className="trust-headline">Rules where probability is not enough</h3>
+                <p className="trust-desc">
+                  Where physical and operational limits are involved, Phys-Valid™ evaluates declared conditions
+                  against deterministic engineering rules and constraint thresholds rather than probabilistic model
+                  inference.
+                </p>
+              </div>
+
+              {/* 04 · Deployment Flexibility */}
+              <div className="trust-ledger-col">
+                <div className="trust-num-row">
+                  <span className="trust-num">04</span>
+                  <span className="trust-pillar-tag">Deployment Flexibility</span>
+                </div>
+                <h3 className="trust-headline">Deployment aligned to enterprise requirements</h3>
+                <p className="trust-desc">
+                  CapabilityOS is designed to support dedicated regional and private deployment models where data
+                  residency, infrastructure isolation, or client governance requirements justify them.
+                </p>
+              </div>
             </div>
 
-            <div className="pipeline-card spotlight-card">
-              <div className="pipeline-num">02</div>
-              <h3 className="pipeline-headline">Zero Training Ingestion</h3>
-              <p className="pipeline-desc">
-                Enterprise sessions, reasoning transcripts, and assessment evidence are never fed back to train
-                commercial foundation models.
+            {/* Restrained Scope Note */}
+            <div className="trust-closing-statement">
+              <span className="trust-closing-rule" />
+              <p className="trust-closing-text">
+                Architecture and deployment controls vary by platform and engagement. Dedicated or regional
+                infrastructure is not the default configuration for every Enable My Growth system.
               </p>
-            </div>
-
-            <div className="pipeline-card spotlight-card">
-              <div className="pipeline-num">03</div>
-              <h3 className="pipeline-headline">Deterministic Safety</h3>
-              <p className="pipeline-desc">
-                Where physical and operational bounds are involved, automated evaluation uses deterministic logic
-                rather than ungrounded probability.
-              </p>
-            </div>
-
-            <div className="pipeline-card spotlight-card">
-              <div className="pipeline-num">04</div>
-              <h3 className="pipeline-headline">Sovereign Deployment</h3>
-              <p className="pipeline-desc">
-                Platforms can be provisioned in regional enterprise cloud VPCs (AWS/GCP/Azure) to adhere to internal
-                data residency mandates.
-              </p>
+              <span className="trust-closing-rule" />
             </div>
           </div>
         </div>

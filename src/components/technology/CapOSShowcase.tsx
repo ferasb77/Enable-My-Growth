@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 
@@ -63,37 +63,47 @@ export function CapOSShowcase() {
           </p>
         </div>
 
-        {/* 3 Distinct Operating Environments Overview */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem', marginBottom: '2.5rem' }}>
-          <div className="pipeline-card spotlight-card" style={{ padding: '1.5rem 1.4rem' }}>
-            <span className="tech-meta-tag" style={{ color: 'var(--gold)' }}>Environment 01</span>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.35rem', color: '#fff', margin: '0.6rem 0 0.4rem' }}>
-              Provider
-            </h3>
-            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: '1.55', margin: 0 }}>
-              Facilitated capability delivery for professional training firms and advisory practices coordinating client cohorts.
+        {/* 3 Distinct Operating Environments Overview: Architectural entry points */}
+        <div className="capos-environments-band">
+          <div className="capos-env-entry">
+            <div className="capos-env-meta">
+              <span className="capos-env-num">Context 01</span>
+              <span className="capos-env-role">Facilitated Cohorts</span>
+            </div>
+            <h3 className="capos-env-title">Provider</h3>
+            <p className="capos-env-desc">
+              Supports facilitated programs, advisory practices, and client cohort delivery.
             </p>
           </div>
 
-          <div className="pipeline-card spotlight-card" style={{ padding: '1.5rem 1.4rem' }}>
-            <span className="tech-meta-tag" style={{ color: 'var(--gold)' }}>Environment 02</span>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.35rem', color: '#fff', margin: '0.6rem 0 0.4rem' }}>
-              Enterprise
-            </h3>
-            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: '1.55', margin: 0 }}>
-              Strategic capability development and internal leadership academy operations with auditable executive visibility.
+          <div className="capos-env-entry">
+            <div className="capos-env-meta">
+              <span className="capos-env-num">Context 02</span>
+              <span className="capos-env-role">Internal Academies</span>
+            </div>
+            <h3 className="capos-env-title">Enterprise</h3>
+            <p className="capos-env-desc">
+              Supports internal academies, leadership programs, and capability initiatives.
             </p>
           </div>
 
-          <div className="pipeline-card spotlight-card" style={{ padding: '1.5rem 1.4rem' }}>
-            <span className="tech-meta-tag" style={{ color: 'var(--gold)' }}>Environment 03</span>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.35rem', color: '#fff', margin: '0.6rem 0 0.4rem' }}>
-              Events
-            </h3>
-            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: '1.55', margin: 0 }}>
-              Live-event participant engagement, real-time coordination, session materials, and sponsor monetization.
+          <div className="capos-env-entry">
+            <div className="capos-env-meta">
+              <span className="capos-env-num">Context 03</span>
+              <span className="capos-env-role">Structured Journeys</span>
+            </div>
+            <h3 className="capos-env-title">Events</h3>
+            <p className="capos-env-desc">
+              Supports live participant journeys, real-time coordination, and structured evidence capture.
             </p>
           </div>
+        </div>
+
+        {/* Central Architectural Connector */}
+        <div className="capos-environments-connector">
+          <span className="capos-connector-rule" />
+          <span className="capos-connector-text">Three operating contexts · one shared core</span>
+          <span className="capos-connector-rule" />
         </div>
 
         {/* Shared CapOS Core Interactive Flow */}
@@ -103,6 +113,7 @@ export function CapOSShowcase() {
               <span className="tech-dot-pulse" />
               <span>Shared CapOS Core Pipeline</span>
             </div>
+            {/* Desktop Step Buttons */}
             <div className="capos-step-indicators" aria-label="Capability flow steps">
               {([1, 2, 3, 4] as const).map((step) => (
                 <button
@@ -114,13 +125,36 @@ export function CapOSShowcase() {
                   {step === 1 && '01 People & Participation'}
                   {step === 2 && '02 Structured Evidence'}
                   {step === 3 && '03 Follow-Through'}
-                  {step === 4 && '04 Intelligence'}
+                  {step === 4 && '04 Intelligence & Memory'}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Dynamic SVG Pipeline Graphic */}
+          {/* Mobile Vertical Stepper (renders only on mobile/tablet) */}
+          <div className="capos-mobile-stepper" aria-label="Mobile pipeline steps">
+            {([1, 2, 3, 4] as const).map((step) => {
+              const stepData = caposSteps[step];
+              const stepLabel =
+                step === 1 ? 'People & Participation' :
+                step === 2 ? 'Structured Evidence' :
+                step === 3 ? 'Follow-Through' : 'Intelligence & Institutional Memory';
+              return (
+                <button
+                  key={step}
+                  type="button"
+                  className={'capos-mobile-step-item' + (activeStep === step ? ' active' : '')}
+                  onClick={() => setActiveStep(step)}
+                >
+                  <span className="capos-mobile-step-num">0{step}</span>
+                  <span className="capos-mobile-step-title">{stepLabel}</span>
+                  {activeStep === step && <span className="capos-mobile-step-status">Active</span>}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Dynamic SVG Pipeline Graphic (Desktop/Large Screens) */}
           <div className="capos-pipeline-graphic">
             <svg className="capos-svg" viewBox="0 0 880 180" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Connecting Backplane Track */}
