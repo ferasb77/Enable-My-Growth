@@ -1,10 +1,6 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 
 export function TechnologyMatrix() {
-  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
-
   const routes = [
     {
       id: 'capos',
@@ -40,10 +36,8 @@ export function TechnologyMatrix() {
     },
   ];
 
-  const activeRoutes = selectedProduct ? routes.filter((r) => r.id === selectedProduct) : routes;
-
   return (
-    <section id="matrix" className="tech-section tech-matrix-interactive-section">
+    <section id="matrix" className="tech-section decision-matrix-section">
       <div className="container">
         <div className="tech-section-header">
           <p className="eyebrow mb-xs" style={{ color: 'var(--gold)', letterSpacing: '0.22em' }}>
@@ -55,30 +49,6 @@ export function TechnologyMatrix() {
           </p>
         </div>
 
-        {/* Interactive Scenario Matcher Filter */}
-        <div className="matrix-filter-bar" role="group" aria-label="Filter decision environments">
-          <span className="matrix-filter-label">Filter by system:</span>
-          <div className="matrix-filter-chips">
-            <button
-              type="button"
-              className={`matrix-chip ${selectedProduct === null ? 'active' : ''}`}
-              onClick={() => setSelectedProduct(null)}
-            >
-              All Decision Environments
-            </button>
-            {routes.map((r) => (
-              <button
-                key={r.id}
-                type="button"
-                className={`matrix-chip ${selectedProduct === r.id ? 'active' : ''}`}
-                onClick={() => setSelectedProduct(selectedProduct === r.id ? null : r.id)}
-              >
-                {r.product}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Desktop 3-Column Decision Routing Ledger */}
         <div className="matrix-table-container">
           <div className="matrix-grid" role="table" aria-label="Decision environment matrix">
@@ -88,12 +58,8 @@ export function TechnologyMatrix() {
               <div className="matrix-col-th col-outcome" role="columnheader">Decision / Operational Outcome</div>
             </div>
 
-            {activeRoutes.map((r) => (
-              <div
-                key={r.id}
-                className={`matrix-row ${selectedProduct === r.id ? 'row-highlighted' : ''}`}
-                role="row"
-              >
+            {routes.map((r) => (
+              <div key={r.id} className="matrix-row" role="row">
                 <div className="matrix-cell col-challenge" role="cell">
                   <p className="matrix-challenge-text">{r.challenge}</p>
                 </div>
@@ -114,7 +80,7 @@ export function TechnologyMatrix() {
 
         {/* Mobile Vertical Decision Routing Sequence */}
         <div className="matrix-mobile-routes" aria-label="Decision routing guide">
-          {activeRoutes.map((r) => (
+          {routes.map((r) => (
             <div key={r.id} className="matrix-mobile-card">
               <div className="mobile-route-tier">
                 <span className="mobile-tier-label">Challenge</span>

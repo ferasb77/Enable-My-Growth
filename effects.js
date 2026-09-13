@@ -13,7 +13,10 @@
   function initHeroCanvas() {
     if (prefersReducedMotion) return;
 
-    const hero = document.querySelector('#hero, .tech-hero, .studio-hero, .product-hero, .phys-hero, .page-hero');
+    // Exclude .tech-hero since Technology page uses pure SVG + CSS perspective field
+    if (document.querySelector('.tech-hero, #perspective-field')) return;
+
+    const hero = document.querySelector('#hero, .studio-hero, .product-hero, .phys-hero, .page-hero');
     if (!hero) return;
 
     // Create canvas
@@ -371,6 +374,22 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
+     7. PERSPECTIVE FIELD REPLAY CONTROLLER
+     ═══════════════════════════════════════════════════════════ */
+  function initPerspectiveFieldReplay() {
+    const field = document.getElementById('perspective-field');
+    const replayBtn = document.getElementById('pf-replay-btn');
+    if (!field || !replayBtn) return;
+
+    replayBtn.addEventListener('click', () => {
+      field.classList.remove('is-running');
+      // Trigger reflow to restart CSS animations
+      void field.offsetWidth;
+      field.classList.add('is-running');
+    });
+  }
+
+  /* ═══════════════════════════════════════════════════════════
      8. CAPOS OPERATING FLOW PIPELINE CONTROLLER
      ═══════════════════════════════════════════════════════════ */
   function initCapOSFlow() {
@@ -378,79 +397,71 @@
     if (!flowContainer) return;
 
     const stepButtons = flowContainer.querySelectorAll('.capos-step-btn');
+    const mobileStepItems = flowContainer.querySelectorAll('.capos-mobile-step-item');
     const flowNodes = flowContainer.querySelectorAll('.cap-flow-node-g');
     const lineFill = document.getElementById('capos-line-fill');
-    const descNum = document.getElementById('capos-desc-num');
-    const descTitle = document.getElementById('capos-desc-title');
-    const descText = document.getElementById('capos-desc-text');
+    const panels = flowContainer.querySelectorAll('[data-capos-panel]');
 
-    const stepData = {
-      1: {
-        num: 'Pillar 01',
-        title: 'Participation across the organizational lifecycle',
-        text: 'Rather than treating learning sessions as ephemeral events, CapOS coordinates participants, facilitators, leadership sponsors, and cohorts in a shared, transparent environment with real-time operational visibility.',
-        lineX2: 100,
-      },
-      2: {
-        num: 'Pillar 02',
-        title: 'Evidence collected in real time',
-        text: 'Action projects, capability artifacts, feedback loops, and observed behavioral shifts are captured continuously as structured proof rather than buried in static evaluation spreadsheets.',
-        lineX2: 320,
-      },
-      3: {
-        num: 'Pillar 03',
-        title: 'Accountable follow-through & behavioral practice',
-        text: 'Capability fails when program momentum evaporates. CapOS institutionalizes structured peer coaching check-ins, application milestones, and supervisor alignment cadences over 6–18 months.',
-        lineX2: 560,
-      },
-      4: {
-        num: 'Pillar 04',
-        title: 'Organizational intelligence & executive memory',
-        text: 'Synthesizes enterprise-wide capability signals into actionable executive dashboards. Leaders see where capability is compounding, where friction persists, and how capability investments translate into business performance.',
-        lineX2: 780,
-      },
+    const lineXMap = {
+      1: 100,
+      2: 320,
+      3: 560,
+      4: 780,
     };
 
     function activateStep(stepIdx) {
-      const data = stepData[stepIdx];
-      if (!data) return;
-
-      // Update buttons
+      // Update desktop buttons
       stepButtons.forEach((btn) => {
-        const isActive = parseInt(btn.getAttribute('data-flow-step'), 10) === stepIdx;
+        const isActive = parseInt(btn.getAttribute('data-capos-step'), 10) === stepIdx;
+        btn.classList.toggle('active', isActive);
+      });
+
+      // Update mobile stepper
+      mobileStepItems.forEach((btn) => {
+        const isActive = parseInt(btn.getAttribute('data-capos-step'), 10) === stepIdx;
         btn.classList.toggle('active', isActive);
       });
 
       // Update SVG nodes
-      flowNodes.forEach((node) => {
-        const idx = parseInt(node.getAttribute('data-flow-idx'), 10);
-        node.classList.toggle('active', idx === stepIdx);
+      flowNodes.forEach((node, idx) => {
+        node.classList.toggle('active', idx + 1 === stepIdx);
       });
 
       // Update SVG connecting line
-      if (lineFill) {
-        lineFill.setAttribute('x2', data.lineX2.toString());
+      if (lineFill && lineXMap[stepIdx]) {
+        lineFill.setAttribute('x2', lineXMap[stepIdx].toString());
       }
 
-      // Update copy with smooth transition
-      if (descNum && descTitle && descText) {
-        descNum.textContent = data.num;
-        descTitle.textContent = data.title;
-        descText.textContent = data.text;
-      }
+      // Update panels
+      panels.forEach((p) => {
+        const pStep = parseInt(p.getAttribute('data-capos-panel'), 10);
+        if (pStep === stepIdx) {
+          p.classList.add('active');
+          p.style.display = 'grid';
+        } else {
+          p.classList.remove('active');
+          p.style.display = 'none';
+        }
+      });
     }
 
     stepButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        const step = parseInt(btn.getAttribute('data-flow-step'), 10);
+        const step = parseInt(btn.getAttribute('data-capos-step'), 10);
         activateStep(step);
       });
     });
 
-    flowNodes.forEach((node) => {
-      node.addEventListener('click', () => {
-        const step = parseInt(node.getAttribute('data-flow-idx'), 10);
+    mobileStepItems.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const step = parseInt(btn.getAttribute('data-capos-step'), 10);
         activateStep(step);
+      });
+    });
+
+    flowNodes.forEach((node, idx) => {
+      node.addEventListener('click', () => {
+        activateStep(idx + 1);
       });
     });
   }
@@ -463,54 +474,43 @@
     if (!treeContainer) return;
 
     const branchButtons = treeContainer.querySelectorAll('.delib-branch-btn');
-    const branchCards = treeContainer.querySelectorAll('.branch-node-card');
-    const branchLines = treeContainer.querySelectorAll('.tree-branch-line');
+    const panels = treeContainer.querySelectorAll('[data-delib-panel]');
+    const stageCount = document.getElementById('delib-stage-count');
 
     const branchIndexMap = {
-      assumptions: 1,
-      evidence: 2,
-      alternatives: 3,
-      risks: 4,
-      implications: 5,
+      assumptions: '01',
+      evidence: '02',
+      alternatives: '03',
+      risks: '04',
+      implications: '05',
     };
 
-    function activateBranch(branchName) {
-      const branchNum = branchIndexMap[branchName] || 1;
-
+    function activateBranch(branchKey) {
       // Update buttons
       branchButtons.forEach((btn) => {
-        const isCurrent = btn.getAttribute('data-branch') === branchName;
+        const isCurrent = btn.getAttribute('data-delib-tab') === branchKey;
         btn.classList.toggle('active', isCurrent);
       });
 
-      // Update branch detail cards
-      branchCards.forEach((card) => {
-        const isCurrent = card.getAttribute('data-branch-name') === branchName;
-        card.classList.toggle('active', isCurrent);
+      // Update stage panels
+      panels.forEach((p) => {
+        const isCurrent = p.getAttribute('data-delib-panel') === branchKey;
+        p.classList.toggle('active', isCurrent);
+        p.style.display = isCurrent ? 'block' : 'none';
       });
 
-      // Update SVG branch connector lines
-      branchLines.forEach((line, idx) => {
-        line.classList.toggle('active', idx + 1 === branchNum);
-      });
+      // Update stage count indicator
+      if (stageCount && branchIndexMap[branchKey]) {
+        stageCount.textContent = `Stage ${branchIndexMap[branchKey]} of 05`;
+      }
     }
 
     branchButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        const branchName = btn.getAttribute('data-branch');
-        activateBranch(branchName);
+        const branchKey = btn.getAttribute('data-delib-tab');
+        activateBranch(branchKey);
       });
     });
-
-    branchCards.forEach((card) => {
-      card.addEventListener('click', () => {
-        const branchName = card.getAttribute('data-branch-name');
-        activateBranch(branchName);
-      });
-    });
-
-    // Default activate first line
-    activateBranch('assumptions');
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -522,8 +522,7 @@
     initScrollReveal();
     initScrollspy();
     initShowcaseTabs();
-    initPerspectiveNetwork();
-    initPerspectiveStepper();
+    initPerspectiveFieldReplay();
     initCapOSFlow();
     initThinkingStudioTree();
   }
