@@ -1800,89 +1800,200 @@ footer {
   color: var(--tech-gold-bright);
 }
 
-/* Perspective Network SVG Stage & Concept Nodes */
-.network-stage-canvas {
+/* Perspective Field Hero Animation & Stage */
+.perspective-field-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.perspective-field-stage {
   position: relative;
   width: 100%;
   height: 380px;
   margin: 0.75rem 0 0.5rem;
 }
 
-.network-svg-canvas {
+.perspective-field-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+  pointer-events: none;
 }
 
-.net-wire {
-  stroke: rgba(201, 169, 110, 0.28);
+/* ── SVG ELEMENT STYLES ── */
+
+/* Scatter Noise Dots & Lines */
+.pf-scatter-dot {
+  fill: var(--tech-gold);
+  opacity: 0.15;
+  transition: opacity 1s ease;
+}
+
+.pf-scatter-line {
+  stroke: var(--tech-gold);
+  stroke-width: 1;
+  opacity: 0.12;
+  stroke-dasharray: 2 4;
+}
+
+/* Lens Geometry */
+.pf-lens-ring {
+  fill: none;
+  stroke: var(--tech-gold);
+  transform-origin: 260px 185px;
+}
+
+.ring-outer {
+  stroke-width: 1;
+  opacity: 0;
+  stroke-dasharray: 4 6;
+}
+
+.ring-mid {
   stroke-width: 1.25;
-  transition: stroke 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              stroke-width 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
 }
 
-.wire-ring {
-  stroke-dasharray: 4 4;
+.ring-inner {
+  stroke-width: 1;
+  opacity: 0;
+  stroke-dasharray: 2 3;
 }
 
-.wire-interpret {
-  stroke: var(--tech-gold-bright);
-  stroke-width: 1.75;
+.pf-lens-tick {
+  stroke: var(--tech-gold);
+  stroke-width: 1.25;
+  opacity: 0;
 }
 
-.core-rotate-ring {
-  animation: rotate-center-ring 24s infinite linear;
-  transform-origin: 250px 190px;
+.pf-lens-glow {
+  opacity: 0;
+  transform-origin: 260px 185px;
 }
 
-@keyframes rotate-center-ring {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Relationship Traces / Focal Rays */
+.pf-rel-path {
+  fill: none;
+  stroke: var(--tech-gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  opacity: 0;
 }
 
-.network-central-node {
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: 250px 190px;
+.pf-focal-ray {
+  stroke: var(--tech-gold);
+  stroke-width: 1;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  opacity: 0;
 }
 
-/* Concept Node Base Styling */
-.concept-node {
+/* Judgment Core & Plaque */
+.pf-core-disc {
+  fill: rgba(14, 14, 22, 0.96);
+  opacity: 0;
+  transform-origin: 260px 185px;
+}
+
+.pf-core-border {
+  fill: none;
+  stroke: var(--tech-gold);
+  stroke-width: 1.5;
+  opacity: 0;
+  transform-origin: 260px 185px;
+}
+
+.pf-text-perspective {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  fill: #ffffff;
+  opacity: 0;
+}
+
+.pf-text-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 0.14em;
+  fill: var(--tech-gold);
+  opacity: 0;
+}
+
+.pf-judgment-beam {
+  stroke: url(#judgmentBeam);
+  stroke-width: 2;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  opacity: 0;
+}
+
+.pf-judgment-arrowhead {
+  fill: var(--tech-gold);
+  opacity: 0;
+}
+
+.pf-judgment-plaque {
+  opacity: 0;
+  transform-origin: 260px 310px;
+}
+
+.pf-plaque-bg {
+  fill: rgba(18, 18, 28, 0.98);
+  stroke: var(--tech-gold);
+  stroke-width: 1.25;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+}
+
+.pf-plaque-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  fill: var(--tech-gold-bright);
+}
+
+/* ── 5 PRIMARY SIGNAL PILLS ── */
+.pf-signals-layer {
   position: absolute;
-  z-index: 3;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pf-signal-pill {
+  position: absolute;
   background: rgba(18, 18, 28, 0.95);
   border: 1px solid var(--tech-border);
   border-radius: 3px;
   padding: 0.45rem 0.75rem;
   display: flex;
-  flex-direction: column;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s ease,
-              background 0.4s ease,
-              box-shadow 0.4s ease,
-              opacity 0.5s ease;
+  align-items: flex-start;
+  gap: 0.45rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
   user-select: none;
+  opacity: 0.7;
 }
 
-.concept-node:hover {
-  border-color: var(--tech-gold);
-  background: rgba(24, 24, 38, 0.98);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7), 0 0 14px rgba(201, 169, 110, 0.2);
-}
-
-.c-node-dot {
-  width: 4px;
-  height: 4px;
+.pf-sig-dot {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--tech-gold);
-  margin-bottom: 0.2rem;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
 }
 
-.c-node-title {
+.pf-sig-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pf-sig-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 0.95rem;
   font-weight: 600;
@@ -1890,135 +2001,251 @@ footer {
   line-height: 1.15;
 }
 
-.c-node-sub {
+.pf-sig-sub {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   color: var(--tech-text-muted);
   letter-spacing: 0.02em;
 }
 
-/* Concept Node Absolute Anchor Points (SVG 500x380) */
-.node-pos-people    { top: 75px;  left: 35px; }
-.node-pos-context   { top: 40px;  left: 250px; transform: translateX(-50%); }
-.node-pos-programs  { top: 75px;  right: 35px; }
-.node-pos-evidence  { top: 290px; left: 45px; }
-.node-pos-decisions { top: 290px; right: 45px; }
+/* Anchor coordinates mapped to 520x400 SVG coordinate grid */
+.pf-sig-people    { left: 3.8%;  top: 17%; }
+.pf-sig-context   { left: 50%;   top: 6%; transform: translateX(-50%); }
+.pf-sig-programs  { right: 3.8%; top: 17%; }
+.pf-sig-evidence  { left: 6.7%;  bottom: 12%; }
+.pf-sig-decisions { right: 6.7%; bottom: 12%; }
 
-/* ── 4-STATE SPATIAL REORGANIZATION ── */
+/* ── KEYFRAME ANIMATIONS (Total Sequence: ~7.0s) ── */
 
-/* STATE 1: FRAGMENTED */
-[data-state="fragmented"] .node-pos-people    { transform: translate(-16px, -18px); border-color: var(--tech-border); }
-[data-state="fragmented"] .node-pos-context   { transform: translate(-50%, -22px); border-color: var(--tech-border); }
-[data-state="fragmented"] .node-pos-programs  { transform: translate(16px, -18px); border-color: var(--tech-border); }
-[data-state="fragmented"] .node-pos-evidence  { transform: translate(-16px, 18px); border-color: var(--tech-border); }
-[data-state="fragmented"] .node-pos-decisions { transform: translate(16px, 18px); border-color: var(--tech-border); }
-
-[data-state="fragmented"] .network-connectors line {
-  opacity: 0;
+/* Sequence running state applied upon client mount */
+.is-running .pf-scatter-dot {
+  animation: pfNoiseFade 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="fragmented"] .network-central-node {
-  opacity: 0;
-  transform: scale(0.8);
+.is-running .pf-lens-glow {
+  animation: pfGlowAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="fragmented"] .concept-node {
-  opacity: 0.75;
-  filter: grayscale(0.6);
+.is-running .ring-outer {
+  animation: pfRingOuter 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* STATE 2: CONNECTED */
-[data-state="connected"] .node-pos-people    { transform: translate(0, 0); }
-[data-state="connected"] .node-pos-context   { transform: translate(-50%, 0); }
-[data-state="connected"] .node-pos-programs  { transform: translate(0, 0); }
-[data-state="connected"] .node-pos-evidence  { transform: translate(0, 0); }
-[data-state="connected"] .node-pos-decisions { transform: translate(0, 0); }
-
-[data-state="connected"] .network-connectors .wire-ring {
-  opacity: 0.85;
+.is-running .ring-mid {
+  animation: pfRingMid 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="connected"] .network-connectors .wire-interpret {
-  opacity: 0.2;
+.is-running .ring-inner {
+  animation: pfRingInner 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="connected"] .network-connectors .wire-core {
-  opacity: 0.25;
+.is-running .pf-lens-tick {
+  animation: pfTicksAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="connected"] .network-central-node {
-  opacity: 0.35;
-  transform: scale(0.92);
+.is-running .pf-rel-path {
+  animation: pfPathDraw 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="connected"] .concept-node {
-  opacity: 1;
-  filter: grayscale(0);
+.is-running .pf-focal-ray {
+  animation: pfRayDraw 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* STATE 3: INTERPRETED */
-[data-state="interpreted"] .node-pos-people    { transform: translate(8px, 6px); }
-[data-state="interpreted"] .node-pos-context   { transform: translate(-50%, 10px); }
-[data-state="interpreted"] .node-pos-programs  { transform: translate(-8px, 6px); }
-[data-state="interpreted"] .node-pos-evidence  { transform: translate(8px, -6px); }
-[data-state="interpreted"] .node-pos-decisions { transform: translate(-8px, -6px); }
-
-[data-state="interpreted"] .network-connectors .wire-ring {
-  opacity: 0.35;
+.is-running .pf-core-disc,
+.is-running .pf-core-border {
+  animation: pfCoreAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="interpreted"] .network-connectors .wire-interpret {
-  opacity: 0.95;
-  stroke-width: 1.8;
-  filter: drop-shadow(0 0 6px rgba(201, 169, 110, 0.4));
+.is-running .pf-text-perspective,
+.is-running .pf-text-sub {
+  animation: pfPerspectiveText 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="interpreted"] .network-connectors .wire-core {
-  opacity: 0.65;
+.is-running .pf-judgment-beam,
+.is-running .pf-judgment-arrowhead {
+  animation: pfBeamAppear 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="interpreted"] .network-central-node {
-  opacity: 0.8;
-  transform: scale(1.0);
+.is-running .pf-judgment-plaque {
+  animation: pfPlaqueResolve 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* STATE 4: RESOLVED */
-[data-state="resolved"] .node-pos-people    { transform: translate(14px, 12px); border-color: var(--tech-gold); }
-[data-state="resolved"] .node-pos-context   { transform: translate(-50%, 16px); border-color: var(--tech-gold); }
-[data-state="resolved"] .node-pos-programs  { transform: translate(-14px, 12px); border-color: var(--tech-gold); }
-[data-state="resolved"] .node-pos-evidence  { transform: translate(14px, -12px); border-color: var(--tech-gold); }
-[data-state="resolved"] .node-pos-decisions { transform: translate(-14px, -12px); border-color: var(--tech-gold); }
-
-[data-state="resolved"] .network-connectors .wire-ring {
-  opacity: 0.6;
+.is-running .pf-signal-pill {
+  animation: pfSignalPillTransform 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-[data-state="resolved"] .network-connectors .wire-interpret {
-  opacity: 0.8;
+/* Individual pill offsets for Phase 1 jitter -> Phase 2 & 4 convergence */
+.is-running .pf-sig-people    { animation-name: pfPillPeople; }
+.is-running .pf-sig-context   { animation-name: pfPillContext; }
+.is-running .pf-sig-programs  { animation-name: pfPillPrograms; }
+.is-running .pf-sig-evidence  { animation-name: pfPillEvidence; }
+.is-running .pf-sig-decisions { animation-name: pfPillDecisions; }
+
+/* ── KEYFRAME TIMINGS ── */
+
+/* 1. Scatter noise dots: visible in Phase 1, faint and stabilized in Phases 2-4 */
+@keyframes pfNoiseFade {
+  0% { opacity: 0.1; }
+  20% { opacity: 0.28; }
+  45% { opacity: 0.18; }
+  75%, 100% { opacity: 0.12; }
 }
 
-[data-state="resolved"] .network-connectors .wire-core {
-  opacity: 1;
-  stroke-width: 1.75;
-  filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.35));
+/* 2. Lens Glow */
+@keyframes pfGlowAppear {
+  0%, 20% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+  75%, 100% { opacity: 0.7; transform: scale(1); }
 }
 
-[data-state="resolved"] .network-central-node {
-  opacity: 1;
-  transform: scale(1.05);
+/* 3. Outer Lens Ring */
+@keyframes pfRingOuter {
+  0%, 20% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+  50% { opacity: 0.65; transform: scale(1) rotate(0deg); }
+  75%, 100% { opacity: 0.45; transform: scale(1) rotate(10deg); }
 }
 
-.network-footer {
-  padding-top: 0.65rem;
-  border-top: 1px solid var(--tech-border);
-  text-align: center;
+/* 4. Mid Lens Ring */
+@keyframes pfRingMid {
+  0%, 22% { opacity: 0; transform: scale(0.8); }
+  52% { opacity: 0.85; transform: scale(1); }
+  75%, 100% { opacity: 0.65; transform: scale(1); }
 }
 
-.network-legend-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--tech-text-muted);
-  letter-spacing: 0.05em;
+/* 5. Inner Lens Ring */
+@keyframes pfRingInner {
+  0%, 25% { opacity: 0; transform: scale(0.6); }
+  55% { opacity: 0.7; transform: scale(1); }
+  75%, 100% { opacity: 0.5; transform: scale(1); }
+}
+
+/* 6. Coordinate ticks */
+@keyframes pfTicksAppear {
+  0%, 30% { opacity: 0; }
+  55%, 100% { opacity: 0.6; }
+}
+
+/* 7. Relationship paths */
+@keyframes pfPathDraw {
+  0%, 45% {
+    stroke-dashoffset: 320;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  75%, 100% {
+    stroke-dashoffset: 0;
+    opacity: 0.75;
+  }
+}
+
+/* 8. Focal rays */
+@keyframes pfRayDraw {
+  0%, 50% {
+    stroke-dashoffset: 180;
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  75%, 100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+
+/* 9. Center Core disc */
+@keyframes pfCoreAppear {
+  0%, 35% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  75%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 10. Perspective Text */
+@keyframes pfPerspectiveText {
+  0%, 40% {
+    opacity: 0;
+  }
+  60%, 100% {
+    opacity: 1;
+  }
+}
+
+/* 11. Beam emerging toward Better Judgment */
+@keyframes pfBeamAppear {
+  0%, 75% {
+    stroke-dashoffset: 50;
+    opacity: 0;
+  }
+  85% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* 12. Plaque resolve */
+@keyframes pfPlaqueResolve {
+  0%, 76% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  88% {
+    opacity: 1;
+    transform: translateY(2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 13. Pill Keyframe Trajectories */
+@keyframes pfPillPeople {
+  0% { transform: translate(-14px, -14px); opacity: 0.65; border-color: var(--tech-border); }
+  22% { transform: translate(-10px, -8px); opacity: 0.75; }
+  50% { transform: translate(4px, 4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
+  78%, 100% { transform: translate(12px, 10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+}
+
+@keyframes pfPillContext {
+  0% { transform: translate(-50%, -18px); opacity: 0.65; border-color: var(--tech-border); }
+  22% { transform: translate(-50%, -12px); opacity: 0.75; }
+  50% { transform: translate(-50%, 4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
+  78%, 100% { transform: translate(-50%, 14px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+}
+
+@keyframes pfPillPrograms {
+  0% { transform: translate(14px, -14px); opacity: 0.65; border-color: var(--tech-border); }
+  22% { transform: translate(10px, -8px); opacity: 0.75; }
+  50% { transform: translate(-4px, 4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
+  78%, 100% { transform: translate(-12px, 10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+}
+
+@keyframes pfPillEvidence {
+  0% { transform: translate(-14px, 14px); opacity: 0.65; border-color: var(--tech-border); }
+  22% { transform: translate(-10px, 8px); opacity: 0.75; }
+  50% { transform: translate(4px, -4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
+  78%, 100% { transform: translate(12px, -10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
+}
+
+@keyframes pfPillDecisions {
+  0% { transform: translate(14px, 14px); opacity: 0.65; border-color: var(--tech-border); }
+  22% { transform: translate(10px, 8px); opacity: 0.75; }
+  50% { transform: translate(-4px, -4px); opacity: 0.95; border-color: rgba(201, 169, 110, 0.4); }
+  78%, 100% { transform: translate(-12px, -10px); opacity: 1; border-color: var(--tech-gold); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 169, 110, 0.2); }
 }
 
 /* ── COMPACT PERSPECTIVE TRANSITION BRIDGE ── */
@@ -4381,37 +4608,56 @@ html, body {
   .perspective-network-card {
     padding: 1.1rem 0.85rem;
   }
-  .network-stage-canvas {
+  .perspective-field-stage {
     height: 330px;
   }
-  .concept-node {
+  .pf-signal-pill {
     padding: 0.32rem 0.55rem;
+    gap: 0.35rem;
   }
-  .c-node-title {
+  .pf-sig-title {
     font-size: 0.82rem;
   }
-  .c-node-sub {
+  .pf-sig-sub {
     font-size: 0.54rem;
   }
 
   /* Mobile Spatial Adaptations (prevent edge clipping on narrow viewports) */
-  .node-pos-people    { top: 55px;  left: 10px; }
-  .node-pos-context   { top: 20px;  left: 50%; transform: translateX(-50%); }
-  .node-pos-programs  { top: 55px;  right: 10px; }
-  .node-pos-evidence  { top: 260px; left: 15px; }
-  .node-pos-decisions { top: 260px; right: 15px; }
+  .pf-sig-people    { left: 1%;  top: 15%; }
+  .pf-sig-context   { left: 50%; top: 3%; transform: translateX(-50%); }
+  .pf-sig-programs  { right: 1%; top: 15%; }
+  .pf-sig-evidence  { left: 2%;  bottom: 8%; }
+  .pf-sig-decisions { right: 2%; bottom: 8%; }
 
-  [data-state="fragmented"] .node-pos-people    { transform: translate(-6px, -10px); }
-  [data-state="fragmented"] .node-pos-context   { transform: translate(-50%, -12px); }
-  [data-state="fragmented"] .node-pos-programs  { transform: translate(6px, -10px); }
-  [data-state="fragmented"] .node-pos-evidence  { transform: translate(-6px, 10px); }
-  [data-state="fragmented"] .node-pos-decisions { transform: translate(6px, 10px); }
+  @keyframes pfPillPeople {
+    0% { transform: translate(-4px, -8px); opacity: 0.65; border-color: var(--tech-border); }
+    50% { transform: translate(2px, 2px); opacity: 0.95; }
+    78%, 100% { transform: translate(6px, 6px); opacity: 1; border-color: var(--tech-gold); }
+  }
 
-  [data-state="resolved"] .node-pos-people    { transform: translate(8px, 8px); }
-  [data-state="resolved"] .node-pos-context   { transform: translate(-50%, 10px); }
-  [data-state="resolved"] .node-pos-programs  { transform: translate(-8px, 8px); }
-  [data-state="resolved"] .node-pos-evidence  { transform: translate(8px, -8px); }
-  [data-state="resolved"] .node-pos-decisions { transform: translate(-8px, -8px); }
+  @keyframes pfPillContext {
+    0% { transform: translate(-50%, -10px); opacity: 0.65; border-color: var(--tech-border); }
+    50% { transform: translate(-50%, 2px); opacity: 0.95; }
+    78%, 100% { transform: translate(-50%, 8px); opacity: 1; border-color: var(--tech-gold); }
+  }
+
+  @keyframes pfPillPrograms {
+    0% { transform: translate(4px, -8px); opacity: 0.65; border-color: var(--tech-border); }
+    50% { transform: translate(-2px, 2px); opacity: 0.95; }
+    78%, 100% { transform: translate(-6px, 6px); opacity: 1; border-color: var(--tech-gold); }
+  }
+
+  @keyframes pfPillEvidence {
+    0% { transform: translate(-4px, 8px); opacity: 0.65; border-color: var(--tech-border); }
+    50% { transform: translate(2px, -2px); opacity: 0.95; }
+    78%, 100% { transform: translate(6px, -6px); opacity: 1; border-color: var(--tech-gold); }
+  }
+
+  @keyframes pfPillDecisions {
+    0% { transform: translate(4px, 8px); opacity: 0.65; border-color: var(--tech-border); }
+    50% { transform: translate(-2px, -2px); opacity: 0.95; }
+    78%, 100% { transform: translate(-6px, -6px); opacity: 1; border-color: var(--tech-gold); }
+  }
 
   .capos-interactive-wrapper,
   .deliberation-studio-card {
@@ -4442,28 +4688,72 @@ html, body {
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .core-rotate-ring,
   .tech-dot-pulse {
     animation: none !important;
   }
-  .net-wire,
-  .network-central-node,
-  .concept-node,
   .perspective-stage-card,
   .tree-branch-line,
   .capos-progress-line {
     transition: none !important;
   }
-  [data-state="fragmented"] .network-connectors line {
-    opacity: 0.8 !important;
+  .perspective-field-stage * {
+    animation: none !important;
+    transition: none !important;
   }
-  [data-state="fragmented"] .network-central-node {
-    opacity: 1 !important;
-    transform: scale(1) !important;
+  .pf-scatter-dot {
+    opacity: 0.12 !important;
   }
-  [data-state="fragmented"] .concept-node {
-    opacity: 1 !important;
-    filter: none !important;
+  .pf-lens-glow {
+    opacity: 0.7 !important;
+  }
+  .ring-outer {
+    opacity: 0.45 !important;
     transform: none !important;
   }
+  .ring-mid {
+    opacity: 0.65 !important;
+    transform: none !important;
+  }
+  .ring-inner {
+    opacity: 0.5 !important;
+    transform: none !important;
+  }
+  .pf-lens-tick {
+    opacity: 0.6 !important;
+  }
+  .pf-rel-path {
+    stroke-dashoffset: 0 !important;
+    opacity: 0.75 !important;
+  }
+  .pf-focal-ray {
+    stroke-dashoffset: 0 !important;
+    opacity: 0.4 !important;
+  }
+  .pf-core-disc,
+  .pf-core-border {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .pf-text-perspective,
+  .pf-text-sub {
+    opacity: 1 !important;
+  }
+  .pf-judgment-beam,
+  .pf-judgment-arrowhead {
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
+  .pf-judgment-plaque {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .pf-signal-pill {
+    opacity: 1 !important;
+    border-color: var(--tech-gold) !important;
+  }
+  .pf-sig-people    { transform: translate(12px, 10px) !important; }
+  .pf-sig-context   { transform: translate(-50%, 14px) !important; }
+  .pf-sig-programs  { transform: translate(-12px, 10px) !important; }
+  .pf-sig-evidence  { transform: translate(12px, -10px) !important; }
+  .pf-sig-decisions { transform: translate(-12px, -10px) !important; }
 }

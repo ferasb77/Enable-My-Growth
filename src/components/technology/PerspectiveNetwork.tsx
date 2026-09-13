@@ -1,297 +1,194 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ConceptNode } from './ConceptNode';
+import React, { useState, useEffect } from 'react';
 
-export type NetworkState = 'fragmented' | 'connected' | 'interpreted' | 'resolved';
-
-const stateDescriptions: Record<NetworkState, { label: string; meta: string }> = {
-  fragmented: {
-    label: 'Fragmented',
-    meta: 'Dispersed inputs without contextual relationships',
-  },
-  connected: {
-    label: 'Connected',
-    meta: 'Active links establishing organizational structure',
-  },
-  interpreted: {
-    label: 'Interpreted',
-    meta: 'High-signal pathways distilled through disciplined examination',
-  },
-  resolved: {
-    label: 'Perspective',
-    meta: 'Synthesized intelligence enabling defensible decisions',
-  },
-};
+// The 5 key signals with their structural positions
+const primarySignals = [
+  { id: 'people', title: 'People', sub: 'Capability & Action' },
+  { id: 'context', title: 'Context', sub: 'Operational Reality' },
+  { id: 'programs', title: 'Programs', sub: 'Delivery Structure' },
+  { id: 'evidence', title: 'Evidence', sub: 'Empirical Telemetry' },
+  { id: 'decisions', title: 'Decisions', sub: 'Defensible Action' },
+];
 
 export function PerspectiveNetwork() {
-  const [state, setState] = useState<NetworkState>('fragmented');
-  const [hasPlayed, setHasPlayed] = useState<boolean>(false);
-  const [isSequenceRunning, setIsSequenceRunning] = useState<boolean>(false);
-  const [devMode, setDevMode] = useState<boolean>(false);
+  const [playCount, setPlayCount] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const clearTimers = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-  };
-
-  // Run the 4-state transformation sequence ONCE (total duration ~6.2s)
-  const runSequence = useCallback(() => {
-    clearTimers();
-    setIsSequenceRunning(true);
-    setState('fragmented');
-
-    // State 1 (Fragmented) -> State 2 (Connected) after 1.4s
-    timerRef.current = setTimeout(() => {
-      setState('connected');
-
-      // State 2 (Connected) -> State 3 (Interpreted) after 1.8s
-      timerRef.current = setTimeout(() => {
-        setState('interpreted');
-
-        // State 3 (Interpreted) -> State 4 (Resolved) after 1.8s
-        timerRef.current = setTimeout(() => {
-          setState('resolved');
-          setIsSequenceRunning(false);
-          setHasPlayed(true);
-        }, 1800);
-      }, 1800);
-    }, 1400);
+  useEffect(() => {
+    setIsMounted(true);
   }, []);
 
-  // IntersectionObserver: Trigger sequence once when hero enters viewport meaningfully
-  useEffect(() => {
-    // Check reduced motion preference
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-      setState('resolved');
-      setHasPlayed(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting && !hasPlayed && !isSequenceRunning) {
-          runSequence();
-        }
-      },
-      {
-        threshold: 0.25, // Hero network is at least 25% visible
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-      clearTimers();
-    };
-  }, [hasPlayed, isSequenceRunning, runSequence]);
-
-  // Dev manual override handler
-  const handleDevStateChange = (target: NetworkState) => {
-    clearTimers();
-    setIsSequenceRunning(false);
-    setHasPlayed(true);
-    setState(target);
+  const handleReplay = () => {
+    setPlayCount((prev) => prev + 1);
   };
 
   return (
     <div
-      ref={containerRef}
-      className="perspective-network-card spotlight-card"
+      className="perspective-network-card spotlight-card perspective-field-card"
       id="perspective-network"
-      data-state={state}
-      aria-label="Perspective Network Visual Transformation"
+      aria-label="Perspective Field Strategic Transformation"
     >
       {/* Network Header with Status & Replay Control */}
       <div className="network-header">
         <div className="network-status-indicator">
           <span className="network-pulse-dot" aria-hidden="true" />
           <span className="network-state-text" aria-live="polite">
-            {state === 'resolved' ? 'Perspective · Better Judgment' : `State: ${stateDescriptions[state].label}`}
+            Perspective Field · Better Judgment
           </span>
         </div>
 
         <div className="network-actions">
-          {/* Subtle Replay Control available after first playback or on demand */}
           <button
             type="button"
             className="net-replay-btn"
-            onClick={runSequence}
-            title="Replay the 4-stage perspective transformation"
-            aria-label="Replay visual transformation sequence"
+            onClick={handleReplay}
+            title="Replay the Perspective Field sequence"
+            aria-label="Replay Perspective Field sequence"
           >
             <span aria-hidden="true">↺</span> Replay
-          </button>
-
-          {/* Dev inspector toggle (discreet development review mode) */}
-          {devMode && (
-            <div className="network-dev-controls" role="group" aria-label="Development state inspector">
-              {(['fragmented', 'connected', 'interpreted', 'resolved'] as NetworkState[]).map((stKey) => (
-                <button
-                  key={stKey}
-                  type="button"
-                  className={'net-dev-btn' + (state === stKey ? ' active' : '')}
-                  onClick={() => handleDevStateChange(stKey)}
-                >
-                  {stKey.slice(0, 4)}
-                </button>
-              ))}
-            </div>
-          )}
-
-          <button
-            type="button"
-            onClick={() => setDevMode(!devMode)}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'var(--tech-subtle)',
-              fontSize: '0.6rem',
-              cursor: 'pointer',
-              padding: '0 0.2rem',
-            }}
-            title="Toggle Developer Review Mode"
-            aria-label="Toggle Developer Review Mode"
-          >
-            {devMode ? '✕' : '⚙'}
           </button>
         </div>
       </div>
 
-      {/* SVG Canvas & Node Layout */}
-      <div className="network-stage-canvas">
+      {/* Animation Stage: keyed by playCount to force deterministic restart on replay */}
+      <div
+        key={playCount}
+        className={`perspective-field-stage ${isMounted ? 'is-running' : 'is-prerender'}`}
+      >
         <svg
-          className="network-svg-canvas"
-          viewBox="0 0 500 380"
+          className="perspective-field-svg"
+          viewBox="0 0 520 400"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g className="network-connectors" aria-hidden="true">
-            {/* Peripheral Structural Pentagon */}
-            <line className="net-wire wire-ring" x1="105" y1="105" x2="250" y2="70" />
-            <line className="net-wire wire-ring" x1="250" y1="70" x2="395" y2="105" />
-            <line className="net-wire wire-ring" x1="395" y1="105" x2="385" y2="305" />
-            <line className="net-wire wire-ring" x1="385" y1="305" x2="115" y2="305" />
-            <line className="net-wire wire-ring" x1="115" y1="305" x2="105" y2="105" />
+          <defs>
+            {/* Subtle background glow for lens */}
+            <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="var(--tech-gold)" stopOpacity="0.12" />
+              <stop offset="60%" stopColor="var(--tech-gold)" stopOpacity="0.03" />
+              <stop offset="100%" stopColor="transparent" stopOpacity="0" />
+            </radialGradient>
 
-            {/* High-Signal Interpreted Triad */}
-            <line className="net-wire wire-interpret" x1="105" y1="105" x2="385" y2="305" />
-            <line className="net-wire wire-interpret" x1="395" y1="105" x2="115" y2="305" />
+            {/* Linear gradient for final Judgment beam */}
+            <linearGradient id="judgmentBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="var(--tech-gold)" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="var(--tech-gold)" stopOpacity="0.15" />
+            </linearGradient>
+          </defs>
 
-            {/* Core Synthesizing Rays */}
-            <line className="net-wire wire-core" x1="105" y1="105" x2="250" y2="190" />
-            <line className="net-wire wire-core" x1="250" y1="70" x2="250" y2="190" />
-            <line className="net-wire wire-core" x1="395" y1="105" x2="250" y2="190" />
-            <line className="net-wire wire-core" x1="115" y1="305" x2="250" y2="190" />
-            <line className="net-wire wire-core" x1="385" y1="305" x2="250" y2="190" />
+          {/* ── PHASE 1: BACKGROUND SCATTERED SIGNALS (Faint noise fragments) ── */}
+          <g className="pf-scatter-field" aria-hidden="true">
+            <circle cx="55" cy="65" r="2" className="pf-scatter-dot dot-1" />
+            <circle cx="140" cy="45" r="1.5" className="pf-scatter-dot dot-2" />
+            <circle cx="410" cy="55" r="2" className="pf-scatter-dot dot-3" />
+            <circle cx="475" cy="95" r="1.5" className="pf-scatter-dot dot-4" />
+            <circle cx="35" cy="205" r="1.5" className="pf-scatter-dot dot-5" />
+            <circle cx="490" cy="245" r="2" className="pf-scatter-dot dot-6" />
+            <circle cx="65" cy="350" r="1.5" className="pf-scatter-dot dot-7" />
+            <circle cx="160" cy="375" r="2" className="pf-scatter-dot dot-8" />
+            <circle cx="380" cy="370" r="1.5" className="pf-scatter-dot dot-9" />
+            <circle cx="465" cy="340" r="2" className="pf-scatter-dot dot-10" />
+
+            {/* Subtle scattered stray dashes */}
+            <line x1="80" y1="130" x2="105" y2="115" className="pf-scatter-line line-1" />
+            <line x1="420" y1="140" x2="445" y2="160" className="pf-scatter-line line-2" />
+            <line x1="70" y1="270" x2="95" y2="290" className="pf-scatter-line line-3" />
+            <line x1="430" y1="280" x2="450" y2="260" className="pf-scatter-line line-4" />
           </g>
 
-          {/* Central Synthesis Perspective Node */}
-          <g className="network-central-node" transform="translate(250, 190)">
-            <circle
-              cx="0"
-              cy="0"
-              r="44"
-              fill="var(--tech-surface-raised)"
-              stroke="var(--tech-gold)"
-              strokeWidth="1.5"
-            />
-            <circle
-              cx="0"
-              cy="0"
-              r="54"
-              fill="none"
-              stroke="rgba(201, 169, 110, 0.35)"
-              strokeWidth="1"
-              strokeDasharray="3 4"
-              className="core-rotate-ring"
-            />
-            <text
-              x="0"
-              y="-6"
-              textAnchor="middle"
-              fill="#FFFFFF"
-              fontFamily="'Cormorant Garamond', Georgia, serif"
-              fontSize="14"
-              fontWeight="600"
-            >
-              Perspective
+          {/* ── PHASE 2: PERSPECTIVE LENS GEOMETRY ── */}
+          <g className="pf-lens-group" aria-hidden="true">
+            {/* Ambient radial lens illumination */}
+            <circle cx="260" cy="185" r="130" fill="url(#lensGlow)" className="pf-lens-glow" />
+
+            {/* Outer structural geometric frame */}
+            <circle cx="260" cy="185" r="126" className="pf-lens-ring ring-outer" />
+            <circle cx="260" cy="185" r="92" className="pf-lens-ring ring-mid" />
+            <circle cx="260" cy="185" r="60" className="pf-lens-ring ring-inner" />
+
+            {/* Fine coordinate tick marks on lens */}
+            <line x1="260" y1="55" x2="260" y2="67" className="pf-lens-tick" />
+            <line x1="260" y1="303" x2="260" y2="315" className="pf-lens-tick" />
+            <line x1="130" y1="185" x2="142" y2="185" className="pf-lens-tick" />
+            <line x1="378" y1="185" x2="390" y2="185" className="pf-lens-tick" />
+          </g>
+
+          {/* ── PHASE 3: INTERPRETATION TRACES & RELATIONSHIPS ── */}
+          <g className="pf-relationship-paths" aria-hidden="true">
+            {/* Smooth curved paths linking the 5 signals through the lens */}
+            {/* People (100, 95) to Center & Context (260, 65) */}
+            <path d="M 100 95 C 170 75, 210 65, 260 65" className="pf-rel-path path-1" />
+            {/* Context (260, 65) to Programs (420, 95) */}
+            <path d="M 260 65 C 310 65, 350 75, 420 95" className="pf-rel-path path-2" />
+            {/* Programs (420, 95) to Decisions (395, 295) */}
+            <path d="M 420 95 C 440 180, 425 240, 395 295" className="pf-rel-path path-3" />
+            {/* Decisions (395, 295) to Evidence (125, 295) */}
+            <path d="M 395 295 C 320 325, 200 325, 125 295" className="pf-rel-path path-4" />
+            {/* Evidence (125, 295) to People (100, 95) */}
+            <path d="M 125 295 C 95 240, 80 180, 100 95" className="pf-rel-path path-5" />
+
+            {/* Convergent focal rays connecting signals directly to the center */}
+            <line x1="100" y1="95" x2="260" y2="185" className="pf-focal-ray ray-people" />
+            <line x1="260" y1="65" x2="260" y2="185" className="pf-focal-ray ray-context" />
+            <line x1="420" y1="95" x2="260" y2="185" className="pf-focal-ray ray-programs" />
+            <line x1="125" y1="295" x2="260" y2="185" className="pf-focal-ray ray-evidence" />
+            <line x1="395" y1="295" x2="260" y2="185" className="pf-focal-ray ray-decisions" />
+          </g>
+
+          {/* ── PHASE 4: JUDGMENT CORE & DIRECTIONAL VECTOR ── */}
+          <g className="pf-judgment-core">
+            {/* Central structured disc */}
+            <circle cx="260" cy="185" r="44" className="pf-core-disc" />
+            <circle cx="260" cy="185" r="50" className="pf-core-border" />
+
+            {/* Center Label: PERSPECTIVE */}
+            <text x="260" y="180" textAnchor="middle" className="pf-text-perspective">
+              PERSPECTIVE
             </text>
-            <text
-              x="0"
-              y="12"
-              textAnchor="middle"
-              fill="var(--tech-gold)"
-              fontFamily="'JetBrains Mono', monospace"
-              fontSize="8"
-              letterSpacing="0.1em"
-            >
-              BETTER JUDGMENT
+            <text x="260" y="196" textAnchor="middle" className="pf-text-sub">
+              STRUCTURED CLARITY
             </text>
+
+            {/* Directional beam emerging toward Better Judgment */}
+            <line x1="260" y1="234" x2="260" y2="280" className="pf-judgment-beam" />
+            <polygon points="257,278 263,278 260,285" className="pf-judgment-arrowhead" />
+
+            {/* Decisive Judgment Plaque / Anchor */}
+            <g className="pf-judgment-plaque" transform="translate(260, 310)">
+              <rect x="-85" y="-14" width="170" height="28" rx="2" className="pf-plaque-bg" />
+              <text x="0" y="4" textAnchor="middle" className="pf-plaque-text">
+                BETTER JUDGMENT
+              </text>
+            </g>
           </g>
         </svg>
 
-        {/* Concept Nodes Floating Overlay */}
-        <ConceptNode
-          id="people"
-          title="People"
-          subtitle="Capability & Action"
-          positionClass="node-pos-people"
-          isActive={state !== 'fragmented'}
-        />
-
-        <ConceptNode
-          id="context"
-          title="Context"
-          subtitle="Operational Reality"
-          positionClass="node-pos-context"
-          isActive={state !== 'fragmented'}
-        />
-
-        <ConceptNode
-          id="programs"
-          title="Programs"
-          subtitle="Delivery Structure"
-          positionClass="node-pos-programs"
-          isActive={state !== 'fragmented'}
-        />
-
-        <ConceptNode
-          id="evidence"
-          title="Evidence"
-          subtitle="Empirical Telemetry"
-          positionClass="node-pos-evidence"
-          isActive={state !== 'fragmented'}
-        />
-
-        <ConceptNode
-          id="decisions"
-          title="Decisions"
-          subtitle="Defensible Action"
-          positionClass="node-pos-decisions"
-          isActive={state !== 'fragmented'}
-        />
+        {/* ── 5 PRIMARY ORGANIZATIONAL SIGNALS ── */}
+        <div className="pf-signals-layer" aria-label="Five organizational signals">
+          {primarySignals.map((sig) => (
+            <div
+              key={sig.id}
+              className={`pf-signal-pill pf-sig-${sig.id}`}
+              data-signal={sig.id}
+            >
+              <span className="pf-sig-dot" />
+              <div className="pf-sig-content">
+                <span className="pf-sig-title">{sig.title}</span>
+                <span className="pf-sig-sub">{sig.sub}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Narrative Metaphor Subtitle */}
       <div className="network-footer">
         <span className="network-legend-tag">
-          {stateDescriptions[state].label}: {stateDescriptions[state].meta}
+          Scattered Signals → Perspective Lens → Disciplined Interpretation → Better Judgment
         </span>
       </div>
     </div>
   );
 }
+
