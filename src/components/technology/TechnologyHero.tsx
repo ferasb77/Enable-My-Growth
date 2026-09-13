@@ -44,62 +44,74 @@ export function TechnologyHero() {
             <circle cx="1060" cy="620" r="1.5" className="pf-faint-dot" />
             <circle cx="1280" cy="530" r="2" className="pf-faint-dot" />
             <circle cx="1380" cy="680" r="1.5" className="pf-faint-dot" />
-            <path d="M 860 140 L 860 160 M 860 620 L 860 640" className="pf-faint-reticle" />
-            <path d="M 580 390 L 600 390 M 1120 390 L 1140 390" className="pf-faint-reticle" />
+            <path d="M 900 130 L 900 150 M 900 610 L 900 630" className="pf-faint-reticle" />
+            <path d="M 640 370 L 660 370 M 1140 370 L 1160 370" className="pf-faint-reticle" />
           </g>
 
-          {/* Phase 2 — Central Perspective Geometry */}
+          {/* Phase 2 — Central Perspective Geometry (Scaled down ~12-15% & re-centered) */}
           <g className="pf-lens-group">
-            <circle cx="880" cy="390" r="210" fill="url(#heroCoreGlow)" className="pf-core-aura" />
-            <circle cx="880" cy="390" r="200" className="pf-lens-orbit pf-orbit-1" />
-            <circle cx="880" cy="390" r="145" className="pf-lens-orbit pf-orbit-2" />
-            <circle cx="880" cy="390" r="95" className="pf-lens-orbit pf-orbit-3" />
-            <line x1="880" y1="180" x2="880" y2="195" className="pf-axis-mark" />
-            <line x1="880" y1="585" x2="880" y2="600" className="pf-axis-mark" />
-            <line x1="670" y1="390" x2="685" y2="390" className="pf-axis-mark" />
-            <line x1="1075" y1="390" x2="1090" y2="390" className="pf-axis-mark" />
+            <circle cx="900" cy="370" r="185" fill="url(#heroCoreGlow)" className="pf-core-aura" />
+            <circle cx="900" cy="370" r="176" className="pf-lens-orbit pf-orbit-1" />
+            <circle cx="900" cy="370" r="128" className="pf-lens-orbit pf-orbit-2" />
+            <circle cx="900" cy="370" r="84" className="pf-lens-orbit pf-orbit-3" />
+            <line x1="900" y1="185" x2="900" y2="198" className="pf-axis-mark" />
+            <line x1="900" y1="542" x2="900" y2="555" className="pf-axis-mark" />
+            <line x1="715" y1="370" x2="728" y2="370" className="pf-axis-mark" />
+            <line x1="1072" y1="370" x2="1085" y2="370" className="pf-axis-mark" />
           </g>
 
           {/* Phase 3 — Convergence Relationship Paths & Focal Beams */}
           <g className="pf-paths-group">
-            <path d="M 640 220 C 720 190, 790 170, 880 170" className="pf-curve pf-c1" />
-            <path d="M 880 170 C 970 170, 1040 190, 1120 220" className="pf-curve pf-c2" />
-            <path d="M 1120 220 C 1160 320, 1140 440, 1080 540" className="pf-curve pf-c3" />
-            <path d="M 1080 540 C 980 610, 780 610, 680 540" className="pf-curve pf-c4" />
-            <path d="M 680 540 C 620 440, 600 320, 640 220" className="pf-curve pf-c5" />
+            <path d="M 685 220 C 755 190, 820 175, 900 175" className="pf-curve pf-c1" />
+            <path d="M 900 175 C 980 175, 1045 190, 1115 220" className="pf-curve pf-c2" />
+            <path d="M 1115 220 C 1150 310, 1130 415, 1080 500" className="pf-curve pf-c3" />
+            <path d="M 1080 500 C 990 560, 810 560, 720 500" className="pf-curve pf-c4" />
+            <path d="M 720 500 C 670 415, 650 310, 685 220" className="pf-curve pf-c5" />
 
             {/* Inward Focal Rays */}
-            <line x1="640" y1="220" x2="880" y2="390" className="pf-ray pf-ray-people" />
-            <line x1="880" y1="170" x2="880" y2="390" className="pf-ray pf-ray-context" />
-            <line x1="1120" y1="220" x2="880" y2="390" className="pf-ray pf-ray-programs" />
-            <line x1="680" y1="540" x2="880" y2="390" className="pf-ray pf-ray-evidence" />
-            <line x1="1080" y1="540" x2="880" y2="390" className="pf-ray pf-ray-decisions" />
+            <line x1="685" y1="220" x2="900" y2="370" className="pf-ray pf-ray-people" />
+            <line x1="900" y1="175" x2="900" y2="370" className="pf-ray pf-ray-context" />
+            <line x1="1115" y1="220" x2="900" y2="370" className="pf-ray pf-ray-programs" />
+            <line x1="720" y1="500" x2="900" y2="370" className="pf-ray pf-ray-evidence" />
+            <line x1="1080" y1="500" x2="900" y2="370" className="pf-ray pf-ray-decisions" />
           </g>
 
           {/* Phase 3 & 4 — PERSPECTIVE Center & BETTER JUDGMENT Directional Alignment */}
           <g className="pf-center-hub">
-            <circle cx="880" cy="390" r="62" className="pf-hub-bg" />
-            <circle cx="880" cy="390" r="70" className="pf-hub-ring" />
-            <text x="880" y="385" textAnchor="middle" className="pf-text-perspective">
+            <circle cx="900" cy="370" r="54" className="pf-hub-bg" />
+            <circle cx="900" cy="370" r="62" className="pf-hub-ring" />
+            <text x="900" y="365" textAnchor="middle" className="pf-text-perspective">
               PERSPECTIVE
             </text>
-            <text x="880" y="404" textAnchor="middle" className="pf-text-clarity">
+            <text x="900" y="382" textAnchor="middle" className="pf-text-clarity">
               SYNTHESIS CORE
             </text>
 
             {/* Downward Vector toward Defensible Action */}
-            <line x1="880" y1="460" x2="880" y2="520" className="pf-vector-line" />
-            <polygon points="875,518 885,518 880,528" className="pf-vector-head" />
+            <line x1="900" y1="432" x2="900" y2="486" className="pf-vector-line" />
+            <polygon points="895,484 905,484 900,494" className="pf-vector-head" />
 
-            {/* Settled Plaque: BETTER JUDGMENT */}
-            <g className="pf-plaque-node" transform="translate(880, 558)">
-              <rect x="-105" y="-18" width="210" height="36" rx="3" className="pf-plaque-rect" />
-              <text x="0" y="6" textAnchor="middle" className="pf-plaque-label">
+            {/* Settled Plaque: BETTER JUDGMENT (Refined vertical cushion) */}
+            <g className="pf-plaque-node" transform="translate(900, 524)">
+              <rect x="-95" y="-16" width="190" height="32" rx="3" className="pf-plaque-rect" />
+              <text x="0" y="5" textAnchor="middle" className="pf-plaque-label">
                 BETTER JUDGMENT
               </text>
             </g>
           </g>
         </svg>
+
+        {/* Quiet Replay Control repositioned into the visual field */}
+        <button
+          type="button"
+          className="pf-replay-btn"
+          id="pf-replay-btn"
+          title="Replay synthesis animation"
+          aria-label="Replay synthesis animation"
+        >
+          <span className="pf-replay-icon" aria-hidden="true">↺</span>
+          <span>Replay</span>
+        </button>
 
         {/* 5 Named Signals — Positioned Spatially across the Living Field (No rectangular cards) */}
         <div className="pf-nodes-field" aria-hidden="true">
@@ -138,7 +150,7 @@ export function TechnologyHero() {
       {/* ── HERO CONTENT LAYER: Sits cleanly over the full-bleed field ── */}
       <div className="container tech-hero-container">
         <div className="tech-hero-editorial">
-          {/* Top Tag & Replay Bar */}
+          {/* Top Tag */}
           <div className="tech-hero-topline">
             <div className="tech-hero-badge">
               <span className="tech-dot-pulse" />
@@ -147,17 +159,6 @@ export function TechnologyHero() {
               </span>
               <span className="tech-meta-tag">Decision Systems &amp; Platforms</span>
             </div>
-
-            <button
-              type="button"
-              className="pf-replay-btn"
-              id="pf-replay-btn"
-              title="Replay synthesis animation"
-              aria-label="Replay synthesis animation"
-            >
-              <span className="pf-replay-icon" aria-hidden="true">↺</span>
-              <span>Replay</span>
-            </button>
           </div>
 
           <h1 className="tech-hero-h1">
