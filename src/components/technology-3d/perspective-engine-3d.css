@@ -1,0 +1,847 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PERSPECTIVE ENGINE 3D HERO PROTOTYPE (.pe3-*)
+   Aesthetic: Neo-Tech, Smoked Glass, Titanium, Precision Optical Instrument
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --pe3-bg: #040406;
+  --pe3-gold: #c9a96e;
+  --pe3-gold-bright: #ecd7ae;
+  --pe3-gold-dim: #796440;
+  --pe3-gold-glow: rgba(201, 169, 110, 0.22);
+  --pe3-border: rgba(255, 255, 255, 0.08);
+  --pe3-border-spec: rgba(201, 169, 110, 0.35);
+  --pe3-titanium: #13131c;
+  --pe3-text: #eae7df;
+  --pe3-text-bright: #ffffff;
+  --pe3-text-muted: #85859e;
+  --pe3-text-dim: #505068;
+  --pe3-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --pe3-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --pe3-font-mono: 'JetBrains Mono', monospace;
+}
+
+.pe3-page {
+  background: var(--pe3-bg);
+  color: var(--pe3-text);
+  font-family: var(--pe3-font-sans);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pe3-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 20, 30, 0.6) 0%, rgba(6, 6, 10, 0.95) 60%, #040406 100%);
+}
+
+.pe3-canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pe3-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.pe3-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(320px, 60vw, 900px);
+  height: clamp(320px, 60vw, 900px);
+  max-width: 90vw;
+  max-height: 90vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, rgba(15, 15, 25, 0) 65%);
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container tuned for 1440x900 above-the-fold narrative view */
+.pe3-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(3.8rem, 6.5vh, 4.8rem) 1.5rem clamp(1.8rem, 3.5vh, 2.5rem);
+  box-sizing: border-box;
+}
+
+.pe3-crest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 840px;
+  margin: 0 auto clamp(0.6rem, 1.4vh, 1.2rem);
+}
+
+.pe3-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(14, 14, 22, 0.7);
+  border: 1px solid var(--pe3-border-spec);
+  box-shadow: 0 0 16px rgba(201, 169, 110, 0.08);
+  margin-bottom: 0.65rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.pe3-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--pe3-gold);
+  box-shadow: 0 0 6px var(--pe3-gold);
+}
+
+.pe3-badge-text {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pe3-gold-bright);
+}
+
+.pe3-badge-text-mobile {
+  display: none;
+}
+
+.pe3-badge-text-desktop {
+  display: inline;
+}
+
+.pe3-headline {
+  font-family: var(--pe3-font-serif);
+  font-size: clamp(2.1rem, 4.0vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--pe3-text-bright);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem 0;
+  max-width: 800px;
+}
+
+.pe3-headline em {
+  font-style: italic;
+  color: var(--pe3-gold-bright);
+  font-weight: 400;
+  text-shadow: 0 0 30px rgba(201, 169, 110, 0.28);
+}
+
+.pe3-subhead {
+  font-family: var(--pe3-font-sans);
+  font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+  font-weight: 350;
+  line-height: 1.5;
+  color: var(--pe3-text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Instrument Viewport: framed for desktop & mobile */
+.pe3-instrument-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: clamp(450px, 50vh, 560px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Center core readout */
+.pe3-core-readout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 8;
+  opacity: 0.85;
+}
+
+.pe3-core-tag {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--pe3-gold);
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(201, 169, 110, 0.4);
+}
+
+.pe3-core-status {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  color: var(--pe3-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Scientific Calibration Annotation Styling (Replaced UI chip cards) */
+.pe3-signal-beacon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 12;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.pe3-signal-beacon:hover {
+  transform: translate(-50%, -52%);
+}
+
+.pe3-signal-beacon:focus-visible {
+  outline: 1px dashed var(--pe3-gold);
+  outline-offset: 4px;
+}
+
+.pe3-calib-annotation {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.18rem 0.4rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.pe3-signal-beacon:hover .pe3-calib-annotation,
+.pe3-signal-beacon.active .pe3-calib-annotation {
+  border-bottom-color: var(--pe3-gold-bright);
+}
+
+.pe3-calib-tick {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--pe3-gold);
+  box-shadow: 0 0 6px var(--pe3-gold);
+  flex-shrink: 0;
+}
+
+.pe3-signal-beacon:hover .pe3-calib-tick,
+.pe3-signal-beacon.active .pe3-calib-tick {
+  background: var(--pe3-gold-bright);
+  box-shadow: 0 0 10px var(--pe3-gold-bright);
+}
+
+.pe3-calib-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.pe3-calib-code {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--pe3-gold-dim);
+  text-transform: uppercase;
+}
+
+.pe3-signal-beacon:hover .pe3-calib-code,
+.pe3-signal-beacon.active .pe3-calib-code {
+  color: var(--pe3-gold);
+}
+
+.pe3-calib-label {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pe3-text-bright);
+}
+
+.pe3-signal-beacon:hover .pe3-calib-label,
+.pe3-signal-beacon.active .pe3-calib-label {
+  color: var(--pe3-gold-bright);
+  text-shadow: 0 0 12px rgba(201, 169, 110, 0.35);
+}
+
+.pe3-calib-leader {
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.3);
+}
+
+.pe3-signal-beacon:hover .pe3-calib-leader,
+.pe3-signal-beacon.active .pe3-calib-leader {
+  background: var(--pe3-gold);
+  width: 20px;
+}
+
+.pe3-calib-sub {
+  font-family: var(--pe3-font-sans);
+  font-size: 0.62rem;
+  color: var(--pe3-text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  margin-top: 0.2rem;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.pe3-signal-beacon:hover .pe3-calib-sub,
+.pe3-signal-beacon.active .pe3-calib-sub {
+  opacity: 1;
+  color: var(--pe3-gold-bright);
+}
+
+/* Symmetrical Positions for Signals */
+.pe3-sig-context {
+  top: 8%;
+  left: 50%;
+}
+
+.pe3-sig-people {
+  top: 28%;
+  left: 18%;
+}
+
+.pe3-sig-programs {
+  top: 28%;
+  left: 82%;
+}
+
+.pe3-sig-evidence {
+  top: 68%;
+  left: 20%;
+}
+
+.pe3-sig-decisions {
+  top: 68%;
+  left: 80%;
+}
+
+/* BETTER JUDGMENT Anchor */
+.pe3-judgment-anchor {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 15;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.pe3-judgment-plaque {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.6rem;
+  background: rgba(12, 12, 18, 0.95);
+  border: 1px solid var(--pe3-gold);
+  border-radius: 3px;
+  box-shadow: 0 0 30px rgba(201, 169, 110, 0.25), inset 0 0 12px rgba(201, 169, 110, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.pe3-judgment-plaque:hover {
+  box-shadow: 0 0 45px rgba(201, 169, 110, 0.4), inset 0 0 16px rgba(201, 169, 110, 0.18);
+  transform: translateY(-1px);
+}
+
+.pe3-judgment-text {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pe3-gold-bright);
+  white-space: nowrap;
+}
+
+.pe3-judgment-sub {
+  font-family: var(--pe3-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--pe3-text-dim);
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+}
+
+/* Actions */
+.pe3-action-tier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  margin-top: clamp(1rem, 2vh, 1.8rem);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.pe3-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--pe3-font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.pe3-btn-gold {
+  background: var(--pe3-gold);
+  color: #07070a;
+  border: 1px solid var(--pe3-gold);
+  font-weight: 600;
+}
+
+.pe3-btn-gold:hover {
+  background: var(--pe3-gold-bright);
+  border-color: var(--pe3-gold-bright);
+  box-shadow: 0 4px 18px rgba(201, 169, 110, 0.35);
+  transform: translateY(-1px);
+}
+
+.pe3-btn-outline {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--pe3-text);
+  border: 1px solid var(--pe3-border);
+}
+
+.pe3-btn-outline:hover {
+  border-color: var(--pe3-border-spec);
+  background: rgba(201, 169, 110, 0.06);
+  color: var(--pe3-text-bright);
+  transform: translateY(-1px);
+}
+
+/* Controller */
+.pe3-controller {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.pe3-replay-btn {
+  background: transparent;
+  border: 1px solid var(--pe3-border);
+  color: var(--pe3-text-dim);
+  font-family: var(--pe3-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.pe3-replay-btn:hover {
+  color: var(--pe3-gold-bright);
+  border-color: var(--pe3-border-spec);
+  background: rgba(201, 169, 110, 0.06);
+}
+
+.pe3-replay-btn:focus-visible {
+  outline: 2px solid var(--pe3-gold);
+}
+
+/* Subtle architectural transition from hero into the subsequent narrative */
+.pe3-transition-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(4, 4, 6, 0.7) 60%, #07070a 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .pe3-instrument-viewport {
+    height: clamp(420px, 52vw, 520px);
+  }
+}
+
+@media (min-width: 431px) and (max-width: 768px) {
+  .pe3-container {
+    padding: clamp(5.5rem, 10vh, 6.5rem) 1.25rem 2.5rem;
+  }
+  .pe3-headline {
+    font-size: clamp(1.9rem, 5.8vw, 2.6rem);
+  }
+  .pe3-instrument-viewport {
+    height: 460px;
+  }
+  .pe3-calib-sub {
+    display: none;
+  }
+  .pe3-sig-people {
+    left: 15%;
+  }
+  .pe3-sig-programs {
+    left: 85%;
+  }
+  .pe3-sig-evidence {
+    left: 18%;
+  }
+  .pe3-sig-decisions {
+    left: 82%;
+  }
+  .pe3-action-tier {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+  .pe3-btn {
+    width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DEDICATED MOBILE COMPOSITION (≤430px, e.g. 375x812, 430x932)
+   - Zero horizontal overflow
+   - Headline and subhead constrained within safe horizontal padding
+   - All 5 calibration annotations visible within viewport
+   - Secondary text hidden
+   - BETTER JUDGMENT anchored and visible
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 430px) {
+  nav#site-nav {
+    padding: 0.75rem 1rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .nav-brand-copy b {
+    font-size: 0.92rem !important;
+  }
+
+  .nav-right {
+    gap: 0.35rem !important;
+  }
+
+  .nav-cta-mobile {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  .pe3-hero {
+    min-height: 100vh;
+    padding-top: 0;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .pe3-ambient-glow {
+    width: 260px;
+    height: 260px;
+    max-width: 70vw;
+    max-height: 70vw;
+  }
+
+  .pe3-container {
+    padding: 4.6rem 16px 1.8rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .pe3-crest {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0.35rem;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .pe3-badge {
+    margin-bottom: 0.6rem;
+    padding: 0.22rem 0.7rem;
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .pe3-badge-text-desktop {
+    display: none !important;
+  }
+
+  .pe3-badge-text-mobile {
+    display: inline !important;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .pe3-headline {
+    font-size: clamp(1.4rem, 5.6vw, 1.75rem);
+    line-height: 1.15;
+    margin: 0 auto 0.5rem;
+    padding: 0;
+    width: calc(100vw - 32px);
+    max-width: 360px;
+    margin-inline: auto;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+  }
+
+  .pe3-subhead {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    width: calc(100vw - 32px);
+    max-width: 340px;
+    margin-inline: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    white-space: normal;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .pe3-instrument-viewport {
+    width: 100%;
+    max-width: 100%;
+    height: 360px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .pe3-core-readout {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+  }
+
+  .pe3-core-tag {
+    font-size: 0.54rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--pe3-gold-bright);
+    text-shadow: 0 0 12px rgba(201, 169, 110, 0.45);
+    white-space: nowrap;
+  }
+
+  .pe3-core-status {
+    font-size: 0.44rem;
+    letter-spacing: 0.14em;
+    color: var(--pe3-text-muted);
+    margin-top: 0.15rem;
+    white-space: nowrap;
+  }
+
+  /* Compact calibration annotations for mobile */
+  .pe3-calib-annotation {
+    padding: 0.1rem 0.2rem;
+    gap: 0.22rem;
+    white-space: nowrap;
+  }
+
+  .pe3-calib-tick {
+    width: 3px;
+    height: 3px;
+  }
+
+  .pe3-calib-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+
+  /* Hide code on very narrow screens so title is fully legible */
+  .pe3-calib-code {
+    display: none !important;
+  }
+
+  .pe3-calib-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .pe3-calib-leader {
+    width: 6px;
+  }
+
+  .pe3-calib-sub {
+    display: none !important;
+  }
+
+  /* Right-side and left-side explicit edge anchoring without escaping transforms */
+  .pe3-sig-context {
+    top: 5%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+    align-items: center;
+  }
+
+  .pe3-sig-people {
+    top: 26%;
+    left: 16px;
+    right: auto;
+    transform: translateY(-50%);
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .pe3-sig-programs {
+    top: 26%;
+    left: auto;
+    right: 16px;
+    transform: translateY(-50%);
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .pe3-sig-programs .pe3-calib-annotation {
+    flex-direction: row-reverse;
+  }
+
+  .pe3-sig-evidence {
+    top: 67%;
+    left: 16px;
+    right: auto;
+    transform: translateY(-50%);
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .pe3-sig-decisions {
+    top: 67%;
+    left: auto;
+    right: 16px;
+    transform: translateY(-50%);
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .pe3-sig-decisions .pe3-calib-annotation {
+    flex-direction: row-reverse;
+  }
+
+  /* BETTER JUDGMENT anchored inside viewport */
+  .pe3-judgment-anchor {
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+  }
+
+  .pe3-judgment-plaque {
+    padding: 0.42rem 1.0rem;
+    gap: 0.45rem;
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .pe3-judgment-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  .pe3-judgment-sub {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .pe3-action-tier {
+    margin-top: 0.6rem;
+    gap: 0.6rem;
+  }
+
+  .pe3-btn {
+    font-size: 0.78rem;
+    padding: 0.65rem 1.1rem;
+    min-height: 38px;
+  }
+
+  .pe3-controller {
+    margin-top: 0.6rem;
+  }
+
+  .pe3-replay-btn {
+    font-size: 0.62rem;
+    padding: 0.32rem 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pe3-badge-dot,
+  .pe3-calib-tick {
+    animation: none !important;
+  }
+
+  .pe3-signal-beacon,
+  .pe3-btn,
+  .pe3-judgment-plaque {
+    transition: none !important;
+  }
+}

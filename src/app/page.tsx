@@ -1,29 +1,19 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { GlobalNav } from '../components/global/GlobalNav';
 import { GlobalFooter } from '../components/global/GlobalFooter';
-import { TechnologyHero } from '../components/technology/TechnologyHero';
-import { PerspectiveStepper } from '../components/technology/PerspectiveStepper';
-import { TechnologyPortfolio } from '../components/technology/TechnologyPortfolio';
-import { CapOSShowcase } from '../components/technology/CapOSShowcase';
-import { ThinkingStudioShowcase } from '../components/technology/ThinkingStudioShowcase';
-import { TechnologyPhilosophy } from '../components/technology/TechnologyPhilosophy';
-import { TechnologyMatrix } from '../components/technology/TechnologyMatrix';
-import { TechnologyCTA } from '../components/technology/TechnologyCTA';
+import { TechnologyExperience } from '../components/technology-v2/TechnologyExperience';
+
+export const metadata: Metadata = {
+  title: 'Enable My Growth Tech — Decision Intelligence, Digital Platforms & Governance Systems',
+  description: 'Enable My Growth Tech develops AI-enabled platforms, decision systems, and custom digital infrastructure that help organizations examine evidence, govern complexity, and strengthen capability.',
+};
 
 export default function TechnologyPage() {
   return (
     <>
       <GlobalNav currentPath="tech.html" />
-      <main className="technology-page">
-        <TechnologyHero />
-        <PerspectiveStepper />
-        <TechnologyPortfolio />
-        <CapOSShowcase />
-        <ThinkingStudioShowcase />
-        <TechnologyPhilosophy />
-        <TechnologyMatrix />
-        <TechnologyCTA />
-      </main>
+      <TechnologyExperience />
       <GlobalFooter />
     </>
   );
