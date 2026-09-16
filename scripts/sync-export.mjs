@@ -34,8 +34,8 @@ const rootTechHtml = path.join(rootDir, 'tech.html');
 
 if (fs.existsSync(srcHtml)) {
   fs.copyFileSync(srcHtml, destHtml);
-  // Root tech.html remains pristine for production
-  console.log('✓ Successfully copied tech.html to clean deploy directory');
+  fs.copyFileSync(srcHtml, rootTechHtml);
+  console.log('✓ Successfully copied tech.html to clean deploy directory and root');
 } else {
   console.error('✗ out/index.html not found!');
   process.exit(1);
