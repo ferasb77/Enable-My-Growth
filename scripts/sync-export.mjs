@@ -15,11 +15,15 @@ fs.mkdirSync(deployDir, { recursive: true });
 const staticExtensions = ['.html', '.png', '.jpg', '.jpeg', '.svg', '.ico', '.pdf', '.xml', '.txt'];
 const specificFiles = ['CNAME', 'style.css', 'analytics.js', 'effects.js', 'nav.js'];
 
-// Copy root production assets (excluding source, dev config, node_modules)
+// Copy root production assets (excluding source, dev config, node_modules, and internal prototypes)
+const excludedFromDeploy = ['tech-v2.html', 'tech-hero-3d.html', 'tech-hero-lab.html'];
 const rootEntries = fs.readdirSync(rootDir, { withFileTypes: true });
 
 for (const entry of rootEntries) {
   if (entry.isFile()) {
+    if (excludedFromDeploy.includes(entry.name)) {
+      continue;
+    }
     const ext = path.extname(entry.name).toLowerCase();
     if (staticExtensions.includes(ext) || specificFiles.includes(entry.name)) {
       fs.copyFileSync(path.join(rootDir, entry.name), path.join(deployDir, entry.name));
@@ -41,43 +45,22 @@ if (fs.existsSync(srcHtml)) {
   process.exit(1);
 }
 
-// 3b. Copy Next.js pre-rendered tech-v2.html (preview route)
-const srcV2Html = fs.existsSync(path.join(outDir, 'tech-v2.html'))
-  ? path.join(outDir, 'tech-v2.html')
-  : path.join(outDir, 'tech-v2', 'index.html');
-const destV2Html = path.join(deployDir, 'tech-v2.html');
-const rootTechV2Html = path.join(rootDir, 'tech-v2.html');
+// 3b-d. Sync local prototype routes to root directory ONLY (NOT copied to dist-deploy)
+const localPrototypes = [
+  { name: 'tech-v2', file: 'tech-v2.html' },
+  { name: 'tech-hero-lab', file: 'tech-hero-lab.html' },
+  { name: 'tech-hero-3d', file: 'tech-hero-3d.html' },
+];
 
-if (fs.existsSync(srcV2Html)) {
-  fs.copyFileSync(srcV2Html, destV2Html);
-  fs.copyFileSync(srcV2Html, rootTechV2Html);
-  console.log('✓ Successfully copied tech-v2.html preview route to deploy directory');
-}
-
-// 3c. Copy Next.js pre-rendered tech-hero-lab.html (standalone prototype route)
-const srcLabHtml = fs.existsSync(path.join(outDir, 'tech-hero-lab.html'))
-  ? path.join(outDir, 'tech-hero-lab.html')
-  : path.join(outDir, 'tech-hero-lab', 'index.html');
-const destLabHtml = path.join(deployDir, 'tech-hero-lab.html');
-const rootTechLabHtml = path.join(rootDir, 'tech-hero-lab.html');
-
-if (fs.existsSync(srcLabHtml)) {
-  fs.copyFileSync(srcLabHtml, destLabHtml);
-  fs.copyFileSync(srcLabHtml, rootTechLabHtml);
-  console.log('✓ Successfully copied tech-hero-lab.html prototype route to deploy directory');
-}
-
-// 3d. Copy Next.js pre-rendered tech-hero-3d.html (Three.js WebGL prototype route)
-const src3DHtml = fs.existsSync(path.join(outDir, 'tech-hero-3d.html'))
-  ? path.join(outDir, 'tech-hero-3d.html')
-  : path.join(outDir, 'tech-hero-3d', 'index.html');
-const dest3DHtml = path.join(deployDir, 'tech-hero-3d.html');
-const rootTech3DHtml = path.join(rootDir, 'tech-hero-3d.html');
-
-if (fs.existsSync(src3DHtml)) {
-  fs.copyFileSync(src3DHtml, dest3DHtml);
-  fs.copyFileSync(src3DHtml, rootTech3DHtml);
-  console.log('✓ Successfully copied tech-hero-3d.html WebGL prototype route to deploy directory');
+for (const proto of localPrototypes) {
+  const src = fs.existsSync(path.join(outDir, proto.file))
+    ? path.join(outDir, proto.file)
+    : path.join(outDir, proto.name, 'index.html');
+  const rootDest = path.join(rootDir, proto.file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, rootDest);
+    console.log(`✓ Synced ${proto.file} to local workspace root (excluded from dist-deploy)`);
+  }
 }
 
 // 4. Copy _next asset directory
