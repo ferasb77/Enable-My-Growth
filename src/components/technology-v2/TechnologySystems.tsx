@@ -54,11 +54,11 @@ export function TechnologySystems() {
             </div>
 
             <div className="tv2-card-actions">
-              <a href="#tv2-capos" className="tv2-btn tv2-btn-gold">
-                Explore Operating Model <span>↓</span>
+              <a href="capability-os.html" className="tv2-btn tv2-btn-gold">
+                Explore CapabilityOS <span>→</span>
               </a>
-              <a href="capability-os.html" className="tv2-btn tv2-btn-outline">
-                Platform Briefing <span>→</span>
+              <a href="contact.html?enquiry=CapabilityOS+Demonstration" className="tv2-btn tv2-btn-outline">
+                Platform Briefing
               </a>
             </div>
           </article>
@@ -97,11 +97,11 @@ export function TechnologySystems() {
             </div>
 
             <div className="tv2-card-actions">
-              <a href="#tv2-thinking" className="tv2-btn tv2-btn-outline">
-                Deliberation Workspace <span>↓</span>
+              <a href="ai-thinking-studio.html" className="tv2-btn tv2-btn-gold">
+                Explore Thinking Studio <span>→</span>
               </a>
-              <a href="ai-thinking-studio.html" className="tv2-btn tv2-btn-outline">
-                Studio Briefing <span>→</span>
+              <a href="https://studio.enablemygrowth.com/" target="_blank" rel="noopener noreferrer" className="tv2-btn tv2-btn-outline">
+                Enter Studio <span>↗</span>
               </a>
             </div>
           </article>

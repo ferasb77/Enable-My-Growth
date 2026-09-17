@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Thinking Studio — Enable My Growth</title>
-  <meta name="description" content="AI Thinking Studio is a structured environment for examining decisions before conclusions harden. Not an answer machine. A thinking environment." />
+  <title>AI Thinking Studio™ — Disciplined Deliberation Architecture — Enable My Growth Tech</title>
+  <meta name="description" content="AI Thinking Studio™ is a structured environment for examining high-stakes decisions before conclusions harden. Not an answer machine or chatbot. A structured reasoning engine." />
   <link rel="canonical" href="https://enablemygrowth.com/ai-thinking-studio.html" />
-  <meta property="og:title" content="AI Thinking Studio — Enable My Growth" />
-  <meta property="og:description" content="A structured environment for examining decisions before conclusions harden." />
+  <meta property="og:title" content="AI Thinking Studio™ — Structured Deliberation Architecture" />
+  <meta property="og:description" content="Slow down premature certainty. Deconstruct high-stakes decisions across five distinct reasoning dimensions." />
   <meta property="og:url" content="https://enablemygrowth.com/ai-thinking-studio.html" />
   <meta property="og:image" content="https://enablemygrowth.com/emg-mobius-hero.png" />
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -15,165 +15,764 @@
   <link rel="apple-touch-icon" href="favicon-128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .studio-hero { padding:11rem 0 6rem; position:relative; overflow:hidden; }
-    .studio-hero::after { content:''; position:absolute; width:38rem; height:38rem; right:-14rem; top:-10rem; border:1px solid rgba(201,169,110,.12); border-radius:50%; box-shadow:0 0 0 7rem rgba(201,169,110,.018),0 0 0 14rem rgba(201,169,110,.012); pointer-events:none; }
-    .studio-hero-inner { position:relative; z-index:1; max-width:880px; }
-    .studio-actions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.5rem; }
-    .studio-note { font-size:.75rem; margin-top:1.2rem; }
-    .promise-panel { max-width:900px; margin:0 auto; border-left:1px solid var(--gold); padding:1rem 0 1rem 2.5rem; }
-    .promise-panel p { font-family:'Cormorant Garamond',serif; font-size:clamp(1.55rem,3vw,2.35rem); color:var(--text); line-height:1.4; }
-    .promise-panel p + p { margin-top:.75rem; }
-    .promise-panel .responsibility { color:var(--gold); font-style:italic; }
-    .examine-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
-    .examine-item { background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:2.2rem 1.8rem; }
-    .examine-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; margin-bottom:.55rem; color:var(--text); }
-    .examine-item p { font-size:.84rem; color:var(--muted); line-height:1.65; }
-    .trust-note { border-top:1px solid var(--gold-dim); padding-top:1.5rem; margin-top:2.2rem; font-size:.82rem; color:var(--muted); }
-    @media (max-width:900px) { .examine-grid { grid-template-columns:1fr; } .studio-hero::after { opacity:.5; } }
+    /* ═══════════════════════════════════════════════════════════════════════════
+       AI THINKING STUDIO™ NEO-TECH DELIBERATION SPECIFICATION
+       ═══════════════════════════════════════════════════════════════════════════ */
+    :root {
+      --ats-bg: #07070a;
+      --ats-surface: #0d0d14;
+      --ats-surface-raised: #13131d;
+      --ats-border: rgba(255, 255, 255, 0.08);
+      --ats-border-light: rgba(255, 255, 255, 0.14);
+      --ats-border-gold: rgba(201, 169, 110, 0.32);
+      --ats-border-gold-faint: rgba(201, 169, 110, 0.12);
+      --ats-gold: #c9a96e;
+      --ats-gold-light: #dec28f;
+      --ats-gold-dim: #90764b;
+      --ats-gold-faint: rgba(201, 169, 110, 0.08);
+      --ats-text: #edeae3;
+      --ats-text-bright: #ffffff;
+      --ats-text-muted: #8d8da4;
+      --ats-text-subtle: #575770;
+      --ats-font-serif: 'Cormorant Garamond', Georgia, serif;
+      --ats-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --ats-font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background-color: var(--ats-bg);
+      color: var(--ats-text);
+      font-family: var(--ats-font-sans);
+      overflow-x: hidden;
+    }
+
+    .ats-section {
+      position: relative;
+      padding: clamp(5rem, 8vw, 8.5rem) 0;
+      border-bottom: 1px solid var(--ats-border);
+    }
+
+    .ats-container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
+    }
+
+    .ats-container-narrow {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Typography */
+    .ats-eyebrow {
+      font-family: var(--ats-font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ats-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .ats-eyebrow-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--ats-gold);
+      box-shadow: 0 0 6px var(--ats-gold);
+    }
+
+    .ats-heading-xl {
+      font-family: var(--ats-font-serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+      line-height: 1.1;
+      color: var(--ats-text-bright);
+      letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+    }
+
+    .ats-heading-lg {
+      font-family: var(--ats-font-serif);
+      font-weight: 300;
+      font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+      line-height: 1.18;
+      color: var(--ats-text-bright);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .ats-lead {
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      line-height: 1.8;
+      color: var(--ats-text-muted);
+      font-weight: 300;
+      max-width: 720px;
+    }
+
+    /* Hero */
+    .ats-hero {
+      padding: 10.5rem 0 6.5rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--ats-border);
+      background: radial-gradient(circle at 80% 20%, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+    }
+
+    .ats-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .ats-status-tag {
+      font-family: var(--ats-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid var(--ats-border-gold);
+      color: var(--ats-gold);
+      background: rgba(201, 169, 110, 0.06);
+    }
+
+    .ats-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.75rem;
+    }
+
+    .btn-ats-gold {
+      background: var(--ats-gold);
+      color: #07070a;
+      padding: 0.85rem 1.65rem;
+      font-family: var(--ats-font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--ats-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-ats-gold:hover {
+      background: var(--ats-gold-light);
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    .btn-ats-outline {
+      background: transparent;
+      color: var(--ats-text);
+      padding: 0.85rem 1.65rem;
+      font-family: var(--ats-font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--ats-border-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-ats-outline:hover {
+      border-color: var(--ats-gold);
+      color: var(--ats-gold-light);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Non-Chatbot Manifest Box */
+    .ats-manifest-box {
+      margin-top: 3.5rem;
+      padding: 2rem 2.5rem;
+      background: var(--ats-surface);
+      border: 1px solid var(--ats-border);
+      border-left: 3px solid var(--ats-gold);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .ats-manifest-quote {
+      font-family: var(--ats-font-serif);
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--ats-text-bright);
+      line-height: 1.4;
+    }
+
+    .ats-manifest-body {
+      font-size: 0.88rem;
+      color: var(--ats-text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── STRUCTURED DELIBERATION SURFACE (MIGRATED FROM /TECH) ── */
+    .ats-delib-surface {
+      border: 1px solid var(--ats-border);
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      background: rgba(13, 13, 20, 0.6);
+      margin-top: 3.5rem;
+    }
+
+    .ats-delib-control-rail {
+      border-right: 1px solid var(--ats-border);
+      display: flex;
+      flex-direction: column;
+      background: rgba(9, 9, 14, 0.8);
+    }
+
+    .ats-delib-inquiry-block {
+      padding: clamp(1.75rem, 3vw, 2.25rem);
+      border-bottom: 1px solid var(--ats-border);
+    }
+
+    .ats-delib-question {
+      font-family: var(--ats-font-serif);
+      font-size: 1.45rem;
+      line-height: 1.35;
+      color: var(--ats-text-bright);
+      margin-top: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .ats-delib-sub {
+      font-size: 0.84rem;
+      line-height: 1.65;
+      color: var(--ats-text-muted);
+    }
+
+    .ats-delib-dimension-track {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 0.35rem;
+    }
+
+    .ats-dim-row-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      color: var(--ats-text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      min-height: 44px;
+    }
+
+    .ats-dim-row-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .ats-dim-marker {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--ats-border-light);
+      transition: background-color 0.2s ease;
+    }
+
+    .ats-dim-num {
+      font-family: var(--ats-font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--ats-text-subtle);
+    }
+
+    .ats-dim-label {
+      font-family: var(--ats-font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .ats-dim-stage-tag {
+      font-family: var(--ats-font-mono);
+      font-size: 0.65rem;
+      color: var(--ats-text-subtle);
+      letter-spacing: 0.1em;
+    }
+
+    .ats-dim-row-btn:hover {
+      color: var(--ats-text-bright);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .ats-dim-row-btn.active {
+      color: var(--ats-gold);
+      border-color: var(--ats-border-gold-faint);
+      background: rgba(201, 169, 110, 0.05);
+    }
+
+    .ats-dim-row-btn.active .ats-dim-marker {
+      background: var(--ats-gold);
+      box-shadow: 0 0 6px var(--ats-gold);
+    }
+
+    .ats-dim-row-btn.active .ats-dim-num,
+    .ats-dim-row-btn.active .ats-dim-stage-tag {
+      color: var(--ats-gold);
+    }
+
+    .ats-delib-canvas {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ats-delib-canvas-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--ats-border);
+    }
+
+    .ats-delib-active-index {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ats-dim-title {
+      font-family: var(--ats-font-serif);
+      font-size: 1.6rem;
+      color: var(--ats-text-bright);
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .ats-dim-fraction {
+      font-family: var(--ats-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--ats-gold);
+    }
+
+    .ats-delib-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .ats-spec-key {
+      font-family: var(--ats-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--ats-gold-dim);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .ats-stage-inquiry {
+      font-family: var(--ats-font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--ats-text-bright);
+      line-height: 1.45;
+    }
+
+    .ats-stage-exam {
+      font-size: 0.94rem;
+      line-height: 1.8;
+      color: var(--ats-text-muted);
+    }
+
+    .ats-delib-finding-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(201, 169, 110, 0.04);
+      border-left: 2px solid var(--ats-gold);
+    }
+
+    .ats-finding-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--ats-text);
+    }
+
+    .ats-delib-synthesis {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--ats-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .ats-synthesis-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--ats-text-muted);
+    }
+
+    /* ── FIVE PRINCIPLES GRID ── */
+    .ats-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .ats-principle-card {
+      background: var(--ats-surface);
+      border: 1px solid var(--ats-border);
+      padding: 2.2rem 1.8rem;
+      transition: all 0.25s ease;
+    }
+
+    .ats-principle-card:hover {
+      border-color: var(--ats-border-light);
+      background: var(--ats-surface-raised);
+    }
+
+    .ats-principle-num {
+      font-family: var(--ats-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--ats-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .ats-principle-title {
+      font-family: var(--ats-font-serif);
+      font-size: 1.35rem;
+      color: var(--ats-text-bright);
+      margin-bottom: 0.6rem;
+    }
+
+    .ats-principle-desc {
+      font-size: 0.85rem;
+      color: var(--ats-text-muted);
+      line-height: 1.65;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .ats-delib-surface { grid-template-columns: 1fr; }
+      .ats-delib-control-rail { border-right: none; border-bottom: 1px solid var(--ats-border); }
+      .ats-grid-5 { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .ats-manifest-box { grid-template-columns: 1fr; }
+      .ats-grid-5 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <main>
     <!-- ═══ HERO ═══ -->
-    <section class="studio-hero" role="banner">
-      <div class="container">
-        <div class="studio-hero-inner">
-          <nav class="tech-breadcrumb" aria-label="Breadcrumb">
-            <a href="tech.html">Enable My Growth Tech</a>
-            <span>/</span>
-            <span>Platforms</span>
-            <span>/</span>
-            <span>Thinking Studio</span>
-          </nav>
-          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
-            <span class="tech-badge badge-available">Available · Pilot</span>
-            <span class="tech-pill-tag">Thinking Environment</span>
+    <header class="ats-hero" role="banner">
+      <div class="ats-container">
+        <nav class="tech-breadcrumb" aria-label="Breadcrumb">
+          <a href="tech.html">Enable My Growth Tech</a>
+          <span>/</span>
+          <span>Platforms</span>
+          <span>/</span>
+          <span>SYS-02 AI Thinking Studio</span>
+        </nav>
+
+        <div class="ats-hero-meta">
+          <span class="ats-status-tag">SYS-02 / Strategy &amp; Executive</span>
+          <span style="font-family:var(--ats-font-mono); font-size:0.68rem; color:var(--ats-text-subtle); text-transform:uppercase;">
+            Disciplined Deliberation Architecture
+          </span>
+        </div>
+
+        <h1 class="ats-heading-xl">AI Thinking Studio™</h1>
+        <p class="ats-lead">
+          A disciplined deliberation environment for stress-testing decisions before commitments harden.
+          Deconstructs consequential questions across five reasoning dimensions—without rushing toward premature certainty.
+        </p>
+
+        <div class="ats-hero-actions">
+          <a href="https://studio.enablemygrowth.com/" target="_blank" rel="noopener noreferrer" class="btn-ats-gold">
+            Enter Live Studio ↗
+          </a>
+          <a href="#stress-test" class="btn-ats-outline">
+            Interactive Stress-Test <span>↓</span>
+          </a>
+          <a href="contact.html?enquiry=AI+Thinking+Studio+Pilot" class="btn-ats-outline">
+            Request Team Pilot
+          </a>
+        </div>
+
+        <div class="ats-manifest-box">
+          <div class="ats-manifest-quote">
+            &ldquo;The value of AI is not in producing instant answers. It is in helping us notice the assumptions we missed.&rdquo;
           </div>
-          <h1 class="display display-xl">Examine the decision before you accelerate it.</h1>
-          <p class="lead mt-md">A structured environment for examining decisions before reaching conclusions.</p>
-          <p class="mt-sm">Developed by Feras Banna to bring the Enable My Growth philosophy into a guided, practical thinking experience.</p>
-          <div class="studio-actions">
-            <a href="https://studio.enablemygrowth.com/" class="btn btn-gold" target="_blank" rel="noopener">Enter the Studio</a>
-            <a href="#method" class="btn btn-outline">Explore the method</a>
+          <div class="ats-manifest-body">
+            AI Thinking Studio is not a chatbot, autocomplete agent, or substitute decision-maker. It is a structured cognitive instrument designed to create an intentional pause—separating assumptions from evidence, forcing counter-factual alternatives, and confronting second-order consequence vectors.
           </div>
-          <p class="studio-note">The Studio opens in a new window.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ LIVE STRESS-TEST EXPERIENCE (MIGRATED FROM /TECH) ═══ -->
+    <section id="stress-test" class="ats-section" aria-label="Deliberation Workspace">
+      <div class="ats-container">
+        <p class="ats-eyebrow"><span class="ats-eyebrow-dot"></span> Deliberation Console</p>
+        <h2 class="ats-heading-lg">Thinking becoming structured.</h2>
+        <p class="ats-lead">
+          Explore how a consequential enterprise dilemma is methodically examined across five distinct reasoning axes.
+        </p>
+
+        <div class="ats-delib-surface">
+          <!-- Left Rail: Question & Dimensions -->
+          <div class="ats-delib-control-rail">
+            <div class="ats-delib-inquiry-block">
+              <div style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:0.65rem;">
+                <span style="font-family:var(--ats-font-mono); font-size:0.68rem; color:var(--ats-gold); letter-spacing:0.18em;">INQUIRY SPEC</span>
+                <span style="color:var(--ats-border-light);">/</span>
+                <span style="font-family:var(--ats-font-mono); font-size:0.68rem; color:var(--ats-text-subtle); text-transform:uppercase;">Case Study</span>
+              </div>
+              <h3 class="ats-delib-question">&ldquo;Should we expand into the regulated enterprise tier this fiscal quarter?&rdquo;</h3>
+              <p class="ats-delib-sub">Human-led deliberation deconstructing high-stakes choices before capital and commitments are deployed.</p>
+            </div>
+
+            <div class="ats-delib-dimension-track" role="tablist">
+              <button type="button" class="ats-dim-row-btn active" onclick="setDim('assumptions')">
+                <div class="ats-dim-row-left">
+                  <span class="ats-dim-marker"></span>
+                  <span class="ats-dim-num">01</span>
+                  <span class="ats-dim-label">Assumptions</span>
+                </div>
+                <span class="ats-dim-stage-tag">Stage 01</span>
+              </button>
+              <button type="button" class="ats-dim-row-btn" onclick="setDim('evidence')">
+                <div class="ats-dim-row-left">
+                  <span class="ats-dim-marker"></span>
+                  <span class="ats-dim-num">02</span>
+                  <span class="ats-dim-label">Evidence</span>
+                </div>
+                <span class="ats-dim-stage-tag">Stage 02</span>
+              </button>
+              <button type="button" class="ats-dim-row-btn" onclick="setDim('alternatives')">
+                <div class="ats-dim-row-left">
+                  <span class="ats-dim-marker"></span>
+                  <span class="ats-dim-num">03</span>
+                  <span class="ats-dim-label">Alternatives</span>
+                </div>
+                <span class="ats-dim-stage-tag">Stage 03</span>
+              </button>
+              <button type="button" class="ats-dim-row-btn" onclick="setDim('risks')">
+                <div class="ats-dim-row-left">
+                  <span class="ats-dim-marker"></span>
+                  <span class="ats-dim-num">04</span>
+                  <span class="ats-dim-label">Risks</span>
+                </div>
+                <span class="ats-dim-stage-tag">Stage 04</span>
+              </button>
+              <button type="button" class="ats-dim-row-btn" onclick="setDim('consequences')">
+                <div class="ats-dim-row-left">
+                  <span class="ats-dim-marker"></span>
+                  <span class="ats-dim-num">05</span>
+                  <span class="ats-dim-label">Consequences</span>
+                </div>
+                <span class="ats-dim-stage-tag">Stage 05</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Canvas: Reasoning Detail -->
+          <div class="ats-delib-canvas">
+            <div>
+              <div class="ats-delib-canvas-header">
+                <div class="ats-delib-active-index">
+                  <span id="activeDimStage" style="font-family:var(--ats-font-mono); font-size:0.72rem; color:var(--ats-gold); letter-spacing:0.16em;">STAGE 01</span>
+                  <span style="color:var(--ats-border-light);">/</span>
+                  <h3 id="activeDimTitle" class="ats-dim-title">Assumptions</h3>
+                </div>
+                <span id="activeDimFraction" class="ats-dim-fraction">01 / 05 REASONING DIMENSIONS</span>
+              </div>
+
+              <div class="ats-delib-flow">
+                <div>
+                  <span class="ats-spec-key">INQUIRY FOCUS</span>
+                  <p id="activeDimInquiry" class="ats-stage-inquiry">What is being taken for granted as true before execution begins?</p>
+                </div>
+
+                <div>
+                  <span class="ats-spec-key">CRITICAL EXAMINATION</span>
+                  <p id="activeDimExam" class="ats-stage-exam">
+                    Are operational readiness timelines assuming standard rollout cycles without factoring external partner dependency delays and compliance reviews?
+                  </p>
+                </div>
+
+                <div class="ats-delib-finding-row">
+                  <span class="ats-spec-key" style="color:var(--ats-gold); margin-bottom:0.2rem;">EXAMINATION NOTE</span>
+                  <p id="activeDimFinding" class="ats-finding-text">High sensitivity to partner approval turnarounds. Unbuffered critical paths pose deployment risks.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ats-delib-synthesis">
+              <span class="ats-spec-key">DELIBERATION SYNTHESIS</span>
+              <p class="ats-synthesis-desc">
+                Structured examination surfaces unexamined dependencies early, allowing leadership to modify strategic pacing before contractual liability or reputational capital is locked in.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ CORE PREMISE ═══ -->
-    <section style="background:var(--surface);">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">A different role for AI</p>
-          <h2 class="display display-lg">Not an answer machine. A thinking environment.</h2>
-        </div>
-        <div>
-          <p class="lead">The value of AI is not only in producing answers. It can also help us notice the questions, assumptions, and perspectives we might otherwise miss.</p>
-          <p>The Studio is not a chatbot, recommender, or substitute decision-maker. It creates a disciplined pause in which you can clarify the challenge, separate observation from interpretation, consider other human perspectives, and test the consequences of possible choices.</p>
-        </div>
-      </div>
-    </section>
+    <!-- ═══ REASONING ARCHITECTURE MATRIX ═══ -->
+    <section class="ats-section" style="background:var(--ats-surface);" aria-label="Five Reasoning Pillars">
+      <div class="ats-container">
+        <p class="ats-eyebrow"><span class="ats-eyebrow-dot"></span> The Five Deliberation Axes</p>
+        <h2 class="ats-heading-lg">Rigorous deconstruction of complex human judgment.</h2>
+        <p class="ats-lead">
+          Every session in AI Thinking Studio enforces an auditable progression through these core reasoning disciplines.
+        </p>
 
-    <!-- ═══ PROMISE ═══ -->
-    <section>
-      <div class="container">
-        <p class="eyebrow mb-lg">The Studio promise</p>
-        <div class="promise-panel">
-          <p>This Studio will not tell you what to think.</p>
-          <p>It is not designed to help you reach conclusions faster.</p>
-          <p>It is designed to help you examine conclusions more thoroughly before reaching them.</p>
-          <p class="responsibility">You remain responsible for your judgments, decisions, and actions.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ METHOD / DISCIPLINES SECTION (ANCHOR: #method) ═══ -->
-    <section id="method" style="background:var(--surface);">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow mb-sm">The Discipline of Examination</p>
-          <h2 class="display display-lg">A Structured Thinking Journey</h2>
-          <p class="lead mt-md">AI Thinking Studio guides participants through a deliberate process of examining a question before settling on a conclusion.</p>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            The experience helps people clarify what matters, surface assumptions, widen perspective, test important conditions, examine possible consequences, and bring their reasoning together more deliberately.
-          </p>
-          <p class="mt-xs" style="color:var(--muted); line-height:1.85;">
-            A structured sequence that helps you examine the situation from different angles without taking the decision away from you.
-          </p>
-        </div>
-
-        <div class="examine-grid" style="margin-top:3.5rem;">
-          <div class="examine-item">
-            <div class="tech-pill-tag mb-sm">Context</div>
-            <h3>Clarify the challenge</h3>
-            <p>Understand the context, objective, and decision that actually matters before rushing into solutions.</p>
+        <div class="ats-grid-5">
+          <div class="ats-principle-card">
+            <span class="ats-principle-num">AXIS 01 / INQUIRY</span>
+            <h3 class="ats-principle-title">Assumptions</h3>
+            <p class="ats-principle-desc">Uncovers implicit operating hypotheses, hidden dependencies, and unverified assumptions before commitments are made.</p>
           </div>
-          <div class="examine-item">
-            <div class="tech-pill-tag mb-sm">Inquiry</div>
-            <h3>Examine what may be assumed</h3>
-            <p>Make hidden assumptions, implicit expectations, and untested beliefs visible for deliberate review.</p>
+          <div class="ats-principle-card">
+            <span class="ats-principle-num">AXIS 02 / EMPIRICAL</span>
+            <h3 class="ats-principle-title">Evidence</h3>
+            <p class="ats-principle-desc">Demands auditable, verifiable proof. Separates signed enterprise commitments from anecdotal pipeline sentiment.</p>
           </div>
-          <div class="examine-item">
-            <div class="tech-pill-tag mb-sm">Perspective</div>
-            <h3>Widen the frame</h3>
-            <p>Consider alternative perspectives, stakeholder concerns, and competing interpretations of the situation.</p>
+          <div class="ats-principle-card">
+            <span class="ats-principle-num">AXIS 03 / DIVERGENCE</span>
+            <h3 class="ats-principle-title">Alternatives</h3>
+            <p class="ats-principle-desc">Forces counter-factual pathway generation to ensure leadership does not lock into premature binary choices.</p>
           </div>
-          <div class="examine-item">
-            <div class="tech-pill-tag mb-sm">Testing</div>
-            <h3>Test the conditions</h3>
-            <p>Ask what must hold true for an idea, strategy, or conclusion to be workable, sound, and responsible.</p>
+          <div class="ats-principle-card">
+            <span class="ats-principle-num">AXIS 04 / EXPOSURE</span>
+            <h3 class="ats-principle-title">Risks</h3>
+            <p class="ats-principle-desc">Distinguishes containable operational friction from structural existential exposure across legal, financial, and brand axes.</p>
           </div>
-          <div class="examine-item">
-            <div class="tech-pill-tag mb-sm">Consequences</div>
-            <h3>Examine consequences</h3>
-            <p>Explore likely effects, trade-offs, secondary risks, and unintended outcomes across different time horizons.</p>
+          <div class="ats-principle-card">
+            <span class="ats-principle-num">AXIS 05 / HORIZONS</span>
+            <h3 class="ats-principle-title">Consequences</h3>
+            <p class="ats-principle-desc">Traces second- and third-order operational ripple effects across organizational capacity and long-term roadmap continuity.</p>
           </div>
-          <div class="examine-item">
-            <div class="tech-pill-tag mb-sm">Synthesis</div>
-            <h3>Reflect before committing</h3>
-            <p>Bring the reasoning together with greater clarity and alignment before moving decisively toward action.</p>
+          <div class="ats-principle-card" style="border-top:2px solid var(--ats-gold); background:rgba(201,169,110,0.03);">
+            <span class="ats-principle-num" style="color:var(--ats-gold);">GOVERNANCE</span>
+            <h3 class="ats-principle-title">Audit Record</h3>
+            <p class="ats-principle-desc">Generates a permanent, timestamped synthesis of deliberated rationale, enabling accountable executive governance.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ RECORD OF THINKING ═══ -->
-    <section style="background:var(--bg);">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">A Record of the Thinking</p>
-          <h2 class="display display-lg">Capture how your reasoning developed.</h2>
-        </div>
-        <div>
-          <p class="lead">AI Thinking Studio does not exist to produce the fastest answer. It exists to improve the quality of examination before people commit to one.</p>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            At the end of the experience, participants retain a structured record of the reasoning explored during the session — including assumptions, perspectives, conditions, and considerations that shaped the discussion.
-          </p>
-          <p class="trust-note mt-lg"><strong>Human judgment remains central.</strong> AI acts as a disciplined thinking partner, not an automated decision-maker. Output provides structured material for human examination, not authoritative answers.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ CTA ═══ -->
-    <section class="cta-band">
-      <div class="container-sm">
-        <p class="eyebrow mb-md">Perspective changes what becomes possible</p>
-        <h2 class="display display-lg mb-md">Enter with a question. Leave with a better examined decision.</h2>
-        <p>The AI Thinking Studio is ready when the situation deserves a wider view.</p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2.5rem;">
-          <a href="https://studio.enablemygrowth.com/" class="btn btn-gold" target="_blank" rel="noopener">Try the Thinking Studio</a>
-          <a href="contact.html?enquiry=AI+Thinking+Studio+Demonstration" class="btn btn-outline">Request a Team Demonstration</a>
-          <a href="tech.html" class="btn btn-outline">Enable My Growth Tech Hub</a>
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="ats-section" aria-label="Access & Demonstration">
+      <div class="ats-container-narrow" style="text-align:center;">
+        <p class="ats-eyebrow"><span class="ats-eyebrow-dot"></span> Better Judgment in Action</p>
+        <h2 class="ats-heading-xl">Enter with a question. Leave with a defensible decision.</h2>
+        <p class="ats-lead" style="margin:0 auto 2.5rem;">
+          Whether preparing for high-stakes board deliberations, strategic market entries, or major operational capital allocations.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="https://studio.enablemygrowth.com/" target="_blank" rel="noopener noreferrer" class="btn-ats-gold">
+            Enter AI Thinking Studio ↗
+          </a>
+          <a href="contact.html?enquiry=AI+Thinking+Studio+Pilot" class="btn-ats-outline">
+            Request Executive Pilot
+          </a>
+          <a href="tech.html" class="btn-ats-outline">
+            ← Back to Tech Hub
+          </a>
         </div>
       </div>
     </section>
   </main>
+
   <script src="analytics.js"></script>
   <script src="effects.js"></script>
   <script src="nav.js"></script>
+  <script>
+    const dimensionsData = {
+      assumptions: {
+        num: "01",
+        name: "Assumptions",
+        inquiry: "What is being taken for granted as true before execution begins?",
+        examination: "Are operational readiness timelines assuming standard rollout cycles without factoring external partner dependency delays and compliance reviews?",
+        finding: "High sensitivity to partner approval turnarounds. Unbuffered critical paths pose deployment risks."
+      },
+      evidence: {
+        num: "02",
+        name: "Evidence",
+        inquiry: "What documented, auditable proof exists today?",
+        examination: "Distinguish verified enterprise commitments and signed letters of intent from early exploratory inquiries and anecdotal pipeline signals.",
+        finding: "Documented commitments verified for core capabilities; regulated tier demand remains preliminary."
+      },
+      alternatives: {
+        num: "03",
+        name: "Alternatives",
+        inquiry: "What alternative pathways achieve capability without immediate organizational lock-in?",
+        examination: "Evaluate whether a phased pilot deployment or accredited partner network can validate readiness before committing internal engineering bandwidth.",
+        finding: "Phased pilot deployment via audited partner network identified as a lower-friction validation route."
+      },
+      risks: {
+        num: "04",
+        name: "Risks",
+        inquiry: "If this choice encounters friction, is downside exposure containable or structural?",
+        examination: "Assess financial downside, contractual penalty exposure, and whether delivery strain impairs core practice continuity.",
+        finding: "Direct cost exposure is containable; organizational reputation risk requires an explicit mitigation framework."
+      },
+      consequences: {
+        num: "05",
+        name: "Consequences",
+        inquiry: "What second-order consequences will this decision create across the operating horizon?",
+        examination: "Identify which executive priorities will lose focus and how senior engineering attention will be diverted from existing commitments.",
+        finding: "Technical lead capacity diverted from core product roadmap continuity for at least two quarters."
+      }
+    };
+
+    function setDim(key) {
+      const data = dimensionsData[key];
+      if (!data) return;
+
+      const btns = document.querySelectorAll('.ats-dim-row-btn');
+      btns.forEach(b => {
+        const isMatch = b.getAttribute('onclick').includes(key);
+        b.classList.toggle('active', isMatch);
+      });
+
+      document.getElementById('activeDimStage').textContent = `STAGE ${data.num}`;
+      document.getElementById('activeDimTitle').textContent = data.name;
+      document.getElementById('activeDimFraction').textContent = `${data.num} / 05 REASONING DIMENSIONS`;
+      document.getElementById('activeDimInquiry').textContent = data.inquiry;
+      document.getElementById('activeDimExam').textContent = data.examination;
+      document.getElementById('activeDimFinding').textContent = data.finding;
+    }
+  </script>
 </body>
 </html>

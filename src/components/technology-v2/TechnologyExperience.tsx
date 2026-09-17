@@ -6,10 +6,7 @@ import { TechnologyNavigation } from './TechnologyNavigation';
 import { PerspectiveEngine3D } from '../technology-3d/PerspectiveEngine3D';
 import { PerspectiveStory } from './PerspectiveStory';
 import { TechnologySystems } from './TechnologySystems';
-import { CapOSExperience } from './CapOSExperience';
-import { ThinkingStudioExperience } from './ThinkingStudioExperience';
 import { TechnologyPrinciples } from './TechnologyPrinciples';
-import { DecisionRouter } from './DecisionRouter';
 import { EnterpriseTrust } from './EnterpriseTrust';
 import { TechnologyClosing } from './TechnologyClosing';
 
@@ -24,10 +21,7 @@ export function TechnologyExperience() {
       />
       <PerspectiveStory />
       <TechnologySystems />
-      <CapOSExperience />
-      <ThinkingStudioExperience />
       <TechnologyPrinciples />
-      <DecisionRouter />
       <EnterpriseTrust />
       <TechnologyClosing />
     </main>

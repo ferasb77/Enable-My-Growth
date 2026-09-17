@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CapabilityOS — Enable My Growth</title>
-  <meta name="description" content="CapabilityOS is purpose-built delivery infrastructure for capability development organizations — coordinating program delivery, stakeholder engagement, and verifiable evidence at scale." />
+  <title>CapabilityOS™ — Operational Infrastructure for Capability Delivery — Enable My Growth Tech</title>
+  <meta name="description" content="CapabilityOS™ is purpose-built operational infrastructure for capability development organizations, academies, and providers — connecting people, structured evidence, and institutional memory." />
   <link rel="canonical" href="https://enablemygrowth.com/capability-os.html" />
-  <meta property="og:title" content="CapabilityOS — Enable My Growth" />
-  <meta property="og:description" content="The operating system for capability development organizations." />
+  <meta property="og:title" content="CapabilityOS™ — Operational Infrastructure — Enable My Growth Tech" />
+  <meta property="og:description" content="Operational infrastructure connecting participants, facilitators, sponsors, and verifiable proof of work." />
   <meta property="og:url" content="https://enablemygrowth.com/capability-os.html" />
   <meta property="og:image" content="https://enablemygrowth.com/emg-mobius-hero.png" />
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -15,723 +15,953 @@
   <link rel="apple-touch-icon" href="favicon-128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── HERO ─────────────────────────────────────────────────────────────── */
-    .product-hero { padding:11rem 0 6rem; position:relative; overflow:hidden; }
-    .product-hero::after {
-      content:''; position:absolute; width:38rem; height:38rem;
-      right:-14rem; top:-10rem;
-      border:1px solid rgba(201,169,110,.12); border-radius:50%;
-      box-shadow:0 0 0 7rem rgba(201,169,110,.018), 0 0 0 14rem rgba(201,169,110,.012);
-      pointer-events:none;
-    }
-    .product-hero-inner { position:relative; z-index:1; max-width:880px; }
-    .product-edition {
-      display:inline-block; color:var(--muted);
-      border-left:1px solid var(--gold); padding-left:1rem;
-      margin:1.5rem 0 2rem; font-size:.76rem;
-      letter-spacing:.16em; text-transform:uppercase;
-    }
-    .product-name span { color:var(--gold); }
-    .product-actions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.5rem; }
-
-    /* ── PROMISE PANEL ──────────────────────────────────────────────────────── */
-    .promise-panel {
-      max-width:900px; margin:0 auto;
-      border-left:1px solid var(--gold); padding:1rem 0 1rem 2.5rem;
-    }
-    .promise-panel p {
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(1.55rem,3vw,2.35rem);
-      color:var(--text); line-height:1.4;
-    }
-    .promise-panel p + p { margin-top:.75rem; }
-
-    /* ── FLOW DIAGRAM ───────────────────────────────────────────────────────── */
-    .flow-col { display:flex; flex-direction:column; align-items:flex-start; gap:0; }
-    .flow-node {
-      display:grid; grid-template-columns:36px 1fr; gap:0; width:100%;
-    }
-    .flow-num {
-      display:flex; align-items:center; justify-content:center;
-      background:var(--surface2); border:1px solid var(--border);
-      font-family:'Cormorant Garamond',serif; font-size:.85rem;
-      color:var(--gold-dim); min-height:56px;
-    }
-    .flow-body {
-      padding:1rem 1.3rem; background:var(--surface);
-      border:1px solid var(--border); border-left:none;
-    }
-    .flow-body-title {
-      font-family:'Cormorant Garamond',serif; font-size:1.1rem;
-      color:var(--text); margin-bottom:.2rem;
-    }
-    .flow-body-desc { font-size:.8rem; color:var(--muted); line-height:1.55; }
-    .flow-conn {
-      width:1px; height:20px;
-      background:linear-gradient(to bottom,var(--gold-dim),var(--border));
-      margin-left:17px;
-    }
-    .flow-node.accent .flow-num { color:var(--gold); border-color:var(--gold-dim); }
-    .flow-node.accent .flow-body { border-top:2px solid var(--gold); }
-    .flow-node.accent .flow-body-title { color:var(--gold); }
-
-    /* ── CHAOS GRID ─────────────────────────────────────────────────────────── */
-    .chaos-grid {
-      display:grid; grid-template-columns:1fr 1fr; gap:1px;
-      background:var(--border2); margin-top:2rem;
-    }
-    .chaos-item {
-      background:var(--surface); padding:.9rem 1.1rem;
-      font-size:.82rem; color:var(--muted); line-height:1.5;
-      display:flex; align-items:center; gap:.6rem;
-      transition:background .2s;
-    }
-    .chaos-item:hover { background:var(--surface2); color:var(--text); }
-    .chaos-item::before { content:'—'; color:var(--border); flex-shrink:0; }
-
-    /* ── CAPABILITY CARDS ───────────────────────────────────────────────────── */
-    .cap-grid {
-      display:grid; grid-template-columns:repeat(3,1fr);
-      gap:1px; background:var(--border2); margin-top:3rem;
-    }
-    .cap-card {
-      background:var(--surface); padding:2.2rem 1.8rem;
-      transition:background .2s;
-    }
-    .cap-card:hover { background:var(--surface2); }
-    .cap-card.accent { border-top:2px solid var(--gold); background:rgba(201,169,110,.02); }
-    .cap-num {
-      font-family:'Cormorant Garamond',serif; font-size:2.4rem;
-      font-weight:300; color:rgba(201,169,110,.15); line-height:1; margin-bottom:1rem;
-    }
-    .cap-title {
-      font-family:'Cormorant Garamond',serif; font-size:1.2rem;
-      color:var(--text); margin-bottom:.9rem; line-height:1.2;
-    }
-    .cap-list { list-style:none; display:flex; flex-direction:column; gap:0; }
-    .cap-list li {
-      display:flex; align-items:baseline; gap:.55rem;
-      font-size:.82rem; color:var(--muted); padding:.4rem 0;
-      border-bottom:1px solid var(--border2); line-height:1.5;
-    }
-    .cap-list li:last-child { border-bottom:none; }
-    .cap-list li::before { content:'—'; color:var(--gold-dim); flex-shrink:0; }
-
-    /* ── STAKEHOLDER GRID ───────────────────────────────────────────────────── */
-    .sh-grid {
-      display:grid; grid-template-columns:repeat(5,1fr);
-      gap:1px; background:var(--border2); margin-top:3rem;
-    }
-    .sh-card {
-      background:var(--surface); padding:2rem 1.4rem;
-      transition:background .2s; cursor:default;
-    }
-    .sh-card:hover { background:var(--surface2); }
-    .sh-card:hover .sh-bar { width:100%; }
-    .sh-bar {
-      height:2px; width:20px; background:var(--gold);
-      margin-bottom:1.2rem; transition:width .4s ease;
-    }
-    .sh-role {
-      font-size:.62rem; font-weight:500; letter-spacing:.2em;
-      text-transform:uppercase; color:var(--gold); margin-bottom:.5rem;
-    }
-    .sh-title {
-      font-family:'Cormorant Garamond',serif; font-size:1.1rem;
-      color:var(--text); margin-bottom:.6rem; line-height:1.25;
-    }
-    .sh-desc { font-size:.8rem; color:var(--muted); line-height:1.65; }
-
-    /* ── INTEL FLOW ─────────────────────────────────────────────────────────── */
-    .intel-flow { display:flex; flex-direction:column; align-items:center; gap:0; }
-    .intel-step {
-      width:100%; background:var(--surface); border:1px solid var(--border);
-      padding:1.4rem 1.8rem; text-align:center; transition:border-color .3s;
-    }
-    .intel-step:hover { border-color:var(--gold-dim); }
-    .intel-step.accent { border-color:var(--gold-dim); background:rgba(201,169,110,.03); }
-    .intel-step-num {
-      font-size:.6rem; letter-spacing:.2em; text-transform:uppercase;
-      color:var(--gold); margin-bottom:.4rem;
-    }
-    .intel-step-title {
-      font-family:'Cormorant Garamond',serif; font-size:1.3rem;
-      font-weight:300; color:var(--text); line-height:1.25;
-    }
-    .intel-step.accent .intel-step-title { color:var(--gold); }
-    .intel-conn {
-      width:1px; height:28px;
-      background:linear-gradient(to bottom,var(--gold),var(--gold-dim));
+    /* ═══════════════════════════════════════════════════════════════════════════
+       CAPABILITYOS™ NEO-TECH PRODUCT SPECIFICATION
+       ═══════════════════════════════════════════════════════════════════════════ */
+    :root {
+      --cap-bg: #07070a;
+      --cap-surface: #0d0d14;
+      --cap-surface-raised: #13131d;
+      --cap-border: rgba(255, 255, 255, 0.08);
+      --cap-border-light: rgba(255, 255, 255, 0.14);
+      --cap-border-gold: rgba(201, 169, 110, 0.32);
+      --cap-border-gold-faint: rgba(201, 169, 110, 0.12);
+      --cap-gold: #c9a96e;
+      --cap-gold-light: #dec28f;
+      --cap-gold-dim: #90764b;
+      --cap-gold-faint: rgba(201, 169, 110, 0.08);
+      --cap-text: #edeae3;
+      --cap-text-bright: #ffffff;
+      --cap-text-muted: #8d8da4;
+      --cap-text-subtle: #575770;
+      --cap-font-serif: 'Cormorant Garamond', Georgia, serif;
+      --cap-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --cap-font-mono: 'JetBrains Mono', monospace;
     }
 
-    /* ── COMPARISON ─────────────────────────────────────────────────────────── */
-    .comp-header {
-      display:grid; grid-template-columns:1fr 1fr;
-      border-bottom:1px solid var(--border);
-    }
-    .comp-header-cell {
-      padding:.9rem 1.8rem; font-size:.65rem; font-weight:500;
-      letter-spacing:.18em; text-transform:uppercase;
-    }
-    .comp-header-trad { color:var(--muted); border-right:1px solid var(--border2); }
-    .comp-header-os { color:var(--gold); }
-    .comp-row {
-      display:grid; grid-template-columns:1fr 1fr;
-      border-bottom:1px solid var(--border2);
-    }
-    .comp-row:first-of-type { border-top:1px solid var(--border2); }
-    .comp-cell { padding:1.4rem 1.8rem; font-size:.9rem; line-height:1.6; }
-    .comp-trad { color:var(--muted); border-right:1px solid var(--border2); }
-    .comp-os { color:var(--text); background:rgba(201,169,110,.022); }
-
-    /* ── WHY CARDS ──────────────────────────────────────────────────────────── */
-    .why-grid {
-      display:grid; grid-template-columns:repeat(3,1fr);
-      gap:1px; background:var(--border2); margin-top:3rem;
-    }
-    .why-card { background:var(--surface); padding:2.2rem 1.8rem; }
-    .why-card.accent { border-top:2px solid var(--gold); background:rgba(201,169,110,.02); }
-    .why-num {
-      font-family:'Cormorant Garamond',serif; font-size:.85rem;
-      color:var(--gold-dim); margin-bottom:1rem;
-    }
-    .why-num.accent { color:var(--gold); }
-    .why-title {
-      font-family:'Cormorant Garamond',serif; font-size:1.2rem;
-      color:var(--text); margin-bottom:.75rem; line-height:1.3;
-    }
-    .why-desc { font-size:.83rem; color:var(--muted); line-height:1.75; }
-
-    /* ── STAT GRID ──────────────────────────────────────────────────────────── */
-    .stat-grid {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      gap:1px; background:var(--border2); margin-top:3rem;
-    }
-    .stat-tile { background:var(--surface); padding:1.8rem 1.5rem; }
-    .stat-num {
-      font-family:'Cormorant Garamond',serif; font-size:2.6rem;
-      font-weight:300; color:var(--gold); line-height:1; margin-bottom:.4rem;
-    }
-    .stat-label { font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
-
-    /* ── DOCTRINE QUOTE ─────────────────────────────────────────────────────── */
-    .doctrine-quote {
-      margin-top:2.5rem; padding:1.8rem 1.8rem 1.8rem 2.2rem;
-      border-left:2px solid var(--gold);
-      background:rgba(201,169,110,.05); border-radius:0 2px 2px 0;
-    }
-    .doctrine-quote p {
-      font-family:'Cormorant Garamond',serif; font-size:1.5rem;
-      font-style:italic; color:var(--text); line-height:1.5;
+    body {
+      background-color: var(--cap-bg);
+      color: var(--cap-text);
+      font-family: var(--cap-font-sans);
+      overflow-x: hidden;
     }
 
-    /* ── ROADMAP TILES ──────────────────────────────────────────────────────── */
-    .roadmap-grid {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      gap:1px; background:var(--border2); margin-top:3rem;
-    }
-    .roadmap-tile {
-      background:var(--surface); padding:1.8rem 1.5rem; transition:background .2s;
-    }
-    .roadmap-tile:hover { background:var(--surface2); }
-    .roadmap-label {
-      font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
-      color:var(--gold); margin-bottom:.75rem;
-    }
-    .roadmap-title {
-      font-family:'Cormorant Garamond',serif; font-size:1.1rem;
-      color:var(--text); line-height:1.3;
+    .cap-section {
+      position: relative;
+      padding: clamp(5rem, 8vw, 8.5rem) 0;
+      border-bottom: 1px solid var(--cap-border);
     }
 
-    /* ── AI PRINCIPLES ──────────────────────────────────────────────────────── */
-    .ai-box {
-      background:var(--bg); border:1px solid var(--border);
-      border-radius:2px; padding:1.8rem;
+    .cap-container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
     }
-    .ai-row {
-      display:flex; align-items:baseline; gap:1rem;
-      padding:.85rem 0; border-bottom:1px solid var(--border2);
-    }
-    .ai-row:last-child { border-bottom:none; }
-    .ai-label {
-      font-family:'Cormorant Garamond',serif; font-size:1.15rem;
-      font-style:italic; color:var(--gold); flex-shrink:0; min-width:90px;
-    }
-    .ai-desc { font-size:.83rem; color:var(--muted); line-height:1.7; }
 
-    /* ── RESPONSIVE ─────────────────────────────────────────────────────────── */
-    @media (max-width:900px) {
-      .cap-grid, .why-grid { grid-template-columns:1fr; }
-      .sh-grid { grid-template-columns:1fr 1fr; }
-      .stat-grid, .roadmap-grid { grid-template-columns:1fr 1fr; }
-      .comp-header, .comp-row { grid-template-columns:1fr; }
-      .comp-trad, .comp-header-trad { border-right:none; border-bottom:1px solid var(--border2); }
+    .cap-container-narrow {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Editorial Typography */
+    .cap-eyebrow {
+      font-family: var(--cap-font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--cap-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .cap-eyebrow-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--cap-gold);
+      box-shadow: 0 0 6px var(--cap-gold);
+    }
+
+    .cap-heading-xl {
+      font-family: var(--cap-font-serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+      line-height: 1.1;
+      color: var(--cap-text-bright);
+      letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+    }
+
+    .cap-heading-lg {
+      font-family: var(--cap-font-serif);
+      font-weight: 300;
+      font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+      line-height: 1.18;
+      color: var(--cap-text-bright);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .cap-lead {
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      line-height: 1.8;
+      color: var(--cap-text-muted);
+      font-weight: 300;
+      max-width: 720px;
+    }
+
+    /* Hero */
+    .cap-hero {
+      padding: 10.5rem 0 6.5rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--cap-border);
+      background: radial-gradient(circle at 80% 20%, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+    }
+
+    .cap-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .cap-status-tag {
+      font-family: var(--cap-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid var(--cap-border-gold);
+      color: var(--cap-gold);
+      background: rgba(201, 169, 110, 0.06);
+    }
+
+    .cap-edition-tag {
+      font-family: var(--cap-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cap-text-subtle);
+    }
+
+    .cap-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.75rem;
+    }
+
+    .btn-cap-gold {
+      background: var(--cap-gold);
+      color: #07070a;
+      padding: 0.85rem 1.65rem;
+      font-family: var(--cap-font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--cap-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-cap-gold:hover {
+      background: var(--cap-gold-light);
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    .btn-cap-outline {
+      background: transparent;
+      color: var(--cap-text);
+      padding: 0.85rem 1.65rem;
+      font-family: var(--cap-font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--cap-border-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-cap-outline:hover {
+      border-color: var(--cap-gold);
+      color: var(--cap-gold-light);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Distinction Banner */
+    .cap-premise-box {
+      margin-top: 3.5rem;
+      padding: 2rem 2.5rem;
+      background: var(--cap-surface);
+      border: 1px solid var(--cap-border);
+      border-left: 3px solid var(--cap-gold);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .cap-premise-quote {
+      font-family: var(--cap-font-serif);
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--cap-text-bright);
+      line-height: 1.4;
+    }
+
+    .cap-premise-body {
+      font-size: 0.88rem;
+      color: var(--cap-text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── THREE OPERATING CONTEXTS ── */
+    .cap-context-track {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .cap-ctx-card {
+      background: var(--cap-surface);
+      border: 1px solid var(--cap-border);
+      padding: 2rem;
+      position: relative;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .cap-ctx-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cap-gold);
+      transition: width 0.25s ease;
+    }
+
+    .cap-ctx-card:hover {
+      border-color: var(--cap-border-light);
+      background: var(--cap-surface-raised);
+    }
+
+    .cap-ctx-card.active {
+      border-color: var(--cap-border-gold);
+      background: rgba(201, 169, 110, 0.035);
+    }
+
+    .cap-ctx-card.active::before {
+      width: 100%;
+    }
+
+    .cap-ctx-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .cap-ctx-num {
+      font-family: var(--cap-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: var(--cap-gold);
+      text-transform: uppercase;
+    }
+
+    .cap-ctx-role {
+      font-family: var(--cap-font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cap-text-subtle);
+    }
+
+    .cap-ctx-title {
+      font-family: var(--cap-font-serif);
+      font-size: 1.6rem;
+      color: var(--cap-text-bright);
+      margin-bottom: 0.5rem;
+    }
+
+    .cap-ctx-desc {
+      font-size: 0.85rem;
+      color: var(--cap-text-muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .cap-ctx-highlight {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--cap-gold-light);
+      border-top: 1px solid var(--cap-border);
+      padding-top: 0.75rem;
+      display: block;
+    }
+
+    /* ── PIPELINE ARCHITECTURE (INTERACTIVE SPEC) ── */
+    .cap-pipeline-container {
+      border: 1px solid var(--cap-border);
+      background: var(--cap-surface);
+      padding: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .cap-pipeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--cap-border);
+      margin-bottom: 2.5rem;
+    }
+
+    .cap-pipeline-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .cap-pipeline-nav::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--cap-border);
+    }
+
+    .cap-pipe-btn {
+      background: transparent;
+      border: none;
+      padding: 0 0 1.25rem 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .cap-pipe-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cap-gold);
+      transition: width 0.25s ease;
+      z-index: 2;
+    }
+
+    .cap-pipe-btn.active::after {
+      width: 100%;
+    }
+
+    .cap-pipe-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cap-pipe-num {
+      font-family: var(--cap-font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--cap-text-subtle);
+    }
+
+    .cap-pipe-tick {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--cap-border-light);
+    }
+
+    .cap-pipe-btn.active .cap-pipe-tick {
+      background: var(--cap-gold);
+      box-shadow: 0 0 6px var(--cap-gold);
+    }
+
+    .cap-pipe-btn.active .cap-pipe-num {
+      color: var(--cap-gold);
+    }
+
+    .cap-pipe-name {
+      font-family: var(--cap-font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cap-text-muted);
+      transition: color 0.2s;
+    }
+
+    .cap-pipe-btn.active .cap-pipe-name {
+      color: var(--cap-text-bright);
+    }
+
+    .cap-pipe-detail-stage {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .cap-pipe-stage-label {
+      font-family: var(--cap-font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      color: var(--cap-gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .cap-pipe-title {
+      font-family: var(--cap-font-serif);
+      font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+      font-weight: 300;
+      color: var(--cap-text-bright);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .cap-pipe-text {
+      font-size: 0.94rem;
+      line-height: 1.8;
+      color: var(--cap-text-muted);
+    }
+
+    .cap-telemetry-spec {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-left: clamp(1.5rem, 3vw, 2.5rem);
+      border-left: 1px solid var(--cap-border);
+    }
+
+    .cap-telemetry-val {
+      font-family: var(--cap-font-mono);
+      font-size: 1.35rem;
+      color: var(--cap-gold-light);
+      font-weight: 400;
+      display: block;
+    }
+
+    .cap-telemetry-lbl {
+      font-size: 0.72rem;
+      font-family: var(--cap-font-mono);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cap-text-subtle);
+    }
+
+    /* ── STAKEHOLDER MESH ── */
+    .cap-mesh-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--cap-border);
+      margin-top: 3.5rem;
+    }
+
+    .cap-mesh-card {
+      background: var(--cap-surface);
+      padding: 2.2rem 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .cap-mesh-card:hover {
+      background: var(--cap-surface-raised);
+    }
+
+    .cap-mesh-bar {
+      height: 2px;
+      width: 24px;
+      background: var(--cap-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .cap-mesh-role {
+      font-family: var(--cap-font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cap-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .cap-mesh-title {
+      font-family: var(--cap-font-serif);
+      font-size: 1.2rem;
+      color: var(--cap-text-bright);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .cap-mesh-desc {
+      font-size: 0.82rem;
+      color: var(--cap-text-muted);
+      line-height: 1.65;
+    }
+
+    /* Comparison Table */
+    .cap-comp-table {
+      margin-top: 3.5rem;
+      border: 1px solid var(--cap-border);
+    }
+
+    .cap-comp-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: rgba(13, 13, 20, 0.9);
+      border-bottom: 1px solid var(--cap-border);
+    }
+
+    .cap-comp-header-cell {
+      padding: 1.2rem 2rem;
+      font-family: var(--cap-font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .cap-comp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--cap-border);
+    }
+
+    .cap-comp-row:last-child {
+      border-bottom: none;
+    }
+
+    .cap-comp-cell {
+      padding: 1.25rem 2rem;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .cap-comp-trad {
+      color: var(--cap-text-muted);
+      border-right: 1px solid var(--cap-border);
+    }
+
+    .cap-comp-os {
+      color: var(--cap-text-bright);
+      background: rgba(201, 169, 110, 0.02);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .cap-context-track { grid-template-columns: 1fr; }
+      .cap-mesh-grid { grid-template-columns: repeat(2, 1fr); }
+      .cap-pipeline-nav { grid-template-columns: repeat(2, 1fr); }
+      .cap-pipe-detail-stage { grid-template-columns: 1fr; }
+      .cap-telemetry-spec { border-left: none; padding-left: 0; border-top: 1px solid var(--cap-border); padding-top: 1.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .cap-premise-box { grid-template-columns: 1fr; }
+      .cap-mesh-grid { grid-template-columns: 1fr; }
+      .cap-comp-header, .cap-comp-row { grid-template-columns: 1fr; }
+      .cap-comp-trad { border-right: none; border-bottom: 1px solid var(--cap-border); }
     }
   </style>
 </head>
 <body>
   <main>
-
     <!-- ═══ HERO ═══ -->
-    <section class="product-hero">
-      <div class="container">
-        <div class="product-hero-inner">
-          <nav class="tech-breadcrumb" aria-label="Breadcrumb">
-            <a href="tech.html">Enable My Growth Tech</a>
-            <span>/</span>
-            <span>Platforms</span>
-            <span>/</span>
-            <span>CapabilityOS</span>
-          </nav>
-          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
-            <span class="tech-badge badge-enterprise">Enterprise Deployment</span>
-            <span class="tech-pill-tag">Capability Operations</span>
-          </div>
-          <h1 class="display display-xl product-name">Capability<span>OS™</span></h1>
-          <p class="lead mt-md" style="max-width:660px;">The operating system for capability development organizations.</p>
-          <div style="margin-top:2rem; padding:1.6rem 1.8rem 1.6rem 2rem; border-left:1px solid var(--border); background:var(--surface);">
-            <p style="font-size:.82rem; color:var(--muted); line-height:1.85; margin-bottom:.8rem;">
-              Today's organizations have CRM. ERP. HRIS. Finance systems. Project management. Knowledge management.
-            </p>
-            <p style="font-size:.82rem; color:var(--muted); line-height:1.85;">
-              Yet the organizations whose business is developing people still run delivery on spreadsheets, email chains, and disconnected applications.
-            </p>
-            <p style="font-size:.95rem; color:var(--text); font-family:'Cormorant Garamond',serif; line-height:1.6; margin-top:1rem; font-style:italic;">
-              CapabilityOS™ exists because capability development deserves its own operating system.
-            </p>
-          </div>
-          <p style="max-width:600px; margin-top:1.5rem; color:var(--muted); line-height:1.85;">
-            CapabilityOS™ helps organizations delivering complex development programs coordinate delivery, participant engagement, operational visibility, and verifiable evidence in one purpose-built environment.
-          </p>
-          <div class="product-actions">
-            <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn btn-gold">Request a Demonstration</a>
-            <a href="#architecture" class="btn btn-outline">Explore Purpose</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <header class="cap-hero" role="banner">
+      <div class="cap-container">
+        <nav class="tech-breadcrumb" aria-label="Breadcrumb">
+          <a href="tech.html">Enable My Growth Tech</a>
+          <span>/</span>
+          <span>Platforms</span>
+          <span>/</span>
+          <span>SYS-01 CapabilityOS</span>
+        </nav>
 
-    <!-- ═══ PROBLEM ═══ -->
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">Why It Exists</p>
-          <h2 class="display display-lg">The operational reality behind every successful program.</h2>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            Most capability providers deliver exceptional learning experiences. What happens behind those experiences is rarely exceptional.
-          </p>
-          <div class="doctrine-quote">
-            <p>The platform was designed to close the gap between delivery excellence and operational clarity.</p>
-          </div>
+        <div class="cap-hero-meta">
+          <span class="cap-status-tag">SYS-01 / Core Operating Platform</span>
+          <span class="cap-edition-tag">Active · Multi-Environment Deployment</span>
         </div>
-        <div>
-          <p class="eyebrow mb-sm">Behind every program, organizations manage:</p>
-          <div class="chaos-grid">
-            <div class="chaos-item">Spreadsheets</div>
-            <div class="chaos-item">Email chains</div>
-            <div class="chaos-item">WhatsApp groups</div>
-            <div class="chaos-item">Certificate generation</div>
-            <div class="chaos-item">Facilitator coordination</div>
-            <div class="chaos-item">Participant tracking</div>
-            <div class="chaos-item">Survey management</div>
-            <div class="chaos-item">Logistics planning</div>
-            <div class="chaos-item">Invoice processing</div>
-            <div class="chaos-item">Delivery reporting</div>
-            <div class="chaos-item">Client communication</div>
-            <div class="chaos-item">Outcome documentation</div>
-          </div>
-          <p style="font-size:.82rem; color:var(--muted); margin-top:1.5rem; line-height:1.8;">
-            As organizations grow, these disconnected systems create operational complexity that limits scalability, visibility, and decision-making.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- ═══ ARCHITECTURE ═══ -->
-    <section id="architecture">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">The Purpose</p>
-          <h2 class="display display-lg">Built around capability delivery — not courses.</h2>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            Traditional training systems manage static course catalogs. CapabilityOS manages structured capability delivery. That single distinction shapes every design decision in the platform.
-          </p>
-          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
-            CapabilityOS coordinates the entire delivery lifecycle—unifying participant engagement, delivery visibility, operational clarity, and longitudinal evidence in one integrated environment.
-          </p>
-        </div>
-        <div>
-          <div class="doctrine-quote" style="background:var(--surface); padding:2.5rem; border:1px solid var(--border);">
-            <p style="font-size:1.15rem; font-family:'Cormorant Garamond',serif; color:var(--text); line-height:1.6;">
-              "Capability development is not a transaction. It is an operational discipline that requires coordination, participant trust, and verifiable evidence."
-            </p>
-            <p style="font-size:0.8rem; color:var(--gold); margin-top:1rem; letter-spacing:0.14em; text-transform:uppercase;">CapabilityOS™ Operating Principle</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ STAKEHOLDERS ═══ -->
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container">
-        <div class="section-intro" style="max-width:820px;">
-          <p class="eyebrow mb-sm">One Shared Environment</p>
-          <h2 class="display display-md">Every stakeholder working from the same source of truth.</h2>
-          <p>Most capability organizations run on fragmented information. Clients wait for reports. Facilitators work from separate systems. Coordinators bridge the gaps manually. Leadership sees a summary of a summary.</p>
-          <p style="margin-top:.9rem;">The result is one operating environment where every stakeholder has the visibility they need — in real time, without reports being written between them and the data.</p>
-        </div>
-        <div class="sh-grid">
-          <div class="sh-card">
-            <div class="sh-bar"></div>
-            <div class="sh-role">Clients</div>
-            <div class="sh-title">Real-time delivery visibility</div>
-            <div class="sh-desc">See program progress, participant completion, and outcome evidence without waiting for a report.</div>
-          </div>
-          <div class="sh-card">
-            <div class="sh-bar"></div>
-            <div class="sh-role">Facilitators</div>
-            <div class="sh-title">Intelligent delivery tools</div>
-            <div class="sh-desc">Manage schedules, access materials, record observations, and submit reports — all in one place.</div>
-          </div>
-          <div class="sh-card">
-            <div class="sh-bar"></div>
-            <div class="sh-role">Coordinators</div>
-            <div class="sh-title">Operational clarity</div>
-            <div class="sh-desc">Coordinate complex multi-facilitator, multi-cohort engagements without spreadsheets or email chains.</div>
-          </div>
-          <div class="sh-card">
-            <div class="sh-bar"></div>
-            <div class="sh-role">Participants</div>
-            <div class="sh-title">Seamless experience</div>
-            <div class="sh-desc">Access schedules, materials, surveys, and certificates through a single participant-facing interface.</div>
-          </div>
-          <div class="sh-card">
-            <div class="sh-bar"></div>
-            <div class="sh-role">Leadership</div>
-            <div class="sh-title">Organizational intelligence</div>
-            <div class="sh-desc">Monitor delivery performance, client health, and capability trends through live operational dashboards.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ CAPABILITY AREAS ═══ -->
-    <section>
-      <div class="container">
-        <div class="section-intro" style="max-width:680px;">
-          <p class="eyebrow mb-sm">What CapabilityOS Provides</p>
-          <h2 class="display display-md">Core capabilities for development organizations.</h2>
-          <p>Integrated operational infrastructure designed to support high-quality capability delivery at scale.</p>
-        </div>
-        <div class="cap-grid">
-          <div class="cap-card">
-            <div class="cap-num">01</div>
-            <div class="cap-title">Program Delivery Management</div>
-            <p style="font-size:0.84rem; color:var(--muted); line-height:1.65;">Coordinated scheduling, participant engagement, and operational visibility across multi-cohort engagements.</p>
-          </div>
-          <div class="cap-card">
-            <div class="cap-num">02</div>
-            <div class="cap-title">Stakeholder Coordination</div>
-            <p style="font-size:0.84rem; color:var(--muted); line-height:1.65;">Unified collaboration environment for clients, facilitators, program directors, and participants.</p>
-          </div>
-          <div class="cap-card">
-            <div class="cap-num">03</div>
-            <div class="cap-title">Evidence &amp; Reporting</div>
-            <p style="font-size:0.84rem; color:var(--muted); line-height:1.65;">Structured outcome capture, longitudinal participation tracking, and verifiable executive reporting.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ AI ═══ -->
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">Artificial Intelligence</p>
-          <h2 class="display display-lg">AI where it matters. Humans where it counts.</h2>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            CapabilityOS™ applies AI where pattern recognition creates value — and keeps human judgment where decisions matter. It does not automate conclusions. It surfaces observations that improve the quality of the conclusions humans reach.
-          </p>
-          <div class="doctrine-quote">
-            <p>AI surfaces.<br/>Humans interpret and decide.</p>
-          </div>
-        </div>
-        <div>
-          <div class="ai-box">
-            <p style="font-size:.82rem; color:var(--muted); margin-bottom:1.2rem;">The platform applies AI to help organizations:</p>
-            <div class="ai-row">
-              <div class="ai-label">Summarize</div>
-              <div class="ai-desc">Convert facilitator observations into structured, readable session summaries — without losing the facilitator's judgment.</div>
-            </div>
-            <div class="ai-row">
-              <div class="ai-label">Identify</div>
-              <div class="ai-desc">Surface patterns across multiple delivery events that would be impossible to detect manually at scale.</div>
-            </div>
-            <div class="ai-row">
-              <div class="ai-label">Support</div>
-              <div class="ai-desc">Generate delivery report drafts that coordinators review, edit, and approve — not publish automatically.</div>
-            </div>
-            <div class="ai-row">
-              <div class="ai-label">Surface</div>
-              <div class="ai-desc">Bring operational insights to leadership attention — not as recommendations, but as observations that inform judgment.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ INTELLIGENCE FLOW ═══ -->
-    <section>
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">From Delivery to Intelligence</p>
-          <h2 class="display display-lg">The platform doesn't simply record what happened.</h2>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            It helps organizations understand what their delivery is telling them. Every session, every observation, and every participant response becomes part of a coherent operational picture — not a separate report that gets filed and forgotten.
-          </p>
-          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
-            Over time, the platform transforms operational data into organizational insight — the kind of evidence-based understanding that improves decisions about people, programs, and performance.
-          </p>
-        </div>
-        <div>
-          <div class="intel-flow" style="max-width:400px; margin:0 auto;">
-            <div class="intel-step">
-              <div class="intel-step-num">Stage 1</div>
-              <div class="intel-step-title">Deliver Programs</div>
-            </div>
-            <div class="intel-conn"></div>
-            <div class="intel-step">
-              <div class="intel-step-num">Stage 2</div>
-              <div class="intel-step-title">Collect Evidence</div>
-            </div>
-            <div class="intel-conn"></div>
-            <div class="intel-step">
-              <div class="intel-step-num">Stage 3</div>
-              <div class="intel-step-title">Reveal Patterns</div>
-            </div>
-            <div class="intel-conn"></div>
-            <div class="intel-step accent">
-              <div class="intel-step-num">Stage 4</div>
-              <div class="intel-step-title">Improve Decisions</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ORGANIZATIONAL INTELLIGENCE ═══ -->
-    <section style="border-top:1px solid var(--border2);">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">Organizational Intelligence</p>
-          <h2 class="display display-lg">Accumulated delivery understanding.</h2>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            Organizational Intelligence is not a feature or dashboard. It is the accumulated operational knowledge that emerges when program delivery evidence is captured consistently across time.
-          </p>
-          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
-            Where standard systems produce fragmented logs, CapabilityOS™ turns structured delivery data into longitudinal insight—helping leaders make decisions about capability with verifiable evidence.
-          </p>
-        </div>
-        <div>
-          <div style="background:var(--surface); border:1px solid var(--border); padding:2rem 2.2rem;">
-            <p style="font-size:0.68rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Operational Progression</p>
-            <div style="display:flex; flex-direction:column; gap:0.8rem;">
-              <p style="font-size:0.9rem; color:var(--text); padding-bottom:0.6rem; border-bottom:1px solid var(--border2);"><strong style="color:var(--gold);">01. Coordinated Delivery:</strong> Sessions run from a single source of truth.</p>
-              <p style="font-size:0.9rem; color:var(--text); padding-bottom:0.6rem; border-bottom:1px solid var(--border2);"><strong style="color:var(--gold);">02. Evidence Capture:</strong> Participant responses and observations structured systematically.</p>
-              <p style="font-size:0.9rem; color:var(--text);"><strong style="color:var(--gold);">03. Longitudinal Memory:</strong> Operational insights that survive staff turnover and program cycles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ COMPARISON ═══ -->
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container">
-        <div class="section-intro" style="max-width:680px;">
-          <p class="eyebrow mb-sm">A Different Operating Philosophy</p>
-          <h2 class="display display-md">Not a better version of the same thing.</h2>
-          <p>The difference between the two is not a feature difference. It is a philosophical one.</p>
-        </div>
-        <div style="margin-top:3rem;">
-          <div class="comp-header">
-            <div class="comp-header-cell comp-header-trad">Traditional platforms</div>
-            <div class="comp-header-cell comp-header-os">CapabilityOS™</div>
-          </div>
-          <div class="comp-row">
-            <div class="comp-cell comp-trad">Organize courses</div>
-            <div class="comp-cell comp-os">Organize capability</div>
-          </div>
-          <div class="comp-row">
-            <div class="comp-cell comp-trad">Record delivery</div>
-            <div class="comp-cell comp-os">Learn from delivery</div>
-          </div>
-          <div class="comp-row">
-            <div class="comp-cell comp-trad">Generate reports</div>
-            <div class="comp-cell comp-os">Build organizational memory</div>
-          </div>
-          <div class="comp-row">
-            <div class="comp-cell comp-trad">Measure participation</div>
-            <div class="comp-cell comp-os">Measure organizational intelligence</div>
-          </div>
-          <div class="comp-row">
-            <div class="comp-cell comp-trad">Start at the session</div>
-            <div class="comp-cell comp-os">Start at the client relationship</div>
-          </div>
-        </div>
-        <div class="doctrine-quote" style="margin-top:2.5rem; max-width:820px;">
-          <p>Traditional training systems manage courses. CapabilityOS™ manages capability delivery.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ PRACTITIONERS ═══ -->
-    <section>
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">Architected by Practitioners</p>
-          <h2 class="display display-lg">Designed from the inside out — not adapted from the outside in.</h2>
-          <p class="mt-md" style="color:var(--muted); line-height:1.85;">
-            Many platforms are built for practitioners. CapabilityOS was architected from inside the practice itself. It was shaped by someone who has spent 25 years inside the operational reality it now manages.
-          </p>
-          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
-            That distinction matters. It means the architecture reflects how capability delivery actually works — not how software engineers imagine it works. The data model, the workflows, the decision points, and the intelligence layer were all shaped by direct operational experience across government, energy, banking, healthcare, and private-sector organizations throughout the Middle East.
-          </p>
-          <p style="margin-top:1rem; color:var(--muted); line-height:1.85;">
-            The operational problems the platform solves are problems we have experienced ourselves. That is not a feature. It is the foundation.
-          </p>
-        </div>
-        <div>
-          <div class="stat-grid">
-            <div class="stat-tile">
-              <div class="stat-num">25+</div>
-              <div class="stat-label">Years Delivering<br/>Capability Programs</div>
-            </div>
-            <div class="stat-tile">
-              <div class="stat-num">1,000+</div>
-              <div class="stat-label">Participants<br/>Trained Annually</div>
-            </div>
-            <div class="stat-tile">
-              <div class="stat-num">50+</div>
-              <div class="stat-label">Client<br/>Organizations</div>
-            </div>
-            <div class="stat-tile">
-              <div class="stat-num">7</div>
-              <div class="stat-label">Countries of<br/>Active Delivery</div>
-            </div>
-          </div>
-          <p style="font-size:.75rem; color:var(--subtle); margin-top:.9rem; line-height:1.7;">
-            Enable My Growth consulting experience underlying the CapabilityOS platform.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ WHY ═══ -->
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container">
-        <div class="section-intro" style="max-width:680px;">
-          <p class="eyebrow mb-sm">Why Organizations Choose CapabilityOS</p>
-          <h2 class="display display-md">Not features. Outcomes.</h2>
-        </div>
-        <div class="why-grid">
-          <div class="why-card">
-            <div class="why-num">01</div>
-            <div class="why-title">Operational Simplicity</div>
-            <div class="why-desc">One operating environment replaces the spreadsheets, email chains, and disconnected tools that currently manage delivery.</div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">02</div>
-            <div class="why-title">Client Visibility</div>
-            <div class="why-desc">Clients see delivery progress, participant outcomes, and program evidence without requesting a report.</div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">03</div>
-            <div class="why-title">Facilitator Intelligence</div>
-            <div class="why-desc">Capture facilitator expertise and observations in a structured way — before it disappears when the session ends.</div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">04</div>
-            <div class="why-title">Evidence-Based Decisions</div>
-            <div class="why-desc">Move beyond attendance reports. Build an evidence base that informs decisions about people, programs, and organizational performance.</div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">05</div>
-            <div class="why-title">Scalable Operations</div>
-            <div class="why-desc">Grow program volume without multiplying administrative effort. The platform scales with delivery — not against it.</div>
-          </div>
-          <div class="why-card accent">
-            <div class="why-num accent">06</div>
-            <div class="why-title">Built for Capability Providers</div>
-            <div class="why-desc">Not adapted from education software or project management tools. Designed specifically for organizations whose business is developing people.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ROADMAP ═══ -->
-    <section>
-      <div class="container">
-        <div class="section-intro" style="max-width:680px;">
-          <p class="eyebrow mb-sm">What's Coming</p>
-          <h2 class="display display-md">Continued advances in organizational intelligence.</h2>
-          <p>The platform is actively developing. Future capability areas are guided by the same principle that shaped the current build — reducing operational complexity so organizations can focus on decisions that matter.</p>
-        </div>
-        <div class="roadmap-grid">
-          <div class="roadmap-tile">
-            <div class="roadmap-label">Coming</div>
-            <div class="roadmap-title">AI-Assisted Reporting</div>
-          </div>
-          <div class="roadmap-tile">
-            <div class="roadmap-label">Coming</div>
-            <div class="roadmap-title">Organizational Intelligence Dashboards</div>
-          </div>
-          <div class="roadmap-tile">
-            <div class="roadmap-label">Coming</div>
-            <div class="roadmap-title">Executive Visibility Suite</div>
-          </div>
-          <div class="roadmap-tile">
-            <div class="roadmap-label">Coming</div>
-            <div class="roadmap-title">Evidence-Based Capability Measurement</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ PHILOSOPHY CLOSE ═══ -->
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container-sm" style="text-align:center;">
-        <p class="eyebrow mb-md">The Principle Behind the Platform</p>
-        <div class="promise-panel" style="border-left:none; padding-left:0; text-align:center;">
-          <p>Technology should reduce the operational complexity of developing people, so that people can focus their attention on decisions that matter.</p>
-        </div>
-        <p style="font-size:.75rem; color:var(--subtle); margin-top:1.5rem; letter-spacing:.06em;">— The founding principle of CapabilityOS</p>
-      </div>
-    </section>
-
-    <!-- ═══ CTA ═══ -->
-    <section class="cta-band">
-      <div class="container-sm">
-        <p class="eyebrow mb-md">Get Started</p>
-        <h2 class="display display-lg mb-md">Ready to transform capability delivery?</h2>
-        <p style="max-width:520px; margin:0 auto; color:var(--muted); line-height:1.9;">
-          Request a demonstration to see how the platform can help your organization deliver with greater visibility, coordination, and intelligence.
+        <h1 class="cap-heading-xl">CapabilityOS™</h1>
+        <p class="cap-lead">
+          Operational infrastructure for capability development organizations, academies, and providers.
+          Connecting participants, facilitators, sponsors, and verifiable proof of work in one unified layer.
         </p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2.5rem;">
-          <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn btn-gold">Request a Demonstration</a>
-          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
-          <a href="tech.html" class="btn btn-outline">Tech Hub</a>
+
+        <div class="cap-hero-actions">
+          <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn-cap-gold">
+            Request Demonstration <span>→</span>
+          </a>
+          <a href="#pipeline" class="btn-cap-outline">
+            Explore Architecture <span>↓</span>
+          </a>
+          <a href="tech.html" class="btn-cap-outline">
+            ← Back to Tech Hub
+          </a>
+        </div>
+
+        <div class="cap-premise-box">
+          <div class="cap-premise-quote">
+            &ldquo;Capability development is an operational discipline, not a generic course transaction.&rdquo;
+          </div>
+          <div class="cap-premise-body">
+            Modern enterprises have CRM, ERP, and HRIS. Yet the practices responsible for developing critical workforce capability still struggle across disconnected spreadsheets, chat groups, and fragmented slide decks. CapabilityOS provides purpose-built infrastructure designed from inside 25 years of real delivery experience.
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ 3 DISTINCT OPERATING CONTEXTS ═══ -->
+    <section class="cap-section" aria-label="Delivery Environments">
+      <div class="cap-container">
+        <p class="cap-eyebrow"><span class="cap-eyebrow-dot"></span> Three Delivery Contexts</p>
+        <h2 class="cap-heading-lg">Tailored operational models for diverse delivery architectures.</h2>
+        <p class="cap-lead">
+          CapabilityOS adapts its coordination and evidence collection to match how capability is delivered in practice.
+        </p>
+
+        <div class="cap-context-track" id="capContextTrack">
+          <div class="cap-ctx-card active" data-context="provider" onclick="setCapContext(0)">
+            <div class="cap-ctx-header">
+              <span class="cap-ctx-num">Context 01</span>
+              <span class="cap-ctx-role">Facilitated Cohorts</span>
+            </div>
+            <h3 class="cap-ctx-title">Provider</h3>
+            <p class="cap-ctx-desc">
+              Supports facilitated advisory practices, cross-client cohorts, and executive masterclasses.
+            </p>
+            <span class="cap-ctx-highlight">Unified facilitator coordination with client-sponsor transparency.</span>
+          </div>
+
+          <div class="cap-ctx-card" data-context="enterprise" onclick="setCapContext(1)">
+            <div class="cap-ctx-header">
+              <span class="cap-ctx-num">Context 02</span>
+              <span class="cap-ctx-role">Internal Academies</span>
+            </div>
+            <h3 class="cap-ctx-title">Enterprise</h3>
+            <p class="cap-ctx-desc">
+              Supports corporate universities, leadership pipelines, and large-scale transformation initiatives.
+            </p>
+            <span class="cap-ctx-highlight">Long-term institutional memory aligned to corporate strategic goals.</span>
+          </div>
+
+          <div class="cap-ctx-card" data-context="events" onclick="setCapContext(2)">
+            <div class="cap-ctx-header">
+              <span class="cap-ctx-num">Context 03</span>
+              <span class="cap-ctx-role">Structured Journeys</span>
+            </div>
+            <h3 class="cap-ctx-title">Events</h3>
+            <p class="cap-ctx-desc">
+              Supports multi-day summits, intensive retreats, and real-time live cohort evidence capture.
+            </p>
+            <span class="cap-ctx-highlight">Zero-friction participant artifact capture during live delivery.</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══ CONNECTED PIPELINE ARCHITECTURE (MIGRATED FROM /TECH) ═══ -->
+    <section id="pipeline" class="cap-section" style="background:var(--cap-surface);" aria-label="Pipeline Architecture">
+      <div class="cap-container">
+        <p class="cap-eyebrow"><span class="cap-eyebrow-dot"></span> Core Pipeline Architecture</p>
+        <h2 class="cap-heading-lg">Connecting people, evidence, and institutional memory.</h2>
+        <p class="cap-lead">
+          A four-stage telemetry pipeline that organizes action deliverables and participant artifacts as verifiable proof of work over time.
+        </p>
+
+        <div class="cap-pipeline-container" style="margin-top:3.5rem;">
+          <div class="cap-pipeline-header">
+            <div style="display:inline-flex; align-items:center; gap:0.5rem;">
+              <span style="font-family:var(--cap-font-mono); font-size:0.72rem; color:var(--cap-gold); letter-spacing:0.16em;">PIPELINE SPEC</span>
+              <span style="color:var(--cap-border-light);">/</span>
+              <span id="activeContextBadge" style="font-family:var(--cap-font-mono); font-size:0.72rem; color:var(--cap-text-muted); text-transform:uppercase;">Active Context: Provider</span>
+            </div>
+            <span id="activeContextHighlight" style="font-family:var(--cap-font-serif); font-size:0.95rem; font-style:italic; color:var(--cap-gold-light);">
+              Unified facilitator coordination with client-sponsor transparency.
+            </span>
+          </div>
+
+          <div class="cap-pipeline-nav" role="tablist">
+            <button type="button" class="cap-pipe-btn active" onclick="setCapStep(1)">
+              <div class="cap-pipe-indicator">
+                <span class="cap-pipe-num">01</span>
+                <span class="cap-pipe-tick"></span>
+              </div>
+              <span class="cap-pipe-name">People &amp; Participation</span>
+            </button>
+            <button type="button" class="cap-pipe-btn" onclick="setCapStep(2)">
+              <div class="cap-pipe-indicator">
+                <span class="cap-pipe-num">02</span>
+                <span class="cap-pipe-tick"></span>
+              </div>
+              <span class="cap-pipe-name">Structured Evidence</span>
+            </button>
+            <button type="button" class="cap-pipe-btn" onclick="setCapStep(3)">
+              <div class="cap-pipe-indicator">
+                <span class="cap-pipe-num">03</span>
+                <span class="cap-pipe-tick"></span>
+              </div>
+              <span class="cap-pipe-name">Follow-Through</span>
+            </button>
+            <button type="button" class="cap-pipe-btn" onclick="setCapStep(4)">
+              <div class="cap-pipe-indicator">
+                <span class="cap-pipe-num">04</span>
+                <span class="cap-pipe-tick"></span>
+              </div>
+              <span class="cap-pipe-name">Intelligence &amp; Memory</span>
+            </button>
+          </div>
+
+          <div class="cap-pipe-detail-stage">
+            <div>
+              <span id="pipeStageLabel" class="cap-pipe-stage-label">PILLAR 01 ARCHITECTURE</span>
+              <h3 id="pipeStageTitle" class="cap-pipe-title">Coordinates participants, facilitators, and sponsors in one operational layer.</h3>
+              <p id="pipeStageText" class="cap-pipe-text">
+                Reflects verifiable session attendance and active cohort engagement without bureaucratic friction or administrative spreadsheets. Captures presence and participation with audited accuracy.
+              </p>
+            </div>
+
+            <div class="cap-telemetry-spec">
+              <span style="font-family:var(--cap-font-mono); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--cap-gold-dim);">VERIFIED TELEMETRY</span>
+              <div id="telemetryBox">
+                <div style="margin-bottom:1.25rem;">
+                  <span class="cap-telemetry-val">Verifiable</span>
+                  <span class="cap-telemetry-lbl">Participation Records</span>
+                </div>
+                <div>
+                  <span class="cap-telemetry-val">Direct</span>
+                  <span class="cap-telemetry-lbl">Facilitator Coordination</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STAKEHOLDER MESH ═══ -->
+    <section class="cap-section" aria-label="Stakeholder Single Source of Truth">
+      <div class="cap-container">
+        <p class="cap-eyebrow"><span class="cap-eyebrow-dot"></span> Single Source of Truth</p>
+        <h2 class="cap-heading-lg">Every stakeholder working from the same operational reality.</h2>
+        <p class="cap-lead">
+          Traditional delivery fragments information between client sponsors, coordinators, facilitators, and participants. CapabilityOS gives each stakeholder appropriate real-time visibility.
+        </p>
+
+        <div class="cap-mesh-grid">
+          <div class="cap-mesh-card">
+            <div class="cap-mesh-bar"></div>
+            <div class="cap-mesh-role">Enterprise Clients</div>
+            <h3 class="cap-mesh-title">Real-Time Visibility</h3>
+            <p class="cap-mesh-desc">Live insight into cohort progress, milestone completion, and authentic work-product deliverables without waiting for manual quarterly summaries.</p>
+          </div>
+          <div class="cap-mesh-card">
+            <div class="cap-mesh-bar"></div>
+            <div class="cap-mesh-role">Facilitators</div>
+            <h3 class="cap-mesh-title">Delivery Tools</h3>
+            <p class="cap-mesh-desc">Direct scheduling, cohort observation logs, participant interaction records, and deliverable review in one unified workspace.</p>
+          </div>
+          <div class="cap-mesh-card">
+            <div class="cap-mesh-bar"></div>
+            <div class="cap-mesh-role">Program Directors</div>
+            <h3 class="cap-mesh-title">Operational Clarity</h3>
+            <p class="cap-mesh-desc">Coordinate multi-cohort, multi-geography programs without email chains, fragmented spreadsheets, or lost files.</p>
+          </div>
+          <div class="cap-mesh-card">
+            <div class="cap-mesh-bar"></div>
+            <div class="cap-mesh-role">Participants</div>
+            <h3 class="cap-mesh-title">Frictionless Flow</h3>
+            <p class="cap-mesh-desc">Access itineraries, diagnostic feedback, working session artifacts, and verifiable achievement proof through a zero-friction interface.</p>
+          </div>
+          <div class="cap-mesh-card">
+            <div class="cap-mesh-bar"></div>
+            <div class="cap-mesh-role">Executive Sponsors</div>
+            <h3 class="cap-mesh-title">Cumulative Memory</h3>
+            <p class="cap-mesh-desc">Audited institutional record of capabilities built, actions committed, and strategic impact sustained across the enterprise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COMPARISON TABLE ═══ -->
+    <section class="cap-section" style="background:var(--cap-surface);" aria-label="System Comparison">
+      <div class="cap-container">
+        <p class="cap-eyebrow"><span class="cap-eyebrow-dot"></span> Structural Distinction</p>
+        <h2 class="cap-heading-lg">Not a course catalogue. Delivery infrastructure.</h2>
+        <p class="cap-lead">
+          Standard learning platforms manage static content libraries. CapabilityOS manages the living operational delivery of organizational capability.
+        </p>
+
+        <div class="cap-comp-table">
+          <div class="cap-comp-header">
+            <div class="cap-comp-header-cell" style="color:var(--cap-text-muted);">Traditional Learning / Courseware Systems</div>
+            <div class="cap-comp-header-cell" style="color:var(--cap-gold);">CapabilityOS™ Operational Infrastructure</div>
+          </div>
+          <div class="cap-comp-row">
+            <div class="cap-comp-cell cap-comp-trad">Manage static course catalogues and video clicks</div>
+            <div class="cap-comp-cell cap-comp-os">Coordinates complex, multi-stakeholder capability programs</div>
+          </div>
+          <div class="cap-comp-row">
+            <div class="cap-comp-cell cap-comp-trad">Record compliance checkbox attendance</div>
+            <div class="cap-comp-cell cap-comp-os">Captures verifiable work-product artifacts and evidence of application</div>
+          </div>
+          <div class="cap-comp-row">
+            <div class="cap-comp-cell cap-comp-trad">Produces disconnected quarterly PDF summaries</div>
+            <div class="cap-comp-cell cap-comp-os">Maintains a persistent, auditable institutional capability memory</div>
+          </div>
+          <div class="cap-comp-row">
+            <div class="cap-comp-cell cap-comp-trad">Isolated participant silos without sponsor engagement</div>
+            <div class="cap-comp-cell cap-comp-os">Connects participants, facilitators, leadership, and coordinators in one shared mesh</div>
+          </div>
+          <div class="cap-comp-row">
+            <div class="cap-comp-cell cap-comp-trad">Generic software adapted from academic schooling</div>
+            <div class="cap-comp-cell cap-comp-os">Architected from 25 years of high-consequence enterprise consulting practice</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="cap-section" aria-label="Demonstration Request">
+      <div class="cap-container-narrow" style="text-align:center;">
+        <p class="cap-eyebrow"><span class="cap-eyebrow-dot"></span> Operational Excellence</p>
+        <h2 class="cap-heading-xl">Transform how your organization delivers capability.</h2>
+        <p class="cap-lead" style="margin:0 auto 2.5rem;">
+          Schedule an operational briefing to see how CapabilityOS can support your internal academy or provider delivery practice.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn-cap-gold">
+            Request Platform Briefing <span>→</span>
+          </a>
+          <a href="tech.html" class="btn-cap-outline">
+            Explore Full Technology Ecosystem
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="analytics.js"></script>
   <script src="effects.js"></script>
   <script src="nav.js"></script>
+  <script>
+    const capContexts = [
+      {
+        badge: "Active Context: Provider",
+        highlight: "Unified facilitator coordination with client-sponsor transparency."
+      },
+      {
+        badge: "Active Context: Enterprise",
+        highlight: "Long-term institutional memory aligned to corporate strategic goals."
+      },
+      {
+        badge: "Active Context: Events",
+        highlight: "Zero-friction participant artifact capture during live delivery."
+      }
+    ];
+
+    const capPillars = [
+      {
+        num: "01",
+        label: "PILLAR 01 ARCHITECTURE",
+        title: "Coordinates participants, facilitators, and sponsors in one operational layer.",
+        text: "Reflects verifiable session attendance and active cohort engagement without bureaucratic friction or administrative spreadsheets. Captures presence and participation with audited accuracy.",
+        telemetry: [
+          { val: "Verifiable", lbl: "Participation Records" },
+          { val: "Direct", lbl: "Facilitator Coordination" }
+        ]
+      },
+      {
+        num: "02",
+        label: "PILLAR 02 ARCHITECTURE",
+        title: "Action deliverables and participant artifacts captured directly in context.",
+        text: "Completed deliverables, workshop artifacts, and assessment diagnostics are organized as verifiable proof of work rather than buried in static slide decks. Captures only what was actually produced.",
+        telemetry: [
+          { val: "Artifacts", lbl: "Work-Product Proof" },
+          { val: "Grounded", lbl: "No Speculative Claims" }
+        ]
+      },
+      {
+        num: "03",
+        label: "PILLAR 03 ARCHITECTURE",
+        title: "Tracking application, milestone checkpoints, and supervisory check-ins.",
+        text: "Documents execution progress where established without inventing artificial causality. Tracks post-program implementation milestones and coaching touchpoints over the operating horizon.",
+        telemetry: [
+          { val: "Documented", lbl: "Milestone Progress" },
+          { val: "Traceable", lbl: "Check-In History" }
+        ]
+      },
+      {
+        num: "04",
+        label: "PILLAR 04 ARCHITECTURE",
+        title: "Aggregates structured program evidence into institutional capability memory.",
+        text: "Provides organizational sponsors with clear portfolio visibility based strictly on verified records, documented follow-through, and cumulative capability growth over time.",
+        telemetry: [
+          { val: "Portfolio", lbl: "Executive Visibility" },
+          { val: "Institutional", lbl: "Structured Memory" }
+        ]
+      }
+    ];
+
+    function setCapContext(idx) {
+      const cards = document.querySelectorAll('.cap-ctx-card');
+      cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+      document.getElementById('activeContextBadge').textContent = capContexts[idx].badge;
+      document.getElementById('activeContextHighlight').textContent = capContexts[idx].highlight;
+    }
+
+    function setCapStep(stepNum) {
+      const btns = document.querySelectorAll('.cap-pipe-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === stepNum - 1));
+      const p = capPillars[stepNum - 1];
+      document.getElementById('pipeStageLabel').textContent = p.label;
+      document.getElementById('pipeStageTitle').textContent = p.title;
+      document.getElementById('pipeStageText').textContent = p.text;
+      
+      const box = document.getElementById('telemetryBox');
+      box.innerHTML = `
+        <div style="margin-bottom:1.25rem;">
+          <span class="cap-telemetry-val">${p.telemetry[0].val}</span>
+          <span class="cap-telemetry-lbl">${p.telemetry[0].lbl}</span>
+        </div>
+        <div>
+          <span class="cap-telemetry-val">${p.telemetry[1].val}</span>
+          <span class="cap-telemetry-lbl">${p.telemetry[1].lbl}</span>
+        </div>
+      `;
+    }
+  </script>
 </body>
 </html>

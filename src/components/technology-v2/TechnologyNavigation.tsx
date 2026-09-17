@@ -6,10 +6,7 @@ const sections = [
   { id: 'tv2-hero', label: 'Overview' },
   { id: 'tv2-perspective', label: 'Perspective' },
   { id: 'tv2-systems', label: 'Systems' },
-  { id: 'tv2-capos', label: 'CapOS™' },
-  { id: 'tv2-thinking', label: 'Thinking Studio™' },
   { id: 'tv2-philosophy', label: 'Philosophy' },
-  { id: 'tv2-decisions', label: 'Decisions' },
   { id: 'tv2-trust', label: 'Trust' },
   { id: 'tv2-contact', label: 'Connect' },
 ];
