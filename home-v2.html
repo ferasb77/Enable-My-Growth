@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enable My Growth — Sharper judgment. Stronger capability. A more human future.</title>
+  <meta name="description" content="Enable My Growth helps leaders and teams see more clearly, make better decisions, and build the capability to create meaningful, lasting progress." />
+  <meta property="og:title" content="Enable My Growth — Sharper judgment. Stronger capability. A more human future." />
+  <meta property="og:description" content="Structured thinking for leaders who want to examine context, evidence, and assumptions before reaching consequential conclusions." />
+  <meta property="og:image" content="https://enablemygrowth.com/emg-hero-landscape.jpg" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ═════════════════════════════════════════════════════════════════════════
+       ENABLE MY GROWTH — 2027 EDITORIAL & PERSPECTIVE FIELD (HOMEPAGE REFERENCE)
+       Visual authority: design-references/emg-homepage-approved.png
+       ═════════════════════════════════════════════════════════════════════════ */
+
+    :root {
+      --emg-bg: #08080C;
+      --emg-surface: #101017;
+      --emg-subtle: #14141E;
+      --emg-gold: #C9A96E;
+      --emg-gold-glow: #E8CCA0;
+      --emg-gold-dim: #796440;
+      --emg-gold-border: rgba(201, 169, 110, 0.22);
+      --emg-gold-hairline: rgba(201, 169, 110, 0.14);
+      --emg-text: #EDEAE3;
+      --emg-text-bright: #FFFFFF;
+      --emg-text-muted: #9E9EAF;
+      --emg-text-dim: #5C5C70;
+      --emg-serif: 'Cormorant Garamond', Georgia, serif;
+      --emg-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --emg-mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--emg-bg);
+      color: var(--emg-text);
+      font-family: var(--emg-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Architectural container */
+    .emg-bound {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4.5vw, 4rem);
+      width: 100%;
+      position: relative;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       HEADER ARCHITECTURE (Matching Reference Proportions)
+       ═════════════════════════════════════════════════════════════════════════ */
+    #site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--emg-text-bright);
+    }
+
+    .nav-brand-symbol {
+      width: 44px;
+      height: 40px;
+      flex: 0 0 44px;
+      background: url('emg-mobius-hero.png') right center / auto 40px no-repeat;
+      display: block;
+    }
+
+    .nav-brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .nav-brand-copy b {
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-brand-copy small {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      color: var(--emg-gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .nav-center-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.5rem, 2.5vw, 2.8rem);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-center-links a {
+      color: #B5B5C6;
+      text-decoration: none;
+      font-family: var(--emg-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-center-links a:hover,
+    .nav-center-links a.active {
+      color: var(--emg-gold-glow);
+    }
+
+    .nav-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--emg-gold);
+      color: #08080C;
+      font-family: var(--emg-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.72rem 1.45rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-nav-cta:hover {
+      background: #dfbf85;
+      box-shadow: 0 0 20px rgba(201, 169, 110, 0.35);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      padding: 0.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--emg-gold);
+      margin: 4px 0;
+      transition: 0.2s;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       HERO: 50/50 EDITORIAL & CINEMATIC PERSPECTIVE FIELD
+       Seamlessly connected to Gateways below
+       ═════════════════════════════════════════════════════════════════════════ */
+    .hero-stage {
+      position: relative;
+      padding-top: 72px; /* nav clearance */
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      align-items: center;
+      width: 100%;
+      min-height: 560px;
+      padding-bottom: 2rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Left Editorial Column */
+    .hero-editorial {
+      padding: clamp(2.5rem, 5vh, 4.5rem) clamp(1rem, 2vw, 3rem) 2rem 0;
+      z-index: 10;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: clamp(1.2rem, 2vh, 1.8rem);
+    }
+
+    .hero-eyebrow-line {
+      width: 24px;
+      height: 1px;
+      background: var(--emg-gold);
+      opacity: 0.7;
+    }
+
+    .hero-eyebrow-text {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .hero-headline {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1.04;
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.2rem, 2.5vh, 1.8rem);
+      letter-spacing: -0.015em;
+    }
+
+    .hero-headline span.line {
+      display: block;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--emg-gold);
+      font-weight: 400;
+    }
+
+    .hero-subtext {
+      font-size: clamp(0.92rem, 1.2vw, 1.08rem);
+      line-height: 1.6;
+      color: #A9A9BA;
+      max-width: 500px;
+      margin: 0 0 clamp(1.8rem, 3vh, 2.5rem);
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--emg-gold);
+      color: #08080C;
+      font-family: var(--emg-sans);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 1.85rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-hero-primary:hover {
+      background: #dfbf85;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(201, 169, 110, 0.35);
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--emg-text-bright);
+      font-family: var(--emg-sans);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 1.75rem;
+      border-radius: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-hero-ghost:hover {
+      border-color: var(--emg-gold);
+      color: var(--emg-gold-glow);
+      background: rgba(201, 169, 110, 0.05);
+    }
+
+    /* Right Cinematic Perspective Field Column */
+    .hero-cinematic {
+      position: relative;
+      height: 100%;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    /* Refinement 1: Landscape Plate with broad, soft continuous feathering */
+    .hero-landscape-frame {
+      position: absolute;
+      inset: -5% -15% -12% -35%;
+      z-index: 1;
+      pointer-events: none;
+      mask-image:
+        radial-gradient(ellipse 85% 75% at 60% 55%, black 40%, transparent 92%),
+        linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 22%, black 48%, black 100%),
+        linear-gradient(to bottom, black 70%, transparent 98%);
+      -webkit-mask-image:
+        radial-gradient(ellipse 85% 75% at 60% 55%, black 40%, transparent 92%),
+        linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 22%, black 48%, black 100%),
+        linear-gradient(to bottom, black 70%, transparent 98%);
+    }
+
+    .hero-landscape-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 58%;
+      filter: contrast(1.05) brightness(0.95);
+    }
+
+    /* Central Horizon Radiance Layer extending softly leftward */
+    .hero-horizon-glow {
+      position: absolute;
+      left: 46%;
+      top: 55%;
+      transform: translate(-50%, -50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse at center, rgba(201, 169, 110, 0.28) 0%, rgba(201, 169, 110, 0.09) 45%, transparent 75%);
+      pointer-events: none;
+      z-index: 2;
+      filter: blur(36px);
+    }
+
+    /* Left-extended subtle atmospheric haze */
+    .hero-atmospheric-bridge {
+      position: absolute;
+      left: 10%;
+      top: 55%;
+      transform: translateY(-50%);
+      width: 480px;
+      height: 280px;
+      background: radial-gradient(ellipse at center, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 2;
+      filter: blur(40px);
+    }
+
+    /* Browser-Native Perspective Field SVG Layer */
+    .hero-svg-field {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 820px;
+      height: 820px;
+      z-index: 3;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    /* Telemetry Text & Coordinate Nodes in Space */
+    .hero-telemetry-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .telemetry-node {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      pointer-events: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .telemetry-node .label {
+      font-family: var(--emg-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .telemetry-node .subitems {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .telemetry-node .subitems span {
+      font-family: var(--emg-sans);
+      font-size: 0.65rem;
+      color: #9E9EAF;
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+    }
+
+    /* Specific Node Placements matching Reference */
+    /* TOP: HUMAN POTENTIAL */
+    .node-top {
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      align-items: center;
+    }
+    .node-top .label {
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+    }
+
+    /* UPPER LEFT: CLARITY */
+    .node-upper-left {
+      top: 22%;
+      left: 4%;
+      text-align: left;
+    }
+
+    /* LOWER LEFT: JUDGMENT */
+    .node-lower-left {
+      top: 53%;
+      left: 5%;
+      text-align: left;
+    }
+
+    /* UPPER RIGHT: CAPABILITY */
+    .node-upper-right {
+      top: 22%;
+      right: 4%;
+      text-align: left;
+    }
+
+    /* LOWER RIGHT: PROGRESS */
+    .node-lower-right {
+      top: 53%;
+      right: 4%;
+      text-align: left;
+    }
+
+    /* CENTER CONCEPTUAL MESSAGE */
+    .node-center-statement {
+      position: absolute;
+      left: 50%;
+      top: 34%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.32rem;
+      pointer-events: none;
+    }
+
+    .node-center-statement span {
+      font-family: var(--emg-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      color: rgba(201, 169, 110, 0.78);
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+
+    /* Micro-tag in corner */
+    .node-corner-tag {
+      position: absolute;
+      bottom: 12%;
+      right: 2%;
+      text-align: right;
+      font-family: var(--emg-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      color: rgba(158, 158, 175, 0.5);
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       Refinement 2: FOUR DIRECTIONAL GATEWAYS
+       Directly connected to the hero as its lower architectural layer
+       ═════════════════════════════════════════════════════════════════════════ */
+    .gateways-stage {
+      position: relative;
+      background: var(--emg-bg);
+      padding: 1.5rem 0 clamp(3.5rem, 6vh, 5rem);
+      margin-top: -1.5rem; /* pull up to connect seamlessly with hero */
+      z-index: 10;
+    }
+
+    .gateways-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(0.85rem, 1.5vw, 1.5rem);
+    }
+
+    .gateway-card {
+      background: var(--emg-surface);
+      border: 1px solid rgba(201, 169, 110, 0.16);
+      border-radius: 3px;
+      padding: clamp(1.75rem, 2.4vw, 2.4rem) clamp(1.25rem, 1.8vw, 1.75rem);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gateway-card:hover {
+      border-color: rgba(201, 169, 110, 0.45);
+      background: #14141E;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(201, 169, 110, 0.08);
+    }
+
+    .gateway-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .gateway-icon {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      color: var(--emg-gold);
+      stroke: var(--emg-gold);
+      stroke-width: 1.25;
+      fill: none;
+    }
+
+    .gateway-heading {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gateway-title {
+      font-family: var(--emg-serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--emg-text-bright);
+      line-height: 1.15;
+      margin: 0 0 0.25rem;
+    }
+
+    .gateway-subline {
+      font-family: var(--emg-serif);
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--emg-gold);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .gateway-desc {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: #9E9EAF;
+      margin: 0 0 1.75rem;
+      font-weight: 300;
+      flex-grow: 1;
+    }
+
+    .gateway-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--emg-sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .gateway-card:hover .gateway-action {
+      color: #dfbf85;
+      transform: translateX(3px);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       Refinement 3 & 4: MOBILE RESPONSIVE OPTIMIZATION
+       Brings the human figure + horizon above the 844px fold
+       ═════════════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .gateways-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-center-links {
+        display: none;
+      }
+      .nav-mobile-toggle {
+        display: block;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 1.5rem;
+      }
+      .hero-cinematic {
+        min-height: 480px;
+        margin-top: 0.5rem;
+      }
+      .hero-editorial {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #site-nav {
+        height: 60px;
+        padding: 0 1.25rem;
+      }
+      .hero-stage {
+        padding-top: 60px;
+        min-height: 844px; /* Ensure full mobile screen */
+        display: flex;
+        flex-direction: column;
+      }
+      .btn-nav-cta {
+        display: none;
+      }
+      .gateways-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .gateways-stage {
+        margin-top: 0;
+        padding-top: 2.5rem;
+      }
+
+      /* Compact, crisp mobile layout */
+      .hero-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-bottom: 0;
+      }
+
+      .hero-editorial {
+        padding: 1.25rem 0 0.5rem;
+        z-index: 10;
+        position: relative;
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-eyebrow-text {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+      }
+
+      .hero-headline {
+        font-size: 2.22rem;
+        line-height: 1.08;
+        margin-bottom: 0.65rem;
+      }
+
+      .hero-subtext {
+        font-size: 0.86rem;
+        line-height: 1.48;
+        margin-bottom: 1.1rem;
+        max-width: 100%;
+        color: #C0C0D0;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn-hero-primary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+      }
+
+      .btn-hero-ghost {
+        padding: 0.75rem 1.1rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      /* Landscape & Perspective Field visible immediately in the first 844px fold */
+      .hero-cinematic {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        min-height: 380px;
+        margin-top: -10px; /* pull landscape closer to CTAs */
+      }
+
+      .hero-landscape-frame {
+        inset: -10% -8% -15% -8%;
+        mask-image:
+          radial-gradient(ellipse 90% 75% at 50% 55%, black 45%, transparent 95%),
+          linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        -webkit-mask-image:
+          radial-gradient(ellipse 90% 75% at 50% 55%, black 45%, transparent 95%),
+          linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+      }
+
+      .hero-landscape-img {
+        object-position: 50% 48%; /* keep human figure and horizon prominent */
+      }
+
+      .hero-horizon-glow {
+        top: 48%;
+        left: 50%;
+        width: 320px;
+        height: 200px;
+        filter: blur(20px);
+      }
+
+      .hero-svg-field {
+        top: 45%;
+        left: 50%;
+        width: 100%;
+        max-width: 390px;
+        height: 390px;
+      }
+
+      /* Refinement 4: Mobile Simplified Field Labels - Clean, collision-free */
+      .hero-telemetry-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .node-top {
+        top: 4%;
+        left: 50%;
+        display: block;
+      }
+      .node-top .label {
+        font-size: 0.64rem;
+        letter-spacing: 0.18em;
+      }
+
+      .node-upper-left {
+        top: 18%;
+        left: 3%;
+        display: block;
+      }
+      .node-upper-left .label {
+        font-size: 0.64rem;
+      }
+      .node-upper-left .subitems {
+        display: none; /* Hide dense sub-labels above the fold */
+      }
+
+      .node-upper-right {
+        top: 18%;
+        right: 3%;
+        text-align: right;
+        display: block;
+      }
+      .node-upper-right .label {
+        font-size: 0.64rem;
+      }
+      .node-upper-right .subitems {
+        display: none;
+      }
+
+      .node-lower-left {
+        top: 56%;
+        left: 3%;
+        display: block;
+      }
+      .node-lower-left .label {
+        font-size: 0.64rem;
+      }
+      .node-lower-left .subitems {
+        display: none;
+      }
+
+      .node-lower-right {
+        top: 56%;
+        right: 3%;
+        text-align: right;
+        display: block;
+      }
+      .node-lower-right .label {
+        font-size: 0.64rem;
+      }
+      .node-lower-right .subitems {
+        display: none;
+      }
+
+      .node-center-statement {
+        top: 30%;
+        display: flex;
+      }
+      .node-center-statement span {
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+      }
+
+      .node-corner-tag {
+        display: none;
+      }
+    }
+
+    /* Subtle Motion */
+    @keyframes orbitDrift {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) rotate(1deg); }
+      100% { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.75; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+    }
+
+    .hero-svg-field {
+      animation: orbitDrift 28s ease-in-out infinite;
+    }
+
+    .hero-horizon-glow {
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-svg-field, .hero-horizon-glow {
+        animation: none !important;
+      }
+    }
+  
+/* ═════════════════════════════════════════════════════════════════════════
+       02. THE EDITORIAL INTERRUPTION (CORE BELIEF)
+       Large-scale statement occupying the viewport with asymmetric geometry
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-manifesto-interruption {
+      position: relative;
+      padding: clamp(6.5rem, 14vh, 10rem) 0;
+      background: #08080d;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      overflow: hidden;
+    }
+
+    .emg-interruption-inner {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: clamp(2.5rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .emg-meta-rail {
+      position: sticky;
+      top: 6.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .emg-rail-num {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      color: var(--emg-gold-dim);
+    }
+
+    .emg-rail-label {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold-pure);
+    }
+
+    .emg-rail-line {
+      width: 32px;
+      height: 1px;
+      background: var(--emg-gold-pure);
+      margin-top: 0.8rem;
+      opacity: 0.5;
+    }
+
+    .emg-interruption-prose h2 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 4.4vw, 4.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      color: var(--emg-text-bright);
+      margin-bottom: clamp(2rem, 4vh, 3rem);
+    }
+
+    .emg-interruption-prose p.lead {
+      font-family: var(--emg-sans);
+      font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+      line-height: 1.85;
+      color: var(--emg-text-primary);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 780px;
+    }
+
+    .emg-interruption-prose p {
+      font-size: 1.0rem;
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin-bottom: 2rem;
+      max-width: 740px;
+    }
+
+    .emg-quote-plaque {
+      margin: 3.5rem 0;
+      padding: 2.4rem clamp(1.8rem, 3.5vw, 3rem);
+      border-left: 1px solid var(--emg-gold-pure);
+      background: linear-gradient(90deg, rgba(201, 169, 110, 0.05) 0%, transparent 100%);
+    }
+
+    .emg-quote-plaque p {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--emg-text-bright);
+      margin: 0;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       03. THE THREE MOVEMENTS: COGNITIVE STAGES
+       Stepped horizontal architectural progression (No standard cards)
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-stages-band {
+      position: relative;
+      padding: clamp(6.5rem, 12vh, 9rem) 0;
+      background: var(--emg-bg-base);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-section-head {
+      margin-bottom: clamp(3rem, 6vh, 4.5rem);
+    }
+
+    .emg-stages-track {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 3.5rem);
+    }
+
+    .emg-stage-pillar {
+      position: relative;
+      padding-top: 2rem;
+      border-top: 1px solid var(--emg-gold-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .emg-stage-pillar::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background: var(--emg-gold-pure);
+    }
+
+    .emg-stage-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+    }
+
+    .emg-stage-code {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      color: var(--emg-gold-dim);
+    }
+
+    .emg-stage-verb {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      color: var(--emg-gold-pure);
+    }
+
+    .emg-stage-pillar h3 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--emg-text-bright);
+      margin-bottom: 1.2rem;
+    }
+
+    .emg-stage-pillar p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--emg-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .emg-stage-axis {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold-dim);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .emg-stage-axis::before {
+      content: '—';
+      color: var(--emg-gold-pure);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       04. CONDITIONS BEFORE CONVICTION (LITERARY MONOGRAPH)
+       Deep editorial presentation — authoritative and quiet
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-book-feature {
+      position: relative;
+      padding: clamp(6.5rem, 12vh, 9rem) 0;
+      background: #08080c;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-book-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    /* Spine & Monograph Plate */
+    .emg-monograph-plate {
+      position: relative;
+      background: linear-gradient(135deg, #0f1018 0%, #08080d 100%);
+      border: 1px solid var(--emg-gold-border);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.2rem);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .emg-plate-spine {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--emg-gold-pure), var(--emg-gold-dim));
+    }
+
+    .emg-plate-type {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emg-gold-pure);
+      margin-bottom: 2rem;
+    }
+
+    .emg-plate-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.06;
+      color: var(--emg-text-bright);
+      margin-bottom: 1rem;
+    }
+
+    .emg-plate-sub {
+      font-family: var(--emg-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--emg-gold-pure);
+      margin-bottom: 2.8rem;
+    }
+
+    .emg-plate-author {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+    }
+
+    .emg-book-narrative h3 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--emg-text-bright);
+      margin-bottom: 1.8rem;
+    }
+
+    .emg-book-narrative p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin-bottom: 2.2rem;
+    }
+
+    .emg-book-inquiries {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .emg-book-inquiries li {
+      position: relative;
+      padding-left: 2rem;
+      font-family: var(--emg-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--emg-text-primary);
+      line-height: 1.5;
+    }
+
+    .emg-book-inquiries li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 14px;
+      height: 1px;
+      background: var(--emg-gold-pure);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       05. TECHNOLOGY: THE ARCHITECTURAL ECOSYSTEM
+       Indexed Architectural Line Structure (Avoids heavy card grids)
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-tech-manifest {
+      position: relative;
+      padding: clamp(6.5rem, 12vh, 9.5rem) 0;
+      background: var(--emg-bg-base);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-tech-header-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-bottom: clamp(3rem, 6vh, 5rem);
+    }
+
+    .emg-tech-header-block h2 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 4.2vw, 4.0rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--emg-text-bright);
+      max-width: 680px;
+    }
+
+    .emg-tech-header-block p {
+      font-size: 1.0rem;
+      line-height: 1.8;
+      color: var(--emg-text-muted);
+      max-width: 460px;
+    }
+
+    .emg-systems-index {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-system-row {
+      display: grid;
+      grid-template-columns: 140px 1.2fr 2fr 180px;
+      align-items: baseline;
+      padding: 2.2rem 0;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s ease;
+      position: relative;
+    }
+
+    .emg-system-row:hover {
+      background: rgba(201, 169, 110, 0.02);
+    }
+
+    .emg-sys-index {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--emg-gold-dim);
+    }
+
+    .emg-sys-name {
+      font-family: var(--emg-serif);
+      font-size: 1.85rem;
+      font-weight: 300;
+      color: var(--emg-text-bright);
+    }
+
+    .emg-sys-summary {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      padding-right: 2rem;
+    }
+
+    .emg-sys-cta {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-gold-pure);
+      text-align: right;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       06. WORKSHOPS & PRACTICE: HUMAN EDITORIAL PROOF
+       Asymmetric typography + verified figures embedded naturally
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-practice-stage {
+      position: relative;
+      padding: clamp(6.5rem, 12vh, 9rem) 0;
+      background: #08080d;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-practice-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .emg-practice-prose h2 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--emg-text-bright);
+      margin-bottom: 1.8rem;
+    }
+
+    .emg-practice-prose p.lead {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--emg-text-primary);
+      margin-bottom: 1.4rem;
+    }
+
+    .emg-practice-prose p {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Editorial Proof Points Matrix with Fine Lines */
+    .emg-proof-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--emg-gold-border);
+      border-left: 1px solid var(--emg-gold-border);
+    }
+
+    .emg-proof-cell {
+      padding: clamp(2rem, 4vw, 3rem) 2rem;
+      border-right: 1px solid var(--emg-gold-border);
+      border-bottom: 1px solid var(--emg-gold-border);
+      background: rgba(13, 15, 22, 0.4);
+    }
+
+    .emg-proof-stat {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--emg-gold-pure);
+      margin-bottom: 0.5rem;
+    }
+
+    .emg-proof-label {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-text-bright);
+      margin-bottom: 0.5rem;
+    }
+
+    .emg-proof-sub {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--emg-text-muted);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       07. SELECTED INSIGHTS: JOURNAL INQUIRIES
+       Magazine-level typography, distinct titles, no blog cards
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-journal-manifest {
+      position: relative;
+      padding: clamp(6.5rem, 12vh, 9rem) 0;
+      background: var(--emg-bg-base);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-journal-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--emg-gold-border);
+    }
+
+    .emg-journal-entry {
+      display: grid;
+      grid-template-columns: 180px 1fr 120px;
+      align-items: baseline;
+      padding: clamp(2rem, 4vh, 3rem) 0;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.25s ease;
+    }
+
+    .emg-journal-entry:hover .emg-journal-title {
+      color: var(--emg-gold-pure);
+    }
+
+    .emg-journal-meta {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+    }
+
+    .emg-journal-body {
+      padding-right: 3rem;
+    }
+
+    .emg-journal-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--emg-text-bright);
+      margin-bottom: 0.8rem;
+      transition: color 0.2s ease;
+    }
+
+    .emg-journal-excerpt {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      max-width: 720px;
+    }
+
+    .emg-journal-link {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold-pure);
+      text-align: right;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       08. FERAS BANNA: THE HUMAN CORE
+       Authentic portrait + intellectual authority (No standard card)
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-founder-stage {
+      position: relative;
+      padding: clamp(6.5rem, 12vh, 9.5rem) 0;
+      background: #08080c;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .emg-founder-layout {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .emg-portrait-frame {
+      position: relative;
+    }
+
+    .emg-portrait-frame::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid var(--emg-gold-border);
+      pointer-events: none;
+    }
+
+    .emg-portrait-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(15%) contrast(105%);
+    }
+
+    .emg-portrait-caption {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-text-muted);
+    }
+
+    .emg-founder-statement h2 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.14;
+      color: var(--emg-text-bright);
+      margin-bottom: 1.8rem;
+    }
+
+    .emg-founder-statement p.lead {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--emg-text-primary);
+      font-weight: 300;
+      margin-bottom: 1.6rem;
+    }
+
+    .emg-founder-statement p {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin-bottom: 1.6rem;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       09. FINAL HORIZON: QUIET PERSPECTIVE
+       Pure, authoritative closing inquiry
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-final-horizon {
+      position: relative;
+      padding: clamp(8rem, 16vh, 12rem) 0;
+      background: radial-gradient(circle at 50% 100%, rgba(201, 169, 110, 0.08) 0%, transparent 65%), var(--emg-bg-base);
+      text-align: center;
+    }
+
+    .emg-horizon-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .emg-horizon-kicker {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--emg-gold-pure);
+      margin-bottom: 2rem;
+    }
+
+    .emg-final-horizon h2 {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.8rem, 5.2vw, 5.0rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--emg-text-bright);
+      margin-bottom: 2rem;
+    }
+
+    .emg-final-horizon p {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin-bottom: 3.5rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       RESPONSIVE ADAPTATIONS
+       ═════════════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .pf-hero-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .pf-editorial {
+        max-width: 100%;
+      }
+      .pf-lead {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .pf-actions {
+        justify-content: center;
+      }
+      .emg-interruption-inner {
+        grid-template-columns: 1fr;
+      }
+      .emg-meta-rail {
+        position: static;
+      }
+      .emg-book-layout {
+        grid-template-columns: 1fr;
+      }
+      .emg-practice-layout {
+        grid-template-columns: 1fr;
+      }
+      .emg-founder-layout {
+        grid-template-columns: 1fr;
+      }
+      .emg-portrait-frame {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .emg-system-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+      .emg-sys-cta {
+        text-align: left;
+      }
+      .emg-journal-entry {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+      .emg-journal-link {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .emg-stages-track {
+        grid-template-columns: 1fr;
+      }
+      .emg-proof-mosaic {
+        grid-template-columns: 1fr;
+      }
+      .pf-hero {
+        padding: 7.5rem 0 3.5rem;
+      }
+      .pf-stage {
+        height: 320px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pf-stage-glow, .pf-mobius-float, .pf-node {
+        animation: none !important;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER ARCHITECTURE (Matching Reference)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <nav id="site-nav" aria-label="Primary navigation">
+    <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+      <span class="nav-brand-symbol" aria-hidden="true"></span>
+      <span class="nav-brand-copy">
+        <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+        <small>Feras Banna</small>
+      </span>
+    </a>
+
+    <ul class="nav-center-links" id="nav-links">
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="training.html">Workshops</a></li>
+      <li><a href="ideas.html">Insights</a></li>
+      <li><a href="work.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right-actions">
+      <a href="contact.html" class="btn-nav-cta">Begin a Conversation</a>
+      <button class="nav-mobile-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         01. HERO STAGE (Matching Reference 50/50 Composition)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <section class="hero-stage" role="banner">
+      <div class="emg-bound">
+        <div class="hero-grid">
+
+          <!-- Left Column: Editorial Headline & Actions -->
+          <div class="hero-editorial">
+            <div class="hero-eyebrow">
+              <div class="hero-eyebrow-line" aria-hidden="true"></div>
+              <span class="hero-eyebrow-text">A More Human Future</span>
+            </div>
+
+            <h1 class="hero-headline">
+              <span class="line">Sharper judgment.</span>
+              <span class="line">Stronger capability.</span>
+              <span class="line">A more <em>human future.</em></span>
+            </h1>
+
+            <p class="hero-subtext">
+              Enable My Growth helps leaders and teams see more clearly, make better decisions, and build the capability to create meaningful, lasting progress.
+            </p>
+
+            <div class="hero-actions">
+              <a href="philosophy.html" class="btn-hero-primary">
+                Explore Our Approach <span>&rarr;</span>
+              </a>
+              <a href="contact.html" class="btn-hero-ghost">
+                Begin a Conversation
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Cinematic Landscape & Browser-Native Perspective Field -->
+          <div class="hero-cinematic" aria-label="Perspective Field Visualization">
+            
+            <!-- Standalone High-Res Landscape Plate (Human Silhouette + Horizon Glow) -->
+            <div class="hero-landscape-frame" aria-hidden="true">
+              <img src="emg-hero-landscape.jpg" alt="Human figure on mountain summit gazing toward the illuminated horizon" class="hero-landscape-img" />
+            </div>
+
+            <!-- Warm Horizon Glow Core -->
+            <div class="hero-horizon-glow" aria-hidden="true"></div>
+            <!-- Atmospheric bridge bleeding gently into headline area -->
+            <div class="hero-atmospheric-bridge" aria-hidden="true"></div>
+
+            <!-- Browser-Native SVG Perspective Field Geometry -->
+            <svg class="hero-svg-field" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Central Vertical Axis connecting ground to human potential -->
+              <line x1="400" y1="50" x2="400" y2="700" stroke="#C9A96E" stroke-opacity="0.32" stroke-width="1.25" />
+              
+              <!-- Primary Outer Orbital Ring -->
+              <ellipse cx="400" cy="460" rx="340" ry="240" stroke="#C9A96E" stroke-opacity="0.22" stroke-width="1.2" />
+              
+              <!-- Secondary Inner Ellipses -->
+              <ellipse cx="400" cy="460" rx="260" ry="170" stroke="#C9A96E" stroke-opacity="0.3" stroke-width="1" />
+              <ellipse cx="400" cy="460" rx="170" ry="105" stroke="#C9A96E" stroke-opacity="0.38" stroke-width="1" stroke-dasharray="3 5" />
+              
+              <!-- Diagonal Perspective Coordinate Rays -->
+              <line x1="160" y1="220" x2="640" y2="700" stroke="#C9A96E" stroke-opacity="0.16" stroke-width="1" />
+              <line x1="640" y1="220" x2="160" y2="700" stroke="#C9A96E" stroke-opacity="0.16" stroke-width="1" />
+
+              <!-- Luminous Intersection Nodes along the Field -->
+              <!-- Top Node: Human Potential -->
+              <circle cx="400" cy="70" r="4.5" fill="#E8CCA0" />
+              <circle cx="400" cy="70" r="9" stroke="#C9A96E" stroke-opacity="0.45" stroke-width="1" />
+
+              <!-- Mid-Axis Nodes -->
+              <circle cx="400" cy="210" r="3.5" fill="#E8CCA0" />
+              <circle cx="400" cy="320" r="3" fill="#E8CCA0" />
+
+              <!-- Left Orbit Nodes: Clarity & Judgment -->
+              <circle cx="210" cy="260" r="3.5" fill="#E8CCA0" />
+              <circle cx="160" cy="480" r="3.5" fill="#E8CCA0" />
+              <!-- Guide rays to labels -->
+              <line x1="210" y1="260" x2="180" y2="245" stroke="#C9A96E" stroke-opacity="0.4" stroke-width="1" />
+              <line x1="160" y1="480" x2="135" y2="480" stroke="#C9A96E" stroke-opacity="0.4" stroke-width="1" />
+
+              <!-- Right Orbit Nodes: Capability & Progress -->
+              <circle cx="590" cy="260" r="3.5" fill="#E8CCA0" />
+              <circle cx="640" cy="480" r="3.5" fill="#E8CCA0" />
+              <!-- Guide rays to labels -->
+              <line x1="590" y1="260" x2="620" y2="245" stroke="#C9A96E" stroke-opacity="0.4" stroke-width="1" />
+              <line x1="640" y1="480" x2="665" y2="480" stroke="#C9A96E" stroke-opacity="0.4" stroke-width="1" />
+
+              <!-- Horizon Base Alignment Ray -->
+              <line x1="260" y1="530" x2="540" y2="530" stroke="#C9A96E" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="2 4" />
+            </svg>
+
+            <!-- Coordinate Telemetry Labels in Space (Matching Reference Hierarchy) -->
+            <div class="hero-telemetry-layer">
+              <!-- TOP -->
+              <div class="telemetry-node node-top">
+                <span class="label">Human Potential</span>
+              </div>
+
+              <!-- UPPER LEFT -->
+              <div class="telemetry-node node-upper-left">
+                <span class="label">Clarity</span>
+                <div class="subitems">
+                  <span>See</span>
+                  <span>Understand</span>
+                  <span>Discern</span>
+                  <span>Choose</span>
+                </div>
+              </div>
+
+              <!-- LOWER LEFT -->
+              <div class="telemetry-node node-lower-left">
+                <span class="label">Judgment</span>
+                <div class="subitems">
+                  <span>Evidence</span>
+                  <span>Context</span>
+                  <span>Perspective</span>
+                  <span>Wisdom</span>
+                </div>
+              </div>
+
+              <!-- UPPER RIGHT -->
+              <div class="telemetry-node node-upper-right">
+                <span class="label">Capability</span>
+                <div class="subitems">
+                  <span>Build</span>
+                  <span>Adapt</span>
+                  <span>Lead</span>
+                  <span>Multiply</span>
+                </div>
+              </div>
+
+              <!-- LOWER RIGHT -->
+              <div class="telemetry-node node-lower-right">
+                <span class="label">Progress</span>
+                <div class="subitems">
+                  <span>People</span>
+                  <span>Organizations</span>
+                  <span>Society</span>
+                  <span>A Brighter Future</span>
+                </div>
+              </div>
+
+              <!-- CENTER CONCEPTUAL MESSAGE -->
+              <div class="node-center-statement">
+                <span>Bigger</span>
+                <span>Perspective</span>
+                <span>Brighter</span>
+                <span>Possibilities</span>
+              </div>
+
+              <!-- CORNER METADATA -->
+              <div class="node-corner-tag">
+                <div>People</div>
+                <div>Ideas</div>
+                <div>Organizations</div>
+                <div>A Brighter Tomorrow</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         02. FOUR DIRECTIONAL GATEWAYS (Immediately Below Hero)
+         Matching Reference Cards & Icons
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <section class="gateways-stage" aria-label="Core Pathways">
+      <div class="emg-bound">
+        <div class="gateways-grid">
+
+          <!-- 01. Our Philosophy -->
+          <a href="philosophy.html" class="gateway-card">
+            <div class="gateway-card-top">
+              <svg class="gateway-icon" viewBox="0 0 40 40" aria-hidden="true">
+                <!-- Two intertwined circles -->
+                <circle cx="16" cy="20" r="11" />
+                <circle cx="24" cy="20" r="11" />
+              </svg>
+              <div class="gateway-heading">
+                <h2 class="gateway-title">Our Philosophy</h2>
+                <span class="gateway-subline">A clearer way forward.</span>
+              </div>
+            </div>
+            <p class="gateway-desc">
+              Explore the ideas and principles that shape our work &mdash; and a more human approach to progress.
+            </p>
+            <div class="gateway-action">
+              Explore Philosophy <span>&rarr;</span>
+            </div>
+          </a>
+
+          <!-- 02. Workshops -->
+          <a href="training.html" class="gateway-card">
+            <div class="gateway-card-top">
+              <svg class="gateway-icon" viewBox="0 0 40 40" aria-hidden="true">
+                <!-- Triangle -->
+                <polygon points="20,7 34,31 6,31" />
+              </svg>
+              <div class="gateway-heading">
+                <h2 class="gateway-title">Workshops</h2>
+                <span class="gateway-subline">From insight to action.</span>
+              </div>
+            </div>
+            <p class="gateway-desc">
+              Immersive experiences that build perspective, strengthen judgment, and unlock capability.
+            </p>
+            <div class="gateway-action">
+              View Workshops <span>&rarr;</span>
+            </div>
+          </a>
+
+          <!-- 03. Insights -->
+          <a href="ideas.html" class="gateway-card">
+            <div class="gateway-card-top">
+              <svg class="gateway-icon" viewBox="0 0 40 40" aria-hidden="true">
+                <!-- Square / Monograph -->
+                <rect x="8" y="8" width="24" height="24" rx="1" />
+              </svg>
+              <div class="gateway-heading">
+                <h2 class="gateway-title">Insights</h2>
+                <span class="gateway-subline">Ideas for what's next.</span>
+              </div>
+            </div>
+            <p class="gateway-desc">
+              Articles, frameworks, and reflections on leadership, decision-making, and human growth.
+            </p>
+            <div class="gateway-action">
+              Explore Insights <span>&rarr;</span>
+            </div>
+          </a>
+
+          <!-- 04. Our Services -->
+          <a href="work.html" class="gateway-card">
+            <div class="gateway-card-top">
+              <svg class="gateway-icon" viewBox="0 0 40 40" aria-hidden="true">
+                <!-- Single circle / Sun -->
+                <circle cx="20" cy="20" r="12" />
+              </svg>
+              <div class="gateway-heading">
+                <h2 class="gateway-title">Our Services</h2>
+                <span class="gateway-subline">Enable lasting progress.</span>
+              </div>
+            </div>
+            <p class="gateway-desc">
+              Advisory, facilitation, and custom engagement designed for leaders and organizations ready to go further.
+            </p>
+            <div class="gateway-action">
+              Learn More <span>&rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+<!-- ═══ 02. CORE BELIEF: THE RECURRING PATTERN ═══ -->
+    <section class="emg-manifesto-interruption">
+      <div class="emg-bound">
+        <div class="emg-interruption-inner">
+          <div class="emg-meta-rail">
+            <span class="emg-rail-num">02 // INQUIRY</span>
+            <span class="emg-rail-label">The Recurring Pattern</span>
+            <div class="emg-rail-line"></div>
+          </div>
+          <div class="emg-interruption-prose">
+            <h2>The patterns that made a leader effective can become the limits of their next chapter.</h2>
+            <p class="lead">
+              Capability is rarely the sole constraint. Most often, the constraint lies in how the situation is being seen—which assumptions remain invisible, which conditions go unexamined, and which conclusions are reached before the evidence supports them.
+            </p>
+            <p>
+              Enable My Growth exists to improve that quality of judgment. Not by replacing professional intuition with a mechanical checklist, but by giving leaders enough cognitive structure to distinguish observation from interpretation, evidence from confidence, and conviction from pressure.
+            </p>
+
+            <div class="emg-quote-plaque">
+              <p>“We rarely experience the conditions that shape a judgment. We experience the conclusion.”</p>
+            </div>
+
+            <p>
+              When high-stakes choices are made under compressed timelines, default narratives take over. Our discipline brings the underlying conditions back into focus before commitments solidify.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 03. THE THREE MOVEMENTS: COGNITIVE STAGES ═══ -->
+    <section class="emg-stages-band">
+      <div class="emg-bound">
+        <div class="emg-section-head">
+          <div class="emg-rail-num">03 // DISCIPLINE</div>
+          <div class="emg-rail-label">The Three Movements</div>
+          <h2 style="font-family:var(--emg-serif); font-size:clamp(2.2rem, 3.6vw, 3.5rem); font-weight:300; margin-top:0.8rem; color:#fff;">See clearly. Decide deliberately. Grow with intention.</h2>
+        </div>
+
+        <div class="emg-stages-track">
+          <article class="emg-stage-pillar">
+            <div class="emg-stage-header">
+              <span class="emg-stage-code">MOVEMENT 01</span>
+              <span class="emg-stage-verb">SEE</span>
+            </div>
+            <h3>See clearly</h3>
+            <p>
+              Widen the frame, question the default explanation, and separate signal from narrative before settling on what the situation means.
+            </p>
+            <div class="emg-stage-axis">Stage of Perception</div>
+          </article>
+
+          <article class="emg-stage-pillar">
+            <div class="emg-stage-header">
+              <span class="emg-stage-code">MOVEMENT 02</span>
+              <span class="emg-stage-verb">DECIDE</span>
+            </div>
+            <h3>Decide deliberately</h3>
+            <p>
+              Give evidence, alternatives, uncertainty, and second-order consequences a visible place in the reasoning—before the urgency to conclude.
+            </p>
+            <div class="emg-stage-axis">Stage of Deliberation</div>
+          </article>
+
+          <article class="emg-stage-pillar">
+            <div class="emg-stage-header">
+              <span class="emg-stage-code">MOVEMENT 03</span>
+              <span class="emg-stage-verb">GROW</span>
+            </div>
+            <h3>Grow with intention</h3>
+            <p>
+              Transform consequential decisions into institutional learning by evaluating not merely the outcome, but the quality of judgment that produced it.
+            </p>
+            <div class="emg-stage-axis">Stage of Institutional Memory</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 04. THE BOOK: CONDITIONS BEFORE CONVICTION ═══ -->
+    <section class="emg-book-feature">
+      <div class="emg-bound">
+        <div class="emg-book-layout">
+          <div class="emg-monograph-plate">
+            <div class="emg-plate-spine"></div>
+            <div class="emg-plate-type">Monograph in Development</div>
+            <h2 class="emg-plate-title">Conditions Before Conviction</h2>
+            <div class="emg-plate-sub">How We Become Certain—and What Our Certainty Changes.</div>
+            <div class="emg-plate-author">By Feras Banna · Founder, Enable My Growth</div>
+          </div>
+
+          <div class="emg-book-narrative">
+            <div class="emg-rail-num">04 // INTELLECTUAL WORK</div>
+            <div class="emg-rail-label">Author &amp; Inquiries</div>
+            <h3>An inquiry into the anatomy of certainty.</h3>
+            <p>
+              When a conclusion feels natural, we stop asking what made it convincing. This book investigates what happens before an explanation gains authority—and the irreversible commitments that follow once we mistake interpretation for fact.
+            </p>
+
+            <ul class="emg-book-inquiries">
+              <li>What conditions made this conclusion feel obvious?</li>
+              <li>What does the evidence actually permit us to claim?</li>
+              <li>What changes once we begin acting from this certainty?</li>
+            </ul>
+
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap; margin-top:2.5rem;">
+              <a href="conditions-before-conviction.html" class="btn-hero-primary">Explore the Book</a>
+              <a href="speaking.html" class="btn-hero-ghost">Speaking &amp; Roundtables</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 05. TECHNOLOGY: ARCHITECTURAL INDEX ═══ -->
+    <section class="emg-tech-manifest">
+      <div class="emg-bound">
+        <div class="emg-tech-header-block">
+          <div>
+            <div class="emg-rail-num">05 // CODE &amp; ARCHITECTURE</div>
+            <div class="emg-rail-label">Enable My Growth Tech</div>
+            <h2>Where expertise becomes technology.</h2>
+          </div>
+          <div>
+            <p>
+              Technology at Enable My Growth is not an isolated development practice. It codifies twenty-five years of executive assessment, organizational governance, and decision logic into enterprise digital platforms.
+            </p>
+            <div style="margin-top:1.5rem;">
+              <a href="tech.html" class="btn-hero-primary">Explore Enable My Growth Tech</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indexed Architectural Systems Manifest -->
+        <div class="emg-systems-index">
+          <a href="capability-os.html" class="emg-system-row">
+            <span class="emg-sys-index">SYS-01 // PLATFORM</span>
+            <span class="emg-sys-name">CapabilityOS™</span>
+            <span class="emg-sys-summary">Operational infrastructure for capability programs, enterprise academies, and live learning operations.</span>
+            <span class="emg-sys-cta">View Architecture →</span>
+          </a>
+
+          <a href="ai-thinking-studio.html" class="emg-system-row">
+            <span class="emg-sys-index">SYS-02 // WORKSPACE</span>
+            <span class="emg-sys-name">AI Thinking Studio™</span>
+            <span class="emg-sys-summary">Disciplined deliberation environment for stress-testing decisions before commitments are made.</span>
+            <span class="emg-sys-cta">Enter Studio →</span>
+          </a>
+
+          <a href="contextual.html" class="emg-system-row">
+            <span class="emg-sys-index">SYS-03 // ASSESSMENT</span>
+            <span class="emg-sys-name">Contextual™</span>
+            <span class="emg-sys-summary">Professional preparation environment for certified assessors examining evidence in context.</span>
+            <span class="emg-sys-cta">View Assessor Platform →</span>
+          </a>
+
+          <a href="phys-valid.html" class="emg-system-row">
+            <span class="emg-sys-index">SYS-04 // GOVERNANCE</span>
+            <span class="emg-sys-name">Phys-Valid™</span>
+            <span class="emg-sys-summary">Deterministic constraint validation and operational governance screening for asset environments.</span>
+            <span class="emg-sys-cta">View Governance Engine →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 06. WORKSHOPS & FACILITATION: EDITORIAL PROOF ═══ -->
+    <section class="emg-practice-stage">
+      <div class="emg-bound">
+        <div class="emg-practice-layout">
+          <div class="emg-practice-prose">
+            <div class="emg-rail-num">06 // PRACTICE</div>
+            <div class="emg-rail-label">Workshops &amp; Executive Facilitation</div>
+            <h2>Learning built around the decisions leaders actually face.</h2>
+            <p class="lead">
+              Context before content. Application over theoretical information.
+            </p>
+            <p>
+              Feras designs and facilitates leadership development, Hogan practitioner certification, and high-stakes executive alignment sessions across the GCC and MENA regions. Programs are engineered around real operational dilemmas rather than generic management scripts.
+            </p>
+            <div>
+              <a href="training.html" class="btn-hero-ghost">Explore Workshops &amp; Masterclasses</a>
+            </div>
+          </div>
+
+          <!-- Editorial Proof Points Matrix with Fine Lines -->
+          <div class="emg-proof-mosaic">
+            <div class="emg-proof-cell">
+              <div class="emg-proof-stat">25+</div>
+              <div class="emg-proof-label">Years of Experience</div>
+              <div class="emg-proof-sub">Advising senior leadership across complex environments</div>
+            </div>
+            <div class="emg-proof-cell">
+              <div class="emg-proof-stat">1,000+</div>
+              <div class="emg-proof-label">Participants Annually</div>
+              <div class="emg-proof-sub">Engaged in workshops, roundtables, and debriefs</div>
+            </div>
+            <div class="emg-proof-cell">
+              <div class="emg-proof-stat">7</div>
+              <div class="emg-proof-label">Countries Served</div>
+              <div class="emg-proof-sub">Cross-industry delivery across the GCC &amp; MENA</div>
+            </div>
+            <div class="emg-proof-cell">
+              <div class="emg-proof-stat" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); line-height: 1.4;">Founder-Led</div>
+              <div class="emg-proof-label">Direct Practice</div>
+              <div class="emg-proof-sub">Direct engagement with Feras Banna</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 07. SELECTED INSIGHTS: JOURNAL INQUIRIES ═══ -->
+    <section class="emg-journal-manifest">
+      <div class="emg-bound">
+        <div class="emg-tech-header-block">
+          <div>
+            <div class="emg-rail-num">07 // ARCHIVE</div>
+            <div class="emg-rail-label">Selected Inquiries</div>
+            <h2>Essays on judgment, context, and certainty.</h2>
+          </div>
+          <div>
+            <a href="ideas.html" class="btn-hero-ghost">Explore all essays &amp; ideas</a>
+          </div>
+        </div>
+
+        <div class="emg-journal-list">
+          <a href="essay-conditions.html" class="emg-journal-entry">
+            <span class="emg-journal-meta">CONDITIONS</span>
+            <div class="emg-journal-body">
+              <h3 class="emg-journal-title">The Conditions We Forget to Examine</h3>
+              <p class="emg-journal-excerpt">When a decision or behavior disappoints us, we locate the failure in the individual. A wider view asks which conditions made that outcome understandable.</p>
+            </div>
+            <span class="emg-journal-link">Read Essay →</span>
+          </a>
+
+          <a href="essay-conviction.html" class="emg-journal-entry">
+            <span class="emg-journal-meta">CERTAINTY</span>
+            <div class="emg-journal-body">
+              <h3 class="emg-journal-title">The Premature Authority of Explanations</h3>
+              <p class="emg-journal-excerpt">Why plausible stories take root before evidence arrives, and how early explanatory consensus closes off superior strategic alternatives.</p>
+            </div>
+            <span class="emg-journal-link">Read Essay →</span>
+          </a>
+
+          <a href="essay-context.html" class="emg-journal-entry">
+            <span class="emg-journal-meta">ASSESSMENT</span>
+            <div class="emg-journal-body">
+              <h3 class="emg-journal-title">Context Before Interpretation</h3>
+              <p class="emg-journal-excerpt">Behavior has no intrinsic standalone meaning. It acquires meaning strictly through the incentives, constraints, and relational history surrounding it.</p>
+            </div>
+            <span class="emg-journal-link">Read Essay →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 08. FERAS BANNA: FOUNDER PROFILE ═══ -->
+    <section class="emg-founder-stage">
+      <div class="emg-bound">
+        <div class="emg-founder-layout">
+          <div class="emg-portrait-frame">
+            <img src="feras-banna.jpg" alt="Feras Banna — Founder, Enable My Growth" class="emg-portrait-img" />
+            <div class="emg-portrait-caption">
+              <span>FERAS BANNA</span>
+              <span>FOUNDER &amp; AUTHOR</span>
+            </div>
+          </div>
+
+          <div class="emg-founder-statement">
+            <div class="emg-rail-num">08 // LEADERSHIP</div>
+            <div class="emg-rail-label">The Person Behind Enable My Growth</div>
+            <h2>A philosophy made practical through founder-led work.</h2>
+            <p class="lead">
+              The work begins with a real situation—not a predetermined service catalog.
+            </p>
+            <p>
+              For over twenty-five years, Feras Banna has advised executive committees, contributed to board-level conversations, and supported government leaders across energy, banking, infrastructure, and the public sector. His practice focuses on the critical juncture where raw information turns into interpretation, interpretation hardens into judgment, and judgment dictates irreversible outcomes.
+            </p>
+            <p>
+              Whether engaged as an executive advisor, certified assessment practitioner, or facilitator of strategic alignment, the intervention is designed around the exact tensions of the client's operating environment.
+            </p>
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap; margin-top:2.5rem;">
+              <a href="about.html" class="btn-hero-ghost">Read About Feras</a>
+              <a href="work.html" class="btn-hero-ghost">How the Work Takes Shape</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 09. FINAL HORIZON: QUIET PERSPECTIVE ═══ -->
+    <section class="emg-final-horizon">
+      <div class="emg-bound">
+        <div class="emg-horizon-inner">
+          <div class="emg-horizon-kicker">09 // ENGAGEMENT · CONTEXTUAL CONSULTATION</div>
+          <h2>What conclusion are you being asked to reach?</h2>
+          <p>
+            You do not need a predefined solution or service category. Bring the decision, the tension, or the organizational ambiguity. We will examine the conditions together.
+          </p>
+          <a href="contact.html" class="btn-hero-primary" style="padding:1.1rem 3.2rem; font-size:0.8rem;">Begin a Conversation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+`
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER ARCHITECTURE
+       Restrained, Architectural Editorial Navigation
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <footer class="emg-footer">
+    <div class="emg-bound">
+      <div class="emg-footer-grid">
+        <div class="emg-footer-brand-col">
+          <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+            <span class="nav-brand-symbol" aria-hidden="true"></span>
+            <span class="nav-brand-copy">
+              <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+              <small>Feras Banna</small>
+            </span>
+          </a>
+          <p class="emg-footer-creds">
+            Perspective changes what becomes possible.<br />
+            Improving the quality of judgment surrounding consequential choices.
+          </p>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="conditions-before-conviction.html">The Book</a></li>
+            <li><a href="ideas.html">Insights &amp; Essays</a></li>
+            <li><a href="about.html">About Feras</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="tech.html"><strong>Enable My Growth Tech</strong></a></li>
+            <li><a href="capability-os.html">CapabilityOS™</a></li>
+            <li><a href="ai-thinking-studio.html">AI Thinking Studio™</a></li>
+            <li><a href="contextual.html">Contextual™</a></li>
+            <li><a href="phys-valid.html">Phys-Valid™</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Practice</h4>
+          <ul>
+            <li><a href="work.html">Work with Feras</a></li>
+            <li><a href="training.html">Workshops &amp; Facilitation</a></li>
+            <li><a href="speaking.html">Speaking &amp; Roundtables</a></li>
+            <li><a href="contact.html">Begin a Conversation</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Legal &amp; Notes</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+            <li><a href="terms.html">Terms of Engagement</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="emg-footer-bottom">
+        <span>&copy; 2026 Enable My Growth. All rights reserved.</span>
+        <span>Founder-Led Practice &middot; GCC &amp; International</span>
+      </div>
+    </div>
+  </footer>
+`
+
+
+  <script src="effects.js"></script>
+  <script>
+    // Mobile navigation toggle
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+  </script>
+</body>
+</html>
