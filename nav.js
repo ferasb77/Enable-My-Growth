@@ -3,10 +3,10 @@
 
   const pages = [
     { href: 'philosophy.html', label: 'Philosophy' },
-    { href: 'conditions-before-conviction.html', label: 'The Book' },
-    { href: 'tech.html',       label: 'Enable My Growth Tech' },
-    { href: 'ideas.html',      label: 'Insights' },
+    { href: 'tech.html',       label: 'Technology' },
     { href: 'training.html',   label: 'Workshops' },
+    { href: 'ideas.html',      label: 'Insights' },
+    { href: 'work.html',       label: 'Services' },
     { href: 'about.html',      label: 'About' },
     { href: 'contact.html',    label: 'Begin a Conversation', cta: true },
   ];
