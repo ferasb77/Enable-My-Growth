@@ -16,7 +16,7 @@ const staticExtensions = ['.html', '.png', '.jpg', '.jpeg', '.svg', '.ico', '.pd
 const specificFiles = ['CNAME', 'style.css', 'analytics.js', 'effects.js', 'nav.js'];
 
 // Copy root production assets (excluding source, dev config, node_modules, and internal prototypes)
-const excludedFromDeploy = ['tech-v2.html', 'tech-hero-3d.html', 'tech-hero-lab.html'];
+const excludedFromDeploy = ['tech-v2.html', 'tech-hero-3d.html', 'tech-hero-lab.html', 'home-v2.html'];
 const rootEntries = fs.readdirSync(rootDir, { withFileTypes: true });
 
 for (const entry of rootEntries) {
