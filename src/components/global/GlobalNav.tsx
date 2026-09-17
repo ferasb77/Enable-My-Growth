@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 
@@ -59,9 +59,6 @@ export function GlobalNav({ currentPath = 'tech.html' }: GlobalNavProps) {
       </ul>
 
       <div className="nav-right">
-        <a href="contact.html" className="nav-cta-mobile btn btn-gold">
-          Talk
-        </a>
         <button
           className="nav-toggle"
           id="nav-toggle"
