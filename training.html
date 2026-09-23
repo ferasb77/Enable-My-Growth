@@ -4,308 +4,2713 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshops &amp; Facilitation — Enable My Growth</title>
-  <meta name="description" content="Contextual leadership workshops, Hogan certification and advanced practitioner workshops, facilitation, and professional development across the GCC and MENA." />
+  <meta name="description" content="Learning experiences built around the decisions leaders actually face. Executive workshops, leadership facilitation, and Hogan practitioner development across the GCC and internationally." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    .stats-band {
-      background: var(--surface);
-      border-top: 1px solid var(--border2);
-      border-bottom: 1px solid var(--border2);
-      padding: 4rem 0;
-    }
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-    .stat-block { text-align: center; }
-    .stat-val {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 0.6rem;
-      line-height: 1.5;
-    }
-    .section-intro { max-width: 680px; }
-    .section-intro > p:last-child { margin-top: 1.1rem; }
+    /* ═════════════════════════════════════════════════════════════════════════
+       ENABLE MY GROWTH — WORKSHOPS & FACILITATION v2
+       Visual system: EMG Dark & Gold Editorial System
+       Page role: The Human / Experiential / Practice side of EMG
+       Visual metaphor: THE WORKING SESSION
+       ═════════════════════════════════════════════════════════════════════════ */
 
-    .design-grid,
-    .hogan-grid,
-    .formats-grid {
-      display: grid;
-      gap: 1.5px;
-      background: var(--border2);
-      margin-top: 3rem;
+    :root {
+      --emg-bg: #08080C;
+      --emg-surface: #101017;
+      --emg-surface-elevated: #151520;
+      --emg-subtle: #14141E;
+      --emg-gold: #C9A96E;
+      --emg-gold-glow: #E8CCA0;
+      --emg-gold-dim: #796440;
+      --emg-gold-border: rgba(201, 169, 110, 0.22);
+      --emg-gold-hairline: rgba(201, 169, 110, 0.14);
+      --emg-gold-subtle: rgba(201, 169, 110, 0.08);
+      --emg-text: #EDEAE3;
+      --emg-text-bright: #FFFFFF;
+      --emg-text-primary: #D4D0C8;
+      --emg-text-muted: #9E9EAF;
+      --emg-text-dim: #5C5C70;
+      --emg-serif: 'Cormorant Garamond', Georgia, serif;
+      --emg-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --emg-mono: 'JetBrains Mono', monospace;
     }
-    .design-grid { grid-template-columns: repeat(4, 1fr); }
-    .hogan-grid { grid-template-columns: repeat(3, 1fr); }
-    .formats-grid { grid-template-columns: repeat(3, 1fr); }
-    .design-card,
-    .hogan-card,
-    .format-card {
-      background: var(--surface);
-      padding: 2.4rem 2rem;
+
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-    .design-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.4rem;
-      font-weight: 300;
-      color: rgba(201,169,110,0.18);
-      line-height: 1;
-      margin-bottom: 1.2rem;
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--emg-bg);
+      color: var(--emg-text);
+      font-family: var(--emg-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.25;
-      margin-bottom: 0.8rem;
+
+    .emg-bound {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      width: 100%;
+      position: relative;
     }
-    .card-copy { font-size: 0.84rem; line-height: 1.75; }
-    .hogan-label {
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       GLOBAL NAVIGATION — Locked EMG Canonical System
+    ───────────────────────────────────────────────────────────────────────── */
+    #site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--emg-text-bright);
+    }
+
+    .nav-brand-symbol {
+      width: 44px;
+      height: 40px;
+      flex: 0 0 44px;
+      background: url('emg-mobius-hero.png') right center / auto 40px no-repeat;
       display: block;
-      color: var(--gold);
-      font-size: 0.63rem;
+    }
+
+    .nav-brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .nav-brand-copy b {
+      font-size: 0.95rem;
       font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--emg-text-bright);
+    }
+
+    .nav-brand-copy small {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      font-family: var(--emg-mono);
+      opacity: 0.85;
+    }
+
+    .nav-center-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-center-links a {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      transition: color 0.25s ease;
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav-center-links a:hover {
+      color: var(--emg-text-bright);
+    }
+
+    .nav-center-links a.active,
+    .nav-center-links .nav-link-active {
+      color: var(--emg-gold-glow);
+    }
+
+    .nav-center-links a.active::after,
+    .nav-center-links .nav-link-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--emg-gold);
+    }
+
+    .nav-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--emg-gold);
+      color: #08080C;
+      font-family: var(--emg-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.72rem 1.45rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-nav-cta:hover {
+      background: #dfbf85;
+      box-shadow: 0 0 20px rgba(201, 169, 110, 0.35);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      padding: 0.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--emg-gold);
+      margin: 4px 0;
+      transition: 0.2s;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       HERO SECTION — THE FACILITATED WORKING SESSION
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 108px;
+      padding-bottom: clamp(3rem, 6vh, 5rem);
+      background: radial-gradient(ellipse at 80% 25%, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+      overflow: hidden;
+    }
+
+    .ws-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      width: 100%;
+    }
+
+    /* Editorial Meta Headers */
+    .ws-meta-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ws-meta-num {
+      font-family: var(--emg-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold);
+    }
+
+    .ws-meta-line {
+      width: 28px;
+      height: 1px;
+      background: var(--emg-gold-hairline);
+    }
+
+    .ws-meta-label {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .ws-hero-headline {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--emg-text-bright);
+      letter-spacing: -0.015em;
+      margin: 0 0 1.6rem;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    .ws-hero-headline em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+    }
+
+    .ws-hero-lead {
+      font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      max-width: 58ch;
+      margin: 0 0 2.2rem;
+    }
+
+    .ws-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-ws-primary {
+      font-family: var(--emg-sans);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--emg-gold);
+      color: #08080C;
+      padding: 0.9rem 1.8rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-ws-primary:hover {
+      background: var(--emg-gold-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 169, 110, 0.32);
+    }
+
+    .btn-ws-editorial {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.25s ease;
+    }
+
+    .btn-ws-editorial:hover {
+      color: var(--emg-gold-glow);
+    }
+
+    .btn-ws-editorial svg {
+      transition: transform 0.25s ease;
+    }
+
+    .btn-ws-editorial:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       PHOTOGRAPHIC COMPOSITION — THE WORKING SESSION FACILITATION CANVAS
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-stage-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    /* Outer working boundary — Architectural Facilitation Canvas */
+    .ws-working-stage {
+      position: relative;
+      border: 1px solid var(--emg-gold-hairline);
+      background: linear-gradient(160deg, rgba(20, 20, 30, 0.75), rgba(10, 10, 15, 0.96));
+      padding: clamp(1rem, 2vw, 1.4rem);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65);
+    }
+
+    /* Precision corner ticks */
+    .ws-corner-tick {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: var(--emg-gold);
+      pointer-events: none;
+    }
+    .ws-tick-tl { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
+    .ws-tick-tr { top: -1px; right: -1px; border-top: 2px solid; border-right: 2px solid; }
+    .ws-tick-bl { bottom: -1px; left: -1px; border-bottom: 2px solid; border-left: 2px solid; }
+    .ws-tick-br { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
+
+    /* Canvas header */
+    .ws-session-tag {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold-dim);
+      text-transform: uppercase;
+    }
+
+    .ws-session-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--emg-gold);
+    }
+
+    .ws-status-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--emg-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(201, 169, 110, 0.7);
+    }
+
+    /* Session Timeline Bar (T+ markers) */
+    .ws-stage-timeline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.55rem 0.7rem;
+      margin: 0.7rem 0 0.9rem;
+      background: rgba(8, 8, 12, 0.6);
+      border: 1px solid rgba(201, 169, 110, 0.1);
+      font-family: var(--emg-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: var(--emg-text-muted);
+    }
+
+    .ws-time-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .ws-time-mark.active {
+      color: var(--emg-gold-glow);
+    }
+
+    .ws-time-t {
+      color: var(--emg-gold);
+      font-weight: 600;
+    }
+
+    .ws-time-dash {
+      color: rgba(201, 169, 110, 0.25);
+    }
+
+    /* Main Canvas Arena */
+    .ws-canvas-arena {
+      display: grid;
+      grid-template-columns: 46% 54%;
+      gap: 0.9rem;
+      align-items: stretch;
       margin-bottom: 0.9rem;
     }
 
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .expertise-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 2.2rem 2rem;
-    }
-    .expertise-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 1rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border2);
-    }
-    .expertise-list,
-    .sector-orgs {
-      list-style: none;
+    /* Facilitator Node (Left column: ~46% of width) */
+    .ws-facilitator-node {
       display: flex;
       flex-direction: column;
+      gap: 0.4rem;
     }
-    .expertise-list { gap: 0.45rem; }
-    .expertise-list li {
-      font-size: 0.83rem;
-      color: var(--muted);
+
+    .ws-facilitator-meta {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--emg-mono);
+      font-size: 0.54rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold-dim);
+      text-transform: uppercase;
+      padding: 0 0.2rem;
+    }
+
+    .ws-photo-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1.15;
+      background: #0B0B10;
+      border: 1px solid rgba(201, 169, 110, 0.18);
+      height: 100%;
+    }
+
+    .ws-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+      filter: contrast(1.05) brightness(0.92);
+      transition: transform 0.6s ease;
+    }
+
+    .ws-stage-wrapper:hover .ws-photo-img {
+      transform: scale(1.02);
+    }
+
+    .ws-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(8, 8, 12, 0.85) 100%);
+      pointer-events: none;
+    }
+
+    /* Deliberation Architecture (Right column: ~54% of width) */
+    .ws-delib-node {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      background: rgba(12, 12, 18, 0.7);
+      border: 1px solid rgba(201, 169, 110, 0.12);
+      padding: 0.85rem;
+      position: relative;
+      background-image: 
+        linear-gradient(rgba(201, 169, 110, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 110, 0.03) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    .ws-inquiry-card {
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      padding-bottom: 0.55rem;
+    }
+
+    .ws-annot-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--emg-mono);
+      font-size: 0.54rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .ws-live-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--emg-gold-glow);
+    }
+    .ws-live-pulse::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--emg-gold);
+      border-radius: 50%;
+    }
+
+    .ws-annot-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .ws-working-trace {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding: 0.35rem 0;
+    }
+
+    .ws-trace-head {
+      font-family: var(--emg-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold-dim);
+      text-transform: uppercase;
+    }
+
+    .ws-trace-sequence {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.25rem;
+    }
+
+    .ws-trace-step {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      background: rgba(20, 20, 28, 0.85);
+      border: 1px solid rgba(201, 169, 110, 0.1);
+      padding: 0.35rem 0.45rem;
+      flex: 1;
+    }
+
+    .ws-trace-step.active {
+      border-color: var(--emg-gold-border);
+      background: rgba(201, 169, 110, 0.08);
+    }
+
+    .ws-step-cue {
+      font-family: var(--emg-mono);
+      font-size: 0.44rem;
+      letter-spacing: 0.12em;
+      color: var(--emg-gold);
+      text-transform: uppercase;
+    }
+
+    .ws-step-txt {
+      font-family: var(--emg-serif);
+      font-size: 0.85rem;
+      color: var(--emg-text-bright);
+      line-height: 1.1;
+    }
+
+    .ws-step-arrow {
+      color: var(--emg-gold);
+      opacity: 0.4;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .ws-stage-cue {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      font-family: var(--emg-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      color: var(--emg-gold-dim);
+      text-transform: uppercase;
+      padding-top: 0.45rem;
+      border-top: 1px dashed rgba(201, 169, 110, 0.15);
+      margin-top: auto;
+    }
+
+    .ws-stage-cue span:last-child {
+      color: var(--emg-text-muted);
+      font-size: 0.54rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* Bottom Session Progression Trace */
+    .ws-stage-trace-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.55rem 0.7rem;
+      background: rgba(8, 8, 12, 0.75);
+      border: 1px solid rgba(201, 169, 110, 0.12);
+      font-family: var(--emg-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      color: var(--emg-text-muted);
+      text-transform: uppercase;
+    }
+
+    .ws-trace-label {
+      color: var(--emg-gold);
+      font-weight: 600;
+    }
+
+    .ws-trace-sep {
+      color: rgba(201, 169, 110, 0.35);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 01 — HOW THE LEARNING IS DESIGNED
+       Integrated Editorial Methodology Field (No SaaS cards)
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-design-section {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    .ws-section-header {
+      max-width: 860px;
+      margin-bottom: clamp(3rem, 6vh, 4rem);
+    }
+
+    .ws-section-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.14;
+      color: var(--emg-text-bright);
+      letter-spacing: -0.015em;
+      margin: 0 0 1.4rem;
+    }
+
+    .ws-section-title em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+    }
+
+    .ws-section-intro {
+      font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      margin: 0;
+      max-width: 68ch;
+    }
+
+    /* Pedagogy Sub-blocks with Section Hierarchy */
+    .ws-pedagogy-block {
+      position: relative;
+    }
+
+    .ws-block-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .ws-label-dash {
+      color: var(--emg-gold-dim);
+    }
+
+    /* The Working Flow Schematic (HOW A SESSION MOVES) */
+    .ws-flow-banner {
+      background: var(--emg-surface);
+      border: 1px solid var(--emg-gold-hairline);
+      padding: 1.5rem clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      overflow-x: auto;
+    }
+
+    .ws-flow-step {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      min-width: 140px;
+    }
+
+    .ws-flow-num {
+      font-family: var(--emg-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold-dim);
+    }
+
+    .ws-flow-label {
+      font-family: var(--emg-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--emg-text-bright);
+    }
+
+    .ws-flow-arrow {
+      color: var(--emg-gold);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* Integrated Editorial Methodology Field (WHAT GUIDES ITS DESIGN) */
+    .ws-methodology-field {
+      border-top: 1px solid rgba(201, 169, 110, 0.16);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.16);
+      position: relative;
+    }
+
+    .ws-method-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ws-method-divider {
+      height: 1px;
+      background: rgba(201, 169, 110, 0.12);
+      width: 100%;
+    }
+
+    .ws-method-item {
+      padding: clamp(2.2rem, 3.5vw, 3.2rem) clamp(1.8rem, 3vw, 2.8rem);
+      position: relative;
+    }
+
+    .ws-method-row .ws-method-item:first-child {
+      border-right: 1px solid rgba(201, 169, 110, 0.12);
+      padding-left: 0;
+    }
+
+    .ws-method-row .ws-method-item:last-child {
+      padding-right: 0;
+    }
+
+    .ws-method-header {
+      display: flex;
+      justify-content: space-between;
       align-items: baseline;
+      margin-bottom: 1.2rem;
+    }
+
+    .ws-method-num {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: rgba(201, 169, 110, 0.28);
+      line-height: 1;
+    }
+
+    .ws-method-cue {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .ws-method-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      margin: 0 0 1rem;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .ws-method-copy {
+      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 52ch;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 03 — CAPABILITY AREAS (THE PRACTICE DOMAINS)
+       Indexed editorial capability matrix (No SaaS cards)
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-capabilities-section {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    .ws-cap-matrix {
+      border-top: 1px solid rgba(201, 169, 110, 0.16);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.16);
+      position: relative;
+    }
+
+    .ws-cap-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ws-cap-row:not(:last-child) {
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .ws-cap-col {
+      padding: clamp(2.4rem, 4vw, 3.4rem) clamp(2rem, 3.5vw, 3.2rem);
+      position: relative;
+    }
+
+    .ws-cap-row .ws-cap-col:first-child {
+      border-right: 1px solid rgba(201, 169, 110, 0.12);
+      padding-left: 0;
+    }
+
+    .ws-cap-row .ws-cap-col:last-child {
+      padding-right: 0;
+    }
+
+    .ws-cap-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.9rem;
+    }
+
+    .ws-cap-num {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: var(--emg-gold);
+    }
+
+    .ws-cap-tag {
+      font-family: var(--emg-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .ws-cap-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      margin: 0 0 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .ws-cap-topics {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
       gap: 0.55rem;
     }
-    .expertise-list li::before {
-      content: '—';
-      color: var(--gold-dim);
-      flex-shrink: 0;
-      font-size: 0.7rem;
+
+    .ws-cap-topics li {
+      font-family: var(--emg-sans);
+      font-size: clamp(0.85rem, 1vw, 0.92rem);
+      line-height: 1.6;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
     }
 
-    .sectors-grid {
+    .ws-cap-topics li::before {
+      content: '—';
+      color: var(--emg-gold-dim);
+      font-size: 0.72rem;
+      flex-shrink: 0;
+    }
+
+    .ws-cap-footer {
+      margin-top: clamp(2rem, 4vh, 2.8rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      color: var(--emg-text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    .ws-cap-footer a {
+      color: var(--emg-gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s ease;
+    }
+
+    .ws-cap-footer a:hover {
+      color: var(--emg-gold-glow);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 04 — ASSESSMENT & HOGAN (EVIDENCE-SUPPORTED DEVELOPMENT)
+       Asymmetric editorial architecture (No product cards)
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-hogan-section {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      background: radial-gradient(ellipse at 15% 40%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+      position: relative;
+    }
+
+    .ws-hogan-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(3rem, 6vw, 6.5rem);
+      align-items: start;
     }
-    .sector-card {
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 2rem 1.8rem;
+
+    .ws-hogan-quote-panel {
+      margin-top: clamp(2.5rem, 4.5vh, 3.5rem);
+      padding-left: clamp(1.4rem, 2.5vw, 2rem);
+      border-left: 2px solid var(--emg-gold);
+      position: relative;
     }
-    .sector-title {
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border2);
-    }
-    .sector-orgs { gap: 0.4rem; }
-    .sector-orgs li {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-    .philosophy-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+
+    .ws-hogan-quote {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.35rem, 2.1vw, 1.85rem);
       font-weight: 300;
       font-style: italic;
-      color: var(--text);
-      line-height: 1.5;
-      border-left: 2px solid var(--gold);
-      padding-left: 2rem;
-      margin: 2.5rem 0;
+      color: var(--emg-gold-glow);
+      line-height: 1.48;
+      margin: 0 0 1rem;
     }
-    .final-cta {
-      background: linear-gradient(135deg, rgba(201,169,110,0.10), rgba(17,17,24,0.35));
-      border-top: 1px solid var(--border2);
-      text-align: center;
-    }
-    .final-cta .container-sm { display: flex; flex-direction: column; align-items: center; }
 
-    @media (max-width: 900px) {
-      .stats-row { grid-template-columns: 1fr 1fr; padding: 0 1.5rem; }
-      .design-grid, .hogan-grid, .formats-grid, .expertise-grid, .sectors-grid { grid-template-columns: 1fr; }
+    .ws-quote-cue {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    /* Stacked Architectural Workshop Entries */
+    .ws-hogan-workshops {
+      border-top: 1px solid rgba(201, 169, 110, 0.16);
+      position: relative;
+    }
+
+    .ws-hogan-entry {
+      padding: clamp(2rem, 3.5vw, 2.8rem) 0;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      position: relative;
+    }
+
+    .ws-hogan-entry-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .ws-hogan-entry-label {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .ws-hogan-entry-num {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-text-dim);
+    }
+
+    .ws-hogan-entry-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      margin: 0 0 0.85rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .ws-hogan-entry-copy {
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 58ch;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 05 — DELIVERY / ENGAGEMENT ARCHITECTURE
+       Contextual engagement pathways (No SaaS tiers or packages)
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-delivery-section {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    /* Triad of Determinants */
+    .ws-determinants-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(201, 169, 110, 0.16);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.16);
+      margin-bottom: clamp(3rem, 6vh, 4.5rem);
+    }
+
+    .ws-determinant-item {
+      padding: clamp(1.8rem, 3vw, 2.4rem) clamp(1.4rem, 2.5vw, 2rem);
+      position: relative;
+    }
+
+    .ws-determinant-item:not(:last-child) {
+      border-right: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .ws-determinant-item:first-child {
+      padding-left: 0;
+    }
+
+    .ws-determinant-item:last-child {
+      padding-right: 0;
+    }
+
+    .ws-det-num {
+      font-family: var(--emg-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      color: var(--emg-gold);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .ws-det-label {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      margin: 0 0 0.5rem;
+      line-height: 1.25;
+    }
+
+    .ws-det-copy {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* Pathways Field (2x2) */
+    .ws-pathways-block {
+      position: relative;
+    }
+
+    .ws-pathways-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(201, 169, 110, 0.16);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.16);
+    }
+
+    .ws-pathway-item {
+      padding: clamp(2.2rem, 3.5vw, 3rem) clamp(1.8rem, 3vw, 2.8rem);
+      position: relative;
+    }
+
+    .ws-pathways-grid .ws-pathway-item:nth-child(odd) {
+      border-right: 1px solid rgba(201, 169, 110, 0.12);
+      padding-left: 0;
+    }
+
+    .ws-pathways-grid .ws-pathway-item:nth-child(even) {
+      padding-right: 0;
+    }
+
+    .ws-pathways-grid .ws-pathway-item:nth-child(1),
+    .ws-pathways-grid .ws-pathway-item:nth-child(2) {
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .ws-pathway-tag {
+      font-family: var(--emg-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .ws-pathway-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.3rem, 1.9vw, 1.65rem);
+      font-weight: 400;
+      color: var(--emg-text-bright);
+      margin: 0 0 0.85rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .ws-pathway-copy {
+      font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 52ch;
+    }
+
+    /* Delivery Modes Baseline */
+    .ws-modes-bar {
+      margin-top: clamp(2.5rem, 5vh, 3.5rem);
+      padding: 1.2rem clamp(1.4rem, 2.5vw, 2rem);
+      background: var(--emg-surface);
+      border: 1px solid var(--emg-gold-hairline);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .ws-modes-label {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      flex-shrink: 0;
+    }
+
+    .ws-modes-copy {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--emg-text-primary);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 06: WHO ENTERS THE ROOM
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-audience-section {
+      padding: clamp(5.5rem, 10vh, 8.5rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      background: var(--emg-bg);
+      position: relative;
+    }
+
+    .ws-audience-header {
+      margin-bottom: clamp(3rem, 6vh, 4.5rem);
+    }
+
+    .ws-audience-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .ws-audience-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: baseline;
+      padding: clamp(2rem, 3.5vh, 2.75rem) 0;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .ws-audience-label {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--emg-text-bright);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .ws-audience-context {
+      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 54ch;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 07: PRACTICE AT SCALE / PROOF
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-proof-section {
+      padding: clamp(5.5rem, 10vh, 8rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      background: var(--emg-surface);
+      position: relative;
+    }
+
+    .ws-proof-header {
+      margin-bottom: clamp(3rem, 5vh, 4rem);
+    }
+
+    .ws-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(201, 169, 110, 0.15);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+      padding: clamp(2.5rem, 5vh, 3.5rem) 0;
+    }
+
+    .ws-proof-item {
+      padding: 0 clamp(1.5rem, 2.5vw, 2.5rem);
+      border-right: 1px solid rgba(201, 169, 110, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .ws-proof-item:first-child {
+      padding-left: 0;
+    }
+
+    .ws-proof-item:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .ws-proof-val {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--emg-gold);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.85rem;
+    }
+
+    .ws-proof-val.ws-proof-text-val {
+      font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .ws-proof-label {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+      line-height: 1.5;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 08: FOUNDER-LED PRACTICE
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-founder-section {
+      padding: clamp(6rem, 12vh, 9.5rem) 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      background: var(--emg-bg);
+      position: relative;
+    }
+
+    .ws-founder-container {
+      max-width: 860px;
+    }
+
+    .ws-founder-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+      font-weight: 300;
+      line-height: 1.35;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.5rem, 3vh, 2.2rem);
+      letter-spacing: -0.015em;
+    }
+
+    .ws-founder-statement em {
+      font-style: italic;
+      color: var(--emg-gold);
+    }
+
+    .ws-founder-copy {
+      font-size: clamp(1rem, 1.25vw, 1.1rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin: 0 0 clamp(2rem, 4vh, 2.75rem);
+      font-weight: 300;
+      max-width: 64ch;
+    }
+
+    .ws-founder-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--emg-gold-dim);
+      padding-bottom: 4px;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .ws-founder-link:hover {
+      color: var(--emg-gold-light);
+      border-color: var(--emg-gold);
+      transform: translateX(3px);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 09: FINAL CTA — BEGIN WITH THE OUTCOME
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-cta-section {
+      padding: clamp(6.5rem, 14vh, 10.5rem) 0 clamp(5.5rem, 10vh, 8.5rem);
+      border-top: 1px solid var(--emg-gold-hairline);
+      background: var(--emg-bg);
+      text-align: center;
+      position: relative;
+    }
+
+    .ws-cta-container {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ws-meta-center {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ws-cta-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.22;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.2rem, 2.5vh, 1.8rem);
+      letter-spacing: -0.015em;
+    }
+
+    .ws-cta-statement em {
+      font-style: italic;
+      color: var(--emg-gold);
+    }
+
+    .ws-cta-lead {
+      font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+      line-height: 1.8;
+      color: var(--emg-text-muted);
+      margin: 0 0 clamp(2.2rem, 4.5vh, 3.2rem);
+      font-weight: 300;
+      max-width: 58ch;
+    }
+
+    .ws-cta-action {
+      display: flex;
+      justify-content: center;
+    }
+
+    .ws-cta-btn {
+      min-width: 240px;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       FOOTER — Matching Homepage & Philosophy Global Footer
+    ───────────────────────────────────────────────────────────────────────── */
+    .emg-footer {
+      border-top: 1px solid var(--emg-gold-hairline);
+      background: var(--emg-surface);
+      padding: clamp(4rem, 8vh, 6rem) 0 2rem;
+      margin-top: 0;
+    }
+
+    .emg-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+    }
+
+    .emg-footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 320px;
+    }
+
+    .emg-footer-creds {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .emg-footer-col h4 {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin: 0 0 1.2rem;
+    }
+
+    .emg-footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .emg-footer-col a {
+      font-size: 0.85rem;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .emg-footer-col a:hover {
+      color: var(--emg-text-bright);
+    }
+
+    .emg-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--emg-text-dim);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       RESPONSIVE ADAPTATIONS
+    ───────────────────────────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .nav-center-links {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(8, 8, 12, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--emg-gold-border);
+        flex-direction: column;
+        padding: 2rem 2.5rem;
+        gap: 1.4rem;
+        align-items: flex-start;
+      }
+      .nav-center-links.open {
+        display: flex;
+      }
+      .nav-mobile-toggle {
+        display: block;
+      }
+      .ws-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3.5rem;
+      }
+      .ws-hero-content {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .ws-stage-wrapper {
+        max-width: 520px;
+      }
+      .ws-hogan-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .ws-determinants-strip {
+        grid-template-columns: 1fr;
+      }
+      .ws-determinant-item {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .ws-determinant-item:last-child {
+        border-bottom: none;
+      }
+      .emg-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .ws-proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 0;
+      }
+      .ws-proof-item:nth-child(2) {
+        border-right: none;
+        padding-right: 0;
+      }
+      .ws-proof-item:nth-child(3) {
+        padding-left: 0;
+        border-top: 1px solid rgba(201, 169, 110, 0.12);
+        padding-top: 2rem;
+      }
+      .ws-proof-item:nth-child(4) {
+        border-top: 1px solid rgba(201, 169, 110, 0.12);
+        padding-top: 2rem;
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .btn-nav-cta {
+        display: none;
+      }
+      .ws-flow-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .ws-flow-arrow {
+        transform: rotate(90deg);
+        margin-left: 0.5rem;
+      }
+      .ws-method-row {
+        grid-template-columns: 1fr;
+      }
+      .ws-method-row .ws-method-item:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .ws-method-row .ws-method-item:last-child {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .ws-method-item {
+        padding: 2.2rem 0;
+      }
+      .ws-cap-row {
+        grid-template-columns: 1fr;
+      }
+      .ws-cap-row .ws-cap-col:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .ws-cap-row .ws-cap-col:last-child {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .ws-cap-col {
+        padding: 2.2rem 0;
+      }
+      .ws-pathways-grid {
+        grid-template-columns: 1fr;
+      }
+      .ws-pathways-grid .ws-pathway-item {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.12) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .ws-pathways-grid .ws-pathway-item:last-child {
+        border-bottom: none !important;
+      }
+      .ws-modes-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .emg-footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .emg-footer-bottom {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+      }
+      .ws-audience-item {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 1.8rem 0;
+      }
+      .ws-proof-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .ws-proof-item {
+        border-right: none !important;
+        border-top: none !important;
+        padding: 1.6rem 0 !important;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      }
+      .ws-proof-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0 !important;
+      }
+      .ws-cta-statement {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ws-stage-wrapper {
+        max-width: 100%;
+      }
+      .ws-working-stage {
+        padding: 0.9rem;
+      }
+      .ws-stage-timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem 0.6rem;
+        font-size: 0.5rem;
+        padding: 0.45rem 0.6rem;
+      }
+      .ws-stage-timeline .ws-time-dash {
+        display: none;
+      }
+      .ws-canvas-arena {
+        grid-template-columns: 110px 1fr;
+        gap: 0.75rem;
+        align-items: stretch;
+      }
+      .ws-facilitator-node {
+        gap: 0.3rem;
+      }
+      .ws-facilitator-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.1rem;
+        font-size: 0.46rem;
+        padding: 0;
+      }
+      .ws-photo-frame {
+        aspect-ratio: 1 / 1.15;
+        height: 100%;
+      }
+      .ws-delib-node {
+        min-width: 0;
+        padding: 0.65rem;
+        gap: 0.45rem;
+      }
+      .ws-annot-meta {
+        font-size: 0.48rem;
+        margin-bottom: 0.25rem;
+      }
+      .ws-annot-title {
+        font-size: 0.95rem;
+        line-height: 1.15;
+        overflow-wrap: break-word;
+      }
+      .ws-working-trace {
+        gap: 0.3rem;
+        padding: 0.2rem 0;
+      }
+      .ws-trace-head {
+        font-size: 0.46rem;
+      }
+      .ws-trace-sequence {
+        gap: 0.2rem;
+      }
+      .ws-trace-step {
+        padding: 0.25rem 0.3rem;
+      }
+      .ws-step-cue {
+        font-size: 0.4rem;
+      }
+      .ws-step-txt {
+        font-size: 0.72rem;
+      }
+      .ws-step-arrow {
+        font-size: 0.65rem;
+      }
+      .ws-stage-cue {
+        font-size: 0.46rem;
+        padding-top: 0.35rem;
+      }
+      .ws-stage-cue span:last-child {
+        font-size: 0.5rem;
+      }
+      .ws-hero-headline {
+        font-size: clamp(2.05rem, 8.4vw, 2.25rem);
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+      }
+      .ws-stage-trace-bar {
+        flex-wrap: wrap;
+        gap: 0.2rem 0.4rem;
+        font-size: 0.48rem;
+        padding: 0.45rem 0.6rem;
+      }
+      .ws-cap-title {
+        font-size: 1.35rem;
+      }
+      .ws-hogan-quote {
+        font-size: 1.25rem;
+      }
+      .ws-hogan-entry-title {
+        font-size: 1.25rem;
+      }
+      .ws-pathway-title {
+        font-size: 1.25rem;
+      }
+      .ws-proof-val.ws-proof-text-val {
+        font-size: 1.6rem;
+      }
+      .ws-founder-statement {
+        font-size: 1.65rem;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .ws-hero-lead {
+        font-size: 0.95rem; /* ~15.2px */
+        line-height: 1.75;
+      }
+      .ws-stage-wrapper {
+        max-width: 100%;
+      }
+      .btn-ws-primary {
+        width: 100%;
+        text-align: center;
+      }
+      .ws-cta-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       REVEAL MOTION
+    ───────────────────────────────────────────────────────────────────────── */
+    .ws-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ws-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ws-reveal-delay-1 { transition-delay: 0.15s; }
+    .ws-reveal-delay-2 { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ws-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header class="page-hero">
-      <div class="container">
-        <p class="eyebrow mb-sm">Workshops &amp; Facilitation</p>
-        <h1 class="display display-xl" style="max-width:820px;">Learning experiences built around the decisions leaders actually face.</h1>
-        <p style="margin-top:1.5rem; max-width:650px; font-size:1rem; line-height:1.85;">
-          I design and facilitate leadership and professional-development experiences across the GCC and MENA. Every program is shaped by the audience, organizational context, and outcomes that matter—not delivered as a generic, off-the-shelf course.
-        </p>
-        <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-gold">Discuss a Program</a>
-          <a href="#capabilities" class="btn btn-outline">Explore Workshop Capabilities</a>
-        </div>
-      </div>
-    </header>
 
-    <div class="stats-band" aria-label="Experience at a glance">
-      <div class="stats-row">
-        <div class="stat-block"><div class="stat-val">25+</div><div class="stat-label">Years Designing &amp; Delivering Programs</div></div>
-        <div class="stat-block"><div class="stat-val">1,000+</div><div class="stat-label">Professionals Trained Annually</div></div>
-        <div class="stat-block"><div class="stat-val">100+</div><div class="stat-label">Leaders Coached Annually</div></div>
-        <div class="stat-block"><div class="stat-val">GCC<br/>&amp; MENA</div><div class="stat-label">Regional Experience Across Diverse Sectors</div></div>
-      </div>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       GLOBAL HEADER — Locked Navigation System
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <nav id="site-nav" aria-label="Primary navigation">
+    <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+      <span class="nav-brand-symbol" aria-hidden="true"></span>
+      <span class="nav-brand-copy">
+        <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+        <small>Feras Banna</small>
+      </span>
+    </a>
+
+    <ul class="nav-center-links" id="nav-links">
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="tech.html">Technology</a></li>
+      <li><a href="training.html" class="active" aria-current="page">Workshops</a></li>
+      <li><a href="ideas.html">Insights</a></li>
+      <li><a href="work.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right-actions">
+      <a href="contact.html" class="btn-nav-cta">Begin a Conversation</a>
+      <button class="nav-mobile-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <section>
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow mb-sm">How the Learning Is Designed</p>
-          <h2 class="display display-md">Learning should change more than what people know.</h2>
-          <p>The most valuable learning experiences help people reconsider what they see, strengthen how they think, and apply that shift to the situations they are responsible for.</p>
-        </div>
-        <div class="design-grid">
-          <article class="design-card"><div class="design-num">01</div><h3 class="card-title">Context before content</h3><p class="card-copy">The design begins with the organization, audience, and situations participants actually face.</p></article>
-          <article class="design-card"><div class="design-num">02</div><h3 class="card-title">Application over information</h3><p class="card-copy">Concepts are connected to real decisions, relationships, responsibilities, and performance expectations.</p></article>
-          <article class="design-card"><div class="design-num">03</div><h3 class="card-title">Constructive challenge</h3><p class="card-copy">Participants are invited to examine assumptions and consider alternatives—not simply absorb prescribed answers.</p></article>
-          <article class="design-card"><div class="design-num">04</div><h3 class="card-title">Transfer into practice</h3><p class="card-copy">Activities, reflection, and follow-through help the learning survive beyond the workshop.</p></article>
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HERO SECTION — THE FACILITATED WORKING SESSION
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-hero" aria-label="Workshops and facilitation introduction">
+      <div class="emg-bound">
+        <div class="ws-hero-grid">
+
+          <!-- Left Column: Editorial Headline & Intent -->
+          <div class="ws-hero-content ws-reveal">
+            <div class="ws-meta-header">
+              <span class="ws-meta-num">01</span>
+              <span class="ws-meta-line"></span>
+              <span class="ws-meta-label">WORKSHOPS &amp; FACILITATION</span>
+            </div>
+
+            <h1 class="ws-hero-headline">
+              Learning experiences built around the decisions <em>leaders actually face.</em>
+            </h1>
+
+            <p class="ws-hero-lead">
+              Every program is shaped by the audience, organizational context, and outcomes that matter — not delivered as a generic, off-the-shelf course.
+            </p>
+
+            <div class="ws-hero-actions">
+              <a href="contact.html" class="btn-ws-primary">Discuss a Program</a>
+              <a href="#how-it-works" class="btn-ws-editorial">
+                HOW THE LEARNING IS DESIGNED
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: The Working Session Facilitation Canvas -->
+          <div class="ws-stage-wrapper ws-reveal ws-reveal-delay-1">
+            <div class="ws-working-stage" aria-label="Facilitated working session environment">
+              <span class="ws-corner-tick ws-tick-tl" aria-hidden="true"></span>
+              <span class="ws-corner-tick ws-tick-tr" aria-hidden="true"></span>
+              <span class="ws-corner-tick ws-tick-bl" aria-hidden="true"></span>
+              <span class="ws-corner-tick ws-tick-br" aria-hidden="true"></span>
+
+              <!-- Canvas Header -->
+              <div class="ws-session-tag">
+                <span class="ws-session-status">
+                  <span class="ws-status-dot" aria-hidden="true"></span>
+                  FOUNDER-LED PRACTICE
+                </span>
+                <span>GCC &middot; MENA</span>
+              </div>
+
+              <!-- Session Timeline Bar -->
+              <div class="ws-stage-timeline" aria-hidden="true">
+                <div class="ws-time-mark"><span class="ws-time-t">T+00</span> CONTEXT</div>
+                <span class="ws-time-dash">─</span>
+                <div class="ws-time-mark active"><span class="ws-time-t">T+25</span> INQUIRY</div>
+                <span class="ws-time-dash">─</span>
+                <div class="ws-time-mark"><span class="ws-time-t">T+55</span> PRACTICE</div>
+                <span class="ws-time-dash">─</span>
+                <div class="ws-time-mark"><span class="ws-time-t">T+90</span> TRANSFER</div>
+              </div>
+
+              <!-- Main Canvas Arena: Facilitator Presence + Live Deliberation Field -->
+              <div class="ws-canvas-arena">
+                
+                <!-- Left: Editorial Facilitator Crop (Human Presence) -->
+                <div class="ws-facilitator-node">
+                  <div class="ws-facilitator-meta">
+                    <span>FACILITATOR</span>
+                    <span>FERAS BANNA</span>
+                  </div>
+                  <div class="ws-photo-frame">
+                    <img src="feras-banna.jpg" alt="Feras Banna — Facilitator, Executive Coach, and Founder of Enable My Growth" class="ws-photo-img" />
+                    <div class="ws-photo-overlay" aria-hidden="true"></div>
+                  </div>
+                </div>
+
+                <!-- Right: Active Deliberation Architecture -->
+                <div class="ws-delib-node">
+                  <div class="ws-inquiry-card">
+                    <div class="ws-annot-meta">
+                      <span>FACILITATED INQUIRY</span>
+                      <span class="ws-live-pulse">LIVE</span>
+                    </div>
+                    <h2 class="ws-annot-title">Structured Deliberation</h2>
+                  </div>
+
+                  <div class="ws-working-trace">
+                    <div class="ws-trace-head">WORKING ANNOTATION</div>
+                    <div class="ws-trace-sequence">
+                      <div class="ws-trace-step">
+                        <span class="ws-step-cue">GROUNDING</span>
+                        <span class="ws-step-txt">Context</span>
+                      </div>
+                      <span class="ws-step-arrow" aria-hidden="true">→</span>
+                      <div class="ws-trace-step">
+                        <span class="ws-step-cue">SCRUTINY</span>
+                        <span class="ws-step-txt">Assumption</span>
+                      </div>
+                      <span class="ws-step-arrow" aria-hidden="true">→</span>
+                      <div class="ws-trace-step active">
+                        <span class="ws-step-cue">OUTCOME</span>
+                        <span class="ws-step-txt">Decision</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ws-stage-cue">
+                    <span>DELIBERATION CUE:</span>
+                    <span>APPLICATION OVER INFORMATION</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Bottom Session Progression Trace -->
+              <div class="ws-stage-trace-bar" aria-label="Session movement">
+                <span class="ws-trace-label">FLOW:</span>
+                <span>Question</span>
+                <span class="ws-trace-sep">→</span>
+                <span>Discussion</span>
+                <span class="ws-trace-sep">→</span>
+                <span>Practice</span>
+                <span class="ws-trace-sep">→</span>
+                <span>Reflection</span>
+                <span class="ws-trace-sep">→</span>
+                <span>Application</span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="capabilities" style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow mb-sm">Workshop Capabilities</p>
-          <h2 class="display display-md">Established programs across six areas of practice.</h2>
-          <p>Established capability areas, redesigned around the organization and the situations participants actually need to handle. Topics are adapted according to audience seniority, organizational priorities, and the context in which participants must perform.</p>
-        </div>
-        <div class="expertise-grid">
-          <article class="expertise-card">
-            <h3 class="expertise-title">Leadership &amp; People Management</h3>
-            <ul class="expertise-list"><li>Leadership Development Programs</li><li>Supervisory Essentials</li><li>Developing and Coaching People</li><li>Managing Performance</li><li>High-Performing Teams</li><li>Leading Change</li><li>Motivation and Engagement</li></ul>
-          </article>
-          <article class="expertise-card">
-            <h3 class="expertise-title">Communication, Coaching &amp; Influence</h3>
-            <ul class="expertise-list"><li>Communicating with Influence</li><li>Presentation Skills</li><li>Giving Effective Feedback</li><li>Coaching Skills for Leaders</li><li>Conflict Resolution</li><li>Negotiation</li></ul>
-          </article>
-          <article class="expertise-card">
-            <h3 class="expertise-title">Talent, Assessment &amp; Performance</h3>
-            <ul class="expertise-list"><li>Competency-Based Interviewing</li><li>Assessment Centers</li><li>Training Needs Analysis</li><li>Train the Trainer</li><li>KPI Development</li><li>High-Potential Assessment</li></ul>
-          </article>
-          <article class="expertise-card">
-            <h3 class="expertise-title">Decisions &amp; Organizational Effectiveness</h3>
-            <ul class="expertise-list"><li>Problem Solving and Decision Making</li><li>Planning and Delivering Results</li><li>Decision-Making Under Pressure</li><li>Business Ethics and Professional Judgment</li><li>Time, Priority, and Stress Management</li></ul>
-          </article>
-          <article class="expertise-card">
-            <h3 class="expertise-title">Sales &amp; Customer Excellence</h3>
-            <ul class="expertise-list"><li>Consultative Selling</li><li>Managing Sales Teams</li><li>Service Excellence</li><li>Internal Customer Experience</li></ul>
-          </article>
-          <article class="expertise-card">
-            <h3 class="expertise-title">Modern Workplace &amp; AI</h3>
-            <ul class="expertise-list"><li>Generative AI for Professionals</li><li>AI Tools for Productivity</li><li>AI-Supported Learning and Performance</li><li>Using AI as a Thinking Partner</li></ul>
-          </article>
-        </div>
-        <p style="margin-top:2rem; font-size:0.82rem; color:var(--subtle);">A broader topic listing is available in the capability statement. &nbsp;<a href="enable-my-growth-capability-statement.pdf" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Download PDF →</a></p>
-      </div>
-    </section>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         FIRST MAJOR SECTION — HOW THE LEARNING IS DESIGNED
+         Integrated Methodology Architecture (No SaaS cards)
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-design-section" id="how-it-works" aria-label="How the learning is designed">
+      <div class="emg-bound">
 
-    <section>
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow mb-sm">Hogan Practitioner Development</p>
-          <h2 class="display display-md">Specialist workshops for responsible, confident Hogan practice.</h2>
-          <p>In addition to integrating Hogan insights into leadership development, I deliver three dedicated practitioner workshops covering certification, advanced interpretation, and advanced feedback.</p>
-        </div>
-        <div class="hogan-grid">
-          <article class="hogan-card"><span class="hogan-label">Practitioner Foundation</span><h3 class="card-title">Hogan Certification Workshop</h3><p class="card-copy">A structured certification experience that develops the knowledge and practical foundation required to interpret and apply Hogan assessment results responsibly.</p></article>
-          <article class="hogan-card"><span class="hogan-label">Advanced Practice</span><h3 class="card-title">Hogan Advanced Interpretation Workshop</h3><p class="card-copy">A deeper examination of how assessment scales interact, how patterns should be interpreted, and how context changes the meaning and relevance of a profile.</p></article>
-          <article class="hogan-card"><span class="hogan-label">Advanced Practice</span><h3 class="card-title">Hogan Advanced Feedback Workshop</h3><p class="card-copy">Developing the judgment and conversational skill required to translate assessment evidence into constructive, balanced, and development-focused feedback.</p></article>
-        </div>
-        <div class="philosophy-quote">Assessment provides evidence and vocabulary. It should deepen the inquiry—not become a verdict about the person.</div>
-      </div>
-    </section>
+        <div class="ws-section-header ws-reveal">
+          <div class="ws-meta-header">
+            <span class="ws-meta-num">02</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">FACILITATION METHODOLOGY</span>
+          </div>
 
-    <section style="background:var(--surface); border-top:1px solid var(--border2);">
-      <div class="container split-feature">
-        <div>
-          <p class="eyebrow mb-md">Technology-Supported Delivery</p>
-          <h2 class="display display-md">Purpose-built infrastructure for structured development experiences.</h2>
+          <h2 class="ws-section-title">
+            Learning should change <em>more than what people know.</em>
+          </h2>
+
+          <p class="ws-section-intro">
+            The most valuable learning experiences help people reconsider what they see, strengthen how they think, and apply that shift to the situations they are responsible for.
+          </p>
         </div>
-        <div>
-          <p class="lead">Where appropriate, Enable My Growth uses purpose-built digital infrastructure to support participant engagement, program coordination, evidence capture, and client reporting across development experiences.</p>
-          <p>Selected programs may be supported through CapabilityOS™, Enable My Growth’s purpose-built environment for structured capability delivery.</p>
-          <div style="display:flex; gap:1.2rem; flex-wrap:wrap; margin-top:2rem;">
-            <a href="tech.html" class="btn btn-outline">Explore Enable My Growth Tech</a>
-            <a href="contact.html?enquiry=CapabilityOS+Demonstration" class="btn btn-text">Request a demonstration</a>
+
+        <!-- PART A: HOW A SESSION MOVES -->
+        <div class="ws-pedagogy-block ws-reveal ws-reveal-delay-1">
+          <div class="ws-block-label">
+            <span class="ws-label-dash" aria-hidden="true">—</span>
+            <span>HOW A SESSION MOVES</span>
+          </div>
+
+          <div class="ws-flow-banner" aria-label="Working session progression">
+            <div class="ws-flow-step">
+              <span class="ws-flow-num">[01]</span>
+              <span class="ws-flow-label">Question</span>
+            </div>
+            <span class="ws-flow-arrow" aria-hidden="true">→</span>
+
+            <div class="ws-flow-step">
+              <span class="ws-flow-num">[02]</span>
+              <span class="ws-flow-label">Discussion</span>
+            </div>
+            <span class="ws-flow-arrow" aria-hidden="true">→</span>
+
+            <div class="ws-flow-step">
+              <span class="ws-flow-num">[03]</span>
+              <span class="ws-flow-label">Practice</span>
+            </div>
+            <span class="ws-flow-arrow" aria-hidden="true">→</span>
+
+            <div class="ws-flow-step">
+              <span class="ws-flow-num">[04]</span>
+              <span class="ws-flow-label">Reflection</span>
+            </div>
+            <span class="ws-flow-arrow" aria-hidden="true">→</span>
+
+            <div class="ws-flow-step">
+              <span class="ws-flow-num">[05]</span>
+              <span class="ws-flow-label">Application</span>
+            </div>
           </div>
         </div>
+
+        <!-- PART B: WHAT GUIDES ITS DESIGN — Integrated Editorial Field -->
+        <div class="ws-pedagogy-block ws-reveal ws-reveal-delay-2" style="margin-top: clamp(3rem, 6vh, 4.5rem);">
+          <div class="ws-block-label">
+            <span class="ws-label-dash" aria-hidden="true">—</span>
+            <span>WHAT GUIDES ITS DESIGN</span>
+          </div>
+
+          <div class="ws-methodology-field">
+            <!-- Row 1 -->
+            <div class="ws-method-row">
+              <!-- Item 01 -->
+              <article class="ws-method-item">
+                <div class="ws-method-header">
+                  <span class="ws-method-num">01</span>
+                  <span class="ws-method-cue">ORIENTATION</span>
+                </div>
+                <h3 class="ws-method-title">Context before content</h3>
+                <p class="ws-method-copy">
+                  The design begins with the organization, audience, and situations participants actually face.
+                </p>
+              </article>
+
+              <!-- Item 02 -->
+              <article class="ws-method-item">
+                <div class="ws-method-header">
+                  <span class="ws-method-num">02</span>
+                  <span class="ws-method-cue">IMPACT</span>
+                </div>
+                <h3 class="ws-method-title">Application over information</h3>
+                <p class="ws-method-copy">
+                  Concepts are connected to real decisions, relationships, responsibilities, and performance expectations.
+                </p>
+              </article>
+            </div>
+
+            <!-- Hairline Divider -->
+            <div class="ws-method-divider" aria-hidden="true"></div>
+
+            <!-- Row 2 -->
+            <div class="ws-method-row">
+              <!-- Item 03 -->
+              <article class="ws-method-item">
+                <div class="ws-method-header">
+                  <span class="ws-method-num">03</span>
+                  <span class="ws-method-cue">SCRUTINY</span>
+                </div>
+                <h3 class="ws-method-title">Constructive challenge</h3>
+                <p class="ws-method-copy">
+                  Participants are invited to examine assumptions and consider alternatives—not simply absorb prescribed answers.
+                </p>
+              </article>
+
+              <!-- Item 04 -->
+              <article class="ws-method-item">
+                <div class="ws-method-header">
+                  <span class="ws-method-num">04</span>
+                  <span class="ws-method-cue">SUSTAINABILITY</span>
+                </div>
+                <h3 class="ws-method-title">Transfer into practice</h3>
+                <p class="ws-method-copy">
+                  Activities, reflection, and follow-through help the learning survive beyond the workshop.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="final-cta">
-      <div class="container-sm">
-        <p class="eyebrow mb-md">Begin with the Outcome</p>
-        <h2 class="display display-lg mb-md">What do your people need to do differently?</h2>
-        <p>Tell me about the audience, the situations they are navigating, and what better performance would make possible. From there, we can shape the right learning experience.</p>
-        <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
-          <a href="contact.html" class="btn btn-gold">Discuss a Program</a>
-          <a href="enable-my-growth-capability-statement.pdf" target="_blank" rel="noopener" class="btn btn-outline">Download Capability Statement</a>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 03 — WORKSHOP CAPABILITIES
+         Indexed Editorial Capability Matrix (No SaaS cards)
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-capabilities-section" id="capabilities" aria-label="Workshop capabilities and practice areas">
+      <div class="emg-bound">
+
+        <div class="ws-section-header ws-reveal">
+          <div class="ws-meta-header">
+            <span class="ws-meta-num">03</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">WORKSHOP CAPABILITIES</span>
+          </div>
+
+          <h2 class="ws-section-title">
+            Established programs across <em>six areas of practice.</em>
+          </h2>
+
+          <p class="ws-section-intro">
+            Established capability areas, redesigned around the organization and the situations participants actually need to handle. Topics are adapted according to audience seniority, organizational priorities, and the context in which participants must perform.
+          </p>
         </div>
+
+        <!-- Capability Matrix (3 Rows x 2 Columns) -->
+        <div class="ws-cap-matrix ws-reveal ws-reveal-delay-1">
+
+          <!-- Row 1 -->
+          <div class="ws-cap-row">
+            <!-- 01 -->
+            <article class="ws-cap-col">
+              <div class="ws-cap-meta">
+                <span class="ws-cap-num">01</span>
+                <span class="ws-cap-tag">PRACTICE DOMAIN</span>
+              </div>
+              <h3 class="ws-cap-title">Leadership &amp; People Management</h3>
+              <ul class="ws-cap-topics" aria-label="Leadership &amp; People Management topics">
+                <li>Leadership Development Programs</li>
+                <li>Supervisory Essentials</li>
+                <li>Developing and Coaching People</li>
+                <li>Managing Performance</li>
+                <li>High-Performing Teams</li>
+                <li>Leading Change</li>
+                <li>Motivation and Engagement</li>
+              </ul>
+            </article>
+
+            <!-- 02 -->
+            <article class="ws-cap-col">
+              <div class="ws-cap-meta">
+                <span class="ws-cap-num">02</span>
+                <span class="ws-cap-tag">PRACTICE DOMAIN</span>
+              </div>
+              <h3 class="ws-cap-title">Communication, Coaching &amp; Influence</h3>
+              <ul class="ws-cap-topics" aria-label="Communication, Coaching &amp; Influence topics">
+                <li>Communicating with Influence</li>
+                <li>Presentation Skills</li>
+                <li>Giving Effective Feedback</li>
+                <li>Coaching Skills for Leaders</li>
+                <li>Conflict Resolution</li>
+                <li>Negotiation</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="ws-cap-row">
+            <!-- 03 -->
+            <article class="ws-cap-col">
+              <div class="ws-cap-meta">
+                <span class="ws-cap-num">03</span>
+                <span class="ws-cap-tag">PRACTICE DOMAIN</span>
+              </div>
+              <h3 class="ws-cap-title">Talent Assessment &amp; Performance</h3>
+              <ul class="ws-cap-topics" aria-label="Talent Assessment &amp; Performance topics">
+                <li>Competency-Based Interviewing</li>
+                <li>Assessment Centers</li>
+                <li>Training Needs Analysis</li>
+                <li>Train the Trainer</li>
+                <li>KPI Development</li>
+                <li>High-Potential Assessment</li>
+              </ul>
+            </article>
+
+            <!-- 04 -->
+            <article class="ws-cap-col">
+              <div class="ws-cap-meta">
+                <span class="ws-cap-num">04</span>
+                <span class="ws-cap-tag">PRACTICE DOMAIN</span>
+              </div>
+              <h3 class="ws-cap-title">Decisions &amp; Organizational Effectiveness</h3>
+              <ul class="ws-cap-topics" aria-label="Decisions &amp; Organizational Effectiveness topics">
+                <li>Problem Solving and Decision Making</li>
+                <li>Planning and Delivering Results</li>
+                <li>Decision-Making Under Pressure</li>
+                <li>Business Ethics and Professional Judgment</li>
+                <li>Time, Priority, and Stress Management</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="ws-cap-row">
+            <!-- 05 -->
+            <article class="ws-cap-col">
+              <div class="ws-cap-meta">
+                <span class="ws-cap-num">05</span>
+                <span class="ws-cap-tag">PRACTICE DOMAIN</span>
+              </div>
+              <h3 class="ws-cap-title">Sales &amp; Customer Excellence</h3>
+              <ul class="ws-cap-topics" aria-label="Sales &amp; Customer Excellence topics">
+                <li>Consultative Selling</li>
+                <li>Managing Sales Teams</li>
+                <li>Service Excellence</li>
+                <li>Internal Customer Experience</li>
+              </ul>
+            </article>
+
+            <!-- 06 -->
+            <article class="ws-cap-col">
+              <div class="ws-cap-meta">
+                <span class="ws-cap-num">06</span>
+                <span class="ws-cap-tag">PRACTICE DOMAIN</span>
+              </div>
+              <h3 class="ws-cap-title">Modern Workplace &amp; AI Thinking</h3>
+              <ul class="ws-cap-topics" aria-label="Modern Workplace &amp; AI Thinking topics">
+                <li>Generative AI for Professionals</li>
+                <li>AI Tools for Productivity</li>
+                <li>AI-Supported Learning and Performance</li>
+                <li>Using AI as a Thinking Partner</li>
+              </ul>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Capability Statement Link -->
+        <div class="ws-cap-footer ws-reveal ws-reveal-delay-2">
+          <span>A broader topic listing is available in the capability statement.</span>
+          <a href="enable-my-growth-capability-statement.pdf" target="_blank" rel="noopener">
+            <span>Download Capability Statement (PDF)</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 04 — ASSESSMENT & HOGAN PRACTITIONER DEVELOPMENT
+         Evidence-Supported Development & Dedicated Practitioner Workshops
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-hogan-section" id="assessment" aria-label="Assessment and Hogan practitioner development">
+      <div class="emg-bound">
+
+        <div class="ws-hogan-grid">
+
+          <!-- Left Column: Intellectual Position & Anchor Quote -->
+          <div class="ws-hogan-intellect ws-reveal">
+            <div class="ws-meta-header">
+              <span class="ws-meta-num">04</span>
+              <span class="ws-meta-line"></span>
+              <span class="ws-meta-label">HOGAN PRACTITIONER DEVELOPMENT</span>
+            </div>
+
+            <h2 class="ws-section-title">
+              Specialist workshops for <em>responsible, confident</em> Hogan practice.
+            </h2>
+
+            <p class="ws-section-intro">
+              In addition to integrating Hogan insights into leadership development, I deliver three dedicated practitioner workshops covering certification, advanced interpretation, and advanced feedback.
+            </p>
+
+            <div class="ws-hogan-quote-panel">
+              <blockquote class="ws-hogan-quote">
+                &ldquo;Assessment provides evidence and vocabulary. It should deepen the inquiry&mdash;not become a verdict about the person.&rdquo;
+              </blockquote>
+              <div class="ws-quote-cue">FOUNDATIONAL PRINCIPLE // PRACTICE GROUNDING</div>
+            </div>
+          </div>
+
+          <!-- Right Column: Architectural Stacked Specialist Workshops -->
+          <div class="ws-hogan-workshops ws-reveal ws-reveal-delay-1">
+
+            <!-- Workshop 01 -->
+            <article class="ws-hogan-entry">
+              <div class="ws-hogan-entry-meta">
+                <span class="ws-hogan-entry-label">Practitioner Foundation</span>
+                <span class="ws-hogan-entry-num">[01]</span>
+              </div>
+              <h3 class="ws-hogan-entry-title">Hogan Certification Workshop</h3>
+              <p class="ws-hogan-entry-copy">
+                A structured certification experience that develops the knowledge and practical foundation required to interpret and apply Hogan assessment results responsibly.
+              </p>
+            </article>
+
+            <!-- Workshop 02 -->
+            <article class="ws-hogan-entry">
+              <div class="ws-hogan-entry-meta">
+                <span class="ws-hogan-entry-label">Advanced Practice</span>
+                <span class="ws-hogan-entry-num">[02]</span>
+              </div>
+              <h3 class="ws-hogan-entry-title">Hogan Advanced Interpretation Workshop</h3>
+              <p class="ws-hogan-entry-copy">
+                A deeper examination of how assessment scales interact, how patterns should be interpreted, and how context changes the meaning and relevance of a profile.
+              </p>
+            </article>
+
+            <!-- Workshop 03 -->
+            <article class="ws-hogan-entry">
+              <div class="ws-hogan-entry-meta">
+                <span class="ws-hogan-entry-label">Advanced Practice</span>
+                <span class="ws-hogan-entry-num">[03]</span>
+              </div>
+              <h3 class="ws-hogan-entry-title">Hogan Advanced Feedback Workshop</h3>
+              <p class="ws-hogan-entry-copy">
+                Developing the judgment and conversational skill required to translate assessment evidence into constructive, balanced, and development-focused feedback.
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 05 — DELIVERY & ENGAGEMENT ARCHITECTURE
+         The Format Follows the Context (Contextual Pathways, No SaaS Tiers)
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-delivery-section" id="delivery" aria-label="Delivery and engagement architecture">
+      <div class="emg-bound">
+
+        <div class="ws-section-header ws-reveal">
+          <div class="ws-meta-header">
+            <span class="ws-meta-num">05</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">ENGAGEMENT ARCHITECTURE</span>
+          </div>
+
+          <h2 class="ws-section-title">
+            The format follows <em>the context.</em>
+          </h2>
+
+          <p class="ws-section-intro">
+            Duration, sequence, and delivery method are determined after understanding the audience, desired outcome, and environment in which the learning must be applied.
+          </p>
+        </div>
+
+        <!-- Part A: The Triad of Determinants -->
+        <div class="ws-determinants-strip ws-reveal ws-reveal-delay-1" aria-label="What shapes each program">
+          <div class="ws-determinant-item">
+            <span class="ws-det-num">DETERMINANT // 01</span>
+            <h3 class="ws-det-label">Audience Seniority</h3>
+            <p class="ws-det-copy">
+              Who enters the room, the existing baseline, and the consequential decisions they are responsible for.
+            </p>
+          </div>
+          <div class="ws-determinant-item">
+            <span class="ws-det-num">DETERMINANT // 02</span>
+            <h3 class="ws-det-label">Organizational Context</h3>
+            <p class="ws-det-copy">
+              The culture, strategic priorities, and operational environment in which participants must perform.
+            </p>
+          </div>
+          <div class="ws-determinant-item">
+            <span class="ws-det-num">DETERMINANT // 03</span>
+            <h3 class="ws-det-label">Outcomes That Matter</h3>
+            <p class="ws-det-copy">
+              What people need to do differently in practice, rather than generic curriculum benchmarks.
+            </p>
+          </div>
+        </div>
+
+        <!-- Part B: Flexible Engagement Shapes (No Tiers, No Pricing) -->
+        <div class="ws-pathways-block ws-reveal ws-reveal-delay-2">
+          <div class="ws-block-label" style="margin-bottom: 1.25rem;">
+            <span class="ws-label-dash" aria-hidden="true">&mdash;</span>
+            <span>ENGAGEMENT PATHWAYS</span>
+          </div>
+
+          <div class="ws-pathways-grid">
+
+            <!-- Pathway 01 -->
+            <article class="ws-pathway-item">
+              <span class="ws-pathway-tag">FOCUSED INTERVENTION</span>
+              <h3 class="ws-pathway-title">In-House Workshops</h3>
+              <p class="ws-pathway-copy">
+                Focused programs adapted to organizational priorities and participant needs.
+              </p>
+            </article>
+
+            <!-- Pathway 02 -->
+            <article class="ws-pathway-item">
+              <span class="ws-pathway-tag">PROGRESSIVE INQUIRY</span>
+              <h3 class="ws-pathway-title">Development Journeys</h3>
+              <p class="ws-pathway-copy">
+                Multi-stage experiences combining workshops, application, reflection, and follow-through.
+              </p>
+            </article>
+
+            <!-- Pathway 03 -->
+            <article class="ws-pathway-item">
+              <span class="ws-pathway-tag">FACILITATED ALIGNMENT</span>
+              <h3 class="ws-pathway-title">Executive &amp; Team Retreats</h3>
+              <p class="ws-pathway-copy">
+                Facilitated sessions focused on leadership priorities, alignment, decisions, and team effectiveness.
+              </p>
+            </article>
+
+            <!-- Pathway 04 -->
+            <article class="ws-pathway-item">
+              <span class="ws-pathway-tag">EMBEDDED PRACTICE</span>
+              <h3 class="ws-pathway-title">Partner-Led Engagements</h3>
+              <p class="ws-pathway-copy">
+                Delivery within the frameworks and client relationships of training, consulting, and assessment partners.
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Part C: Delivery Modes Baseline Bar -->
+        <div class="ws-modes-bar ws-reveal">
+          <span class="ws-modes-label">DELIVERY MODES</span>
+          <p class="ws-modes-copy">
+            In-person, virtual, and blended formats designed around access, active participation, and real-world application.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 06 — WHO ENTERS THE ROOM
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-audience-section" id="audience" aria-label="Who enters the room">
+      <div class="emg-bound">
+
+        <div class="ws-audience-header ws-reveal">
+          <div class="ws-meta-header">
+            <span class="ws-meta-num">06</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">WHO ENTERS THE ROOM</span>
+          </div>
+
+          <h2 class="ws-section-title">
+            Programs shaped around the people <em>responsible for the work.</em>
+          </h2>
+        </div>
+
+        <div class="ws-audience-list ws-reveal ws-reveal-delay-1">
+
+          <!-- Audience 01 -->
+          <article class="ws-audience-item">
+            <h3 class="ws-audience-label">Executive &amp; Leadership Teams</h3>
+            <p class="ws-audience-context">
+              Senior leaders and teams working through priorities, alignment, and consequential decisions.
+            </p>
+          </article>
+
+          <!-- Audience 02 -->
+          <article class="ws-audience-item">
+            <h3 class="ws-audience-label">People Managers</h3>
+            <p class="ws-audience-context">
+              Managers responsible for developing people, coaching performance, and leading teams.
+            </p>
+          </article>
+
+          <!-- Audience 03 -->
+          <article class="ws-audience-item">
+            <h3 class="ws-audience-label">Assessment Practitioners</h3>
+            <p class="ws-audience-context">
+              Practitioners developing the judgment and conversational skill required to apply assessment evidence responsibly.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 07 — PRACTICE AT SCALE / PROOF
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-proof-section" id="proof" aria-label="Practice at scale">
+      <div class="emg-bound">
+
+        <div class="ws-proof-header ws-reveal">
+          <div class="ws-meta-header">
+            <span class="ws-meta-num">07</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">PRACTICE AT SCALE</span>
+          </div>
+        </div>
+
+        <div class="ws-proof-grid ws-reveal ws-reveal-delay-1" aria-label="Practice proof points">
+
+          <!-- Proof 01 -->
+          <div class="ws-proof-item">
+            <div class="ws-proof-val">25+</div>
+            <div class="ws-proof-label">YEARS OF EXPERIENCE</div>
+          </div>
+
+          <!-- Proof 02 -->
+          <div class="ws-proof-item">
+            <div class="ws-proof-val">1000+</div>
+            <div class="ws-proof-label">PARTICIPANTS ANNUALLY</div>
+          </div>
+
+          <!-- Proof 03 -->
+          <div class="ws-proof-item">
+            <div class="ws-proof-val">7</div>
+            <div class="ws-proof-label">COUNTRIES SERVED</div>
+          </div>
+
+          <!-- Proof 04 -->
+          <div class="ws-proof-item">
+            <div class="ws-proof-val ws-proof-text-val">FOUNDER-LED</div>
+            <div class="ws-proof-label">PRACTICE</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 08 — FOUNDER-LED PRACTICE
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-founder-section" id="founder-practice" aria-label="Founder-led practice">
+      <div class="emg-bound">
+
+        <div class="ws-founder-container ws-reveal">
+          <div class="ws-meta-header">
+            <span class="ws-meta-num">08</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">FOUNDER-LED PRACTICE</span>
+          </div>
+
+          <h2 class="ws-founder-statement">
+            Every program is shaped by the audience, organizational context, and outcomes that matter &mdash; <em>not delivered as an off-the-shelf course.</em>
+          </h2>
+
+          <p class="ws-founder-copy">
+            What remains constant is a respect for professional judgment, disciplined inquiry, and the human responsibility at the center of every consequential choice.
+          </p>
+
+          <a href="about.html" class="ws-founder-link">
+            <span>How I Work</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 09 — FINAL CTA: BEGIN WITH THE OUTCOME
+    ═══════════════════════════════════════════════════════════════════════ -->
+    <section class="ws-cta-section" id="discuss" aria-label="Discuss a program">
+      <div class="emg-bound">
+
+        <div class="ws-cta-container ws-reveal">
+          <div class="ws-meta-header ws-meta-center">
+            <span class="ws-meta-num">09</span>
+            <span class="ws-meta-line"></span>
+            <span class="ws-meta-label">BEGIN WITH THE OUTCOME</span>
+          </div>
+
+          <h2 class="ws-cta-statement">
+            What do your people need to <em>do differently?</em>
+          </h2>
+
+          <p class="ws-cta-lead">
+            Tell me about the audience, the situations they are navigating, and what better performance would make possible. From there, we can shape the right learning experience.
+          </p>
+
+          <div class="ws-cta-action">
+            <a href="contact.html" class="btn-ws-primary ws-cta-btn">Discuss a Program</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <script src="analytics.js"></script>
-  <script src="effects.js"></script>
-  <script src="nav.js"></script>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER — Matching Global Site Architecture
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <footer class="emg-footer">
+    <div class="emg-bound">
+      <div class="emg-footer-grid">
+        <div class="emg-footer-brand-col">
+          <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+            <span class="nav-brand-symbol" aria-hidden="true"></span>
+            <span class="nav-brand-copy">
+              <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+              <small>Feras Banna</small>
+            </span>
+          </a>
+          <p class="emg-footer-creds">
+            Perspective changes what becomes possible.<br />
+            Improving the quality of judgment surrounding consequential choices.
+          </p>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="conditions-before-conviction.html">The Book</a></li>
+            <li><a href="ideas.html">Insights &amp; Essays</a></li>
+            <li><a href="about.html">About Feras</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="tech.html"><strong>Enable My Growth Tech</strong></a></li>
+            <li><a href="capability-os.html">CapabilityOS™</a></li>
+            <li><a href="ai-thinking-studio.html">AI Thinking Studio™</a></li>
+            <li><a href="contextual.html">Contextual™</a></li>
+            <li><a href="phys-valid.html">Phys-Valid™</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Practice</h4>
+          <ul>
+            <li><a href="work.html">Work with Feras</a></li>
+            <li><a href="training.html">Workshops &amp; Facilitation</a></li>
+            <li><a href="speaking.html">Speaking &amp; Roundtables</a></li>
+            <li><a href="contact.html">Begin a Conversation</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Legal &amp; Notes</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+            <li><a href="terms.html">Terms of Engagement</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="emg-footer-bottom">
+        <span>&copy; 2026 Enable My Growth. All rights reserved.</span>
+        <span>Founder-Led Practice &middot; GCC &amp; International</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // Scroll reveal — IntersectionObserver
+    const revealEls = document.querySelectorAll('.ws-reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // Hero elements visible immediately
+    document.querySelectorAll('.ws-hero .ws-reveal').forEach(el => el.classList.add('visible'));
+  </script>
+
 </body>
 </html>
