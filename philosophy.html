@@ -4,72 +4,2065 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Philosophy — Enable My Growth</title>
-  <meta name="description" content="A broader philosophy for improving human judgment through structured reasoning in context." />
+  <meta name="description" content="The intellectual foundation of Enable My Growth. Conclusions should be earned — through context, evidence, and disciplined examination." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ═════════════════════════════════════════════════════════════════════════
+       ENABLE MY GROWTH — PHILOSOPHY PAGE v2
+       Visual system: Same brand as homepage, distinct intellectual experience
+       Visual metaphor: THE SHIFTING FRAME
+       ═════════════════════════════════════════════════════════════════════════ */
+
+    :root {
+      --emg-bg: #08080C;
+      --emg-surface: #101017;
+      --emg-subtle: #14141E;
+      --emg-gold: #C9A96E;
+      --emg-gold-pure: #C9A96E;
+      --emg-gold-glow: #E8CCA0;
+      --emg-gold-dim: #796440;
+      --emg-gold-border: rgba(201, 169, 110, 0.22);
+      --emg-gold-hairline: rgba(201, 169, 110, 0.14);
+      --emg-text: #EDEAE3;
+      --emg-text-bright: #FFFFFF;
+      --emg-text-primary: #D4D0C8;
+      --emg-text-muted: #9E9EAF;
+      --emg-text-dim: #5C5C70;
+      --emg-serif: 'Cormorant Garamond', Georgia, serif;
+      --emg-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --emg-mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--emg-bg);
+      color: var(--emg-text);
+      font-family: var(--emg-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .emg-bound {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      width: 100%;
+      position: relative;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       NAVIGATION — Exact match to index.html
+    ───────────────────────────────────────────────────────────────────────── */
+    #site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--emg-text-bright);
+    }
+
+    .nav-brand-symbol {
+      width: 44px;
+      height: 40px;
+      flex: 0 0 44px;
+      background: url('emg-mobius-hero.png') right center / auto 40px no-repeat;
+      display: block;
+    }
+
+    .nav-brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .nav-brand-copy b {
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-brand-copy small {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      color: var(--emg-gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .nav-center-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.1rem, 2vw, 2.2rem);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-center-links a {
+      color: #B5B5C6;
+      text-decoration: none;
+      font-family: var(--emg-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-center-links a:hover,
+    .nav-center-links a.active {
+      color: var(--emg-gold-glow);
+    }
+
+    .nav-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--emg-gold);
+      color: #08080C;
+      font-family: var(--emg-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.72rem 1.45rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-nav-cta:hover {
+      background: #dfbf85;
+      box-shadow: 0 0 20px rgba(201, 169, 110, 0.35);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      padding: 0.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--emg-gold);
+      margin: 4px 0;
+      transition: 0.2s;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       HERO STAGE — Philosophy
+       Left: Large typographic editorial
+       Right: Shifting Frame SVG visual
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-hero {
+      position: relative;
+      padding-top: 72px;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--emg-bg);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    /* Subtle architectural grid background */
+    .phil-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201, 169, 110, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 110, 0.028) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 100% 100% at 60% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 100% 100% at 60% 50%, black 30%, transparent 80%);
+    }
+
+    /* Very subtle warm glow, right side only */
+    .phil-hero::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 55%;
+      height: 60%;
+      background: radial-gradient(ellipse 70% 70% at 65% 45%, rgba(201, 169, 110, 0.04) 0%, transparent 75%);
+      pointer-events: none;
+    }
+
+    .phil-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: center;
+      width: 100%;
+      padding: clamp(4rem, 9vh, 7rem) 0 clamp(5rem, 10vh, 8rem);
+    }
+
+    /* LEFT: Editorial column */
+    .phil-editorial {
+      max-width: 580px;
+    }
+
+    .phil-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .phil-eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background: var(--emg-gold);
+      opacity: 0.7;
+    }
+
+    .phil-eyebrow-label {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .phil-headline {
+      font-family: var(--emg-serif);
+      font-size: clamp(3.2rem, 6.5vw, 6.4rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.5rem, 3vh, 2.5rem);
+    }
+
+    .phil-headline em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+      font-weight: 300;
+    }
+
+    .phil-lead {
+      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      margin-bottom: clamp(2rem, 4vh, 3rem);
+      max-width: 490px;
+      overflow-wrap: break-word;
+    }
+
+    .phil-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-phil-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      text-decoration: none;
+      transition: color 0.2s ease, gap 0.2s ease;
+    }
+
+    .btn-phil-read:hover {
+      color: var(--emg-gold-glow);
+      gap: 0.9rem;
+    }
+
+    .btn-phil-read svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .btn-phil-contact {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--emg-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(158, 158, 175, 0.3);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-phil-contact:hover {
+      color: var(--emg-text);
+      border-color: var(--emg-text-muted);
+    }
+
+    /* RIGHT: Shifting Frame visual */
+    .phil-frame-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 0.94;
+      max-width: 560px;
+      justify-self: center;
+      overflow: hidden;
+    }
+
+    .phil-frame-svg {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SHIFTING FRAME — SVG Animation
+    ───────────────────────────────────────────────────────────────────────── */
+
+    /* Outer frame — slow drift */
+    @keyframes frameShiftOuter {
+      0%    { transform: translate(0px, 0px) rotate(0deg); }
+      33%   { transform: translate(-4px, 3px) rotate(0.3deg); }
+      66%   { transform: translate(3px, -2px) rotate(-0.2deg); }
+      100%  { transform: translate(0px, 0px) rotate(0deg); }
+    }
+
+    /* Inner frame — slower, offset drift */
+    @keyframes frameShiftInner {
+      0%    { transform: translate(0px, 0px) rotate(0deg); }
+      40%   { transform: translate(5px, -3px) rotate(-0.4deg); }
+      70%   { transform: translate(-3px, 4px) rotate(0.3deg); }
+      100%  { transform: translate(0px, 0px) rotate(0deg); }
+    }
+
+    /* Focal point alignment */
+    @keyframes focalPulse {
+      0%, 100% { opacity: 0.5; r: 2; }
+      50%       { opacity: 1.0; r: 3; }
+    }
+
+    @keyframes lineResolve {
+      0%, 100% { opacity: 0.18; stroke-dashoffset: 24; }
+      50%       { opacity: 0.55; stroke-dashoffset: 0; }
+    }
+
+    @keyframes fragmentDrift {
+      0%, 100% { transform: translateY(0px); opacity: 0.22; }
+      50%       { transform: translateY(-6px); opacity: 0.38; }
+    }
+
+    @keyframes planeShift {
+      0%, 100% { transform: skewX(0deg) translateX(0px); }
+      50%       { transform: skewX(0.5deg) translateX(3px); }
+    }
+
+    .sf-outer-frame {
+      animation: frameShiftOuter 18s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .sf-inner-frame {
+      animation: frameShiftInner 24s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .sf-focal-point {
+      animation: focalPulse 6s ease-in-out infinite;
+    }
+
+    .sf-resolve-line {
+      animation: lineResolve 9s ease-in-out infinite;
+      stroke-dasharray: 8 4;
+      stroke-dashoffset: 24;
+    }
+
+    .sf-text-fragment {
+      animation: fragmentDrift 14s ease-in-out infinite;
+    }
+
+    .sf-perspective-plane {
+      animation: planeShift 20s ease-in-out infinite;
+      transform-origin: 50% 50%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sf-outer-frame,
+      .sf-inner-frame,
+      .sf-focal-point,
+      .sf-resolve-line,
+      .sf-text-fragment,
+      .sf-perspective-plane {
+        animation: none !important;
+      }
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SHARED SECTION & EDITORIAL PRIMITIVES
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-section {
+      position: relative;
+      padding: clamp(6rem, 12vh, 10rem) 0;
+      background: var(--emg-bg);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      overflow: hidden;
+    }
+
+    .phil-meta-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: clamp(1.2rem, 2.5vh, 2rem);
+      flex-wrap: wrap;
+    }
+
+    .phil-meta-num {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      color: var(--emg-gold-dim);
+    }
+
+    .phil-meta-line {
+      width: 24px;
+      height: 1px;
+      background: var(--emg-gold);
+      opacity: 0.45;
+    }
+
+    .phil-meta-label {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      font-weight: 500;
+    }
+
+    .phil-meta-coords {
+      font-family: var(--emg-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-text-dim);
+      margin-left: 0.5rem;
+    }
+
+    .phil-section-header {
+      max-width: 820px;
+      margin-bottom: clamp(3.5rem, 7vh, 5.5rem);
+    }
+
+    .phil-section-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.2rem, 2.5vh, 1.8rem);
+    }
+
+    .phil-section-title em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+    }
+
+    .phil-section-intro {
+      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--emg-text-primary);
+      font-weight: 300;
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .btn-phil-editorial {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      text-decoration: none;
+      transition: color 0.2s ease, gap 0.2s ease;
+      margin-top: 1.5rem;
+    }
+
+    .btn-phil-editorial:hover {
+      color: var(--emg-gold-glow);
+      gap: 0.9rem;
+    }
+
+    .btn-phil-editorial svg {
+      transition: transform 0.2s ease;
+    }
+
+    .btn-phil-editorial:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 02 — THE VANTAGE POINT
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-vantage-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: clamp(3rem, 6vw, 6.5rem);
+      align-items: center;
+      margin-bottom: clamp(5rem, 10vh, 7.5rem);
+    }
+
+    .phil-vantage-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.3rem, 4.4vw, 4.0rem);
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.5rem, 3vh, 2.2rem);
+    }
+
+    .phil-vantage-statement em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+    }
+
+    .phil-vantage-lead {
+      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      margin: 0;
+      max-width: 620px;
+    }
+
+    .phil-vantage-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phil-vantage-diagram {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 0.88;
+      border: 1px solid rgba(201, 169, 110, 0.12);
+      background: radial-gradient(circle at center, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phil-vantage-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Visual Pause: Pull-Quote (spacious, not a card) */
+    .phil-pause-block {
+      position: relative;
+      padding: clamp(3.5rem, 7vh, 5.5rem) 0;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .phil-pause-line-top,
+    .phil-pause-line-bottom {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--emg-gold), transparent);
+      margin: 0 auto;
+      opacity: 0.55;
+    }
+
+    .phil-pause-quote {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--emg-text-bright);
+      margin: clamp(1.8rem, 3.5vh, 2.5rem) 0;
+      letter-spacing: -0.01em;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 03 — DISTINCTIONS
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-distinctions-matrix {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .phil-distinction-row {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      align-items: center;
+      padding: clamp(2.5rem, 5vh, 3.8rem) 0;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+      position: relative;
+    }
+
+    .phil-distinction-row:last-child {
+      border-bottom: none;
+    }
+
+    .phil-distinction-col {
+      padding: 0 clamp(1rem, 2.5vw, 2.5rem);
+    }
+
+    .phil-col-left {
+      text-align: left;
+    }
+
+    .phil-col-right {
+      text-align: left;
+    }
+
+    .phil-dist-tag {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .phil-dist-term {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      font-weight: 300;
+      color: var(--emg-text-bright);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .phil-dist-desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      max-width: 440px;
+    }
+
+    .phil-dist-axis {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+    }
+
+    .phil-dist-axis::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: var(--emg-gold-hairline);
+    }
+
+    .phil-axis-mark {
+      position: relative;
+      z-index: 2;
+      background: var(--emg-bg);
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold);
+      padding: 0.3rem 0.5rem;
+      border: 1px solid var(--emg-gold-hairline);
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 04 — FIVE PRINCIPLES
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-principles-sequence {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--emg-gold-hairline);
+    }
+
+    .phil-principle-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: baseline;
+      padding: clamp(3rem, 6vh, 4.5rem) 0;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      transition: background 0.3s ease;
+      position: relative;
+    }
+
+    .phil-principle-shift {
+      padding-left: clamp(1rem, 3.5vw, 3.5rem);
+    }
+
+    .phil-p-index {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 300;
+      color: var(--emg-gold);
+      opacity: 0.55;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .phil-p-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      max-width: 780px;
+    }
+
+    .phil-p-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+      font-weight: 300;
+      color: var(--emg-text-bright);
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .phil-p-text {
+      font-size: clamp(1rem, 1.25vw, 1.15rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 05 — BOUNDARIES
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-boundaries-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .phil-section-sub {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: var(--emg-text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .phil-boundaries-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--emg-gold-hairline);
+    }
+
+    .phil-boundary-item {
+      display: grid;
+      grid-template-columns: 24px 44px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      padding: clamp(1.4rem, 2.8vh, 2rem) 0;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+    }
+
+    .phil-boundary-dash {
+      color: var(--emg-gold-dim);
+      font-size: 1.1rem;
+    }
+
+    .phil-boundary-idx {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold-dim);
+    }
+
+    .phil-boundary-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--emg-text-primary);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 06 — HUMAN RESPONSIBILITY
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-human-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .phil-human-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(2rem, 4vh, 3rem);
+      letter-spacing: -0.01em;
+    }
+
+    .phil-human-statement em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+    }
+
+    .phil-human-prose {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+      line-height: 1.9;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .phil-human-quiet-note {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-style: italic;
+      color: var(--emg-gold-glow);
+      opacity: 0.85;
+      text-align: center;
+      margin: 0 auto;
+      letter-spacing: -0.01em;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 07 — BETTER-EARNED CONCLUSIONS (CULMINATION)
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-culmination-container {
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(2rem, 4vh, 4rem) 0;
+      position: relative;
+    }
+
+    .phil-converge-lines {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0 auto clamp(2rem, 4vh, 3rem);
+      max-width: 420px;
+    }
+
+    .phil-converge-left,
+    .phil-converge-right {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--emg-gold));
+    }
+
+    .phil-converge-right {
+      background: linear-gradient(90deg, var(--emg-gold), transparent);
+    }
+
+    .phil-converge-point {
+      width: 6px;
+      height: 6px;
+      background: var(--emg-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.8);
+    }
+
+    .phil-culmination-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.5rem, 5.2vw, 4.8rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.5rem, 3vh, 2rem);
+      letter-spacing: -0.015em;
+    }
+
+    .phil-culmination-statement em {
+      font-style: italic;
+      color: var(--emg-gold-glow);
+    }
+
+    .phil-culmination-sub {
+      letter-spacing: 0.08em;
+      color: var(--emg-text-dim);
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       SECTION 08 — CONDITIONS BEFORE CONVICTION (BOOK)
+       SECTION 09 — INSIGHTS BRIDGE
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-book-container,
+    .phil-insights-container {
+      max-width: 780px;
+    }
+
+    .phil-book-title,
+    .phil-insights-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 300;
+      color: var(--emg-text-bright);
+      margin: 0 0 1.2rem;
+      line-height: 1.2;
+    }
+
+    .phil-book-sentence,
+    .phil-insights-text {
+      font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      font-weight: 300;
+      margin: 0 0 1.5rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       FINAL CTA
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-final-cta-section {
+      padding: clamp(7rem, 15vh, 12rem) 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+    }
+
+    .phil-final-cta-container {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .phil-final-quote {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.2rem, 4.4vw, 3.8rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.25;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(2rem, 4vh, 3rem);
+      letter-spacing: -0.01em;
+    }
+
+    .phil-final-note {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--emg-text-muted);
+      margin: 0 0 2.5rem;
+      font-weight: 300;
+    }
+
+    .btn-phil-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--emg-sans);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--emg-gold);
+      color: #08080C;
+      padding: 1.1rem 2.4rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 18px rgba(201, 169, 110, 0.25);
+    }
+
+    .btn-phil-primary:hover {
+      background: var(--emg-gold-glow);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(201, 169, 110, 0.4);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       FOOTER — Exact match to index.html
+    ───────────────────────────────────────────────────────────────────────── */
+    .emg-footer {
+      background: #08080d;
+      border-top: 1px solid var(--emg-gold-hairline);
+      padding: clamp(4rem, 8vh, 6rem) 0 0;
+    }
+
+    .emg-footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      padding-bottom: clamp(3.5rem, 6vh, 5rem);
+    }
+
+    .emg-footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .emg-footer-creds {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--emg-text-muted);
+      margin: 0;
+    }
+
+    .emg-footer-col h4 {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+      margin: 0 0 1.25rem;
+    }
+
+    .emg-footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .emg-footer-col a {
+      font-size: 0.88rem;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .emg-footer-col a:hover {
+      color: var(--emg-text);
+    }
+
+    .emg-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .nav-center-links {
+        display: none;
+      }
+      .nav-center-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(8, 8, 12, 0.98);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        padding: 1.5rem 2rem;
+        gap: 0.75rem;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
+        z-index: 1001;
+      }
+      .nav-center-links.open li { width: 100%; }
+      .nav-center-links.open a {
+        display: block;
+        padding: 0.6rem 0;
+        font-size: 0.85rem;
+        width: 100%;
+      }
+      .nav-mobile-toggle {
+        display: block;
+      }
+
+      /* Hero stacks vertically — left-align for editorial clarity */
+      .phil-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        padding: 3rem 0 4rem;
+        text-align: left;
+      }
+      .phil-editorial {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .phil-eyebrow {
+        justify-content: flex-start;
+      }
+      .phil-lead {
+        max-width: 100%;
+        padding: 0;
+      }
+      .phil-hero-actions {
+        justify-content: flex-start;
+      }
+      .phil-frame-stage {
+        max-width: 480px;
+        aspect-ratio: 1 / 0.85;
+      }
+
+      /* Sections 02-09 responsive at 1024px */
+      .phil-vantage-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .phil-boundaries-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .phil-principle-shift {
+        padding-left: 0;
+      }
+
+      /* Footer collapses */
+      .emg-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+      .emg-footer-brand-col {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #site-nav {
+        height: 60px;
+        padding: 0 1.25rem;
+      }
+      .phil-hero {
+        padding-top: 60px;
+        min-height: auto;
+      }
+      .btn-nav-cta {
+        display: none;
+      }
+      .phil-headline {
+        font-size: clamp(2.4rem, 9vw, 3.2rem);
+      }
+      .phil-lead {
+        font-size: 0.95rem; /* ~15.2px */
+        line-height: 1.75;
+        max-width: 38ch;
+      }
+      .phil-hero-actions {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        column-gap: 1.25rem;
+      }
+      .phil-frame-stage {
+        max-width: 340px;
+        aspect-ratio: 1 / 0.9;
+        margin: 0;
+      }
+      .btn-phil-read,
+      .btn-phil-contact {
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
+      }
+      .phil-distinction-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        padding: 1.8rem 0;
+      }
+      .phil-dist-axis {
+        display: flex;
+        justify-content: flex-start;
+        height: auto;
+      }
+      .phil-dist-axis::before {
+        display: none;
+      }
+      .phil-principle-item {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 2.5rem 0;
+      }
+      .phil-p-index {
+        font-size: 2.2rem;
+      }
+      .phil-boundary-item {
+        grid-template-columns: 20px 36px 1fr;
+        font-size: 0.95rem;
+        padding: 1.2rem 0;
+      }
+      .phil-human-prose {
+        text-align: left;
+      }
+      .emg-footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .emg-footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .phil-hero-inner {
+        gap: 2.5rem;
+        padding: 2rem 0 3rem;
+      }
+      .phil-headline {
+        font-size: 2.4rem;
+      }
+      .phil-lead {
+        font-size: 0.95rem; /* ~15.2px */
+        line-height: 1.75;
+        max-width: 36ch;
+      }
+      .phil-vantage-statement {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+      }
+      .phil-section-title {
+        font-size: clamp(1.9rem, 7.5vw, 2.4rem);
+      }
+      .phil-culmination-statement {
+        font-size: clamp(2.2rem, 8.5vw, 2.8rem);
+      }
+      .phil-final-quote {
+        font-size: clamp(1.8rem, 7vw, 2.3rem);
+      }
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       REVEAL ANIMATIONS — scroll-triggered via JS class
+    ───────────────────────────────────────────────────────────────────────── */
+    .phil-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .phil-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .phil-reveal-delay-1 { transition-delay: 0.15s; }
+    .phil-reveal-delay-2 { transition-delay: 0.3s; }
+    .phil-reveal-delay-3 { transition-delay: 0.45s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .phil-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       GLOBAL HEADER — Locked navigation system
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <nav id="site-nav" aria-label="Primary navigation">
+    <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+      <span class="nav-brand-symbol" aria-hidden="true"></span>
+      <span class="nav-brand-copy">
+        <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+        <small>Feras Banna</small>
+      </span>
+    </a>
+
+    <ul class="nav-center-links" id="nav-links">
+      <li><a href="philosophy.html" class="active">Philosophy</a></li>
+      <li><a href="tech.html">Technology</a></li>
+      <li><a href="training.html">Workshops</a></li>
+      <li><a href="ideas.html">Insights</a></li>
+      <li><a href="work.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right-actions">
+      <a href="contact.html" class="btn-nav-cta">Begin a Conversation</a>
+      <button class="nav-mobile-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
   <main>
-    <header class="page-hero">
-      <div class="container">
-        <p class="eyebrow mb-sm">The philosophy</p>
-        <h1 class="display display-xl" style="max-width:820px;">Conclusions should be earned.</h1>
-        <p class="lead mt-md" style="max-width:690px;">Good judgment is not the absence of uncertainty. It is the ability to reason responsibly within it.</p>
-      </div>
-    </header>
 
-    <section>
-      <div class="container split-feature">
-        <div class="quote-panel"><blockquote>Perspective changes what becomes possible.</blockquote></div>
-        <div>
-          <p>Every consequential decision is made from a particular vantage point. That perspective shapes which facts appear relevant, which explanations feel plausible, which risks receive attention, and which possibilities remain unseen.</p>
-          <p>Enable My Growth exists to improve human judgment by making that frame more visible. The aim is not to remove intuition or replace professional experience with a rigid process. It is to give judgment enough structure to distinguish observation from interpretation, evidence from confidence, and conviction from pressure.</p>
-          <p><strong>The result is not certainty. It is a better-earned conclusion.</strong></p>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         01. PHILOSOPHY HERO
+         Left: Typographic editorial
+         Right: Shifting Frame SVG
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-hero" aria-label="Philosophy hero">
+      <div class="emg-bound">
+        <div class="phil-hero-inner">
+
+          <!-- LEFT — Editorial -->
+          <div class="phil-editorial">
+            <div class="phil-eyebrow phil-reveal">
+              <span class="phil-eyebrow-line" aria-hidden="true"></span>
+              <span class="phil-eyebrow-label">The Philosophy</span>
+            </div>
+
+            <h1 class="phil-headline phil-reveal phil-reveal-delay-1">
+              Conclusions<br />
+              should be<br />
+              <em>earned.</em>
+            </h1>
+
+            <p class="phil-lead phil-reveal phil-reveal-delay-2">
+              Good judgment is not the absence of uncertainty.
+              It is the ability to reason responsibly within it.
+            </p>
+
+            <div class="phil-hero-actions phil-reveal phil-reveal-delay-3">
+              <a href="#principles" class="btn-phil-read">
+                Explore the principles
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="ideas.html" class="btn-phil-contact">Read the insights</a>
+            </div>
+          </div>
+
+          <!-- RIGHT — Shifting Frame SVG Visual -->
+          <div class="phil-frame-stage" aria-hidden="true">
+            <svg class="phil-frame-svg" viewBox="0 0 480 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Gold gradient for lines -->
+                <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#796440" stop-opacity="0.3"/>
+                  <stop offset="50%" stop-color="#C9A96E" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#796440" stop-opacity="0.3"/>
+                </linearGradient>
+                <linearGradient id="goldLineV" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#796440" stop-opacity="0.15"/>
+                  <stop offset="40%" stop-color="#C9A96E" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#796440" stop-opacity="0.15"/>
+                </linearGradient>
+                <linearGradient id="dimLine" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.35"/>
+                </linearGradient>
+                <!-- Glow filter -->
+                <filter id="glowFocal" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- ─── BACKGROUND GRID — very subtle architectural mesh ─── -->
+              <!-- Horizontal grid lines -->
+              <g opacity="0.12" stroke="#C9A96E" stroke-width="0.5">
+                <line x1="40" y1="80" x2="440" y2="80"/>
+                <line x1="40" y1="160" x2="440" y2="160"/>
+                <line x1="40" y1="240" x2="440" y2="240"/>
+                <line x1="40" y1="320" x2="440" y2="320"/>
+                <line x1="40" y1="400" x2="440" y2="400"/>
+              </g>
+              <!-- Vertical grid lines -->
+              <g opacity="0.12" stroke="#C9A96E" stroke-width="0.5">
+                <line x1="120" y1="40" x2="120" y2="440"/>
+                <line x1="200" y1="40" x2="200" y2="440"/>
+                <line x1="280" y1="40" x2="280" y2="440"/>
+                <line x1="360" y1="40" x2="360" y2="440"/>
+              </g>
+
+              <!-- ─── OUTER FRAME — primary architectural rectangle ─── -->
+              <g class="sf-outer-frame">
+                <!-- Main outer frame -->
+                <rect x="52" y="48" width="320" height="290"
+                      stroke="url(#dimLine)" stroke-width="1" fill="none"
+                      opacity="0.65"/>
+                <!-- Top-left corner accent -->
+                <polyline points="52,78 52,48 82,48" stroke="#C9A96E" stroke-width="1.5" fill="none" opacity="0.8"/>
+                <!-- Bottom-right corner accent -->
+                <polyline points="342,308 372,308 372,338" stroke="#C9A96E" stroke-width="1.5" fill="none" opacity="0.8"/>
+
+                <!-- Top axis measurement line -->
+                <line x1="52" y1="38" x2="372" y2="38"
+                      stroke="#C9A96E" stroke-width="0.5" opacity="0.35"/>
+                <line x1="52" y1="35" x2="52" y2="41" stroke="#C9A96E" stroke-width="0.5" opacity="0.35"/>
+                <line x1="372" y1="35" x2="372" y2="41" stroke="#C9A96E" stroke-width="0.5" opacity="0.35"/>
+
+                <!-- Left axis measurement line -->
+                <line x1="38" y1="48" x2="38" y2="338"
+                      stroke="#C9A96E" stroke-width="0.5" opacity="0.35"/>
+                <line x1="35" y1="48" x2="41" y2="48" stroke="#C9A96E" stroke-width="0.5" opacity="0.35"/>
+                <line x1="35" y1="338" x2="41" y2="338" stroke="#C9A96E" stroke-width="0.5" opacity="0.35"/>
+
+                <!-- Measurement labels -->
+                <text x="212" y="28" fill="#796440" font-family="'JetBrains Mono', monospace" font-size="8.5" letter-spacing="0.2em" text-anchor="middle" opacity="0.55">PERSPECTIVE</text>
+                <text x="26" y="195" fill="#796440" font-family="'JetBrains Mono', monospace" font-size="8.5" letter-spacing="0.15em" text-anchor="middle" transform="rotate(-90 26 195)" opacity="0.55">CONTEXT</text>
+              </g>
+
+              <!-- ─── INNER FRAME — offset, drifting — the shifted perspective ─── -->
+              <g class="sf-inner-frame">
+                <!-- Inner frame, deliberately offset from outer -->
+                <rect x="108" y="106" width="320" height="290"
+                      stroke="url(#dimLine)" stroke-width="1" fill="none"
+                      opacity="0.5"/>
+                <!-- Bottom-left corner accent of inner -->
+                <polyline points="108,366 108,396 138,396" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/>
+                <!-- Top-right corner accent of inner -->
+                <polyline points="398,136 398,106 368,106" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/>
+
+                <!-- Inner coordinate annotations -->
+                <text x="420" y="115" fill="#5C5C70" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="0.15em" opacity="0.55">0,0</text>
+                <text x="420" y="400" fill="#5C5C70" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="0.15em" opacity="0.55">1,1</text>
+              </g>
+
+              <!-- ─── PERSPECTIVE PLANE — diagonal resolution line ─── -->
+              <g class="sf-perspective-plane">
+                <!-- Primary diagonal: top-left outer to bottom-right inner -->
+                <line x1="52" y1="48" x2="428" y2="396"
+                      stroke="#C9A96E" stroke-width="0.75" opacity="0.22"/>
+                <!-- Secondary diagonal: top-right outer to bottom-left inner -->
+                <line x1="372" y1="48" x2="108" y2="396"
+                      stroke="#C9A96E" stroke-width="0.75" opacity="0.14"/>
+                <!-- The crossing point — intersection of perspectives -->
+                <circle cx="240" cy="222" r="3.5" fill="none" stroke="#C9A96E" stroke-width="0.75" opacity="0.35"/>
+              </g>
+
+              <!-- ─── RESOLUTION LINES — animate into alignment ─── -->
+              <!-- These represent understanding resolving from fragments -->
+              <line x1="52" y1="192" x2="372" y2="192"
+                    class="sf-resolve-line"
+                    stroke="url(#goldLine)" stroke-width="0.85"/>
+              <line x1="212" y1="48" x2="212" y2="338"
+                    class="sf-resolve-line"
+                    stroke="url(#goldLineV)" stroke-width="0.85"
+                    style="animation-delay: 2.5s;"/>
+
+              <!-- ─── FOCAL POINTS — where perspectives resolve ─── -->
+              <!-- Primary focal: center where frames overlap -->
+              <circle class="sf-focal-point" cx="240" cy="222" r="2.5"
+                      fill="#C9A96E" filter="url(#glowFocal)"/>
+              <!-- Secondary focal: golden section -->
+              <circle class="sf-focal-point" cx="152" cy="142" r="1.8"
+                      fill="none" stroke="#C9A96E" stroke-width="0.75" opacity="0.55"
+                      style="animation-delay:3s;"/>
+              <!-- Tertiary focal -->
+              <circle class="sf-focal-point" cx="338" cy="310" r="1.8"
+                      fill="none" stroke="#C9A96E" stroke-width="0.75" opacity="0.45"
+                      style="animation-delay:1.5s;"/>
+
+              <!-- ─── TEXT FRAGMENTS — partial philosophy words drifting into clarity ─── -->
+              <!-- These fragments represent uncertain raw signals -->
+              <g class="sf-text-fragment" style="animation-delay:0s;">
+                <text x="72" y="172" fill="#C9A96E" font-family="'Cormorant Garamond', Georgia, serif"
+                      font-size="11" font-style="italic" opacity="0.22" letter-spacing="0.04em">context</text>
+              </g>
+              <g class="sf-text-fragment" style="animation-delay:2.5s;">
+                <text x="288" y="142" fill="#C9A96E" font-family="'Cormorant Garamond', Georgia, serif"
+                      font-size="11" font-style="italic" opacity="0.18" letter-spacing="0.04em">evidence</text>
+              </g>
+              <g class="sf-text-fragment" style="animation-delay:5s;">
+                <text x="138" y="296" fill="#C9A96E" font-family="'Cormorant Garamond', Georgia, serif"
+                      font-size="11" font-style="italic" opacity="0.15" letter-spacing="0.04em">judgment</text>
+              </g>
+              <g class="sf-text-fragment" style="animation-delay:7.5s;">
+                <text x="310" y="356" fill="#C9A96E" font-family="'Cormorant Garamond', Georgia, serif"
+                      font-size="11" font-style="italic" opacity="0.14" letter-spacing="0.04em">conviction</text>
+              </g>
+
+              <!-- ─── FOCAL LABEL — the one resolving phrase ─── -->
+              <!-- In sharp focus at the intersection -->
+              <text x="240" y="238" fill="#C9A96E"
+                    font-family="'JetBrains Mono', monospace"
+                    font-size="8" letter-spacing="0.24em" text-anchor="middle" opacity="0.7"
+                    text-transform="uppercase">VANTAGE&nbsp;POINT</text>
+
+              <!-- ─── CORNER COORDINATE LABELS — architectural notation ─── -->
+              <g opacity="0.4" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#5C5C70" letter-spacing="0.14em">
+                <text x="56" y="46">φ.01</text>
+                <text x="350" y="46" text-anchor="end">φ.02</text>
+                <text x="56" y="355">φ.03</text>
+                <text x="350" y="410" text-anchor="end">φ.04</text>
+              </g>
+
+              <!-- ─── GOLD ACCENT — right edge warm glow strip ─── -->
+              <rect x="436" y="80" width="2" height="200"
+                    fill="url(#goldLineV)" opacity="0.55" rx="1"/>
+
+              <!-- ─── BOTTOM STATEMENT — in sharp alignment ─── -->
+              <text x="212" y="440" fill="#C9A96E"
+                    font-family="'JetBrains Mono', monospace"
+                    font-size="8" letter-spacing="0.22em" text-anchor="middle" opacity="0.5">
+                FRAME&nbsp;·&nbsp;EXAMINE&nbsp;·&nbsp;CONCLUDE
+              </text>
+            </svg>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section style="background:var(--surface);">
-      <div class="container">
-        <div class="section-heading"><p class="eyebrow mb-sm">Five commitments</p><h2 class="display display-lg">How the philosophy behaves in practice</h2></div>
-        <div class="mode-grid">
-          <article class="principle-card"><div class="number">01</div><h3>Professional judgment first</h3><p>Structure should enhance the judgment of responsible people, not replace their accountability.</p></article>
-          <article class="principle-card"><div class="number">02</div><h3>Context before interpretation</h3><p>A signal acquires meaning through the conditions, constraints, relationships, and incentives around it.</p></article>
-          <article class="principle-card"><div class="number">03</div><h3>Evidence before confidence</h3><p>Confidence is not evidence. What is observed, inferred, unknown, and disputed should remain distinguishable.</p></article>
-          <article class="principle-card"><div class="number">04</div><h3>Conditions before conviction</h3><p>Examine what made a conclusion convincing before relying on it as an account of what is happening.</p></article>
-          <article class="principle-card"><div class="number">05</div><h3>Learning after action</h3><p>A decision is not finished when it is made. Outcomes should refine the reasoning that produced them.</p></article>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 02 — THE VANTAGE POINT
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-vantage-section" id="vantage-point" aria-label="The Vantage Point">
+      <div class="emg-bound">
+        <div class="phil-vantage-grid">
+          <!-- Left: Editorial Content -->
+          <div class="phil-vantage-copy">
+            <div class="phil-meta-header phil-reveal">
+              <span class="phil-meta-num">02</span>
+              <span class="phil-meta-line"></span>
+              <span class="phil-meta-label">THE VANTAGE POINT</span>
+              <span class="phil-meta-coords">PERSPECTIVE · CONTEXT · INTERPRETATION</span>
+            </div>
+
+            <h2 class="phil-vantage-statement phil-reveal phil-reveal-delay-1">
+              Every consequential decision is made from a particular <em>vantage point.</em>
+            </h2>
+
+            <p class="phil-vantage-lead phil-reveal phil-reveal-delay-2">
+              That perspective shapes which facts appear relevant, which explanations feel plausible, which risks receive attention, and which possibilities remain unseen.
+            </p>
+          </div>
+
+          <!-- Right: Architectural Frame Geometry Continuation -->
+          <div class="phil-vantage-visual phil-reveal phil-reveal-delay-2" aria-hidden="true">
+            <div class="phil-vantage-diagram">
+              <svg viewBox="0 0 360 320" fill="none" class="phil-vantage-svg">
+                <!-- Framing lines & coordinates -->
+                <rect x="30" y="30" width="260" height="220" stroke="rgba(201, 169, 110, 0.25)" stroke-width="1" />
+                <rect x="70" y="70" width="260" height="220" stroke="rgba(201, 169, 110, 0.15)" stroke-dasharray="3 3" stroke-width="1" />
+                <!-- Perspective diagonal -->
+                <line x1="30" y1="30" x2="330" y2="290" stroke="rgba(201, 169, 110, 0.2)" stroke-width="1" />
+                <line x1="70" y1="70" x2="290" y2="250" stroke="#C9A96E" stroke-width="1.2" opacity="0.6" />
+                <!-- Focal intersection -->
+                <circle cx="180" cy="160" r="3.5" fill="#C9A96E" />
+                <circle cx="180" cy="160" r="14" stroke="#C9A96E" stroke-width="0.8" opacity="0.3" stroke-dasharray="2 2" />
+                <!-- Subtle Mono Text -->
+                <text x="180" y="195" fill="#C9A96E" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="0.22em" text-anchor="middle" opacity="0.7">POINT OF OBSERVATION</text>
+                <text x="38" y="22" fill="#5C5C70" font-family="'JetBrains Mono', monospace" font-size="7" letter-spacing="0.14em">PLANE_01</text>
+                <text x="322" y="308" fill="#5C5C70" font-family="'JetBrains Mono', monospace" font-size="7" letter-spacing="0.14em" text-anchor="end">PLANE_02</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pull-Quote: "Perspective changes what becomes possible." (Visual Pause) -->
+        <div class="phil-pause-block phil-reveal">
+          <div class="phil-pause-line-top" aria-hidden="true"></div>
+          <blockquote class="phil-pause-quote">
+            “Perspective changes what becomes possible.”
+          </blockquote>
+          <div class="phil-pause-line-bottom" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container split-feature">
-        <div><p class="eyebrow mb-sm">What this is not</p><h2 class="display display-md">Neither a formula nor a performance of certainty</h2></div>
-        <div>
-          <ul class="quiet-list">
-            <li>Not a universal framework imposed regardless of context</li>
-            <li>Not analysis used to avoid a necessary decision</li>
-            <li>Not a tool that outsources human responsibility</li>
-            <li>Not confidence mistaken for decision quality</li>
-            <li>Not development separated from the work that matters</li>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 03 — DISTINGUISHING WHAT WE KNOW
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-distinctions-section" id="distinctions" aria-label="Distinguishing What We Know">
+      <div class="emg-bound">
+        <div class="phil-section-header phil-reveal">
+          <div class="phil-meta-header">
+            <span class="phil-meta-num">03</span>
+            <span class="phil-meta-line"></span>
+            <span class="phil-meta-label">THE DISCIPLINE OF DISTINCTION</span>
+          </div>
+          <h2 class="phil-section-title">
+            What is observed, inferred, unknown, and disputed should remain distinguishable.
+          </h2>
+          <p class="phil-section-intro">
+            The aim is not to remove intuition or replace professional experience with a rigid process. It is to give judgment enough structure to distinguish observation from interpretation, evidence from confidence, and conviction from pressure.
+          </p>
+        </div>
+
+        <!-- Architectural Comparative Layout (3 Distinction Pairs) -->
+        <div class="phil-distinctions-matrix phil-reveal phil-reveal-delay-1">
+
+          <!-- Distinction 01 -->
+          <div class="phil-distinction-row">
+            <div class="phil-distinction-col phil-col-left">
+              <span class="phil-dist-tag">SIGNAL · GROUNDED</span>
+              <h3 class="phil-dist-term">Observation</h3>
+            </div>
+            <div class="phil-dist-axis" aria-hidden="true">
+              <span class="phil-axis-mark">vs</span>
+            </div>
+            <div class="phil-distinction-col phil-col-right">
+              <span class="phil-dist-tag">INFERENCE · MODEL</span>
+              <h3 class="phil-dist-term">Interpretation</h3>
+            </div>
+          </div>
+
+          <!-- Distinction 02 -->
+          <div class="phil-distinction-row">
+            <div class="phil-distinction-col phil-col-left">
+              <span class="phil-dist-tag">CORROBORATED · FACTUAL</span>
+              <h3 class="phil-dist-term">Evidence</h3>
+            </div>
+            <div class="phil-dist-axis" aria-hidden="true">
+              <span class="phil-axis-mark">vs</span>
+            </div>
+            <div class="phil-distinction-col phil-col-right">
+              <span class="phil-dist-tag">AFFECT · SUBJECTIVE</span>
+              <h3 class="phil-dist-term">Confidence</h3>
+            </div>
+          </div>
+
+          <!-- Distinction 03 -->
+          <div class="phil-distinction-row">
+            <div class="phil-distinction-col phil-col-left">
+              <span class="phil-dist-tag">EARNED · DELIBERATE</span>
+              <h3 class="phil-dist-term">Conviction</h3>
+            </div>
+            <div class="phil-dist-axis" aria-hidden="true">
+              <span class="phil-axis-mark">vs</span>
+            </div>
+            <div class="phil-distinction-col phil-col-right">
+              <span class="phil-dist-tag">URGENCY · EXTERNAL</span>
+              <h3 class="phil-dist-term">Pressure</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 04 — FIVE PRINCIPLES
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-principles-section" id="principles" aria-label="Five Principles">
+      <div class="emg-bound">
+        <div class="phil-section-header phil-reveal">
+          <div class="phil-meta-header">
+            <span class="phil-meta-num">04</span>
+            <span class="phil-meta-line"></span>
+            <span class="phil-meta-label">FIVE COMMITMENTS</span>
+          </div>
+          <h2 class="phil-section-title">
+            How the philosophy behaves in practice.
+          </h2>
+        </div>
+
+        <div class="phil-principles-sequence">
+
+          <!-- Principle 01 -->
+          <article class="phil-principle-item phil-reveal">
+            <div class="phil-p-index">01</div>
+            <div class="phil-p-body">
+              <h3 class="phil-p-title">Professional judgment first</h3>
+              <p class="phil-p-text">Structure should enhance the judgment of responsible people, not replace their accountability.</p>
+            </div>
+          </article>
+
+          <!-- Principle 02 -->
+          <article class="phil-principle-item phil-principle-shift phil-reveal phil-reveal-delay-1">
+            <div class="phil-p-index">02</div>
+            <div class="phil-p-body">
+              <h3 class="phil-p-title">Context before interpretation</h3>
+              <p class="phil-p-text">A signal acquires meaning through the conditions, constraints, relationships, and incentives around it.</p>
+            </div>
+          </article>
+
+          <!-- Principle 03 -->
+          <article class="phil-principle-item phil-reveal phil-reveal-delay-1">
+            <div class="phil-p-index">03</div>
+            <div class="phil-p-body">
+              <h3 class="phil-p-title">Evidence before confidence</h3>
+              <p class="phil-p-text">Confidence is not evidence. What is observed, inferred, unknown, and disputed should remain distinguishable.</p>
+            </div>
+          </article>
+
+          <!-- Principle 04 -->
+          <article class="phil-principle-item phil-principle-shift phil-reveal phil-reveal-delay-2">
+            <div class="phil-p-index">04</div>
+            <div class="phil-p-body">
+              <h3 class="phil-p-title">Conditions before conviction</h3>
+              <p class="phil-p-text">Examine what made a conclusion convincing before relying on it as an account of what is happening.</p>
+            </div>
+          </article>
+
+          <!-- Principle 05 -->
+          <article class="phil-principle-item phil-reveal phil-reveal-delay-2">
+            <div class="phil-p-index">05</div>
+            <div class="phil-p-body">
+              <h3 class="phil-p-title">Learning after action</h3>
+              <p class="phil-p-text">A decision is not finished when it is made. Outcomes should refine the reasoning that produced them.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 05 — WHAT THIS IS NOT (BOUNDARIES)
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-boundaries-section" id="boundaries" aria-label="Boundaries">
+      <div class="emg-bound">
+        <div class="phil-boundaries-grid">
+          <div class="phil-boundaries-intro phil-reveal">
+            <div class="phil-meta-header">
+              <span class="phil-meta-num">05</span>
+              <span class="phil-meta-line"></span>
+              <span class="phil-meta-label">BOUNDARIES</span>
+            </div>
+            <h2 class="phil-section-title">
+              What disciplined judgment is not.
+            </h2>
+            <p class="phil-section-sub">
+              Neither a rigid formula nor a performance of certainty.
+            </p>
+          </div>
+
+          <div class="phil-boundaries-list phil-reveal phil-reveal-delay-1">
+            <div class="phil-boundary-item">
+              <span class="phil-boundary-dash" aria-hidden="true">—</span>
+              <span class="phil-boundary-idx">[01]</span>
+              <p class="phil-boundary-text">Not a universal framework imposed regardless of context</p>
+            </div>
+            <div class="phil-boundary-item">
+              <span class="phil-boundary-dash" aria-hidden="true">—</span>
+              <span class="phil-boundary-idx">[02]</span>
+              <p class="phil-boundary-text">Not analysis used to avoid a necessary decision</p>
+            </div>
+            <div class="phil-boundary-item">
+              <span class="phil-boundary-dash" aria-hidden="true">—</span>
+              <span class="phil-boundary-idx">[03]</span>
+              <p class="phil-boundary-text">Not a tool that outsources human responsibility</p>
+            </div>
+            <div class="phil-boundary-item">
+              <span class="phil-boundary-dash" aria-hidden="true">—</span>
+              <span class="phil-boundary-idx">[04]</span>
+              <p class="phil-boundary-text">Not confidence mistaken for decision quality</p>
+            </div>
+            <div class="phil-boundary-item">
+              <span class="phil-boundary-dash" aria-hidden="true">—</span>
+              <span class="phil-boundary-idx">[05]</span>
+              <p class="phil-boundary-text">Not development separated from the work that matters</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 06 — PROFESSIONAL JUDGMENT REMAINS HUMAN
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-human-section" id="human-judgment" aria-label="Human Responsibility">
+      <div class="emg-bound">
+        <div class="phil-human-wrapper phil-reveal">
+          <div class="phil-meta-header" style="justify-content: center;">
+            <span class="phil-meta-num">06</span>
+            <span class="phil-meta-line"></span>
+            <span class="phil-meta-label">HUMAN RESPONSIBILITY</span>
+          </div>
+
+          <h2 class="phil-human-statement">
+            Structure should enhance the judgment of responsible people, <em>not replace their accountability.</em>
+          </h2>
+
+          <div class="phil-human-prose">
+            <p class="phil-human-quiet-note">Not a tool that outsources human responsibility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 07 — BETTER-EARNED CONCLUSIONS
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-culmination-section" id="culmination" aria-label="Better-Earned Conclusions">
+      <div class="emg-bound">
+        <div class="phil-culmination-container phil-reveal">
+          <div class="phil-meta-header" style="justify-content: center;">
+            <span class="phil-meta-num">07</span>
+            <span class="phil-meta-line"></span>
+            <span class="phil-meta-label">THE CULMINATION</span>
+          </div>
+
+          <!-- Converging alignment geometry -->
+          <div class="phil-converge-lines" aria-hidden="true">
+            <span class="phil-converge-left"></span>
+            <span class="phil-converge-point"></span>
+            <span class="phil-converge-right"></span>
+          </div>
+
+          <h2 class="phil-culmination-statement">
+            The result is not certainty.<br/>
+            It is a <em>better-earned conclusion.</em>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 08 — CONDITIONS BEFORE CONVICTION (BOOK)
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-book-section" id="the-book" aria-label="Conditions Before Conviction">
+      <div class="emg-bound">
+        <div class="phil-book-container phil-reveal">
+          <div class="phil-meta-header">
+            <span class="phil-meta-num">08</span>
+            <span class="phil-meta-line"></span>
+            <span class="phil-meta-label">FORTHCOMING WORK</span>
+          </div>
+
+          <h2 class="phil-book-title">
+            Conditions Before Conviction
+          </h2>
+
+          <p class="phil-book-sentence">
+            Examines how conclusions become convincing enough to rely on, what shapes the authority we give them, and what our certainty changes once we act.
+          </p>
+
+          <div class="phil-book-action">
+            <a href="conditions-before-conviction.html" class="btn-phil-editorial">
+              EXPLORE THE BOOK
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 09 — INSIGHTS BRIDGE
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-insights-section" id="insights" aria-label="Insights Bridge">
+      <div class="emg-bound">
+        <div class="phil-insights-container phil-reveal">
+          <div class="phil-meta-header">
+            <span class="phil-meta-num">09</span>
+            <span class="phil-meta-line"></span>
+            <span class="phil-meta-label">CONTINUOUS INQUIRY</span>
+          </div>
+
+          <h2 class="phil-insights-statement">
+            The philosophy develops through inquiry.
+          </h2>
+
+          <p class="phil-insights-text">
+            Read the ideas and essays that test these commitments against leadership, assessment, behavior, and organizational decisions.
+          </p>
+
+          <div class="phil-insights-action">
+            <a href="ideas.html" class="btn-phil-editorial">
+              EXPLORE THE INSIGHTS
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         FINAL CTA — BEGIN A CONVERSATION
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="phil-section phil-final-cta-section" id="conversation" aria-label="Begin a Conversation">
+      <div class="emg-bound">
+        <div class="phil-final-cta-container phil-reveal">
+          <p class="phil-final-quote">
+            “Perspective changes what becomes possible.”
+          </p>
+          <div class="phil-final-actions">
+            <a href="contact.html" class="btn-phil-primary">
+              BEGIN A CONVERSATION
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER — Matching homepage footer
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <footer class="emg-footer">
+    <div class="emg-bound">
+      <div class="emg-footer-grid">
+        <div class="emg-footer-brand-col">
+          <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+            <span class="nav-brand-symbol" aria-hidden="true"></span>
+            <span class="nav-brand-copy">
+              <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+              <small>Feras Banna</small>
+            </span>
+          </a>
+          <p class="emg-footer-creds">
+            Perspective changes what becomes possible.<br />
+            Improving the quality of judgment surrounding consequential choices.
+          </p>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="conditions-before-conviction.html">The Book</a></li>
+            <li><a href="ideas.html">Insights &amp; Essays</a></li>
+            <li><a href="about.html">About Feras</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="tech.html"><strong>Enable My Growth Tech</strong></a></li>
+            <li><a href="capability-os.html">CapabilityOS™</a></li>
+            <li><a href="ai-thinking-studio.html">AI Thinking Studio™</a></li>
+            <li><a href="contextual.html">Contextual™</a></li>
+            <li><a href="phys-valid.html">Phys-Valid™</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Practice</h4>
+          <ul>
+            <li><a href="work.html">Work with Feras</a></li>
+            <li><a href="training.html">Workshops &amp; Facilitation</a></li>
+            <li><a href="speaking.html">Speaking &amp; Roundtables</a></li>
+            <li><a href="contact.html">Begin a Conversation</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Legal &amp; Notes</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+            <li><a href="terms.html">Terms of Engagement</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
-    </section>
 
-    <section class="cta-band">
-      <div class="container-sm">
-        <p class="eyebrow mb-md">Continue exploring</p>
-        <h2 class="display display-lg mb-md">The philosophy develops through inquiry.</h2>
-        <p>Read the ideas and essays that test these commitments against leadership, assessment, behavior, and organizational decisions.</p>
-        <a href="ideas.html" class="btn btn-gold mt-lg">Explore the insights</a>
+      <div class="emg-footer-bottom">
+        <span>&copy; 2026 Enable My Growth. All rights reserved.</span>
+        <span>Founder-Led Practice &middot; GCC &amp; International</span>
       </div>
-    </section>
-  </main>
-  <script src="analytics.js"></script><script src="effects.js"></script>
-  <script src="nav.js"></script>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // Scroll reveal — IntersectionObserver
+    const revealEls = document.querySelectorAll('.phil-reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // Hero elements are above fold — make visible immediately
+    document.querySelectorAll('.phil-hero .phil-reveal').forEach(el => {
+      el.classList.add('visible');
+    });
+  </script>
+
 </body>
 </html>
