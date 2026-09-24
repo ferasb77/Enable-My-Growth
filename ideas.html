@@ -4,234 +4,2259 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Insights — Enable My Growth</title>
-  <meta name="description" content="Ideas and essays on structured judgment, leadership, decision-making, context, and human behavior." />
+  <meta name="description" content="Questions worth keeping open. Essays and lines of inquiry about judgment, leadership, behavior, and the explanations we accept too quickly." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon-128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    .idea-section {
-      padding: 5rem 0;
-      border-top: 1px solid var(--border2);
-    }
-    .idea-section:first-of-type { border-top: none; }
+    /* ═════════════════════════════════════════════════════════════════════════
+       ENABLE MY GROWTH — INSIGHTS & INQUIRY v2
+       Visual system: EMG Dark & Gold Editorial System
+       Page role: The Publication / Inquiry side of EMG
+       Visual metaphor: THE INQUIRY LEDGER
+       ═════════════════════════════════════════════════════════════════════════ */
 
-    .idea-layout {
-      max-width: 1080px;
+    :root {
+      --emg-bg: #08080C;
+      --emg-surface: #101017;
+      --emg-surface-elevated: #151520;
+      --emg-subtle: #14141E;
+      --emg-gold: #C9A96E;
+      --emg-gold-glow: #E8CCA0;
+      --emg-gold-dim: #796440;
+      --emg-gold-border: rgba(201, 169, 110, 0.22);
+      --emg-gold-hairline: rgba(201, 169, 110, 0.14);
+      --emg-gold-subtle: rgba(201, 169, 110, 0.08);
+      --emg-text: #EDEAE3;
+      --emg-text-bright: #FFFFFF;
+      --emg-text-primary: #D4D0C8;
+      --emg-text-muted: #9E9EAF;
+      --emg-text-dim: #5C5C70;
+      --emg-serif: 'Cormorant Garamond', Georgia, serif;
+      --emg-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --emg-mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--emg-bg);
+      color: var(--emg-text);
+      font-family: var(--emg-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       LAYOUT BOUNDS & GRID PRIMITIVES
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-bound {
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 3rem;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 5rem;
+      padding-left: clamp(1.25rem, 5vw, 3.5rem);
+      padding-right: clamp(1.25rem, 5vw, 3.5rem);
+      width: 100%;
     }
 
-    .idea-sidebar {
+    /* ═════════════════════════════════════════════════════════════════════════
+       GLOBAL HEADER — LOCKED ACROSS ALL EMG PAGES
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-header {
       position: sticky;
-      top: 6rem;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 8, 12, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      height: 72px;
+      display: flex;
+      align-items: center;
     }
 
-    .idea-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
+    .emg-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .emg-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--emg-text-bright);
+    }
+
+    .emg-brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--emg-gold-border);
+      background: radial-gradient(circle at 35% 35%, rgba(201, 169, 110, 0.25), transparent 75%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .emg-brand-mark::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emg-gold);
+    }
+
+    .emg-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .emg-brand-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--emg-text-bright);
+    }
+
+    .emg-brand-title span {
+      color: var(--emg-gold);
+    }
+
+    .emg-brand-sub {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .emg-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .emg-nav a {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .emg-nav a:hover {
+      color: var(--emg-text-bright);
+    }
+
+    .emg-nav a.active {
+      color: var(--emg-gold);
+    }
+
+    .emg-nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--emg-gold);
+    }
+
+    .emg-header-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1.15rem;
+      background: var(--emg-gold);
+      color: #08080C;
+      font-family: var(--emg-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--emg-gold);
+      border-radius: 2px;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .emg-header-cta:hover {
+      background: #dfc28d;
+      border-color: #dfc28d;
+      color: #08080C;
+    }
+
+    .emg-nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--emg-gold-border);
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      color: var(--emg-gold);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .emg-nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--emg-gold);
+      position: relative;
+    }
+
+    .emg-nav-toggle span::before,
+    .emg-nav-toggle span::after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background: var(--emg-gold);
+      left: 0;
+    }
+
+    .emg-nav-toggle span::before { top: -6px; }
+    .emg-nav-toggle span::after { top: 6px; }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       INQUIRY LEDGER — EDITORIAL METADATA HEADERS & TAGS
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-meta-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: clamp(1.25rem, 2.5vh, 1.85rem);
+    }
+
+    .inq-meta-num {
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-gold);
+    }
+
+    .inq-meta-line {
+      width: 24px;
+      height: 1px;
+      background: var(--emg-gold-dim);
+    }
+
+    .inq-meta-label {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SECTION 01: INSIGHTS HERO — THE INQUIRY LEDGER
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-hero-section {
+      padding: clamp(3.5rem, 8vh, 6.5rem) 0 clamp(4rem, 8vh, 6.5rem);
+      position: relative;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 10%, rgba(201, 169, 110, 0.05), transparent 70%),
+        radial-gradient(ellipse 50% 50% at 85% 60%, rgba(20, 20, 30, 0.4), transparent 70%),
+        var(--emg-bg);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .inq-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(3rem, 6vw, 6.5rem);
+      align-items: start;
+    }
+
+    .inq-hero-primary {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inq-hero-headline {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 4.8vw, 4.2rem);
       font-weight: 300;
-      color: rgba(201,169,110,0.1);
-      line-height: 1;
+      line-height: 1.12;
+      color: var(--emg-text-bright);
+      margin: 0 0 clamp(1.4rem, 3vh, 2rem);
+      letter-spacing: -0.015em;
+      max-width: 18ch;
+    }
+
+    .inq-hero-headline em {
+      font-style: italic;
+      color: var(--emg-gold);
+    }
+
+    .inq-hero-lead {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      line-height: 1.8;
+      color: var(--emg-text-primary);
+      margin: 0 0 clamp(2rem, 4vh, 2.75rem);
+      font-weight: 300;
+      max-width: 48ch;
+    }
+
+    .inq-hero-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--emg-gold-border) 0%, rgba(201,169,110,0.02) 100%);
+      margin-bottom: 2rem;
+    }
+
+    .inq-hero-epigraph {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      border-left: 2px solid var(--emg-gold-dim);
+      padding-left: 1.25rem;
+    }
+
+    .inq-epigraph-text {
+      font-family: var(--emg-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--emg-text-muted);
+    }
+
+    .inq-epigraph-source {
+      font-family: var(--emg-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    /* Right Column: The Inquiry Ledger Registry */
+    .inq-ledger-panel {
+      background: var(--emg-surface);
+      border: 1px solid var(--emg-gold-border);
+      border-radius: 2px;
+      padding: clamp(1.75rem, 3vw, 2.5rem);
+      position: relative;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .inq-ledger-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--emg-gold), transparent);
+    }
+
+    .inq-ledger-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .inq-ledger-title {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .inq-ledger-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .inq-ledger-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emg-gold);
+      box-shadow: 0 0 6px var(--emg-gold);
+    }
+
+    .inq-ledger-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .inq-ledger-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-bottom: 1.15rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .inq-ledger-entry:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .inq-entry-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      color: var(--emg-text-dim);
+      text-transform: uppercase;
+      flex-wrap: wrap;
+    }
+
+    .inq-entry-tag {
+      color: var(--emg-text-primary);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .inq-ledger-entry:hover .inq-entry-tag {
+      color: var(--emg-gold);
+    }
+
+    .inq-entry-count {
+      color: var(--emg-gold-dim);
+      font-size: 0.62rem;
+    }
+
+    .inq-entry-premise {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      transition: color 0.2s ease;
+    }
+
+    .inq-ledger-entry:hover .inq-entry-premise {
+      color: var(--emg-text-primary);
+    }
+
+    .inq-ledger-footer {
+      margin-top: 1.75rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--emg-gold-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--emg-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      color: var(--emg-text-dim);
+      text-transform: uppercase;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SECTION 02: FEATURED INQUIRY / LEAD ESSAY TREATMENT
+       The Intellectual Anchor — Not a generic card
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-featured-section {
+      padding: clamp(5rem, 10vh, 8.5rem) 0;
+      position: relative;
+      background: var(--emg-bg);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .inq-featured-header-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: clamp(2rem, 4vh, 3.5rem);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      padding-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .inq-featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .inq-featured-coordinate {
+      font-family: var(--emg-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.16em;
+      color: var(--emg-text-dim);
+      text-transform: uppercase;
+    }
+
+    .inq-featured-article {
+      display: grid;
+      grid-template-columns: 160px 1fr 340px;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    /* Column 1: Entry Index / Coordinates */
+    .inq-featured-index {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .inq-big-num {
+      font-family: var(--emg-serif);
+      font-size: clamp(4.5rem, 7vw, 6.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: rgba(201, 169, 110, 0.22);
+      letter-spacing: -0.04em;
+    }
+
+    .inq-index-meta {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+      line-height: 1.6;
+    }
+
+    /* Column 2: Article Headline, Thesis & Excerpt */
+    .inq-featured-core {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inq-core-tag {
+      font-family: var(--emg-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
       margin-bottom: 1rem;
     }
 
-    .idea-main-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    .inq-core-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(2rem, 3.5vw, 3.1rem);
       font-weight: 300;
       line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 1rem;
+      color: var(--emg-text-bright);
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.015em;
     }
 
-    .idea-premise {
-      font-size: 1rem;
-      color: var(--muted);
+    .inq-core-thesis {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--emg-gold-glow);
+      margin: 0 0 1.75rem;
+      font-weight: 300;
+      border-left: 2px solid var(--emg-gold);
+      padding-left: 1.25rem;
+    }
+
+    .inq-core-body {
+      font-size: clamp(0.98rem, 1.2vw, 1.05rem);
       line-height: 1.85;
-      margin-bottom: 2.5rem;
+      color: var(--emg-text-primary);
+      margin: 0 0 2rem;
+      font-weight: 300;
     }
 
-    .idea-body-text {
+    .inq-core-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--emg-gold);
+      font-family: var(--emg-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--emg-gold-dim);
+      width: fit-content;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .inq-core-action:hover {
+      color: var(--emg-gold-glow);
+      border-color: var(--emg-gold);
+      transform: translateX(4px);
+    }
+
+    /* Column 3: Marginal Deliberation / Observation Column */
+    .inq-featured-marginalia {
+      background: var(--emg-surface);
+      border: 1px solid var(--emg-gold-hairline);
+      border-radius: 2px;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .inq-margin-label {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      padding-bottom: 0.5rem;
+    }
+
+    .inq-margin-quote {
+      font-family: var(--emg-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--emg-text);
+      margin: 0;
+    }
+
+    .inq-margin-note {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .inq-margin-nav {
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(201, 169, 110, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .inq-margin-nav-label {
+      font-family: var(--emg-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .inq-margin-link {
+      font-family: var(--emg-serif);
       font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
+      font-style: italic;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      line-height: 1.4;
+      transition: color 0.2s ease;
     }
 
-    .article-block {
-      border-top: 1px solid var(--border2);
-      margin-top: 2.5rem;
-      padding-top: 2rem;
+    .inq-margin-link:hover {
+      color: var(--emg-gold);
     }
 
-    .article-block-label {
+    /* ═════════════════════════════════════════════════════════════════════════
+       SECTION 03: ARCHIVE TRANSITION — EDITORIAL REGISTRY PREVIEW
+       Milestone 1 boundary: First archive transition immediately below
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-transition-section {
+      padding: clamp(4.5rem, 8vh, 6.5rem) 0 clamp(4rem, 6vh, 5.5rem);
+      background: var(--emg-surface);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .inq-transition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: baseline;
+    }
+
+    .inq-transition-statement {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1.35;
+      color: var(--emg-text-bright);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .inq-transition-statement em {
+      font-style: italic;
+      color: var(--emg-gold);
+    }
+
+    .inq-transition-prose {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .inq-transition-desc {
+      font-size: 0.96rem;
+      line-height: 1.8;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .inq-transition-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--emg-mono);
       font-size: 0.65rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
+      color: var(--emg-gold-dim);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SERIES ARCHIVE SECTIONS (SERIES 01 & 02) — THE READING LEDGER
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-series-section {
+      padding: clamp(4.5rem, 8vh, 7rem) 0;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    .inq-series-header {
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: baseline;
+    }
+
+    .inq-series-meta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .inq-series-num {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+    }
+
+    .inq-series-classification {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .inq-series-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .inq-series-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(2rem, 3.2vw, 2.75rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--emg-text-bright);
+      margin: 0;
+      letter-spacing: -0.015em;
+    }
+
+    .inq-series-premise {
+      font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 68ch;
+    }
+
+    /* ── The Reading Ledger Table ── */
+    .inq-ledger-table {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inq-ledger-row {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      gap: clamp(1.5rem, 3vw, 3rem);
+      align-items: baseline;
+      padding: clamp(2rem, 3.5vh, 2.75rem) 1rem clamp(2rem, 3.5vh, 2.75rem) 0.5rem;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      transition: background 0.25s ease;
+    }
+
+    .inq-ledger-row:hover {
+      background: rgba(201, 169, 110, 0.025);
+    }
+
+    /* Index Coordinate */
+    .inq-ledger-coord {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .inq-ledger-idx {
+      font-family: var(--emg-serif);
+      font-size: 1.75rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--emg-gold-dim);
+      transition: color 0.2s ease;
+    }
+
+    .inq-ledger-row:hover .inq-ledger-idx {
+      color: var(--emg-gold);
+    }
+
+    .inq-ledger-row-tag {
+      font-family: var(--emg-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    /* Content Area */
+    .inq-ledger-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .inq-ledger-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--emg-text-bright);
+      margin: 0;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+
+    .inq-ledger-row:hover .inq-ledger-title {
+      color: var(--emg-gold-glow);
+    }
+
+    .inq-ledger-excerpt {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 68ch;
+    }
+
+    /* Action Link */
+    .inq-ledger-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      white-space: nowrap;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--emg-gold-dim);
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .inq-ledger-row:hover .inq-ledger-action {
+      color: var(--emg-gold-glow);
+      border-color: var(--emg-gold);
+      transform: translateX(4px);
+    }
+
+    /* Special Featured Reference Row in Series 02 */
+    .inq-ledger-row.inq-ledger-featured-ref {
+      background: rgba(201, 169, 110, 0.015);
+      border-left: 2px solid var(--emg-gold-dim);
+      padding-left: 1.25rem;
+    }
+
+    .inq-ledger-row.inq-ledger-featured-ref:hover {
+      background: rgba(201, 169, 110, 0.035);
+      border-left-color: var(--emg-gold);
+    }
+
+    .inq-featured-ref-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--emg-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin-bottom: 0.25rem;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SECTION 04: THE INNER CONVERSATION — WORKING INQUIRIES (IN DEVELOPMENT)
+       Unlinked, disciplined, dignified academic register
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-working-section {
+      padding: clamp(4.5rem, 8vh, 7rem) 0;
+      background: var(--emg-surface);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    .inq-working-table {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inq-working-row {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      gap: clamp(1.5rem, 3vw, 3rem);
+      align-items: baseline;
+      padding: clamp(1.75rem, 3vh, 2.25rem) 1rem clamp(1.75rem, 3vh, 2.25rem) 0.5rem;
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    .inq-working-coord {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .inq-working-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.35;
+      color: var(--emg-text);
+      margin: 0;
+    }
+
+    .inq-working-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+      white-space: nowrap;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SECTION 05: CONDITIONS BEFORE CONVICTION — BOOK BRIDGE
+       The Architectural Anchor / Book in Development
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-book-bridge-section {
+      padding: clamp(5.5rem, 10vh, 8.5rem) 0;
+      background: var(--emg-bg);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      position: relative;
+    }
+
+    .inq-book-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .inq-book-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inq-book-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--emg-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .inq-book-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--emg-text-bright);
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .inq-book-kicker {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--emg-gold-glow);
+      margin: 0 0 2rem;
+      font-weight: 300;
+    }
+
+    .inq-book-quote-card {
+      background: var(--emg-surface);
+      border: 1px solid var(--emg-gold-hairline);
+      border-left: 2px solid var(--emg-gold);
+      padding: 1.75rem 1.5rem;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+
+    .inq-book-epigraph {
+      font-family: var(--emg-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--emg-text);
+      margin: 0 0 0.75rem;
+    }
+
+    .inq-book-epigraph-meta {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .inq-book-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .inq-book-prose {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .inq-book-triad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1rem 0 0.5rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--emg-gold-hairline);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+    }
+
+    .inq-triad-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .inq-triad-strong {
+      font-family: var(--emg-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--emg-text-bright);
+      line-height: 1.3;
+    }
+
+    .inq-triad-desc {
+      font-family: var(--emg-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+    }
+
+    .inq-book-cta-row {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .inq-book-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.6rem;
+      background: transparent;
+      border: 1px solid var(--emg-gold);
+      color: var(--emg-gold);
+      text-decoration: none;
+      font-family: var(--emg-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    }
+
+    .inq-book-action:hover {
+      background: var(--emg-gold);
+      color: #080808;
+      transform: translateY(-1px);
+    }
+
+    .inq-book-meta-sub {
+      font-family: var(--emg-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SECTION 06: QUIET EDITORIAL CLOSING
+       No sales funnel — dignified editorial punctuation
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-closing-section {
+      padding: clamp(5rem, 9vh, 7.5rem) 0;
+      background: var(--emg-surface);
+      border-bottom: 1px solid var(--emg-gold-hairline);
+      text-align: center;
+      position: relative;
+    }
+
+    .inq-closing-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .inq-closing-mark {
+      width: 24px;
+      height: 1px;
+      background: var(--emg-gold);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .inq-closing-title {
+      font-family: var(--emg-serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-weight: 300;
+      color: var(--emg-text-bright);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .inq-closing-desc {
+      font-size: 0.94rem;
+      line-height: 1.8;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       GLOBAL FOOTER — LOCKED ACROSS ALL EMG PAGES
+       ═════════════════════════════════════════════════════════════════════════ */
+    .emg-footer {
+      background: var(--emg-bg);
+      border-top: 1px solid var(--emg-gold-hairline);
+      padding: clamp(4.5rem, 8vh, 6.5rem) 0 clamp(2.5rem, 4vh, 3.5rem);
+      position: relative;
+    }
+
+    .emg-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 3.5vw, 4rem);
+      margin-bottom: clamp(3rem, 5vh, 4.5rem);
+    }
+
+    .emg-footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .emg-footer-brand-col .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--emg-text-bright);
+    }
+
+    .nav-brand-symbol {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--emg-gold-border);
+      background: radial-gradient(circle at 35% 35%, rgba(201, 169, 110, 0.25), transparent 75%);
+      display: inline-block;
+      position: relative;
+    }
+
+    .nav-brand-symbol::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--emg-gold);
+    }
+
+    .nav-brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .nav-brand-copy b {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--emg-text-bright);
+    }
+
+    .nav-brand-copy small {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emg-text-dim);
+    }
+
+    .emg-footer-creds {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--emg-text-muted);
+      margin: 0;
+      font-weight: 300;
+      max-width: 32ch;
+    }
+
+    .emg-footer-col h4 {
+      font-family: var(--emg-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emg-gold);
+      margin: 0 0 1.25rem;
+      font-weight: 500;
+    }
+
+    .emg-footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .emg-footer-col a {
+      font-size: 0.85rem;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-weight: 300;
+    }
+
+    .emg-footer-col a:hover {
+      color: var(--emg-text-bright);
+    }
+
+    .emg-footer-bottom {
+      border-top: 1px solid var(--emg-gold-hairline);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--emg-text-dim);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       SCROLL REVEALS & MOTION (DISCIPLINED)
+       ═════════════════════════════════════════════════════════════════════════ */
+    .inq-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .inq-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .inq-reveal-delay-1 {
+      transition-delay: 0.15s;
+    }
+
+    .inq-reveal-delay-2 {
+      transition-delay: 0.25s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .inq-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ═════════════════════════════════════════════════════════════════════════
+       RESPONSIVE EDITORIAL BREAKPOINTS
+       ═════════════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1080px) {
+      .inq-featured-article {
+        grid-template-columns: 120px 1fr;
+        gap: 3rem;
+      }
+      .inq-featured-marginalia {
+        grid-column: 1 / -1;
+      }
+      .emg-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .emg-footer-brand-col {
+        grid-column: 1 / -1;
+      }
     }
 
     @media (max-width: 900px) {
-      .idea-layout { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
-      .idea-sidebar { position: static; }
+      .emg-nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--emg-surface-elevated);
+        border-bottom: 1px solid var(--emg-gold-border);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+      .emg-nav.open {
+        display: flex;
+      }
+      .emg-nav-toggle {
+        display: flex;
+      }
+      .inq-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .inq-transition-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .inq-series-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .inq-book-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .inq-book-triad {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .inq-featured-article {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .inq-featured-index {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--emg-gold-hairline);
+        padding-bottom: 1rem;
+      }
+      .inq-big-num {
+        font-size: 3.5rem;
+      }
+      .inq-ledger-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.75rem 0.5rem;
+      }
+      .inq-ledger-coord {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+      .inq-working-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1.5rem 0.5rem;
+      }
+      .inq-working-coord {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+      .inq-book-action {
+        width: 100%;
+        justify-content: center;
+      }
+      .emg-footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .emg-header-cta {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page-hero">
-    <div class="container">
-      <p class="eyebrow mb-sm">Insights</p>
-      <h1 class="display display-xl" style="max-width:700px;">Questions worth keeping open</h1>
-      <p style="margin-top:1.5rem; max-width:520px; font-size:1rem; line-height:1.85;">
-        Essays and lines of inquiry about judgment, leadership, behavior, and the explanations we accept too quickly.
-      </p>
-    </div>
-  </div>
 
-  <!-- 01 CONDITIONS BEFORE CONVICTION -->
-  <div class="idea-section" id="cbc">
-    <div class="idea-layout">
-      <div class="idea-sidebar">
-        <div class="idea-num">01</div>
-        <p class="eyebrow mb-sm">Core Idea</p>
-        <h2 class="idea-main-title">Conditions Before Conviction</h2>
-        <div class="gold-rule mt-md"></div>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       GLOBAL HEADER — Canonical Order: Philosophy, Technology, Workshops, Insights (active), Services, About
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <header class="emg-header">
+    <div class="emg-bound emg-header-inner">
+      <a href="index.html" class="emg-brand" aria-label="Enable My Growth home">
+        <div class="emg-brand-mark" aria-hidden="true"></div>
+        <div class="emg-brand-text">
+          <span class="emg-brand-title">Enable My <span>Growth</span></span>
+          <span class="emg-brand-sub">Feras Banna</span>
+        </div>
+      </a>
+
+      <nav class="emg-nav" id="nav-links" aria-label="Main Navigation">
+        <a href="philosophy.html">Philosophy</a>
+        <a href="tech.html">Technology</a>
+        <a href="training.html">Workshops</a>
+        <a href="ideas.html" class="active" aria-current="page">Insights</a>
+        <a href="work.html">Services</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="contact.html" class="emg-header-cta">Begin a Conversation</a>
+        <button class="emg-nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
       </div>
-      <div>
-        <p class="idea-premise">
-          We rarely experience the conditions that shape a judgment. We experience the conclusion. This is the subject of a book by Feras Banna, currently in development.
-        </p>
-        <p class="idea-body-text">
-          Conviction, here, does not mean dogmatism. It is the point at which a conclusion has acquired enough authority for us to rely on it. The upstream question is what happened before this became convincing enough to rely on. The downstream question is what it changes once we act from it.
-        </p>
-        <p class="idea-body-text">
-          The book does not assume our conclusions are wrong, and the aim is not less certainty. It is a more responsible relationship with the authority certainty carries — strong enough to act, open enough to learn, accountable enough to change.
-        </p>
-        <p class="idea-body-text">
-          <em>Conditions Before Conviction</em> is currently in development as big-idea general nonfiction.
-        </p>
-        <div class="article-block">
-          <div class="article-block-label">Continue exploring</div>
-          <ul class="article-list">
-            <li><a href="conditions-before-conviction.html">About the book</a></li>
-            <li><a href="essay-conditions.html">The Conditions We Forget to Examine</a></li>
-            <li><a href="essay-context.html">Context Before Explanation</a></li>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 01 — INSIGHTS HERO: THE INQUIRY LEDGER
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-hero-section" aria-label="Insights hero">
+      <div class="emg-bound">
+
+        <div class="inq-hero-grid">
+
+          <!-- Left / Primary: Editorial Statement -->
+          <div class="inq-hero-primary inq-reveal">
+            <div class="inq-meta-header">
+              <span class="inq-meta-num">01</span>
+              <span class="inq-meta-line"></span>
+              <span class="inq-meta-label">INSIGHTS &amp; INQUIRY</span>
+            </div>
+
+            <h1 class="inq-hero-headline">
+              Questions worth <em>keeping open.</em>
+            </h1>
+
+            <p class="inq-hero-lead">
+              Essays and lines of inquiry about judgment, leadership, behavior, and the explanations we accept too quickly.
+            </p>
+
+            <div class="inq-hero-rule"></div>
+
+            <div class="inq-hero-epigraph">
+              <div class="inq-epigraph-text">
+                &ldquo;We rarely experience the conditions that shape a judgment. We experience the conclusion.&rdquo;
+              </div>
+              <div class="inq-epigraph-source">
+                FERAS BANNA // CONDITIONS BEFORE CONVICTION
+              </div>
+            </div>
+          </div>
+
+          <!-- Right / Secondary: The Inquiry Registry -->
+          <div class="inq-ledger-panel inq-reveal inq-reveal-delay-1" aria-label="Active inquiry registry">
+            <div class="inq-ledger-topbar">
+              <span class="inq-ledger-title">INQUIRY REGISTRY</span>
+              <div class="inq-ledger-status">
+                <span class="inq-ledger-dot" aria-hidden="true"></span>
+                <span>08 PUBLISHED ESSAYS</span>
+              </div>
+            </div>
+
+            <ul class="inq-ledger-list">
+
+              <!-- Entry 01 -->
+              <li>
+                <a href="conditions-before-conviction.html" class="inq-ledger-entry">
+                  <div class="inq-entry-meta">
+                    <span class="inq-entry-tag">INQ &middot; 01 // CONDITIONS BEFORE CONVICTION</span>
+                    <span class="inq-entry-count">[BOOK IN DEVELOPMENT]</span>
+                  </div>
+                  <p class="inq-entry-premise">
+                    We rarely experience the conditions that shape a judgment. We experience the conclusion.
+                  </p>
+                </a>
+              </li>
+
+              <!-- Entry 02 -->
+              <li>
+                <a href="essay-context.html" class="inq-ledger-entry">
+                  <div class="inq-entry-meta">
+                    <span class="inq-entry-tag">INQ &middot; 02 // CONTEXT BEFORE EXPLANATION</span>
+                    <span class="inq-entry-count">[3 ESSAYS]</span>
+                  </div>
+                  <p class="inq-entry-premise">
+                    We routinely explain behavior through the person before examining the conditions that made the behavior reasonable.
+                  </p>
+                </a>
+              </li>
+
+              <!-- Entry 03 -->
+              <li>
+                <div class="inq-ledger-entry">
+                  <div class="inq-entry-meta">
+                    <span class="inq-entry-tag">INQ &middot; 03 // THE INNER CONVERSATION</span>
+                    <span class="inq-entry-count">[IN DEVELOPMENT]</span>
+                  </div>
+                  <p class="inq-entry-premise">
+                    The assumptions we rarely examine often have more influence than the conclusions we consciously defend.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Entry 04 -->
+              <li>
+                <a href="#featured" class="inq-ledger-entry">
+                  <div class="inq-entry-meta">
+                    <span class="inq-entry-tag">INQ &middot; 04 // DECISION INTEGRITY</span>
+                    <span class="inq-entry-count">[5 ESSAYS]</span>
+                  </div>
+                  <p class="inq-entry-premise">
+                    The quality of decisions is constrained by the quality of the conditions surrounding them.
+                  </p>
+                </a>
+              </li>
+
+            </ul>
+
+            <div class="inq-ledger-footer">
+              <span>4 CORE INQUIRIES</span>
+              <span>FERAS BANNA</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 02 — SELECTED INQUIRY / LEAD ESSAY
+         The Intellectual Anchor — "The Conditions We Forget to Examine"
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-featured-section" id="featured" aria-label="Featured essay">
+      <div class="emg-bound">
+
+        <!-- Header Row -->
+        <div class="inq-featured-header-row inq-reveal">
+          <div class="inq-featured-badge">
+            <span class="inq-ledger-dot" aria-hidden="true"></span>
+            <span>SELECTED INQUIRY // LEAD ESSAY</span>
+          </div>
+          <div class="inq-featured-coordinate">
+            <span>SERIES: DECISION INTEGRITY &middot; ESSAY &middot; FERAS BANNA</span>
+          </div>
+        </div>
+
+        <!-- Article Composition -->
+        <article class="inq-featured-article inq-reveal inq-reveal-delay-1">
+
+          <!-- Col 1: Large Number Coordinates -->
+          <div class="inq-featured-index">
+            <div class="inq-big-num">01</div>
+            <div class="inq-index-meta">
+              <span>ENTRY // 01</span><br />
+              <span>ARCHIVE REF: E-COND</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Core Article Content -->
+          <div class="inq-featured-core">
+            <div class="inq-core-tag">DECISION INTEGRITY &middot; ESSAY</div>
+
+            <h2 class="inq-core-title">
+              The Conditions We Forget to Examine
+            </h2>
+
+            <div class="inq-core-thesis">
+              &ldquo;Decisions do not emerge in isolation. They emerge from circumstances that shape judgment before deliberate analysis even begins.&rdquo;
+            </div>
+
+            <p class="inq-core-body">
+              When people reflect upon important decisions, attention usually moves toward the decision itself: Was it the right choice? Was the information accurate? Were the risks properly evaluated? The outcome becomes the focus. The surrounding conditions receive comparatively little scrutiny.
+            </p>
+
+            <p class="inq-core-body">
+              Yet two individuals facing the same choice may be operating under entirely different circumstances&mdash;pressure, fatigue, urgency, social constraints, or perceived scarcity. The decision appears the same. The conditions are not. And conditions have a remarkable ability to alter judgment long before deliberate analysis begins.
+            </p>
+
+            <a href="essay-conditions.html" class="inq-core-action">
+              <span>Read Essay</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Col 3: Marginal Deliberation Column -->
+          <aside class="inq-featured-marginalia inq-reveal inq-reveal-delay-2" aria-label="Marginal observation">
+            <div class="inq-margin-label">DELIBERATION NOTE</div>
+
+            <p class="inq-margin-quote">
+              &ldquo;A good outcome does not necessarily indicate a sound decision. A poor outcome does not necessarily indicate a flawed one.&rdquo;
+            </p>
+
+            <p class="inq-margin-note">
+              Both may have emerged from conditions that remain largely invisible once the result becomes known. Months later, people remember what they chose; they struggle to remember the pressures operating when the choice was made.
+            </p>
+
+            <div class="inq-margin-nav">
+              <span class="inq-margin-nav-label">Companion Inquiry</span>
+              <a href="essay-better-people.html" class="inq-margin-link">
+                When Better People Don&rsquo;t Produce Better Decisions &rarr;
+              </a>
+              <a href="essay-integrity.html" class="inq-margin-link">
+                What Integrity in Decision-Making Actually Requires &rarr;
+              </a>
+            </div>
+          </aside>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 03 — ARCHIVE TRANSITION: REGISTERED INQUIRIES
+         Milestone 1 boundary: First archive / editorial transition immediately below
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-transition-section" aria-label="Archive transition">
+      <div class="emg-bound">
+
+        <div class="inq-transition-grid inq-reveal">
+
+          <div class="inq-transition-col">
+            <div class="inq-meta-header">
+              <span class="inq-meta-num">02</span>
+              <span class="inq-meta-line"></span>
+              <span class="inq-meta-label">THE INQUIRY ARCHIVE</span>
+            </div>
+
+            <h2 class="inq-transition-statement">
+              The upstream question is what happened <em>before</em> a conclusion became convincing enough to rely on.
+            </h2>
+          </div>
+
+          <div class="inq-transition-prose">
+            <p class="inq-transition-desc">
+              The downstream question is what it changes once we act from it. Below are the published essays and working lines of inquiry examining judgment, explanation, and decision integrity across organizations and leadership practice.
+            </p>
+            <div class="inq-transition-indicator">
+              <span class="inq-ledger-dot" aria-hidden="true"></span>
+              <span>8 ESSAYS &middot; 4 CORE INQUIRIES &middot; BOOK IN DEVELOPMENT</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SERIES 01: CONTEXT BEFORE EXPLANATION
+         3 Published Essays · Explanations, Psychometrics, Leadership Performance
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-series-section" id="context-series" aria-label="Context Before Explanation series">
+      <div class="emg-bound">
+
+        <!-- Series Header -->
+        <header class="inq-series-header inq-reveal">
+          <div class="inq-series-meta-block">
+            <span class="inq-series-num">SERIES 01 // ARCHIVE</span>
+            <span class="inq-series-classification">CONTEXT &amp; ATTRIBUTION &middot; 3 ESSAYS</span>
+          </div>
+
+          <div class="inq-series-intro">
+            <h2 class="inq-series-title">Context Before Explanation</h2>
+            <p class="inq-series-premise">
+              We routinely explain behavior through the person before examining the conditions that made the behavior reasonable. When we misattribute cause, assessment becomes judgment rather than insight, and the conditions that generated the behavior remain unchanged.
+            </p>
+          </div>
+        </header>
+
+        <!-- Reading Ledger Table -->
+        <div class="inq-ledger-table" role="feed" aria-label="Context Before Explanation essays">
+
+          <!-- Entry 01 -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-1" aria-labelledby="inq-title-c01">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">01</span>
+              <span class="inq-ledger-row-tag">ESSAY // FOUNDATIONAL</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-c01">Context Before Explanation</h3>
+              <p class="inq-ledger-excerpt">
+                The human mind generates explanations with remarkable speed. The discipline lies in postponing them. An essay on explanation, context, and understanding.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-context.html" class="inq-ledger-action" aria-label="Read essay: Context Before Explanation">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entry 02 -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-1" aria-labelledby="inq-title-c02">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">02</span>
+              <span class="inq-ledger-row-tag">ESSAY // PSYCHOMETRICS</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-c02">Why Assessment Scores Are Not Explanations</h3>
+              <p class="inq-ledger-excerpt">
+                A score describes. An explanation explains. One of the most common misunderstandings in psychometric assessment &mdash; and why it matters.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-scores.html" class="inq-ledger-action" aria-label="Read essay: Why Assessment Scores Are Not Explanations">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entry 03 -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-2" aria-labelledby="inq-title-c03">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">03</span>
+              <span class="inq-ledger-row-tag">ESSAY // LEADERSHIP</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-c03">Leadership Potential and Leadership Performance</h3>
+              <p class="inq-ledger-excerpt">
+                Potential and performance are not the same question. Yet organizations treat them as interchangeable. An essay on the conditions that separate them.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-potential.html" class="inq-ledger-action" aria-label="Read essay: Leadership Potential and Leadership Performance">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SERIES 02: DECISION INTEGRITY
+         5 Essays (Lead Acknowledged + 4 Integrated Reading Ledger Entries)
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-series-section" id="decision-series" aria-label="Decision Integrity series">
+      <div class="emg-bound">
+
+        <!-- Series Header -->
+        <header class="inq-series-header inq-reveal">
+          <div class="inq-series-meta-block">
+            <span class="inq-series-num">SERIES 02 // ARCHIVE</span>
+            <span class="inq-series-classification">JUDGMENT &amp; CONDITIONS &middot; 5 ESSAYS</span>
+          </div>
+
+          <div class="inq-series-intro">
+            <h2 class="inq-series-title">Decision Integrity</h2>
+            <p class="inq-series-premise">
+              The quality of decisions is constrained by the quality of the conditions surrounding them. Organizations invest heavily in selecting and developing people with good judgment. They invest far less in building the conditions in which good judgment can actually operate.
+            </p>
+          </div>
+        </header>
+
+        <!-- Reading Ledger Table -->
+        <div class="inq-ledger-table" role="feed" aria-label="Decision Integrity essays">
+
+          <!-- Entry 01: Lead Essay Acknowledged (Not duplicated) -->
+          <article class="inq-ledger-row inq-ledger-featured-ref inq-reveal inq-reveal-delay-1" aria-labelledby="inq-title-d01">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">01</span>
+              <span class="inq-ledger-row-tag">FEATURED LEAD</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <div class="inq-featured-ref-badge">
+                <span class="inq-ledger-dot" aria-hidden="true"></span>
+                <span>SELECTED INQUIRY &middot; LEAD ESSAY</span>
+              </div>
+              <h3 class="inq-ledger-title" id="inq-title-d01">The Conditions We Forget to Examine</h3>
+              <p class="inq-ledger-excerpt">
+                Lead inquiry featured above in the primary reading frame. Decisions do not emerge in isolation; they emerge from circumstances that shape judgment before deliberate analysis even begins.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="#featured" class="inq-ledger-action" aria-label="View featured lead essay above">
+                <span>View Above</span>
+                <span aria-hidden="true">&uarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entry 02 -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-1" aria-labelledby="inq-title-d02">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">02</span>
+              <span class="inq-ledger-row-tag">ESSAY // CAPABILITY</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-d02">When Better People Don&rsquo;t Produce Better Decisions</h3>
+              <p class="inq-ledger-excerpt">
+                Organizations can improve the quality of their people while seeing little improvement in their decisions. Why capability alone is rarely enough.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-better-people.html" class="inq-ledger-action" aria-label="Read essay: When Better People Don't Produce Better Decisions">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entry 03 -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-1" aria-labelledby="inq-title-d03">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">03</span>
+              <span class="inq-ledger-row-tag">ESSAY // DELIBERATION</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-d03">What Integrity in Decision-Making Actually Requires</h3>
+              <p class="inq-ledger-excerpt">
+                Integrity in decision-making is less about conviction than connection &mdash; to the conditions, evidence, and uncertainty that genuinely existed.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-integrity.html" class="inq-ledger-action" aria-label="Read essay: What Integrity in Decision-Making Actually Requires">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entry 04 (Integrated previously orphaned essay) -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-2" aria-labelledby="inq-title-d04">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">04</span>
+              <span class="inq-ledger-row-tag">ESSAY // COMMITMENT</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-d04">Commitment Is the Result, Not the Decision</h3>
+              <p class="inq-ledger-excerpt">
+                What if commitment is not the decision &mdash; but its result? An essay on how commitment emerges from conditions rather than willpower.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-commitment.html" class="inq-ledger-action" aria-label="Read essay: Commitment Is the Result, Not the Decision">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entry 05 (Integrated previously orphaned essay) -->
+          <article class="inq-ledger-row inq-reveal inq-reveal-delay-2" aria-labelledby="inq-title-d05">
+            <div class="inq-ledger-coord">
+              <span class="inq-ledger-idx">05</span>
+              <span class="inq-ledger-row-tag">ESSAY // CONVICTION</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-ledger-title" id="inq-title-d05">Conviction Cannot Be Demanded</h3>
+              <p class="inq-ledger-excerpt">
+                Organizations often demand conviction at precisely the moment it is least available. An essay on why conviction is a consequence, not a command.
+              </p>
+            </div>
+
+            <div class="inq-ledger-action-col">
+              <a href="essay-conviction.html" class="inq-ledger-action" aria-label="Read essay: Conviction Cannot Be Demanded">
+                <span>Read Essay</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 04: THE INNER CONVERSATION
+         Working Inquiries in Development · Unlinked, No Buttons, No Invented Dates
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-working-section" id="inner-series" aria-label="The Inner Conversation working inquiries">
+      <div class="emg-bound">
+
+        <!-- Section Header -->
+        <header class="inq-series-header inq-reveal">
+          <div class="inq-series-meta-block">
+            <span class="inq-series-num">SERIES 03 // WORKING INQUIRIES</span>
+            <span class="inq-series-classification">INTERNAL NARRATIVE &middot; 3 INQUIRIES</span>
+          </div>
+
+          <div class="inq-series-intro">
+            <h2 class="inq-series-title">The Inner Conversation</h2>
+            <p class="inq-series-premise">
+              The assumptions we rarely examine often have more influence than the conclusions we consciously defend. Every leader carries an internal narrative &mdash; about who they are, what people expect of them, what risks are acceptable, and what counts as failure. The inner conversation is where much of the real decision-making happens.
+            </p>
+          </div>
+        </header>
+
+        <!-- Working Inquiries Register (Unlinked) -->
+        <div class="inq-working-table" role="region" aria-label="Inquiries in development">
+
+          <!-- Item 01 -->
+          <div class="inq-working-row inq-reveal inq-reveal-delay-1">
+            <div class="inq-working-coord">
+              <span class="inq-ledger-idx">01</span>
+              <span class="inq-ledger-row-tag">WORKING NOTE</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-working-title">We Mistake Explanation for Understanding</h3>
+            </div>
+
+            <div class="inq-working-status">
+              <span class="inq-ledger-dot" aria-hidden="true"></span>
+              <span>IN DEVELOPMENT</span>
+            </div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="inq-working-row inq-reveal inq-reveal-delay-1">
+            <div class="inq-working-coord">
+              <span class="inq-ledger-idx">02</span>
+              <span class="inq-ledger-row-tag">WORKING NOTE</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-working-title">The Stories We Stop Questioning</h3>
+            </div>
+
+            <div class="inq-working-status">
+              <span class="inq-ledger-dot" aria-hidden="true"></span>
+              <span>IN DEVELOPMENT</span>
+            </div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="inq-working-row inq-reveal inq-reveal-delay-2">
+            <div class="inq-working-coord">
+              <span class="inq-ledger-idx">03</span>
+              <span class="inq-ledger-row-tag">WORKING NOTE</span>
+            </div>
+
+            <div class="inq-ledger-content">
+              <h3 class="inq-working-title">Why Certainty Often Arrives Too Early</h3>
+            </div>
+
+            <div class="inq-working-status">
+              <span class="inq-ledger-dot" aria-hidden="true"></span>
+              <span>IN DEVELOPMENT</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 05: CONDITIONS BEFORE CONVICTION — BOOK BRIDGE
+         Book in Development
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-book-bridge-section" id="cbc-book" aria-label="Conditions Before Conviction book">
+      <div class="emg-bound">
+
+        <div class="inq-book-grid inq-reveal">
+
+          <!-- Left Column: Title, Kicker & Epigraph Card -->
+          <div class="inq-book-left">
+            <div class="inq-book-badge">
+              <span class="inq-ledger-dot" aria-hidden="true"></span>
+              <span>BOOK IN DEVELOPMENT</span>
+            </div>
+
+            <h2 class="inq-book-title">Conditions Before Conviction</h2>
+
+            <div class="inq-book-kicker">
+              How We Become Certain&mdash;and What Our Certainty Changes
+            </div>
+
+            <div class="inq-book-quote-card">
+              <blockquote class="inq-book-epigraph">
+                &ldquo;We rarely experience the conditions that shape a judgment. We experience the conclusion.&rdquo;
+              </blockquote>
+              <div class="inq-book-epigraph-meta">
+                FERAS BANNA &middot; FOUNDATIONAL THESIS
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Substantive Thesis & Action -->
+          <div class="inq-book-right inq-reveal inq-reveal-delay-1">
+            <p class="inq-book-prose">
+              Conviction, here, does not mean dogmatism. It is the point at which a conclusion has acquired enough authority for us to rely on it. The upstream question is what happened before this became convincing enough to rely on. The downstream question is what it changes once we act from it.
+            </p>
+
+            <p class="inq-book-prose">
+              The book does not assume our conclusions are wrong, and the aim is not less certainty. It is a more responsible relationship with the authority certainty carries &mdash; strong enough to act, open enough to learn, accountable enough to change.
+            </p>
+
+            <div class="inq-book-triad">
+              <div class="inq-triad-item">
+                <span class="inq-triad-strong">Strong enough</span>
+                <span class="inq-triad-desc">To Act</span>
+              </div>
+              <div class="inq-triad-item">
+                <span class="inq-triad-strong">Open enough</span>
+                <span class="inq-triad-desc">To Learn</span>
+              </div>
+              <div class="inq-triad-item">
+                <span class="inq-triad-strong">Accountable enough</span>
+                <span class="inq-triad-desc">To Change</span>
+              </div>
+            </div>
+
+            <div class="inq-book-cta-row">
+              <a href="conditions-before-conviction.html" class="inq-book-action">
+                <span>Explore the Book</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+              <span class="inq-book-meta-sub">About the Book</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION 06: QUIET EDITORIAL CLOSING
+         Reflective Closure — Straight into Locked EMG Footer
+    ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="inq-closing-section" aria-label="Editorial closing">
+      <div class="emg-bound">
+
+        <div class="inq-closing-inner inq-reveal">
+          <div class="inq-closing-mark" aria-hidden="true"></div>
+          <h2 class="inq-closing-title">Questions worth keeping open.</h2>
+          <p class="inq-closing-desc">
+            Perspective changes what becomes possible.<br />
+            Improving the quality of judgment surrounding consequential choices.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER — Matching Global Site Architecture
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <footer class="emg-footer">
+    <div class="emg-bound">
+      <div class="emg-footer-grid">
+        <div class="emg-footer-brand-col">
+          <a class="nav-brand" href="index.html" aria-label="Enable My Growth home">
+            <span class="nav-brand-symbol" aria-hidden="true"></span>
+            <span class="nav-brand-copy">
+              <b>Enable My <span style="color:#C9A96E;">Growth</span></b>
+              <small>Feras Banna</small>
+            </span>
+          </a>
+          <p class="emg-footer-creds">
+            Perspective changes what becomes possible.<br />
+            Improving the quality of judgment surrounding consequential choices.
+          </p>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="conditions-before-conviction.html">The Book</a></li>
+            <li><a href="ideas.html">Insights &amp; Essays</a></li>
+            <li><a href="about.html">About Feras</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="tech.html"><strong>Enable My Growth Tech</strong></a></li>
+            <li><a href="capability-os.html">CapabilityOS™</a></li>
+            <li><a href="ai-thinking-studio.html">AI Thinking Studio™</a></li>
+            <li><a href="contextual.html">Contextual™</a></li>
+            <li><a href="phys-valid.html">Phys-Valid™</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Practice</h4>
+          <ul>
+            <li><a href="work.html">Work with Feras</a></li>
+            <li><a href="training.html">Workshops &amp; Facilitation</a></li>
+            <li><a href="speaking.html">Speaking &amp; Roundtables</a></li>
+            <li><a href="contact.html">Begin a Conversation</a></li>
+          </ul>
+        </div>
+
+        <div class="emg-footer-col">
+          <h4>Legal &amp; Notes</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+            <li><a href="terms.html">Terms of Engagement</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- 02 CONTEXT BEFORE EXPLANATION -->
-  <div class="idea-section" id="context">
-    <div class="idea-layout">
-      <div class="idea-sidebar">
-        <div class="idea-num">02</div>
-        <p class="eyebrow mb-sm">Core Idea</p>
-        <h2 class="idea-main-title">Context Before Explanation</h2>
-        <div class="gold-rule mt-md"></div>
-      </div>
-      <div>
-        <p class="idea-premise">
-          We routinely explain behavior through the person before examining the conditions that made the behavior reasonable.
-        </p>
-        <p class="idea-body-text">
-          In organizations, this appears constantly. A leader underperforms and the explanation defaults to personality, motivation, or fit. A team struggles and the narrative settles on individuals. A decision fails and someone is identified as having lacked the judgment required.
-        </p>
-        <p class="idea-body-text">
-          These explanations are not necessarily wrong. But they are frequently incomplete — and accepted too quickly, before the conditions shaping the behavior have been seriously examined.
-        </p>
-        <p class="idea-body-text">
-          When we misattribute cause, we apply the wrong remedies. Assessment becomes judgment rather than insight. Development addresses the wrong problem. And the conditions that generated the behavior remain unchanged, ready to shape whoever comes next.
-        </p>
-        <div class="article-block">
-          <div class="article-block-label">Essays on this idea</div>
-          <ul class="article-list">
-            <li><a href="essay-context.html">Context Before Explanation</a></li>
-            <li><a href="essay-scores.html">Why Assessment Scores Are Not Explanations</a></li>
-            <li><a href="essay-potential.html">Leadership Potential and Leadership Performance</a></li>
-          </ul>
-        </div>
+      <div class="emg-footer-bottom">
+        <span>&copy; 2026 Enable My Growth. All rights reserved.</span>
+        <span>Founder-Led Practice &middot; GCC &amp; International</span>
       </div>
     </div>
-  </div>
+  </footer>
 
-  <!-- 03 THE INNER CONVERSATION -->
-  <div class="idea-section" id="inner">
-    <div class="idea-layout">
-      <div class="idea-sidebar">
-        <div class="idea-num">03</div>
-        <p class="eyebrow mb-sm">Core Idea</p>
-        <h2 class="idea-main-title">The Inner Conversation</h2>
-        <div class="gold-rule mt-md"></div>
-      </div>
-      <div>
-        <p class="idea-premise">
-          The assumptions we rarely examine often have more influence than the conclusions we consciously defend.
-        </p>
-        <p class="idea-body-text">
-          Every leader carries an internal narrative — about who they are, what people expect of them, what risks are acceptable, and what counts as failure. These narratives are not always visible, even to the person holding them.
-        </p>
-        <p class="idea-body-text">
-          They shape what information gets noticed, which options get considered seriously, and how uncertainty is tolerated. They are not character flaws. They are the residue of experience — useful in the contexts that formed them, potentially limiting in the contexts that require something different.
-        </p>
-        <p class="idea-body-text">
-          The inner conversation is where much of the real decision-making happens. Making it more visible — more examinable — is one of the most valuable things a leader can do.
-        </p>
-        <div class="article-block">
-          <div class="article-block-label">Essays in development</div>
-          <ul class="article-list" style="list-style:none; padding-left:0;">
-            <li style="color:var(--muted); font-size:0.9rem; padding:0.4rem 0;">We Mistake Explanation for Understanding <span style="font-size:0.75rem; color:var(--gold-dim); margin-left:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">(Forthcoming)</span></li>
-            <li style="color:var(--muted); font-size:0.9rem; padding:0.4rem 0;">The Stories We Stop Questioning <span style="font-size:0.75rem; color:var(--gold-dim); margin-left:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">(Forthcoming)</span></li>
-            <li style="color:var(--muted); font-size:0.9rem; padding:0.4rem 0;">Why Certainty Often Arrives Too Early <span style="font-size:0.75rem; color:var(--gold-dim); margin-left:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">(Forthcoming)</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script>
+    // Mobile navigation toggle
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
 
-  <!-- 04 DECISION INTEGRITY -->
-  <div class="idea-section" id="decision">
-    <div class="idea-layout">
-      <div class="idea-sidebar">
-        <div class="idea-num">04</div>
-        <p class="eyebrow mb-sm">Core Idea</p>
-        <h2 class="idea-main-title">Decision Integrity</h2>
-        <div class="gold-rule mt-md"></div>
-      </div>
-      <div>
-        <p class="idea-premise">
-          The quality of decisions is constrained by the quality of the conditions surrounding them.
-        </p>
-        <p class="idea-body-text">
-          Organizations invest heavily in selecting and developing people with good judgment. They invest far less in building the conditions in which good judgment can actually operate.
-        </p>
-        <p class="idea-body-text">
-          Information quality, psychological safety, time available for reflection, clarity of priorities, the degree to which dissent is tolerated — these factors shape the decisions that get made, regardless of the quality of the people making them.
-        </p>
-        <p class="idea-body-text">
-          Decision integrity asks a different set of questions: not only who is deciding, but what conditions surrounded the decision. Was the information complete? Were alternatives genuinely considered? Was pressure to conclude premature? Understanding these conditions — before and after — is how decision quality actually improves.
-        </p>
-        <div class="article-block">
-          <div class="article-block-label">Essays on this idea</div>
-          <ul class="article-list">
-            <li><a href="essay-conditions.html">The Conditions We Forget to Examine</a></li>
-            <li><a href="essay-better-people.html">When Better People Don't Produce Better Decisions</a></li>
-            <li><a href="essay-integrity.html">What Integrity in Decision-Making Actually Requires</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+    // Scroll reveal — IntersectionObserver
+    const revealEls = document.querySelectorAll('.inq-reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
 
-  <script src="analytics.js"></script>
-  <script src="effects.js"></script>
-  <script src="nav.js"></script>
+    // Hero elements visible immediately
+    document.querySelectorAll('.inq-hero-section .inq-reveal').forEach(el => el.classList.add('visible'));
+  </script>
+
 </body>
 </html>
