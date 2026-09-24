@@ -1213,131 +1213,81 @@
       font-weight: 300;
     }
 
-    /* ═════════════════════════════════════════════════════════════════════════
-       GLOBAL FOOTER — LOCKED ACROSS ALL EMG PAGES
-       ═════════════════════════════════════════════════════════════════════════ */
+    /* ─────────────────────────────────────────────────────────────────────────
+       FOOTER — Exact match to philosophy.html
+    ───────────────────────────────────────────────────────────────────────── */
     .emg-footer {
-      background: var(--emg-bg);
+      background: #08080d;
       border-top: 1px solid var(--emg-gold-hairline);
-      padding: clamp(4.5rem, 8vh, 6.5rem) 0 clamp(2.5rem, 4vh, 3.5rem);
-      position: relative;
+      padding: clamp(4rem, 8vh, 6rem) 0 0;
     }
 
     .emg-footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      gap: clamp(2rem, 3.5vw, 4rem);
-      margin-bottom: clamp(3rem, 5vh, 4.5rem);
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      padding-bottom: clamp(3.5rem, 6vh, 5rem);
     }
 
     .emg-footer-brand-col {
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1.2rem;
     }
 
-    .emg-footer-brand-col .nav-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.85rem;
-      text-decoration: none;
-      color: var(--emg-text-bright);
+    .emg-footer-creds {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--emg-text-muted);
+      margin: 0;
     }
 
-    .nav-brand-symbol {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      border: 1px solid var(--emg-gold-border);
-      background: radial-gradient(circle at 35% 35%, rgba(201, 169, 110, 0.25), transparent 75%);
-      display: inline-block;
-      position: relative;
+    .emg-footer-col h4 {
+      font-family: var(--emg-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emg-gold-dim);
+      margin: 0 0 1.25rem;
     }
 
-    .nav-brand-symbol::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--emg-gold);
-    }
-
-    .nav-brand-copy {
+    .emg-footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      line-height: 1.2;
+      gap: 0.85rem;
     }
 
-    .nav-brand-copy b {
-      font-size: 0.95rem;
+    .emg-footer-col a {
+      font-size: 0.88rem;
+      color: var(--emg-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .emg-footer-col a strong {
+      color: inherit;
       font-weight: 500;
-      color: var(--emg-text-bright);
     }
 
-    .nav-brand-copy small {
+    .emg-footer-col a:hover {
+      color: var(--emg-text);
+    }
+
+    .emg-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--emg-gold-hairline);
       font-family: var(--emg-mono);
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--emg-text-dim);
-    }
-
-    .emg-footer-creds {
-      font-size: 0.85rem;
-      line-height: 1.7;
-      color: var(--emg-text-muted);
-      margin: 0;
-      font-weight: 300;
-      max-width: 32ch;
-    }
-
-    .emg-footer-col h4 {
-      font-family: var(--emg-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--emg-gold);
-      margin: 0 0 1.25rem;
-      font-weight: 500;
-    }
-
-    .emg-footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .emg-footer-col a {
-      font-size: 0.85rem;
-      color: var(--emg-text-muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-      font-weight: 300;
-    }
-
-    .emg-footer-col a:hover {
-      color: var(--emg-text-bright);
-    }
-
-    .emg-footer-bottom {
-      border-top: 1px solid var(--emg-gold-hairline);
-      padding-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--emg-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: var(--emg-text-dim);
-      flex-wrap: wrap;
-      gap: 1rem;
     }
 
     /* ═════════════════════════════════════════════════════════════════════════
