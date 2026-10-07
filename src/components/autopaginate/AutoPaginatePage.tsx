@@ -1,14 +1,16 @@
 import React from 'react';
 import { GlobalNav } from '../global/GlobalNav';
 
-const features = [
-  ['01', 'Automatic page detection', 'Detect document pages before capture begins.'],
-  ['02', 'Multi-page capture', 'Capture pages in sequence without repeated manual screenshots.'],
-  ['03', 'Document assembly', 'Bring captured pages together as one document.'],
-  ['04', 'Review and annotation', 'Review captured content and add annotations before export.'],
-  ['05', 'PDF export', 'Export the finished document as a polished PDF.'],
-  ['06', 'Image export', 'Export the finished document as images.'],
+const workflow = [
+  ['01', 'Detect', 'Identify document pages and estimate the capture.'],
+  ['02', 'Capture', 'Capture the pages in sequence from the active tab.'],
+  ['03', 'Assemble', 'Bring the captured pages together as one document.'],
+  ['04', 'Edit / Redact', 'Review, annotate, and redact before export.'],
+  ['05', 'Export', 'Create a PDF or image output for the finished document.'],
 ];
+
+const freeBenefits = ['Unlimited ordinary webpage capture', 'Visible-area capture', 'Selected-area capture', 'Full scrolling capture', 'PNG export', 'Clipboard copy', 'Basic crop', 'View documents created during trial', 'No login required', 'No watermark', 'No usage quotas'];
+const personalBenefits = ['Automatic document/page detection', 'Virtualized or next-page capture', 'Page ranges', 'Scrollable/element capture', 'Advanced paper/layout options', 'Searchable PDFs and links', 'WebP export', 'Document assembly', 'Advanced editing', 'Annotations', 'Pixelation / secure redaction', 'Extended history and recovery', 'Advanced settings'];
 
 export function AutoPaginatePage() {
   return (
@@ -21,8 +23,9 @@ export function AutoPaginatePage() {
               <div className="ap-brand-lockup"><img src="/assets/autopaginate/store-icon-512.png" alt="AutoPaginate icon" width="64" height="64" /><span>AutoPaginate 1.6</span></div>
               <p className="ap-eyebrow">Enable My Growth / Chrome extension</p>
               <h1 id="autopaginate-title">Auto<span>Paginate</span></h1>
-              <p className="ap-hero-title">Capture multi-page documents from the web and turn them into clean PDFs or images.</p>
-              <p className="ap-lead">AutoPaginate automatically detects document pages, captures them in sequence, assembles them into one document, and gives you tools to review, annotate, and export the result.</p>
+              <p className="ap-hero-title">Capture the document, not just the webpage.</p>
+              <p className="ap-lead">AutoPaginate detects multi-page web documents, captures them in sequence, assembles them correctly, and lets you review, redact, and export them as clean PDFs or images.</p>
+              <p className="ap-positioning-line">Free captures webpages. Personal understands documents.</p>
               <div className="ap-actions">
                 <a className="ap-button ap-button-primary" href="#get-autopaginate">Get AutoPaginate</a>
                 <a className="ap-button ap-button-quiet" href="/autopaginate/support">Get Support <span aria-hidden="true">→</span></a>
@@ -31,6 +34,8 @@ export function AutoPaginatePage() {
             <div className="ap-hero-art"><img src="/assets/autopaginate/marquee-promo-tile-1400x560.png" alt="AutoPaginate product artwork showing page capture and browser support" width="1400" height="560" /></div>
           </div>
         </section>
+
+        <section className="ap-section ap-trust ap-trust-early" aria-labelledby="trust-title"><div className="ap-container ap-trust-inner"><div><p className="ap-eyebrow">Local-first by design</p><h2 id="trust-title">Your documents stay on your device.</h2></div><p>AutoPaginate processes captures locally in your browser. Captured pages are not uploaded to Enable My Growth or a third-party service as part of the core capture workflow. <a href="/autopaginate/privacy">Read the Privacy Policy</a>.</p></div></section>
 
         <section className="ap-section ap-gallery" aria-labelledby="gallery-title">
           <div className="ap-container"><div className="ap-section-head"><div><p className="ap-eyebrow">Product walkthrough</p><h2 id="gallery-title">See AutoPaginate in action.</h2></div><p className="ap-gallery-intro">A closer look at the capture, editing, redaction, export, and browser-support surfaces in the production extension.</p></div>
@@ -44,9 +49,9 @@ export function AutoPaginatePage() {
           </div>
         </section>
 
-        <section className="ap-section" aria-labelledby="features-title">
-          <div className="ap-container"><div className="ap-section-head"><p className="ap-eyebrow">Capture, review, export</p><h2 id="features-title">A clearer way to capture documents from the web.</h2></div>
-            <div className="ap-feature-grid">{features.map(([number, title, text]) => <article className="ap-feature" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <section className="ap-section" aria-labelledby="workflow-title">
+          <div className="ap-container"><div className="ap-section-head"><div><p className="ap-eyebrow">Document workflow</p><h2 id="workflow-title">AutoPaginate understands documents.</h2></div><p className="ap-gallery-intro">A capture workflow built around the document you want to keep, review, and use.</p></div>
+            <div className="ap-feature-grid ap-workflow-grid">{workflow.map(([number, title, text]) => <article className="ap-feature" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
           </div>
         </section>
 
@@ -62,9 +67,11 @@ export function AutoPaginatePage() {
           </div>
         </section>
 
-        <section className="ap-section ap-usecases" aria-labelledby="usecases-title"><div className="ap-container ap-split"><div><p className="ap-eyebrow">Useful when you need the whole document</p><h2 id="usecases-title">Designed for paginated content that should stay together.</h2></div><ul><li>Web-hosted documents</li><li>Paginated reports</li><li>Online manuals</li><li>Multi-page reference material</li><li>Content that would otherwise require repeated screenshots</li></ul></div></section>
+        <section className="ap-section ap-difference" aria-labelledby="difference-title"><div className="ap-container ap-split"><div><p className="ap-eyebrow">The document difference</p><h2 id="difference-title">More than a long screenshot.</h2></div><p>Traditional screenshot tools capture what is on the page. AutoPaginate is designed to understand document structure, capture pages in sequence, preserve the workflow, and produce a usable document.</p></div></section>
 
-        <section className="ap-section ap-trust" aria-labelledby="trust-title"><div className="ap-container ap-trust-inner"><div><p className="ap-eyebrow">Privacy and permissions</p><h2 id="trust-title">Focused on the capture you request.</h2></div><p>AutoPaginate is designed to process the content needed to perform the functions you request. For more information about data handling and extension permissions, see the <a href="/autopaginate/privacy">Privacy Policy</a>.</p></div></section>
+        <section className="ap-section ap-usecases" aria-labelledby="usecases-title"><div className="ap-container ap-split"><div><p className="ap-eyebrow">Built for document-heavy work</p><h2 id="usecases-title">Built for real documents.</h2></div><ul><li>Multi-page reports</li><li>Research and reference material</li><li>Online manuals</li><li>Tender and procurement documents</li><li>Legal or compliance records</li><li>Web-hosted document viewers</li><li>Long paginated content that would otherwise require repeated screenshots</li></ul></div></section>
+
+        <section className="ap-section ap-pricing" aria-labelledby="pricing-title"><div className="ap-container"><div className="ap-section-head"><div><p className="ap-eyebrow">Choose your workflow</p><h2 id="pricing-title">Free captures webpages. Personal understands documents.</h2></div><p className="ap-gallery-intro">Start with everyday capture. Upgrade when the work calls for document-aware tools.</p></div><div className="ap-plan-grid"><article className="ap-plan"><p className="ap-plan-label">Free</p><h3>Everyday webpage capture</h3><ul>{freeBenefits.map(item => <li key={item}>{item}</li>)}</ul></article><article className="ap-plan ap-plan-featured"><p className="ap-plan-label">Personal</p><h3>Document capture and reconstruction</h3><p className="ap-plan-price">$12/year <span>or</span> $29 lifetime</p><p className="ap-plan-note">7-day Personal trial · No card required · Coming soon</p><ul>{personalBenefits.map(item => <li key={item}>{item}</li>)}</ul></article></div></div></section>
 
         <section className="ap-cta" id="get-autopaginate" aria-labelledby="get-title"><div className="ap-container"><p className="ap-eyebrow">AutoPaginate</p><h2 id="get-title">Ready when you need the whole document.</h2><p>The Chrome Web Store link will be available here.</p><a className="ap-button ap-button-primary" href="/autopaginate/support">Get Support <span aria-hidden="true">→</span></a></div></section>
         <section className="ap-support-strip"><div className="ap-container"><div><h2>Need help with AutoPaginate?</h2><p>Find support for page capture, exports, permissions, bug reports, and feature requests.</p></div><a className="ap-button ap-button-quiet" href="/autopaginate/support">AutoPaginate Support <span aria-hidden="true">→</span></a></div></section>
