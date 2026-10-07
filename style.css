@@ -5093,7 +5093,14 @@ html, body {
 .ap-policy-grid strong { color:var(--ap-text); font-weight:500; }
 .ap-policy code { color:var(--ap-gold); font:500 .78rem 'JetBrains Mono',monospace; }
 .ap-policy a { border-bottom:1px solid var(--ap-gold); color:var(--ap-gold); }
+.ap-brand-lockup,.ap-title-lockup { align-items:center; display:flex; gap:1rem; margin-bottom:1.8rem; }
+.ap-brand-lockup img,.ap-title-lockup img { border:1px solid rgba(201,169,110,.55); border-radius:18px; box-shadow:0 10px 32px rgba(0,0,0,.28); display:block; object-fit:cover; }
+.ap-brand-lockup span { color:var(--ap-gold); font:500 .68rem 'JetBrains Mono',monospace; letter-spacing:.13em; text-transform:uppercase; }
+.ap-title-lockup { align-items:flex-start; margin-bottom:1.5rem; }.ap-title-lockup img { border-radius:20px; flex:none; }.ap-title-lockup .ap-eyebrow { margin-top:.5rem; }
+.ap-hero-art { align-self:center; filter:drop-shadow(0 28px 44px rgba(0,0,0,.38)); }.ap-hero-art img { border:1px solid rgba(201,169,110,.32); border-radius:12px; display:block; height:auto; max-width:100%; width:100%; }
+.ap-gallery { background:#0c0c12; }.ap-gallery .ap-section-head { align-items:end; }.ap-gallery-intro { line-height:1.75; margin:0; max-width:350px; }.ap-gallery-grid { display:grid; gap:3rem 2rem; grid-template-columns:repeat(2,1fr); }.ap-gallery figure { margin:0; }.ap-gallery figure:last-child { grid-column:1 / -1; max-width:calc(50% - 1rem); }.ap-gallery figure img { border:1px solid rgba(201,169,110,.3); border-radius:8px; display:block; height:auto; max-width:100%; width:100%; }.ap-gallery figcaption { display:grid; gap:.55rem; padding:1.2rem 0 0; }.ap-gallery figcaption b { color:var(--ap-gold); font:500 .67rem 'JetBrains Mono',monospace; letter-spacing:.12em; text-transform:uppercase; }.ap-gallery figcaption span { color:var(--ap-muted); font-size:.9rem; line-height:1.65; }
 @media (max-width:700px) { .ap-policy-grid { grid-template-columns:1fr; } }
+@media (max-width:700px) { .ap-gallery .ap-section-head { align-items:start; flex-direction:column; gap:1.5rem; }.ap-gallery-grid { grid-template-columns:1fr; }.ap-gallery figure:last-child { grid-column:auto; max-width:none; }.ap-hero-art { margin-top:1rem; }.ap-brand-lockup img { border-radius:14px; height:52px; width:52px; } }
 
 .matrix-table-container {
   width: 100%;

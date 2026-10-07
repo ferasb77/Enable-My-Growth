@@ -18,6 +18,7 @@ export function AutoPaginatePage() {
         <section className="ap-hero" aria-labelledby="autopaginate-title">
           <div className="ap-container ap-hero-grid">
             <div>
+              <div className="ap-brand-lockup"><img src="/assets/autopaginate/store-icon-512.png" alt="AutoPaginate icon" width="64" height="64" /><span>AutoPaginate 1.6</span></div>
               <p className="ap-eyebrow">Enable My Growth / Chrome extension</p>
               <h1 id="autopaginate-title">Auto<span>Paginate</span></h1>
               <p className="ap-hero-title">Capture multi-page documents from the web and turn them into clean PDFs or images.</p>
@@ -27,11 +28,18 @@ export function AutoPaginatePage() {
                 <a className="ap-button ap-button-quiet" href="/autopaginate/support">Get Support <span aria-hidden="true">→</span></a>
               </div>
             </div>
-            <div className="ap-document-motif" aria-label="Illustration of pages being assembled into an export document" role="img">
-              <div className="ap-page-sheet ap-sheet-back"><span>01</span></div>
-              <div className="ap-page-sheet ap-sheet-mid"><span>02</span></div>
-              <div className="ap-page-sheet ap-sheet-front"><div className="ap-sheet-top"><i></i><b>DOCUMENT CAPTURE</b></div><div className="ap-sheet-lines"><i></i><i></i><i></i><i></i></div><div className="ap-sheet-note">REVIEWED · READY TO EXPORT</div></div>
-              <div className="ap-motif-line"><span></span><b>ASSEMBLE</b><span></span></div>
+            <div className="ap-hero-art"><img src="/assets/autopaginate/marquee-promo-tile-1400x560.png" alt="AutoPaginate product artwork showing page capture and browser support" width="1400" height="560" /></div>
+          </div>
+        </section>
+
+        <section className="ap-section ap-gallery" aria-labelledby="gallery-title">
+          <div className="ap-container"><div className="ap-section-head"><div><p className="ap-eyebrow">Product walkthrough</p><h2 id="gallery-title">See AutoPaginate in action.</h2></div><p className="ap-gallery-intro">A closer look at the capture, editing, redaction, export, and browser-support surfaces in the production extension.</p></div>
+            <div className="ap-gallery-grid">
+              <figure><img src="/assets/autopaginate/screenshot-1-smart-capture.png" alt="AutoPaginate Smart Capture panel detecting an article and estimating pages" width="1280" height="800" loading="lazy" /><figcaption><b>01 / Smart Capture</b><span>Detects article content, estimates pages, and offers clean-article or entire-page capture.</span></figcaption></figure>
+              <figure><img src="/assets/autopaginate/screenshot-2-document-editor.png" alt="AutoPaginate document editor showing three pages and page properties" width="1280" height="800" loading="lazy" /><figcaption><b>02 / Document Editor</b><span>Review a multi-page document with page thumbnails, properties, and export controls.</span></figcaption></figure>
+              <figure><img src="/assets/autopaginate/screenshot-3-pii-redaction.png" alt="AutoPaginate redaction mode showing redacted fields and sanitization checks" width="1280" height="800" loading="lazy" /><figcaption><b>03 / PII Redaction</b><span>Redaction mode shows sanitized fields alongside checks for pixels, text tokens, and hyperlinks.</span></figcaption></figure>
+              <figure><img src="/assets/autopaginate/screenshot-4-export-formats.png" alt="AutoPaginate export screen showing PDF, PNG, JPG, and WebP options" width="1280" height="800" loading="lazy" /><figcaption><b>04 / Export Formats</b><span>Choose from PDF, PNG, JPG, or WebP output formats in the export surface.</span></figcaption></figure>
+              <figure><img src="/assets/autopaginate/screenshot-5-cross-browser.png" alt="AutoPaginate compatibility screen for Chrome, Edge, and Firefox" width="1280" height="800" loading="lazy" /><figcaption><b>05 / Cross-browser</b><span>Shows the extension’s compatibility surfaces for Chrome, Edge, and Firefox.</span></figcaption></figure>
             </div>
           </div>
         </section>
@@ -68,12 +76,17 @@ export function AutoPaginatePage() {
 
 export function AutoPaginateSupportPage() {
   const topics = ['AutoPaginate is not detecting all pages', 'A page is not being captured correctly', 'PDF export issues', 'Image export issues', 'Annotation or editing questions', 'Extension permissions', 'Bug reports', 'Feature requests'];
-  return <div className="ap-page"><GlobalNav currentPath="autopaginate" /><main id="main-content"><section className="ap-support-hero"><div className="ap-container"><p className="ap-eyebrow">Enable My Growth / Chrome extension</p><h1>AutoPaginate <span>Support</span></h1><p>Need help using AutoPaginate? We’re here to help.</p><a className="ap-button ap-button-quiet" href="/autopaginate">← Back to AutoPaginate</a></div></section><section className="ap-section"><div className="ap-container"><p className="ap-eyebrow">Support topics</p><h2>What can we help with?</h2><ul className="ap-topic-list">{topics.map((topic, index) => <li key={topic}><span>{String(index + 1).padStart(2, '0')}</span>{topic}</li>)}</ul></div></section><section className="ap-section ap-before"><div className="ap-container ap-split"><div><p className="ap-eyebrow">Before contacting support</p><h2>Please include enough context to help us reproduce the issue.</h2></div><ul><li>The website where the issue occurred</li><li>Your Chrome version</li><li>Your AutoPaginate version</li><li>A short description of what happened</li><li>A screenshot, if relevant</li></ul></div></section><section className="ap-cta"><div className="ap-container"><p className="ap-eyebrow">Contact</p><h2>For support, bug reports, or feature requests, contact:</h2><a className="ap-email" href="mailto:feras@enablemygrowth.com">feras@enablemygrowth.com</a><p>AutoPaginate is developed by Enable My Growth.</p></div></section></main><AutoPaginateFooter /></div>;
+  return <div className="ap-page"><GlobalNav currentPath="autopaginate" /><main id="main-content">
+    <section className="ap-support-hero"><div className="ap-container"><div className="ap-title-lockup"><img src="/assets/autopaginate/store-icon-512.png" alt="AutoPaginate icon" width="72" height="72" /><div><p className="ap-eyebrow">Enable My Growth / Chrome extension</p><h1>AutoPaginate <span>Support</span></h1></div></div><p>Need help using AutoPaginate? We’re here to help.</p><a className="ap-button ap-button-quiet" href="/autopaginate">← Back to AutoPaginate</a></div></section>
+    <section className="ap-section"><div className="ap-container"><p className="ap-eyebrow">Support topics</p><h2>What can we help with?</h2><ul className="ap-topic-list">{topics.map((topic, index) => <li key={topic}><span>{String(index + 1).padStart(2, '0')}</span>{topic}</li>)}</ul></div></section>
+    <section className="ap-section ap-before"><div className="ap-container ap-split"><div><p className="ap-eyebrow">Before contacting support</p><h2>Please include enough context to help us reproduce the issue.</h2></div><ul><li>The website where the issue occurred</li><li>Your Chrome version</li><li>Your AutoPaginate version</li><li>A short description of what happened</li><li>A screenshot, if relevant</li></ul></div></section>
+    <section className="ap-cta"><div className="ap-container"><p className="ap-eyebrow">Contact</p><h2>For support, bug reports, or feature requests, contact:</h2><a className="ap-email" href="mailto:feras@enablemygrowth.com">feras@enablemygrowth.com</a><p>AutoPaginate is developed by Enable My Growth.</p></div></section>
+  </main><AutoPaginateFooter /></div>;
 }
 
 export function AutoPaginatePrivacyPage() {
   return <div className="ap-page"><GlobalNav currentPath="autopaginate" /><main id="main-content">
-    <section className="ap-support-hero" aria-labelledby="privacy-title"><div className="ap-container"><p className="ap-eyebrow">Enable My Growth / AutoPaginate</p><h1 id="privacy-title">AutoPaginate <span>Privacy Policy</span></h1><p>How AutoPaginate handles information when you use the Chrome extension.</p><p className="ap-policy-effective">Effective date: October 7, 2026</p><a className="ap-button ap-button-quiet" href="/autopaginate">← Back to AutoPaginate</a></div></section>
+    <section className="ap-support-hero" aria-labelledby="privacy-title"><div className="ap-container"><div className="ap-title-lockup"><img src="/assets/autopaginate/store-icon-512.png" alt="AutoPaginate icon" width="72" height="72" /><div><p className="ap-eyebrow">Enable My Growth / AutoPaginate</p><h1 id="privacy-title">AutoPaginate <span>Privacy Policy</span></h1></div></div><p>How AutoPaginate handles information when you use the Chrome extension.</p><p className="ap-policy-effective">Effective date: October 7, 2026</p><a className="ap-button ap-button-quiet" href="/autopaginate">← Back to AutoPaginate</a></div></section>
     <section className="ap-section ap-policy"><div className="ap-container">
       <p className="ap-eyebrow">The short version</p><h2>AutoPaginate is local-first by implementation.</h2>
       <p>AutoPaginate captures and assembles web documents in your browser so you can review, annotate, and export them as PDFs or images. The audited version 1.6.0 extension contains no analytics, telemetry, external API client, account system, or upload endpoint. Its code does not transmit captured images, page content, URLs, or browsing data to Enable My Growth or another server.</p>
