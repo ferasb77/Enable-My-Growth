@@ -95,4 +95,15 @@ if (fs.existsSync(srcNext)) {
   process.exit(1);
 }
 
+// 5. Copy public assets emitted by the Next.js static export.
+const srcAssets = path.join(outDir, 'assets');
+const destAssets = path.join(deployDir, 'assets');
+if (fs.existsSync(srcAssets)) {
+  fs.cpSync(srcAssets, destAssets, { recursive: true, force: true });
+  console.log('✓ Successfully copied public assets to clean deploy directory');
+} else {
+  console.error('✗ out/assets not found!');
+  process.exit(1);
+}
+
 console.log('✓ Clean deployment bundle assembled in dist-deploy/');
