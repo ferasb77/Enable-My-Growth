@@ -10,18 +10,18 @@ export function GlobalNav({ currentPath = 'tech.html' }: GlobalNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const pages = [
-    { href: 'philosophy.html', label: 'Philosophy' },
-    { href: 'conditions-before-conviction.html', label: 'The Book' },
-    { href: 'tech.html', label: 'Enable My Growth Tech' },
-    { href: 'ideas.html', label: 'Insights' },
-    { href: 'training.html', label: 'Workshops' },
-    { href: 'about.html', label: 'About' },
-    { href: 'contact.html', label: 'Begin a Conversation', cta: true },
+    { href: '/philosophy.html', label: 'Philosophy' },
+    { href: '/conditions-before-conviction.html', label: 'The Book' },
+    { href: '/tech.html', label: 'Enable My Growth Tech' },
+    { href: '/ideas.html', label: 'Insights' },
+    { href: '/training.html', label: 'Workshops' },
+    { href: '/about.html', label: 'About' },
+    { href: '/contact.html', label: 'Begin a Conversation', cta: true },
   ];
 
   return (
     <nav id="site-nav" aria-label="Primary navigation">
-      <a className="nav-logo nav-brand" href="index.html" aria-label="Enable My Growth home">
+      <a className="nav-logo nav-brand" href="/index.html" aria-label="Enable My Growth home">
         <span
           aria-hidden="true"
           style={{
@@ -42,7 +42,7 @@ export function GlobalNav({ currentPath = 'tech.html' }: GlobalNavProps) {
 
       <ul className={'nav-links' + (isOpen ? ' open' : '')} id="nav-links">
         {pages.map((p) => {
-          const isActive = currentPath === p.href || (p.href === 'tech.html' && currentPath.includes('tech'));
+          const isActive = currentPath === p.href || currentPath === p.href.slice(1) || (p.href === '/tech.html' && currentPath.includes('tech'));
           const ctaClass = p.cta ? 'nav-cta ' : '';
           const activeClass = isActive ? 'active' : '';
           return (

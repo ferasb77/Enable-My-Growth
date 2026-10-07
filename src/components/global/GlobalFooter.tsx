@@ -34,16 +34,16 @@ export function GlobalFooter() {
             <h4>Explore</h4>
             <ul>
               <li>
-                <a href="philosophy.html">Philosophy</a>
+                <a href="/philosophy.html">Philosophy</a>
               </li>
               <li>
-                <a href="conditions-before-conviction.html">Conditions Before Conviction</a>
+                <a href="/conditions-before-conviction.html">Conditions Before Conviction</a>
               </li>
               <li>
-                <a href="ideas.html">Insights &amp; Essays</a>
+                <a href="/ideas.html">Insights &amp; Essays</a>
               </li>
               <li>
-                <a href="about.html">About Feras</a>
+                <a href="/about.html">About Feras</a>
               </li>
             </ul>
           </div>
@@ -52,21 +52,21 @@ export function GlobalFooter() {
             <h4>Tech &amp; Platforms</h4>
             <ul>
               <li>
-                <a href="tech.html">
+                <a href="/tech.html">
                   <strong>Enable My Growth Tech</strong>
                 </a>
               </li>
               <li>
-                <a href="capability-os.html">CapabilityOS™</a>
+                <a href="/capability-os.html">CapabilityOS™</a>
               </li>
               <li>
-                <a href="ai-thinking-studio.html">Thinking Studio™</a>
+                <a href="/ai-thinking-studio.html">Thinking Studio™</a>
               </li>
               <li>
-                <a href="contextual.html">Contextual™</a>
+                <a href="/contextual.html">Contextual™</a>
               </li>
               <li>
-                <a href="phys-valid.html">Phys-Valid™</a>
+                <a href="/phys-valid.html">Phys-Valid™</a>
               </li>
             </ul>
           </div>
@@ -75,16 +75,16 @@ export function GlobalFooter() {
             <h4>Engage</h4>
             <ul>
               <li>
-                <a href="work.html">Work with Feras</a>
+                <a href="/work.html">Work with Feras</a>
               </li>
               <li>
-                <a href="training.html">Workshops &amp; Facilitation</a>
+                <a href="/training.html">Workshops &amp; Facilitation</a>
               </li>
               <li>
-                <a href="tech.html#custom-solutions">Custom Technology Solutions</a>
+                <a href="/tech.html#custom-solutions">Custom Technology Solutions</a>
               </li>
               <li>
-                <a href="contact.html">Begin a conversation</a>
+                <a href="/contact.html">Begin a conversation</a>
               </li>
             </ul>
           </div>
@@ -93,13 +93,13 @@ export function GlobalFooter() {
             <h4>More</h4>
             <ul>
               <li>
-                <a href="books.html">Books</a>
+                <a href="/books.html">Books</a>
               </li>
               <li>
-                <a href="resources.html">Resources</a>
+                <a href="/resources.html">Resources</a>
               </li>
               <li>
-                <a href="privacy.html">Privacy</a>
+                <a href="/privacy.html">Privacy</a>
               </li>
             </ul>
           </div>

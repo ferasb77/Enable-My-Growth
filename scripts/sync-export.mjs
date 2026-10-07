@@ -45,6 +45,24 @@ if (fs.existsSync(srcHtml)) {
   process.exit(1);
 }
 
+// 3a. Publish AutoPaginate at extensionless directory routes for Chrome Web Store URLs.
+const exportedRoutes = [
+  { name: 'autopaginate', source: path.join(outDir, 'autopaginate.html') },
+  { name: 'autopaginate/support', source: path.join(outDir, 'autopaginate', 'support.html') },
+  { name: 'autopaginate/privacy', source: path.join(outDir, 'autopaginate', 'privacy.html') },
+];
+
+for (const route of exportedRoutes) {
+  if (!fs.existsSync(route.source)) {
+    console.error(`✗ Exported route not found: ${route.source}`);
+    process.exit(1);
+  }
+  const routeDir = path.join(deployDir, route.name);
+  fs.mkdirSync(routeDir, { recursive: true });
+  fs.copyFileSync(route.source, path.join(routeDir, 'index.html'));
+  console.log(`✓ Published extensionless route /${route.name}`);
+}
+
 // 3b-d. Sync local prototype routes to root directory ONLY (NOT copied to dist-deploy)
 const localPrototypes = [
   { name: 'tech-v2', file: 'tech-v2.html' },
