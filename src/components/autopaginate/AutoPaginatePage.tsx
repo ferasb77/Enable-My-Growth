@@ -27,7 +27,7 @@ export function AutoPaginatePage() {
               <p className="ap-lead">AutoPaginate detects multi-page web documents, captures them in sequence, assembles them correctly, and lets you review, redact, and export them as clean PDFs or images.</p>
               <p className="ap-positioning-line">Free captures webpages. Personal understands documents.</p>
               <div className="ap-actions">
-                <a className="ap-button ap-button-primary" href="#get-autopaginate">Get AutoPaginate</a>
+                <a className="ap-button ap-button-primary" href="https://chromewebstore.google.com/detail/autopaginate/aelphfappkhhegholojnkfmpgkehmkic" target="_blank" rel="noopener noreferrer">Add to Chrome</a>
                 <a className="ap-button ap-button-quiet" href="/autopaginate/support">Get Support <span aria-hidden="true">→</span></a>
               </div>
             </div>
@@ -73,7 +73,7 @@ export function AutoPaginatePage() {
 
         <section className="ap-section ap-pricing" aria-labelledby="pricing-title"><div className="ap-container"><div className="ap-section-head"><div><p className="ap-eyebrow">Choose your workflow</p><h2 id="pricing-title">Free captures webpages. Personal understands documents.</h2></div><p className="ap-gallery-intro">Start with everyday capture. Upgrade when the work calls for document-aware tools.</p></div><div className="ap-plan-grid"><article className="ap-plan"><p className="ap-plan-label">Free</p><h3>Everyday webpage capture</h3><ul>{freeBenefits.map(item => <li key={item}>{item}</li>)}</ul></article><article className="ap-plan ap-plan-featured"><p className="ap-plan-label">Personal</p><h3>Document capture and reconstruction</h3><p className="ap-plan-price">$12/year <span>or</span> $29 lifetime</p><p className="ap-plan-note">7-day Personal trial · No card required · Coming soon</p><ul>{personalBenefits.map(item => <li key={item}>{item}</li>)}</ul></article></div></div></section>
 
-        <section className="ap-cta" id="get-autopaginate" aria-labelledby="get-title"><div className="ap-container"><p className="ap-eyebrow">AutoPaginate</p><h2 id="get-title">Ready when you need the whole document.</h2><p>The Chrome Web Store link will be available here.</p><a className="ap-button ap-button-primary" href="/autopaginate/support">Get Support <span aria-hidden="true">→</span></a></div></section>
+        <section className="ap-cta" id="get-autopaginate" aria-labelledby="get-title"><div className="ap-container"><p className="ap-eyebrow">AutoPaginate</p><h2 id="get-title">Ready when you need the whole document.</h2><p>AutoPaginate is available now in the Chrome Web Store.</p><a className="ap-button ap-button-primary" href="https://chromewebstore.google.com/detail/autopaginate/aelphfappkhhegholojnkfmpgkehmkic" target="_blank" rel="noopener noreferrer">Add to Chrome</a></div></section>
         <section className="ap-support-strip"><div className="ap-container"><div><h2>Need help with AutoPaginate?</h2><p>Find support for page capture, exports, permissions, bug reports, and feature requests.</p></div><a className="ap-button ap-button-quiet" href="/autopaginate/support">AutoPaginate Support <span aria-hidden="true">→</span></a></div></section>
       </main>
       <AutoPaginateFooter />
