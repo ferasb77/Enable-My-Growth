@@ -50,6 +50,8 @@ const exportedRoutes = [
   { name: 'autopaginate', source: path.join(outDir, 'autopaginate.html') },
   { name: 'autopaginate/support', source: path.join(outDir, 'autopaginate', 'support.html') },
   { name: 'autopaginate/privacy', source: path.join(outDir, 'autopaginate', 'privacy.html') },
+  { name: 'autopaginate/pricing', source: path.join(outDir, 'autopaginate', 'pricing.html') },
+  { name: 'autopaginate/checkout/success', source: path.join(outDir, 'autopaginate', 'checkout', 'success.html') },
 ];
 
 for (const route of exportedRoutes) {
