@@ -31,6 +31,8 @@ jobs:
         run: npm ci || npm install
 
       - name: Build Next.js static export & Assemble Clean Deployment Bundle
+        env:
+          NEXT_PUBLIC_PADDLE_CLIENT_TOKEN: ${{ vars.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN }}
         run: npm run build
 
       - name: Verify Clean Deployment Directory
