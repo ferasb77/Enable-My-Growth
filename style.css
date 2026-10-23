@@ -5090,6 +5090,9 @@ html, body {
 .ap-policy-grid article { border-bottom:1px solid var(--ap-rule); padding:2rem 0 2.2rem; }
 .ap-policy-grid h3 { font-size:1.8rem; line-height:1.05; margin:0 0 .8rem; }
 .ap-policy-grid p { font-size:.92rem; line-height:1.75; margin:0; }
+.ap-policy-grid p + p { margin-top:1rem; }
+.ap-policy-grid ul { color:var(--ap-muted); font-size:.88rem; line-height:1.65; margin:1rem 0 0; padding-left:1.2rem; }
+.ap-policy-grid li + li { margin-top:.45rem; }
 .ap-policy-grid strong { color:var(--ap-text); font-weight:500; }
 .ap-policy code { color:var(--ap-gold); font:500 .78rem 'JetBrains Mono',monospace; }
 .ap-policy a { border-bottom:1px solid var(--ap-gold); color:var(--ap-gold); }
